@@ -1,10 +1,14 @@
 import os
+import platform
 import random
 import networkx as nx
 import matplotlib.pyplot as plt
 from pick import pick
 
-os.system("CLS")
+if platform.system() is "Windows":
+	os.system("CLS")
+elif platform.system() is "Linux":
+	os.system("clear")
 
 matploitdraw  = False
 
