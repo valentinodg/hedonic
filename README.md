@@ -9,11 +9,24 @@ Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/d
 * using **Matplotlib Library** (*Matplotlib 2.2*) [https://matplotlib.org/index.html]
 * using **Pick Library** (*Pick 0.6.4*) [https://github.com/wong2/pick]
 
-Build Instructions
+Build Instructions :
 ```
 pip install networkx
 pip install matplotlib
 pip install pick
+python filename.py
+```
+
+## GRAPH READER
+
+Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/downloads/]
+
+* using **Python Standard Library** (*Python 3.6.5 - Python 2.7.14*)
+* using **NetworkX Library** (*NetworkX 2.1*) [https://networkx.github.io/documentation/stable/]
+
+Build Instructions :
+```
+pip install networkx
 python filename.py
 ```
 
