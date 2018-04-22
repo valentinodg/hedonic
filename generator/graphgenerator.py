@@ -5,6 +5,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from pick import pick
 
+
 if platform.system() is "Windows":
 	os.system("CLS")
 elif platform.system() is "Linux":
@@ -22,13 +23,18 @@ title = 'Choose random graph class: '
 #
 # Classic
 # Expanders
-# Lattice
+# Small
 #
 
-options = ['Classic', 'Expanders', 'Lattice']
+options = ['Classics', 'Expanders', 'Small']
 option, index = pick(options, title, indicator='>', multi_select=False)
 
-if option is "Classic":
+
+##################################################
+#################### CLASSICS ####################
+##################################################
+
+if option is "Classics":
 
 	title = 'Choose random graph type: '
 
@@ -141,6 +147,12 @@ if option is "Classic":
 	elif option is "dorogovtsev_goltsev_mendes_graph":
 
 		n = int(input('[*] Insert generation number (int): '))
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto) (only)
+		#
+		#
 
 		G=nx.dorogovtsev_goltsev_mendes_graph(n, create_using=nx.Graph())
 
@@ -259,6 +271,9 @@ if option is "Classic":
 			G=nx.wheel_graph(n, create_using=nx.MultiGraph())
 
 
+###################################################
+#################### EXPANDERS ####################
+###################################################
 
 elif option is "Expanders":
 
@@ -274,13 +289,471 @@ elif option is "Expanders":
 	options = ['chordal_cycle_graph']
 	option, index = pick(options, title, indicator='>', multi_select=False)
 
-	# insert draw block
 	if option is "chordal_cycle_graph":
 
 		p = int(input('[*] Insert the number of nodes [MUST BE A PRIME NUMBER] (int): '))
 
 		G=nx.chordal_cycle_graph(p, create_using=nx.MultiGraph())
 
+
+###############################################
+#################### SMALL ####################
+###############################################
+
+elif option is "Small":
+
+	title = 'Choose random graph type: '
+
+	# TYPES :
+	#
+	#
+	# bull_graph
+	# cubical_graph
+	# desargues_graph
+	# diamond_graph
+	# dodecahedral_graph
+	# frucht_graph
+	# heawood_graph
+	# house_graph
+	# house_x_graph
+	# icosahedral_graph
+	# krackhardt_kite_graph
+	# moebius_kantor_graph
+	# octahedral_graph
+	# pappus_graph
+	# petersen_graph
+	# sedgewick_maze_graph
+	# tetrahedral_graph
+	# truncated_cube_graph
+	# truncated_tetrahedron_graph
+	# tutte_graph
+	#
+	#
+
+	options = ['bull_graph', 'cubical_graph', 'desargues_graph', 'diamond_graph', 'dodecahedral_graph', 'frucht_graph', 'heawood_graph', 'house_graph', 'house_x_graph', 'icosahedral_graph', 'krackhardt_kite_graph', 'moebius_kantor_graph', 'octahedral_graph', 'pappus_graph', 'petersen_graph', 'sedgewick_maze_graph', 'tetrahedral_graph', 'truncated_cube_graph', 'truncated_tetrahedron_graph', 'tutte_graph']
+	option, index = pick(options, title, indicator='>', multi_select=False)
+
+	if option is "bull_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.bull_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.bull_graph(create_using=nx.MultiGraph())
+
+
+	if option is "cubical_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.cubical_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.cubical_graph(create_using=nx.MultiGraph())
+
+
+	if option is "desargues_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.desargues_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.desargues_graph(create_using=nx.MultiGraph())
+
+
+	if option is "diamond_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.diamond_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.diamond_graph(create_using=nx.MultiGraph())
+
+
+	if option is "dodecahedral_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.dodecahedral_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.dodecahedral_graph(create_using=nx.MultiGraph())
+
+
+	if option is "frucht_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.frucht_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.frucht_graph(create_using=nx.MultiGraph())
+
+
+	if option is "heawood_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.heawood_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.heawood_graph(create_using=nx.MultiGraph())
+
+
+	if option is "house_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.house_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.house_graph(create_using=nx.MultiGraph())
+
+
+	if option is "house_x_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.house_x_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.house_x_graph(create_using=nx.MultiGraph())
+
+
+	if option is "icosahedral_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.icosahedral_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.icosahedral_graph(create_using=nx.MultiGraph())
+
+
+	if option is "krackhardt_kite_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.krackhardt_kite_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.krackhardt_kite_graph(create_using=nx.MultiGraph())
+
+
+	if option is "moebius_kantor_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.moebius_kantor_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.moebius_kantor_graph(create_using=nx.MultiGraph())
+
+
+	if option is "octahedral_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.octahedral_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.octahedral_graph(create_using=nx.MultiGraph())
+
+
+	if option is "pappus_graph":
+		G=nx.pappus_graph()
+		matploitdraw = True
+
+
+	if option is "petersen_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.petersen_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.petersen_graph(create_using=nx.MultiGraph())
+
+
+	if option is "sedgewick_maze_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.sedgewick_maze_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.sedgewick_maze_graph(create_using=nx.MultiGraph())
+
+
+	if option is "tetrahedral_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.tetrahedral_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.tetrahedral_graph(create_using=nx.MultiGraph())
+
+
+	if option is "truncated_cube_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.truncated_cube_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.truncated_cube_graph(create_using=nx.MultiGraph())
+
+
+	if option is "truncated_tetrahedron_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.truncated_tetrahedron_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.truncated_tetrahedron_graph(create_using=nx.MultiGraph())
+
+
+	if option is "tutte_graph":
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Graph() (grafo semplice non-diretto)
+		# MultiGraph() (grafo non-diretto)
+		#
+
+		options = ['Graph', 'MultiGraph']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Graph":
+			G=nx.tutte_graph(create_using=nx.Graph())
+			matploitdraw = True
+
+		if option is "MultiGraph":
+			G=nx.tutte_graph(create_using=nx.MultiGraph())
+
+
+###############################################
+#################### SMALL ####################
+###############################################
+
+elif option is "":
+
+	title = 'Choose random graph type: '
+
+	# TYPES :
+	#
+	#
+	# types
+	#
+	#
+
+	options = ['']
+	option, index = pick(options, title, indicator='>', multi_select=False)
 
 
 
@@ -328,7 +801,7 @@ nx.write_weighted_edgelist(G, filename)
 #################### DRAW BLOCK ####################
 ####################################################
 
-if matploitdraw :
+if matploitdraw:
 
 	title = 'Do you want to draw the graph? '
 
