@@ -1,6 +1,6 @@
 # COOPERATIVE GAME THEORY - HEDONIC COALITION FORMATION GAME
 
-## GRAPH GENERATOR
+## GRAPH GENERATOR (INCOMPLETE)
 
 Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/downloads/]
 
