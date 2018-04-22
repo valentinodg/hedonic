@@ -1,4 +1,6 @@
 import os
+import shutil
+import pathlib
 import platform
 import random
 import networkx as nx
@@ -773,6 +775,7 @@ title = 'Choose edge weight type: '
 options = ['integer', 'float']
 option, index = pick(options, title, indicator='>', multi_select=False)
 
+# integer weights
 if option is "integer":
 
 	MinInt = int(input('[*] Insert MinInt range int number: '))
@@ -781,6 +784,7 @@ if option is "integer":
 	for (u,v,w) in G.edges(data=True):
 	    w['weight'] = random.randint(MinInt, MaxInt)
 
+# float weights
 elif option is "float":
 
 	MinInt = int(input('[*] Insert MinInt range int number: '))
@@ -790,13 +794,27 @@ elif option is "float":
 	for (u,v,w) in G.edges(data=True):
 	    w['weight'] = round(random.uniform(MinInt, MaxInt), Aprx)
 
+# set .edgelist filename
 name = input('[*] Insert name for file .edgelist: ')
 ext = ".edgelist"
 
 filename = name + ext
+print(filename)
+
+# build home directory path
+hubdir = pathlib.Path.cwd().joinpath('gen').joinpath(name)
+pathlib.Path(hubdir).mkdir(parents=True, exist_ok=True)
+print(hubdir)
 
 # build .edgelist file
 nx.write_weighted_edgelist(G, filename)
+
+# move .edgelist file into home directory
+filepath = pathlib.Path.cwd().joinpath(filename)
+print(filepath)
+newfilepath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(filename)
+print(newfilepath)
+shutil.move(filepath, newfilepath)
 
 ext2 = ".dot"
 dotpath = name + ext2
@@ -804,7 +822,7 @@ dotpath = name + ext2
 # build .dot file
 # nx.nx_agraph.write_dot(G, dotpath)
 
-print("[*] Creation completed")
+print("[X] Creation completed")
 
 ####################################################
 #################### DRAW BLOCK ####################
@@ -863,4 +881,4 @@ if matploitdraw:
 		plt.show()
 
 	if option is "no":
-		print("[*] Creation completed")
+		print("[X] Creation completed")
