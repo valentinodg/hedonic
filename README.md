@@ -20,9 +20,12 @@ or (e.g. Arch Linux - Arch Repository)
 ```
 pacman -Sy python python2 python-pip python2-pip
 pacman -Sy python-matplotlib python2-matplotlib python-networkx python2-networkx
+pip install networkx
+pip install matplotlib
 pip install pick
 python filename.py
 ```
+etc...
 
 ## GRAPH READER (TODO)
 
@@ -37,7 +40,7 @@ pip install networkx
 python filename.py
 ```
 
-## DOC (TODO)
+## DOCUMENT (TODO)
 
 Written in **LaTeX** (*LaTeX 3*) [https://www.latex-project.org/get/]
 

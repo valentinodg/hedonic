@@ -742,9 +742,9 @@ elif option is "Small":
 			G=nx.tutte_graph(create_using=nx.MultiGraph())
 
 
-###############################################
-#################### SMALL ####################
-###############################################
+################################################
+#################### RANDOM ####################
+################################################
 
 elif option is "Random":
 
@@ -757,10 +757,15 @@ elif option is "Random":
 	# gnp_random_graph
 	# dense_gnm_random_graph
 	# gnm_random_graph
+	# erdos_renyi_graph
+	# binomial_graph
+	# newman_watts_strogatz_graph
+	# watts_strogatz_graph
+	# connected_watts_strogatz_graph
 	#
 	#
 
-	options = ['fast_gnp_random_graph', 'gnp_random_graph', 'dense_gnm_random_graph', 'gnm_random_graph']
+	options = ['fast_gnp_random_graph', 'gnp_random_graph', 'dense_gnm_random_graph', 'gnm_random_graph', 'erdos_renyi_graph', 'binomial_graph', 'newman_watts_strogatz_graph', 'watts_strogatz_graph', 'connected_watts_strogatz_graph']
 	option, index = pick(options, title, indicator='>', multi_select=False)
 
 	if option is "fast_gnp_random_graph":
@@ -835,6 +840,78 @@ elif option is "Random":
 			G=nx.gnm_random_graph(n, m, directed=False)
 		if option is "Directed":
 			G=nx.gnm_random_graph(n, m, directed=True)
+
+
+	if option is "erdos_renyi_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		p = float(input('[*] Insert the probability of edge creation value (float): '))
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Non-Directed (grafo non-diretto)
+		# Directed (grafo diretto)
+		#
+
+		options = ['Non-Directed', 'Directed']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Non-Directed":
+			G=nx.erdos_renyi_graph(n, p, directed=False)
+		if option is "Directed":
+			G=nx.erdos_renyi_graph(n, p, directed=True)
+
+
+	if option is "binomial_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		p = float(input('[*] Insert the probability of edge creation value (float): '))
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Non-Directed (grafo non-diretto)
+		# Directed (grafo diretto)
+		#
+
+		options = ['Non-Directed', 'Directed']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Non-Directed":
+			G=nx.binomial_graph(n, p, directed=False)
+		if option is "Directed":
+			G=nx.binomial_graph(n, p, directed=True)
+
+
+	if option is "newman_watts_strogatz_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		k = int(input('[*] Insert the number of nodes for ring topology (int): '))
+		p = float(input('[*] Insert the probability of edge creation value (float): '))
+
+		G=nx.newman_watts_strogatz_graph(n, k, p)
+
+
+	if option is "watts_strogatz_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		k = int(input('[*] Insert the number of nodes for ring topology (int): '))
+		p = float(input('[*] Insert the probability of edge creation value (float): '))
+
+		G=nx.watts_strogatz_graph(n, k, p)
+
+
+	if option is "connected_watts_strogatz_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		k = int(input('[*] Insert the number of nodes for ring topology (int): '))
+		p = float(input('[*] Insert the probability of edge creation value (float): '))
+		tries = int(input('[*] Insert the number of attempts to generate a connected graph (int): '))
+
+		G=nx.connected_watts_strogatz_graph(n, k, p, tries)
 
 
 ####################################################
