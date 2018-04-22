@@ -28,9 +28,10 @@ title = 'Choose random graph class: '
 # Classic
 # Expanders
 # Small
+# Random
 #
 
-options = ['Classics', 'Expanders', 'Small']
+options = ['Classics', 'Expanders', 'Small', 'Random']
 option, index = pick(options, title, indicator='>', multi_select=False)
 
 
@@ -745,20 +746,95 @@ elif option is "Small":
 #################### SMALL ####################
 ###############################################
 
-elif option is "":
+elif option is "Random":
 
 	title = 'Choose random graph type: '
 
 	# TYPES :
 	#
 	#
-	# types
+	# fast_gnp_random_graph
+	# gnp_random_graph
+	# dense_gnm_random_graph
+	# gnm_random_graph
 	#
 	#
 
-	options = ['']
+	options = ['fast_gnp_random_graph', 'gnp_random_graph', 'dense_gnm_random_graph', 'gnm_random_graph']
 	option, index = pick(options, title, indicator='>', multi_select=False)
 
+	if option is "fast_gnp_random_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		p = float(input('[*] Insert the probability of edge creation value (float): '))
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Non-Directed (grafo non-diretto)
+		# Directed (grafo diretto)
+		#
+
+		options = ['Non-Directed', 'Directed']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Non-Directed":
+			G=nx.fast_gnp_random_graph(n, p, directed=False)
+		if option is "Directed":
+			G=nx.fast_gnp_random_graph(n, p, directed=True)
+
+
+	if option is "gnp_random_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		p = float(input('[*] Insert the probability of edge creation value (float): '))
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Non-Directed (grafo non-diretto)
+		# Directed (grafo diretto)
+		#
+
+		options = ['Non-Directed', 'Directed']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Non-Directed":
+			G=nx.gnp_random_graph(n, p, directed=False)
+		if option is "Directed":
+			G=nx.gnp_random_graph(n, p, directed=True)
+
+
+	if option is "dense_gnm_random_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		m = int(input('[*] Insert the number of edges (int): '))
+
+		G=nx.dense_gnm_random_graph(n, m)
+
+
+	if option is "gnm_random_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		m = int(input('[*] Insert the number of edges (int): '))
+
+		title = 'Choose random graph type: '
+
+		# TYPES :
+		#
+		# Non-Directed (grafo non-diretto)
+		# Directed (grafo diretto)
+		#
+
+		options = ['Non-Directed', 'Directed']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "Non-Directed":
+			G=nx.gnm_random_graph(n, m, directed=False)
+		if option is "Directed":
+			G=nx.gnm_random_graph(n, m, directed=True)
 
 
 ####################################################
