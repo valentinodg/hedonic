@@ -4,6 +4,7 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 from pick import pick
+#import pygraphviz ## import errors on windows
 
 
 if platform.system() is "Windows":
@@ -794,8 +795,16 @@ ext = ".edgelist"
 
 filename = name + ext
 
+# build .edgelist file
 nx.write_weighted_edgelist(G, filename)
 
+ext2 = ".dot"
+dotpath = name + ext2
+
+# build .dot file
+# nx.nx_agraph.write_dot(G, dotpath)
+
+print("[*] Creation completed")
 
 ####################################################
 #################### DRAW BLOCK ####################
