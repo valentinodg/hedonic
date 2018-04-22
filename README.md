@@ -16,8 +16,14 @@ pip install matplotlib
 pip install pick
 python filename.py
 ```
+or (e.g. Arch Linux - Arch Repository)
+```
+pacman -Sy python python2 python-pip python2-pip python-matplotlib python2-matplotlib python-networkx python2-networkx
+pip install pick
+python filename.py
+```
 
-## GRAPH READER
+## GRAPH READER (TODO)
 
 Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/downloads/]
 
@@ -30,7 +36,7 @@ pip install networkx
 python filename.py
 ```
 
-## DOC
+## DOC (TODO)
 
 Written in **LaTeX** (*LaTeX 3*) [https://www.latex-project.org/get/]
 
