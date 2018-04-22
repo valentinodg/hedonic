@@ -18,7 +18,8 @@ python filename.py
 ```
 or (e.g. Arch Linux - Arch Repository)
 ```
-pacman -Sy python python2 python-pip python2-pip python-matplotlib python2-matplotlib python-networkx python2-networkx
+pacman -Sy python python2 python-pip python2-pip
+pacman -Sy python-matplotlib python2-matplotlib python-networkx python2-networkx
 pip install pick
 python filename.py
 ```
