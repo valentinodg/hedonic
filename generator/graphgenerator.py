@@ -14,7 +14,8 @@ if platform.system() is "Windows":
 elif platform.system() is "Linux":
 	os.system("clear")
 
-matploitdraw  = False
+print("\n")
+matplotdraw  = False
 
 ######################################################
 #################### CHOICE BLOCK ####################
@@ -351,7 +352,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.bull_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.bull_graph(create_using=nx.MultiGraph())
@@ -372,7 +373,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.cubical_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.cubical_graph(create_using=nx.MultiGraph())
@@ -393,7 +394,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.desargues_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.desargues_graph(create_using=nx.MultiGraph())
@@ -414,7 +415,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.diamond_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.diamond_graph(create_using=nx.MultiGraph())
@@ -435,7 +436,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.dodecahedral_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.dodecahedral_graph(create_using=nx.MultiGraph())
@@ -456,7 +457,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.frucht_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.frucht_graph(create_using=nx.MultiGraph())
@@ -477,7 +478,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.heawood_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.heawood_graph(create_using=nx.MultiGraph())
@@ -498,7 +499,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.house_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.house_graph(create_using=nx.MultiGraph())
@@ -519,7 +520,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.house_x_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.house_x_graph(create_using=nx.MultiGraph())
@@ -540,7 +541,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.icosahedral_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.icosahedral_graph(create_using=nx.MultiGraph())
@@ -561,7 +562,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.krackhardt_kite_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.krackhardt_kite_graph(create_using=nx.MultiGraph())
@@ -582,7 +583,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.moebius_kantor_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.moebius_kantor_graph(create_using=nx.MultiGraph())
@@ -603,7 +604,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.octahedral_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.octahedral_graph(create_using=nx.MultiGraph())
@@ -611,7 +612,7 @@ elif option is "Small":
 
 	if option is "pappus_graph":
 		G=nx.pappus_graph()
-		matploitdraw = True
+		matplotdraw = True
 
 
 	if option is "petersen_graph":
@@ -629,7 +630,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.petersen_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.petersen_graph(create_using=nx.MultiGraph())
@@ -650,7 +651,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.sedgewick_maze_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.sedgewick_maze_graph(create_using=nx.MultiGraph())
@@ -671,7 +672,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.tetrahedral_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.tetrahedral_graph(create_using=nx.MultiGraph())
@@ -692,7 +693,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.truncated_cube_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.truncated_cube_graph(create_using=nx.MultiGraph())
@@ -713,7 +714,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.truncated_tetrahedron_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.truncated_tetrahedron_graph(create_using=nx.MultiGraph())
@@ -734,7 +735,7 @@ elif option is "Small":
 
 		if option is "Graph":
 			G=nx.tutte_graph(create_using=nx.Graph())
-			matploitdraw = True
+			matplotdraw = True
 
 		if option is "MultiGraph":
 			G=nx.tutte_graph(create_using=nx.MultiGraph())
@@ -778,8 +779,10 @@ option, index = pick(options, title, indicator='>', multi_select=False)
 # integer weights
 if option is "integer":
 
+	print("\n")
 	MinInt = int(input('[*] Insert MinInt range int number: '))
 	MaxInt = int(input('[*] Insert MaxInt range int number: '))
+	print("\n")
 
 	for (u,v,w) in G.edges(data=True):
 	    w['weight'] = random.randint(MinInt, MaxInt)
@@ -787,34 +790,38 @@ if option is "integer":
 # float weights
 elif option is "float":
 
+	print("\n")
 	MinInt = int(input('[*] Insert MinInt range int number: '))
 	MaxInt = int(input('[*] Insert MaxInt range int number: '))
 	Aprx = int(input('[*] Set approximation (number of decimals): '))
+	print("\n")
 
 	for (u,v,w) in G.edges(data=True):
 	    w['weight'] = round(random.uniform(MinInt, MaxInt), Aprx)
 
 # set .edgelist filename
 name = input('[*] Insert name for file .edgelist: ')
+print("\n")
+
 ext = ".edgelist"
 
 filename = name + ext
-print(filename)
+print("[!] Name of .edgelist file is: " + filename)
 
 # build home directory path
 hubdir = pathlib.Path.cwd().joinpath('gen').joinpath(name)
 pathlib.Path(hubdir).mkdir(parents=True, exist_ok=True)
-print(hubdir)
+print("[!] Path of home directory is: " + str(hubdir))
 
 # build .edgelist file
 nx.write_weighted_edgelist(G, filename)
 
 # move .edgelist file into home directory
 filepath = pathlib.Path.cwd().joinpath(filename)
-print(filepath)
 newfilepath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(filename)
-print(newfilepath)
 shutil.move(filepath, newfilepath)
+print("[!] Final .edgelist file path is: " + str(newfilepath))
+print("\n")
 
 ext2 = ".dot"
 dotpath = name + ext2
@@ -828,7 +835,7 @@ print("[X] Creation completed")
 #################### DRAW BLOCK ####################
 ####################################################
 
-if matploitdraw:
+if matplotdraw:
 
 	title = 'Do you want to draw the graph? '
 
