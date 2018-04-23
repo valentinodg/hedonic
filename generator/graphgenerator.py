@@ -6,7 +6,7 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 from pick import pick
-#import pygraphviz ## import errors on windows
+#import pygraphviz 
 
 
 if platform.system() is "Windows":
@@ -976,8 +976,8 @@ shutil.move(filepath, newfilepath)
 print("[!] Final .edgelist file path is: " + str(newfilepath))
 print("\n")
 
-ext2 = ".dot"
-dotpath = name + ext2
+# ext2 = ".dot"
+# dotpath = name + ext2
 
 # build .dot file
 # nx.nx_agraph.write_dot(G, dotpath)
