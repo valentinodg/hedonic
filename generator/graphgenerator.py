@@ -6,7 +6,6 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 from pick import pick
-#import pygraphviz
 
 
 if platform.system() is "Linux":
