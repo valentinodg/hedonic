@@ -6,13 +6,13 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 from pick import pick
-#import pygraphviz 
+#import pygraphviz
 
 
-if platform.system() is "Windows":
-	os.system("CLS")
-elif platform.system() is "Linux":
+if platform.system() is "Linux":
 	os.system("clear")
+elif platform.system() is "Windows":
+	os.system("cls")
 
 print("\n")
 matplotdraw  = False
@@ -976,11 +976,11 @@ shutil.move(filepath, newfilepath)
 print("[!] Final .edgelist file path is: " + str(newfilepath))
 print("\n")
 
-# ext2 = ".dot"
-# dotpath = name + ext2
+ext2 = ".dot"
+dotpath = name + ext2
 
 # build .dot file
-# nx.nx_agraph.write_dot(G, dotpath)
+nx.nx_pydot.write_dot(G, dotpath)
 
 print("[X] Creation completed")
 

@@ -5,9 +5,12 @@
 Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/downloads/]
 
 * using **Python Standard Library** (*Python 3.6.5 - Python 2.7.14*) [https://docs.python.org/3/library/]
-* using **NetworkX Library** (*NetworkX 2.1*) [https://networkx.github.io/documentation/stable/]
-* using **Matplotlib Library** (*Matplotlib 2.2*) [https://matplotlib.org/index.html]
-* using **Pick Library** (*Pick 0.6.4*) [https://github.com/wong2/pick]
+* using **NetworkX Library** (*NetworkX 2.1*) [link]
+* using **Matplotlib Library** (*Matplotlib 2.2*) [link]
+* using **Pick Library** (*Pick 0.6.4*) [link]
+* using **Pydot Library** (*Pydot 1.2.4*) [link]
+* using **Graphviz Library** (*Graphviz 0.8.2*) [link]
+* using **PyParsing Library** (*PyParsing 2.2.0*) [link]
 
 Build Instructions :
 ```
