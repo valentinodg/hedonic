@@ -987,7 +987,7 @@ pngpath = name + ext3
 
 # build .png file
 K = nx.nx_pydot.to_pydot(G)
-pydot.Dot.write_png("pydot_example.png")
+K.write_png("pydot_example.png")
 
 print("[X] Creation completed")
 
