@@ -5,6 +5,7 @@ import platform
 import random
 import networkx as nx
 import matplotlib.pyplot as plt
+import pydot
 from pick import pick
 
 
@@ -980,6 +981,13 @@ dotpath = name + ext2
 
 # build .dot file
 nx.nx_pydot.write_dot(G, dotpath)
+
+ext3 = ".dot"
+pngpath = name + ext3
+
+# build .png file
+K = nx.nx_pydot.to_pydot(G)
+pydot.Dot.write_png("pydot_example.png")
 
 print("[X] Creation completed")
 
