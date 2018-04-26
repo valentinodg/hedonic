@@ -25,13 +25,19 @@ title = 'Choose random graph class: '
 
 # CLASSES :
 #
+#
 # Classic
 # Expanders
+# *** Lattice
 # Small
 # Random
+# Duplication Divergence
+# Degree Sequence (TODO)
+# *** Random Clustered
+#
 #
 
-options = ['Classics', 'Expanders', 'Small', 'Random']
+options = ['Classics', 'Expanders', 'Small', 'Random', 'Duplication Divergence', 'Degree Sequence']
 option, index = pick(options, title, indicator='>', multi_select=False)
 
 
@@ -762,10 +768,15 @@ elif option is "Random":
 	# newman_watts_strogatz_graph
 	# watts_strogatz_graph
 	# connected_watts_strogatz_graph
+	# random_regular_graph
+	# barabasi_albert_graph
+	# powerlaw_cluster_graph
+	# random_lobster
+	# random_powerlaw_tree
 	#
 	#
 
-	options = ['fast_gnp_random_graph', 'gnp_random_graph', 'dense_gnm_random_graph', 'gnm_random_graph', 'erdos_renyi_graph', 'binomial_graph', 'newman_watts_strogatz_graph', 'watts_strogatz_graph', 'connected_watts_strogatz_graph']
+	options = ['fast_gnp_random_graph', 'gnp_random_graph', 'dense_gnm_random_graph', 'gnm_random_graph', 'erdos_renyi_graph', 'binomial_graph', 'newman_watts_strogatz_graph', 'watts_strogatz_graph', 'connected_watts_strogatz_graph', 'random_regular_graph', 'barabasi_albert_graph', 'powerlaw_cluster_graph', 'random_lobster', 'random_powerlaw_tree']
 	option, index = pick(options, title, indicator='>', multi_select=False)
 
 	if option is "fast_gnp_random_graph":
@@ -914,6 +925,113 @@ elif option is "Random":
 		G=nx.connected_watts_strogatz_graph(n, k, p, tries)
 
 
+	if option is "random_regular_graph":
+
+		d = int(input('[*] Insert the number of nodes (int): '))
+		n = int(input('[*] Insert the number of nodes (n × d MUST BE EVEN && d >= n ) (int): '))
+
+		G=nx.random_regular_graph(d, n)
+
+
+	if option is "barabasi_albert_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		m = int(input('[*] Insert the number of edges to attach from a new node to existing nodes (1 <= m < n) (int): '))
+
+		G=nx.barabasi_albert_graph(n, m)
+
+
+	if option is "powerlaw_cluster_graph":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		m = int(input('[*] Insert the number of random edges to add for each new node (1 <= m <= n) (int): '))
+		p = float(input('[*] Insert the probability of adding a triangle after adding a random edge (0 <= p <= 1) (float): '))
+
+		G=nx.powerlaw_cluster_graph(n, m, p)
+
+
+	if option is "random_lobster":
+
+		n = int(input('[*] Insert the number of nodes in the backbone (int): '))
+		p1 = float(input('[*] Insert the probability of adding an edge to the backbone (float): '))
+		p2 = float(input('[*] Insert the probability of adding an edge one level beyond backbone (float): '))
+
+		G=nx.random_lobster(n, p1, p2)
+
+
+	if option is "random_powerlaw_tree":
+
+		n = int(input('[*] Insert the number of nodes (int): '))
+		gamma = float(input('[*] Insert the exponent of the power law (float): '))
+		tries = int(input('[*] Insert the number of attempts to adjust the sequence to make it a tree (int): '))
+
+		G=nx.random_powerlaw_tree(n, gamma, tries)
+
+
+################################################################
+#################### DUPLICATION DIVERGENCE ####################
+################################################################
+
+elif option is "Duplication Divergence":
+
+	title = 'Choose random graph type: '
+
+	# TYPES :
+	#
+	# duplication_divergence_graph
+	# partial_duplication_graph
+	#
+	#
+
+	options = ['duplication_divergence_graph', 'partial_duplication_graph']
+	option, index = pick(options, title, indicator='>', multi_select=False)
+
+	# only Graph()
+	if option is "duplication_divergence_graph":
+
+		n = int(input('[*] Insert the number of nodes (n >= 2) (int): '))
+		p = float(input('[*] Insert the probability for retaining the edge of the replicated node (0 <= p <= 1) (float): '))
+
+		G=nx.duplication_divergence_graph(n, p)
+
+
+	if option is "partial_duplication_graph":
+
+		N = int(input('[*] Insert the total number of nodes in the final graph (int): '))
+		n = int(input('[*] Insert the number of nodes in the initial clique (int): '))
+		p = float(input('[*] Insert the probability of joining each neighbor of a node to the duplicate node (0 <= p <= 1) (float): '))
+		q = float(input('[*] Insert the probability of joining the source node to the duplicate node (0 <= p <= 1) (float): '))
+
+		G=nx.partial_duplication_graph(N, n, p, q)
+
+
+#########################################################
+#################### DEGREE SEQUENCE ####################
+#########################################################
+'''
+elif option is "Degree Sequence":
+
+	title = 'Choose random graph type: '
+
+	# TYPES :
+	#
+	# types
+	#
+	#
+
+	options = ['type', 'type', 'type', 'type', 'type', 'type', 'type']
+	option, index = pick(options, title, indicator='>', multi_select=False)
+
+	# only Graph()
+	if option is "type":
+
+		n = int(input('[*] Insert (int): '))
+		p = float(input('[*] Insert (float): '))
+
+		G=nx.typefunction(n, p)
+'''
+
+
 ####################################################
 #################### MAIN BLOCK ####################
 ####################################################
@@ -956,28 +1074,32 @@ elif option is "float":
 name = input('[*] Insert name for file .edgelist: ')
 print("\n")
 
-ext = ".edgelist"
-
-filename = name + ext
-print("[!] Name of .edgelist file is: " + filename)
-
 # build home directory path
 hubdir = pathlib.Path.cwd().joinpath('gen').joinpath(name)
 pathlib.Path(hubdir).mkdir(parents=True, exist_ok=True)
 print("[!] Path of home directory is: " + str(hubdir))
-
-# build .edgelist file
-nx.write_weighted_edgelist(G, filename)
-
-# move .edgelist file into home directory
-filepath = pathlib.Path.cwd().joinpath(filename)
-newfilepath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(filename)
-shutil.move(filepath, newfilepath)
-print("[!] Final .edgelist file path is: " + str(newfilepath))
 print("\n")
 
+# build .edgelist filename
+ext = ".edgelist"
+
+edgelistname = name + ext
+print("[!] Name of .edgelist file is: " + edgelistname)
+
+# build .edgelist file
+nx.write_weighted_edgelist(G, edgelistname)
+
+# move .edgelist file into home directory
+edgelistpath = pathlib.Path.cwd().joinpath(edgelistname)
+newedgelistpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(edgelistname)
+shutil.move(edgelistpath, newedgelistpath)
+print("[!] Final .edgelist file path is: " + str(newedgelistpath))
+
+# build .dot filename
 ext2 = ".dot"
+
 dotname = name + ext2
+print("[!] Name of .dot file is: " + dotname)
 
 # build .dot file
 nx.nx_pydot.write_dot(G, dotname)
@@ -986,7 +1108,8 @@ nx.nx_pydot.write_dot(G, dotname)
 dotpath = pathlib.Path.cwd().joinpath(dotname)
 newdotpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(dotname)
 shutil.move(dotpath, newdotpath)
-
+print("[!] Final .dot file path is: " + str(newdotpath))
+print("\n")
 
 #################################################################
 #################### DRAW BLOCK [ GRAPHVIZ ] ####################
