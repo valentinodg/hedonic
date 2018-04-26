@@ -6,7 +6,9 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 import pydot
+
 from pick import pick
+from colorama import Fore, Back, Style, init
 
 
 if platform.system() is "Windows":
@@ -15,6 +17,9 @@ else :
 	os.system("clear")
 
 print("\n")
+
+# colorama init
+init()
 matplotdraw  = False
 
 ######################################################
@@ -1051,8 +1056,8 @@ option, index = pick(options, title, indicator='>', multi_select=False)
 if option is "integer":
 
 	print("\n")
-	MinInt = int(input('[*] Insert MinInt range int number: '))
-	MaxInt = int(input('[*] Insert MaxInt range int number: '))
+	MinInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MIN ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
+	MaxInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
 	print("\n")
 
 	for (u,v,w) in G.edges(data=True):
@@ -1062,29 +1067,29 @@ if option is "integer":
 elif option is "float":
 
 	print("\n")
-	MinInt = int(input('[*] Insert MinInt range int number: '))
-	MaxInt = int(input('[*] Insert MaxInt range int number: '))
-	Aprx = int(input('[*] Set approximation (number of decimals): '))
+	MinInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MIN ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
+	MaxInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
+	Aprx = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Set' + Fore.YELLOW + ' APPROXIMATION ' + Fore.CYAN + 'value (number of decimals): ' + Style.RESET_ALL))
 	print("\n")
 
 	for (u,v,w) in G.edges(data=True):
 	    w['weight'] = round(random.uniform(MinInt, MaxInt), Aprx)
 
 # set .edgelist filename
-name = input('[*] Insert name for file .edgelist: ')
+name = input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NAME ' + Fore.CYAN + 'for file' + Fore.YELLOW + ' .edgelist' + Fore.CYAN + ': ' + Style.RESET_ALL)
 print("\n")
 
 # build home directory path
 hubdir = pathlib.Path.cwd().joinpath('gen').joinpath(name)
 pathlib.Path(hubdir).mkdir(parents=True, exist_ok=True)
-print("[!] Path of home directory is: " + str(hubdir))
+print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.YELLOW + " Path " + Fore.CYAN + "of" + Fore.YELLOW + " home directory " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + str(hubdir) + Style.RESET_ALL)
 print("\n")
 
 # build .edgelist filename
 ext = ".edgelist"
 
 edgelistname = name + ext
-print("[!] Name of .edgelist file is: " + edgelistname)
+print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.YELLOW + " Name " + Fore.CYAN + "of" + Fore.YELLOW + " .edgelist file " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + edgelistname + Style.RESET_ALL)
 
 # build .edgelist file
 nx.write_weighted_edgelist(G, edgelistname)
@@ -1093,13 +1098,13 @@ nx.write_weighted_edgelist(G, edgelistname)
 edgelistpath = pathlib.Path.cwd().joinpath(edgelistname)
 newedgelistpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(edgelistname)
 shutil.move(edgelistpath, newedgelistpath)
-print("[!] Final .edgelist file path is: " + str(newedgelistpath))
+print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.CYAN + " Final" + Fore.YELLOW + " .edgelist file path " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + str(newedgelistpath) + Style.RESET_ALL)
 
 # build .dot filename
 ext2 = ".dot"
 
 dotname = name + ext2
-print("[!] Name of .dot file is: " + dotname)
+print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.YELLOW + " Name " + Fore.CYAN + "of" + Fore.YELLOW + " .dot file " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + dotname + Style.RESET_ALL)
 
 # build .dot file
 nx.nx_pydot.write_dot(G, dotname)
@@ -1108,7 +1113,7 @@ nx.nx_pydot.write_dot(G, dotname)
 dotpath = pathlib.Path.cwd().joinpath(dotname)
 newdotpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(dotname)
 shutil.move(dotpath, newdotpath)
-print("[!] Final .dot file path is: " + str(newdotpath))
+print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.CYAN + " Final" + Fore.YELLOW + " .dot file path " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + str(newdotpath) + Style.RESET_ALL)
 print("\n")
 
 #################################################################
@@ -1116,6 +1121,7 @@ print("\n")
 #################################################################
 
 # (works with Graph/DiGraph/MultiGraph/MultiDiGraph)
+# TODO : ADD PRINT WITH COLORS
 
 title = 'Do you want to draw(.dot -> .png)/save the graph with Graphviz Library? '
 
@@ -1130,8 +1136,12 @@ option, index = pick(options, title, indicator='>', default_index=1, multi_selec
 
 if option is "yes":
 
+	print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "X" + Fore.MAGENTA + "]" + Fore.GREEN + " Graphviz init")
+
 	ext3 = ".png"
 	pngname = name + ext3
+	print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.YELLOW + " Name " + Fore.CYAN + "of" + Fore.YELLOW + " .png file " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + pngname + Style.RESET_ALL)
+
 
 	# build .png file
 	K = nx.nx_pydot.to_pydot(G)
@@ -1141,9 +1151,11 @@ if option is "yes":
 	pngpath = pathlib.Path.cwd().joinpath(pngname)
 	newpngpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(pngname)
 	shutil.move(pngpath, newpngpath)
+	print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.CYAN + " Final" + Fore.YELLOW + " .png file path " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + str(newpngpath) + Style.RESET_ALL)
+
 
 if option is "no":
-	print("[X] Creation completed")
+	print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "X" + Fore.MAGENTA + "]" + Fore.RED + " Graphviz terminated")
 
 
 #################################################################
@@ -1166,6 +1178,8 @@ if matplotdraw:
 	option, index = pick(options, title, indicator='>', default_index=1, multi_select=False)
 
 	if option is "yes":
+
+		print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "X" + Fore.MAGENTA + "]" + Fore.GREEN + " Matplotlib init")
 
 		title = 'Choose graph layout: '
 
@@ -1205,4 +1219,7 @@ if matplotdraw:
 		plt.show()
 
 	if option is "no":
-		print("[X] Creation completed")
+		print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "X" + Fore.MAGENTA + "]" + Fore.RED + " Matplotlib terminated")
+
+print("\n")
+print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "X" + Fore.MAGENTA + "]" + Fore.GREEN + " Creation completed")

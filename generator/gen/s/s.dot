@@ -1,0 +1,12 @@
+strict graph "Bull Graph" {
+0;
+1;
+2;
+3;
+4;
+0 -- 1  [weight=2];
+0 -- 2  [weight=4];
+1 -- 2  [weight=4];
+1 -- 3  [weight=3];
+2 -- 4  [weight=3];
+}
