@@ -16,7 +16,6 @@ if platform.system() is "Windows":
 else :
 	os.system("clear")
 
-print("\n")
 
 # colorama init
 init()
@@ -77,8 +76,9 @@ if option is "Classics":
 
 	if option is "balanced_tree":
 
-		r = int(input('[*] Branching factor of the tree (int): '))
-		h = int(input('[*] Height of the tree (int): '))
+		print("\n")
+		r = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Branching factor of the tree' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		h = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Height of the tree' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -99,7 +99,8 @@ if option is "Classics":
 
 	elif option is "complete_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -120,7 +121,8 @@ if option is "Classics":
 
 	elif option is "circular_ladder_graph":
 
-		n = int(input('[*] Insert length on CLn (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert length on CLn' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -141,7 +143,8 @@ if option is "Classics":
 
 	elif option is "cycle_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -162,7 +165,7 @@ if option is "Classics":
 
 	elif option is "dorogovtsev_goltsev_mendes_graph":
 
-		n = int(input('[*] Insert generation number (int): '))
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert generation number' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		# TYPES :
 		#
@@ -175,7 +178,8 @@ if option is "Classics":
 
 	elif option is "ladder_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -196,8 +200,9 @@ if option is "Classics":
 
 	elif option is "lollipop_graph":
 
-		m = int(input('[*] Insert the number of nodes (int) range(m) - range(m, m+n) -> m: '))
-		n = int(input('[*] Insert the number of nodes (int) range(m) - range(m, m+n) -> n: '))
+		print("\n")
+		m = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + 'range(m) - range(m, m+n) -> ' + Fore.YELLOW + 'm' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + 'range(m) - range(m, m+n) -> ' + Fore.YELLOW + 'n' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -218,7 +223,8 @@ if option is "Classics":
 
 	elif option is "path_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -239,7 +245,8 @@ if option is "Classics":
 
 	elif option is "star_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -260,15 +267,17 @@ if option is "Classics":
 
 	elif option is "turan_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		r = int(input('[*] Insert the number of disjoint subset (partitions) (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		r = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of disjoint subset (partitions)' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.turan_graph(n, r)
 
 
 	elif option is "wheel_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -1145,17 +1154,18 @@ if option is "yes":
 
 	# build .png file
 	K = nx.nx_pydot.to_pydot(G)
-	K.write_png("pydot_example.png")
+	K.write_png(pngname)
 
 	# move .png file into home directory
 	pngpath = pathlib.Path.cwd().joinpath(pngname)
 	newpngpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(pngname)
 	shutil.move(pngpath, newpngpath)
 	print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.CYAN + " Final" + Fore.YELLOW + " .png file path " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + str(newpngpath) + Style.RESET_ALL)
-
+	print("\n")
 
 if option is "no":
 	print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "X" + Fore.MAGENTA + "]" + Fore.RED + " Graphviz terminated")
+	print("\n")
 
 
 #################################################################
@@ -1180,6 +1190,7 @@ if matplotdraw:
 	if option is "yes":
 
 		print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "X" + Fore.MAGENTA + "]" + Fore.GREEN + " Matplotlib init")
+		print("\n")
 
 		title = 'Choose graph layout: '
 
@@ -1220,6 +1231,7 @@ if matplotdraw:
 
 	if option is "no":
 		print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "X" + Fore.MAGENTA + "]" + Fore.RED + " Matplotlib terminated")
+		print("\n")
 
-print("\n")
+
 print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "X" + Fore.MAGENTA + "]" + Fore.GREEN + " Creation completed")

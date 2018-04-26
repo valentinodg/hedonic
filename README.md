@@ -11,21 +11,32 @@ Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/d
 * using **Pydot Library** (*Pydot 1.2.4*) [https://pypi.org/project/pydot/]
 * using **Graphviz Library** (*Graphviz 0.8.2*) [https://pypi.org/project/graphviz/]
 * using **PyParsing Library** (*PyParsing 2.2.0*) [https://pypi.org/project/pyparsing/]
+* using **Colorama Library** (*Colorama 0.3.9*) [https://pypi.org/project/colorama/]
 
 Build Instructions :
 ```
 pip install networkx
 pip install matplotlib
 pip install pick
+pip install colorama
+pip install graphviz
+pip install pydot
 python filename.py
 ```
 or (e.g. Arch Linux - Arch Repository)
+* (optional) using **PyGraphviz Library** (*PyGraphviz 1.3.1*) [https://pypi.org/project/pygraphviz/]
+
 ```
 pacman -Sy python python2 python-pip python2-pip
 pacman -Sy python-matplotlib python2-matplotlib python-networkx python2-networkx
+pacman -Sy python-pydot python2-pydot graphviz python-colorama python2-colorama
 pip install networkx
 pip install matplotlib
 pip install pick
+pip install colorama
+pip install graphviz
+pip install pydot
+pip install pygraphviz
 python filename.py
 ```
 etc...
