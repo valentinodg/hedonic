@@ -9,10 +9,10 @@ import pydot
 from pick import pick
 
 
-if platform.system() is "Linux":
-	os.system("clear")
-elif platform.system() is "Windows":
+if platform.system() is "Windows":
 	os.system("cls")
+else :
+	os.system("clear")
 
 print("\n")
 matplotdraw  = False
@@ -977,27 +977,61 @@ print("[!] Final .edgelist file path is: " + str(newfilepath))
 print("\n")
 
 ext2 = ".dot"
-dotpath = name + ext2
+dotname = name + ext2
 
 # build .dot file
-nx.nx_pydot.write_dot(G, dotpath)
+nx.nx_pydot.write_dot(G, dotname)
 
-ext3 = ".dot"
-pngpath = name + ext3
+# move .dot file into home directory
+dotpath = pathlib.Path.cwd().joinpath(dotname)
+newdotpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(dotname)
+shutil.move(dotpath, newdotpath)
 
-# build .png file
-K = nx.nx_pydot.to_pydot(G)
-K.write_png("pydot_example.png")
 
-print("[X] Creation completed")
+#################################################################
+#################### DRAW BLOCK [ GRAPHVIZ ] ####################
+#################################################################
 
-####################################################
-#################### DRAW BLOCK ####################
-####################################################
+# (works with Graph/DiGraph/MultiGraph/MultiDiGraph)
+
+title = 'Do you want to draw(.dot -> .png)/save the graph with Graphviz Library? '
+
+# ANSWER :
+#
+# yes (draw/show)
+# no (return)
+#
+
+options = ['yes', 'no']
+option, index = pick(options, title, indicator='>', default_index=1, multi_select=False)
+
+if option is "yes":
+
+	ext3 = ".png"
+	pngname = name + ext3
+
+	# build .png file
+	K = nx.nx_pydot.to_pydot(G)
+	K.write_png("pydot_example.png")
+
+	# move .png file into home directory
+	pngpath = pathlib.Path.cwd().joinpath(pngname)
+	newpngpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(pngname)
+	shutil.move(pngpath, newpngpath)
+
+if option is "no":
+	print("[X] Creation completed")
+
+
+#################################################################
+#################### DRAW BLOCK [ MATPLOIT ] ####################
+#################################################################
+
+#  (works only with Graph/DiGraph)
 
 if matplotdraw:
 
-	title = 'Do you want to draw the graph? '
+	title = 'Do you want to draw/show the graph with Matplotlib library? '
 
 	# ANSWER :
 	#
@@ -1006,7 +1040,7 @@ if matplotdraw:
 	#
 
 	options = ['yes', 'no']
-	option, index = pick(options, title, indicator='>', multi_select=False)
+	option, index = pick(options, title, indicator='>', default_index=1, multi_select=False)
 
 	if option is "yes":
 
