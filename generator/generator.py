@@ -316,7 +316,8 @@ elif option is "Expanders":
 
 	if option is "chordal_cycle_graph":
 
-		p = int(input('[*] Insert the number of nodes [MUST BE A PRIME NUMBER] (int): '))
+		print("\n")
+		p = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes [MUST BE A PRIME NUMBER]' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.chordal_cycle_graph(p, create_using=nx.MultiGraph())
 
@@ -795,8 +796,9 @@ elif option is "Random":
 
 	if option is "fast_gnp_random_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		p = float(input('[*] Insert the probability of edge creation value (float): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of edge creation value' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -817,8 +819,9 @@ elif option is "Random":
 
 	if option is "gnp_random_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		p = float(input('[*] Insert the probability of edge creation value (float): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of edge creation value' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -839,16 +842,18 @@ elif option is "Random":
 
 	if option is "dense_gnm_random_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		m = int(input('[*] Insert the number of edges (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		m = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of edges' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.dense_gnm_random_graph(n, m)
 
 
 	if option is "gnm_random_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		m = int(input('[*] Insert the number of edges (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		m = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of edges' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -869,8 +874,9 @@ elif option is "Random":
 
 	if option is "erdos_renyi_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		p = float(input('[*] Insert the probability of edge creation value (float): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of edge creation value' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -891,8 +897,9 @@ elif option is "Random":
 
 	if option is "binomial_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		p = float(input('[*] Insert the probability of edge creation value (float): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of edge creation value' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		title = 'Choose random graph type: '
 
@@ -913,71 +920,79 @@ elif option is "Random":
 
 	if option is "newman_watts_strogatz_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		k = int(input('[*] Insert the number of nodes for ring topology (int): '))
-		p = float(input('[*] Insert the probability of edge creation value (float): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		k = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes for ring topology' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of edge creation value' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.newman_watts_strogatz_graph(n, k, p)
 
 
 	if option is "watts_strogatz_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		k = int(input('[*] Insert the number of nodes for ring topology (int): '))
-		p = float(input('[*] Insert the probability of edge creation value (float): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		k = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes for ring topology' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of edge creation value' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.watts_strogatz_graph(n, k, p)
 
 
 	if option is "connected_watts_strogatz_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		k = int(input('[*] Insert the number of nodes for ring topology (int): '))
-		p = float(input('[*] Insert the probability of edge creation value (float): '))
-		tries = int(input('[*] Insert the number of attempts to generate a connected graph (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		k = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes for ring topology' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of edge creation value' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		tries = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of attempts to generate a connected graph' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.connected_watts_strogatz_graph(n, k, p, tries)
 
 
 	if option is "random_regular_graph":
 
-		d = int(input('[*] Insert the number of nodes (int): '))
-		n = int(input('[*] Insert the number of nodes (n × d MUST BE EVEN && d >= n ) (int): '))
+		print("\n")
+		d = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes (n × d MUST BE EVEN && d >= n )' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.random_regular_graph(d, n)
 
 
 	if option is "barabasi_albert_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		m = int(input('[*] Insert the number of edges to attach from a new node to existing nodes (1 <= m < n) (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		m = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of edges to attach from a new node to existing nodes (1 <= m < n)' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.barabasi_albert_graph(n, m)
 
 
 	if option is "powerlaw_cluster_graph":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		m = int(input('[*] Insert the number of random edges to add for each new node (1 <= m <= n) (int): '))
-		p = float(input('[*] Insert the probability of adding a triangle after adding a random edge (0 <= p <= 1) (float): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		m = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of random edges to add for each new node (1 <= m <= n)' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of adding a triangle after adding a random edge (0 <= p <= 1)' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.powerlaw_cluster_graph(n, m, p)
 
 
 	if option is "random_lobster":
 
-		n = int(input('[*] Insert the number of nodes in the backbone (int): '))
-		p1 = float(input('[*] Insert the probability of adding an edge to the backbone (float): '))
-		p2 = float(input('[*] Insert the probability of adding an edge one level beyond backbone (float): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes in the backbone' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p1 = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of adding an edge to the backbone' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p2 = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of adding an edge one level beyond backbone' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.random_lobster(n, p1, p2)
 
 
 	if option is "random_powerlaw_tree":
 
-		n = int(input('[*] Insert the number of nodes (int): '))
-		gamma = float(input('[*] Insert the exponent of the power law (float): '))
-		tries = int(input('[*] Insert the number of attempts to adjust the sequence to make it a tree (int): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes in the backbone' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		gamma = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the exponent of the power law' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		tries = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of attempts to adjust the sequence to make it a tree' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.random_powerlaw_tree(n, gamma, tries)
 
@@ -1003,18 +1018,20 @@ elif option is "Duplication Divergence":
 	# only Graph()
 	if option is "duplication_divergence_graph":
 
-		n = int(input('[*] Insert the number of nodes (n >= 2) (int): '))
-		p = float(input('[*] Insert the probability for retaining the edge of the replicated node (0 <= p <= 1) (float): '))
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes (n >= 2)' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability for retaining the edge of the replicated node (0 <= p <= 1)' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.duplication_divergence_graph(n, p)
 
 
 	if option is "partial_duplication_graph":
 
-		N = int(input('[*] Insert the total number of nodes in the final graph (int): '))
-		n = int(input('[*] Insert the number of nodes in the initial clique (int): '))
-		p = float(input('[*] Insert the probability of joining each neighbor of a node to the duplicate node (0 <= p <= 1) (float): '))
-		q = float(input('[*] Insert the probability of joining the source node to the duplicate node (0 <= p <= 1) (float): '))
+		print("\n")
+		N = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the total number of nodes in the final graph' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes in the initial clique' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		p = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of joining each neighbor of a node to the duplicate node (0 <= p <= 1)' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		q = float(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the probability of joining the source node to the duplicate node (0 <= p <= 1)' + Fore.CYAN + '(' + Fore.YELLOW + 'float' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		G=nx.partial_duplication_graph(N, n, p, q)
 
