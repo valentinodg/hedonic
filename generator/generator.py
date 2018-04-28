@@ -11,6 +11,10 @@ from pick import pick
 from colorama import Fore, Back, Style, init
 
 
+#####################################################
+#################### INIT BLOCK #####################
+#####################################################
+
 if platform.system() is "Windows":
 	os.system("cls")
 else :
@@ -1147,7 +1151,6 @@ print("\n")
 #################################################################
 
 # (works with Graph/DiGraph/MultiGraph/MultiDiGraph)
-# TODO : ADD PRINT WITH COLORS
 
 title = 'Do you want to draw(.dot -> .png)/save the graph with Graphviz Library? '
 
