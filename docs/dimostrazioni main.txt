@@ -1,0 +1,131 @@
+[1]
+Data una colorazione c, definiamo la funzione potenziale Φ(c) come la somma dei pesi degli archi colorati correttamente più il profitto che ciascun giocatore v ottiene dall'utilizzo del colore cv.
+Formalmente :
+(16)
+Per prima cosa notiamo che questa funzione è limitata. 
+Ora dimostriamo che Φ è una funzione potenziale corretta, vale a dire il cambiamento che si verifica nell'utilità di un giocatore quando esegue una mossa migliorativa è uguale alla variazione di Φ. 
+In una determinata colorazione c, chiamiamo, un giocatore v, infelice se può eseguire una mossa migliorativa, creando la nuova colorazione c' = (c-v, c'v). 
+Quindi il cambio di Φ, risultante da una mossa migliorativa del giocatore v che induce la nuova colorazione c', è:
+(2095476520697)
+Quindi, ogni mossa migliorativa aumenta il valore di Φ in modo proporzionale. 
+Segue che, dopo un numero finito di mosse migliorative, nessun giocatore può essere più infelice, cioè la colorazione risultante è Nash stabile.
+
+
+
+[2]
+E' facile vedere che, per ogni possibile colorazione, l'utilità di ciascun giocatore v ∈ V non può superare PMv+δv.
+Sia c* la colorazione che massimizza il benessere sociale e sia c una colorazione stabile.
+Notiamo che, un giocatore v, in un qualsiasi equilibrio, ha un'utilità almeno pari a max{k-1/k δv, PMv}.
+Infatti, da una parte, dal principio pidgehole, esiste sempre un colore i tale che sommatoria u:cu=i w({v, u}) ≤ 1/k δv.
+Dall'altra parte, il giocatore v può sempre selezionare il colore che massimizza la propria funzione di profitto.
+Consideriamo ora i seguenti 2 casi:
+
+caso 1 -> PMv ≥ δv
+in questo caso vale che :
+(3)
+
+caso 2 -> PMv < δv
+Sia PMv = δv-x, dove 0 < x < δv.
+Sia Yu(c) l'insieme dei nodi vicini di v il cui colore in c è differente da quello di v, diciamo i, che massimizza il profitto del colore di v, cioè u ∈ Yv(c) se u è un vicino di v e cu != i, dove i ∈ K e Pv(i) = PMv.
+Sia y = sommatoria u ∈ Yv(c) w({v, u}).
+Quindi, in qualsiasi nash equilibrium il profitto di v è almeno pari a max{PMv+y,δv −y}.
+Dunque, valgono entrambe le seguenti disequazioni :
+(4)
+(5)
+La disuguaglianza (4) è vera perché, se v sceglie il colore i, allora guadagna almeno PM v(che è uguale a δv -x) più tutti gli archi che sono corretti (e sono esattamente y). La disuguaglianza (5) vale perché se v sceglie un altro colore diverso da i, guadagna almeno δv - y. Si noti che il rapporto è limitato dal minimo tra questi due valori, vale a dire.
+(6)
+e quindi esso è massimizzato quando [equazionerobecopiapaper], che avviene, quando x = 2y.
+Applicando quest'ultimo alla disequazione (4), otteniamo :
+(7)
+Dunque, abbiamo che per ciascun giocatore v, µc*(v)/µc(v) ≤ 2.
+Sommando su tutti i giocatori, il teorema segue.
+
+
+[3]
+Per provare il limite inferiore dell'utilitarian price of anarchy, si consideri la stella G = (V, E) raffigurata nella figura 2, dove n è il nodo centrale e tutti gli altri nodi sono foglie, cioè V = {1 ,. . . , n} ed E = {{j, n}: j = 1,. . . , n-1}. Ci sono k colori disponibili. Definiamo la seguente funzione di profitto:
+per tutte le foglie j = 1,. . . , n - 1, Pj (1) = 1 e Pj (h) = 0, per h = 2,. . . , k, mentre per il nodo centrale n, Pn (h) = 0, per h = 1,. . . , k -1 e Pn (k) = n-1. 
+È facile vedere che il colore c* con il massimo benessere sociale è il primo in cui le foglie sono colorate 1, e il nodo centrale è colorato k. Il benessere sociale risultante è SWUT (c*) = 4 (n - 1). Anche se c* è stabile, non è l'unico equilibrio di Nash. 
+Infatti, il colore c' in cui le foglie sono colorate k e il nodo centrale è colorato 1 è un equilibrio di Nash, e il suo benessere sociale è SWUT (c') = 2 (n - 1). Pertanto, il price of anarchy del generalized graph k-coloring game è almeno 2. 
+Osserviamo che tale limite inferiore non dipende dal numero di colori k.
+
+
+[4]
+Si consideri il grafo stella non-pesato G di Figura 2, e qualsiasi k. 
+Definiamo la seguente funzione di profitto: per tutte le foglie j = 1,. . . , n-1, Pj (1) = 1 + γ, dove γ> 0 è un valore piccolo, e Pj (h) = 0, per h = 2,. . . , K. 
+Per quanto riguarda il nodo centrale n, abbiamo che Pn (1) = n - 1 + γ, e Pn (h) = 0, per h = 2,. . . , K. 
+È facile vedere che la colorazione ottimale c* con il massimo benessere sociale è quella in cui il nodo centrale n è colorato h, per alcuni h = 2,. . . , k, e le foglie sono colorate 1. 
+Il suo benessere sociale è SWUT (c *) = 2 (n - 1) + (n - 1) (1 + γ) = 3 (n - 1) + γ (n - 1 ). Tuttavia, c* non è un equilibrio di Nash, infatti, il giocatore centrale n può eseguire una mossa migliorativa selezionando il colore 1, poiché in questo caso il suo guadagno sale da n - 1 a n - 1 + γ.
+La colorazione risultante c' ora è un equilibrio di Nash, poiché nessun giocatore ha incentivi a deviare (anche se tutti gli archi sono ora monocromatici). 
+Il benessere sociale risultante è SWUT (c') = (n - 1) (1 + γ) + n - 1 + γ = 2 (n - 1) + nγ. 
+Inoltre, c' è l'unico equilibrio di Nash. 
+Infatti, l'unico altro tipo possibile di colorazione è quello in cui il nodo centrale n è colorato 1, mentre ogni foglia è colorata h, per alcuni h = 1,. . . , K. 
+Ma qui, ogni foglia che non è colorata 1, può migliorare la propria utilità passando al colore 1. Quindi otteniamo che:
+(17)
+dove epsilon = γ (n + 2) / 2(2 (n − 1) + nγ). 
+Il teorema segue.
+
+
+[5] 
+al fine di dimostrare il limite superiore per l'utilitarian price of stability, abbiamo prima bisogno di alcune definizioni preliminari.
+Data una colorazione c definiamo le seguenti 2 variabili :
+Sia A(c) = sommatoria v∈V Pv(cv) come la somma del profitto dei colori ottenuta dai giocatori nella colorazione c,
+e sia B(c) = sommatoria {v,u}∈E:cv!=cu w({v, u}) la somma dei pesi degli archi colorati correttamente in c.
+Quindi, possiamo riscrivere le equazioni (1) e (16) per l'utilitarian social welfare e per la funzione potenziale rispetto ad una colorazione data c come SWUT(c) = A(c)+2B(c) e Φ(c) = A(c) +B(c), rispettivamente.
+Sia c* la colorazione che massimizza il benessere sociale, e sia N il nash equililbrium che viene raggiunto da una dinamica a partire da c*.
+Con l'argomento della funzione potenziale, poichè ogni mossa migliorativa aumenta il valore potenziale, deve valere che :
+(7)
+dall'altra parte, poichè c* è la colorazione che massimazza il benessere sociale, vale che :
+(8)
+per dimostrare che PoS ≤ 3/2 è sufficente mostrare che il rapporto tra SWUT(c*) e SWUT(N) è ≤ 3/2.
+Infatti, se vale tale disequazione, allora se N* è il miglior nash equilibrium, SWUT(N) ≤ SWUT(N*) e conseguentemente, SWUT(c*) / SWUT(N*) ≤ SWUT(c*) / SWUT(N) ≤ 3/2.
+vogliamo provare che 
+(9)
+e, utilizzando A(c) e B(c) definite sopra, otteniamo che questo è vero se e solo se :
+(10)
+Per il resto della dimostrazione mostreremo che:
+(11)
+In effetti, se la disuguaglianza (11) vale, sommandolo con la disuguaglianza (7) otteniamo che (10) regge, e questo conclude la dimostrazione.
+Dato N, per ogni giocatore v, sia Bv(N) = sommatoria u∈V:Nv!=Nu w({v, u}) la somma dei pesi degli archi colorati correttamente incidenti a v.
+Quindi B(N) = 1/2 sommatoria v∈V Bv(N).
+Allo stesso modo, sia B(barrato)v(N) = sommatoria u∈V:Nv=Nu w({v, u}) = δv −Bv(N) la somma dei pesi degli archi monocromatici incidenti a v, e sia B(barrato)(N) = sommatoria v∈V δv −B(N) = 1/2 sommatoria v∈V B(barrato)v(N) la somma dei pesi di tutti gli archi monocromatici.
+Poichè N è un nash equilibrium, deve valere che 
+(12)
+altrimenti, il giocatore v potrebbe passare a un qualsiasi altro colore, migliorando così la propria utilità.
+Possiamo calcolare A(N) come segue
+(13)
+(14)
+(15)
+In (13) applichiamo la disuguaglianza (12), quindi in (14) aggiungiamo e rimuoviamo 2B(N). 
+Poiché ogni arco è colorato correttamente o monocromatico, appare solo in una delle due sommatorie in (15). 
+Inoltre, ogni arco viene contato esattamente due volte in una somma (una per endpoint), cioè, sommatoria v∈V B(barrato)v(N) = 2 B(barrato)(N) e sommatoria v∈V Bv(N) = 2B(N).
+Sommando 2B(barrato)(N) a 2B(N), abbiamo 2 sommatoria v∈V δv.
+Quindi, A(N) ≥ 2 sommatoria v∈V δv − 4B(N), che è, A(N) + 4B(N) ≥ 2 sommatoria v∈V δv ≥ 2B(c∗).
+Dividendo per 2, abbiamo che la disequazione (11) vale, che ciò conclude la prova
+
+
+[7] 
+Si consideri il grafo pesato della Figura 1 con k ≥ 2 colori, dove Kk-1 sta per una cricca di dimensione k - 1, e le frecce in grassetto indicano che c'è un'incidenza completa tra i due sottografi adiacenti, cioè, c'è un arco di peso 1 tra qualsiasi nodo della cricca Kk-1 e nodo 2, e qualsiasi nodo della cricca Kk-1 e nodo 3. 
+Inoltre, c'è un arco da 2 a 3 del peso M, dove M è un numero intero maggiore o uguale a 2k. 
+L'unico modo per ottenere una colorazione che massimizzi il benessere sociale egalitario è il seguente: 
+i nodi 2 e 3 prendono lo stesso colore, i nodi nella cricca scelgono i rimanenti k - 1 colori, uno per vertice, e i giocatori 1 e 4 scelgono qualsiasi colore diverso da quello scelto da 2 e 3. 
+Colorando i nodi in questo modo, il benessere sociale egualitario risultante è uguale a k. 
+Notiamo che questa è l'unica colorazione ottimale possibile, poiché la massima utilità possibile che ogni nodo della cricca Kk-1 può raggiungere è esattamente k, e l'unico modo per ottenerla è assegnando lo stesso colore ai nodi 2 e 3.
+Tuttavia, questa colorazione non è stabile, poiché il giocatore 2 o 3 può passare a un altro colore disponibile per migliorare la propria utilità, passando da 2k-1 a un'utilità di almeno M. 
+In effetti, è facile vedere che in qualsiasi Nash equilibrium i nodi 2 e 3 devono scegliere colori diversi, e facendo in questo modo c'è almeno un nodo nella cricca, per esempio i, che ha lo stesso colore di 2 o 3, ottenendo così un'utilità al massimo pari a k - 1. 
+Inoltre, il giocatore i non può aumentare la propria utilità cambiando colore perché ha esattamente un vicino h, per ogni colore h = 1,. . . , K. 
+Quindi, otteniamo che l'egalitarian price of stability dei graph k-coloring games è almeno pari a k/k-1.
+Il teorema deriva dal fatto che l'egalitaria price of anarchy dei graph k-coloring games è al massimo k/k-1.
+
+
+[8] 
+Per prima cosa mostriamo un limite inferiore di 2.
+Consideriamo il gioco indotto dal grafo stella G non-pesato della figura 2 con la seguente funzione di profitto :
+per tutte le foglie j = 1, --- , n-1, Pj(1) = 1, e Pj(h) = 0, per h =2,...,k.
+Per quanto riguarda il nodo centrale n, abbiamo che Pn(1) = n-1+epsilon per alcune piccole epsilon > 0, e Pn(h) = 0, per h=2,...,k.
+Una colorazione ottimale c* può essere quella in cui il nodo centrale è colorato h, per qualche h=2,...,n, e le foglie sono colorate 1.
+Il suo egalitaria social welfare è SWeg(c*)=2.
+notiamo che in qualsiasi colorazione le foglie non possono avere un'utilità maggiore di 2.
+Tuttavia c * non è stabile poiché il giocatore n può passare al colore 1, migliorando così la propria utilità da n - 1 a n - 1 + epsilon. 
+In effetti, è facile vedere che in qualsiasi equilibrio di Nash il nodo centrale n sceglie il colore 1 e in questo modo ogni foglia può raggiungere l'utilità al massimo 1. 
+Pertanto, otteniamo che il prezzo egualitario della stabilità del grafico generalizzato k-giochi coloranti è almeno 2.
+L'affermazione deriva dal fatto che l'egalitaria price of anarchy dei generalized graph k-coloring games è 2 (Teorema 6).
