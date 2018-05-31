@@ -95,4 +95,10 @@ name = "read-copy-of--" + str(filelist[index].name)
 print(name)
 input("")
 
+for (node) in G.nodes(data=True):
+    print(node)
+
+for (u,v,w) in G.edges(data=True):
+    print(u,v,w)
+
 nx.write_weighted_edgelist(G, name)
