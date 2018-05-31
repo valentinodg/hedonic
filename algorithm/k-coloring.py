@@ -117,6 +117,7 @@ print("### PROFITS FOR NODE IN COLOURING C BASED ON CURRENT COLORS ##\n")
 
 count = 0;
 restart = True
+last_improved_node = None
 
 while restart:
 	restart = False
@@ -124,7 +125,11 @@ while restart:
 		color_init = data['color']
 		color_best = data['color']
 		profit_old = profits[data['color']]
-		print("\n----------------------------------------")
+		if(node == last_improved_node):
+			print("\n----------------------------------------------------------------------\n")
+			print(Style.BRIGHT + Back.RED + Fore.WHITE + "&&&&&&&&&&&&&&&&&&&&&&&&& LAST IMPROVED NODE &&&&&&&&&&&&&&&&&&&&&&&&&" + Style.RESET_ALL)
+			continue
+		print("\n----------------------------------------------------------------------\n")
 		print(Style.BRIGHT + Fore.GREEN + "$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(color_init) + Style.RESET_ALL)
 		print(Style.BRIGHT + Fore.GREEN + "with INITIAL PROFIT " + str(profit_old) + Style.RESET_ALL)
 		neighbors = G.neighbors(node)
@@ -135,16 +140,14 @@ while restart:
 				print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a profit_old")
 			else:
 				print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a profit_old")
-		print(Style.BRIGHT + Fore.GREEN + "with TOTAL PROFIT " + str(profit_old) + Style.RESET_ALL)
-		print('\n')
+		print(Style.BRIGHT + Fore.GREEN + "with TOTAL PROFIT " + str(profit_old) + Style.RESET_ALL + "\n")
 		for current_color in colors:
 			if(current_color != color_init):
 				print(Style.BRIGHT + Fore.CYAN + "PROVO colore " + str(current_color) + " per il NODO " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL)
 				data['color'] = current_color
 				color_new = current_color
 				profit_new = profits[current_color]
-				print("profit_new value --> " + str(profit_new))
-				print('\n')
+				print("profit_new value --> " + str(profit_new) + "\n")
 				neighbors = G.neighbors(node)
 				for neighbor in neighbors:
 					if(G.node[neighbor]['color'] != G.node[node]['color']):
@@ -155,22 +158,17 @@ while restart:
 						print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a profit_new")
 				print("\nprofit_new value UPDATED --> " + str(profit_new))
 				if(profit_new > profit_old):
-					print(str(profit_new) + " > " + str(profit_old))
-					print('\n')
+					print(str(profit_new) + " > " + str(profit_old) + "\n")
 					profit_old = profit_new
 					color_best = current_color
 				else:
-					print(str(profit_new) + " <= " + str(profit_old))
-					print('\n')
+					print(str(profit_new) + " <= " + str(profit_old) + "\n")
 			else:
-				print(Style.BRIGHT + Fore.RED + "NON PROVO colore " + str(current_color) + " per il nodo " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL)
-				print('\n')
+				print(Style.BRIGHT + Fore.RED + "NON PROVO colore " + str(current_color) + " per il nodo " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL + "\n")
 				continue
-		print("best color for node " + str(node) + " is " + str(color_best) + " with profit = " + str(profit_old))
 		data['color'] = color_best
-		print("color for node " + str(node) + " is " + str(data['color']))
 		if(data['color'] != color_init):
-			print(Style.BRIGHT + Fore.MAGENTA + "$$$$$$$$$$ NEW COLOR " + str(data['color']) + " with PROFIT " + str(profit_old) + Style.RESET_ALL)
+			print(Style.BRIGHT + Fore.MAGENTA + "$$$$$$$$$$ NEW COLOR " + str(data['color']) + " with PROFIT " + str(profit_old) + " for NODE " + str(node) + Style.RESET_ALL)
 			count += 1
 			print(Style.BRIGHT + Fore.YELLOW + "$$$$$$$$$$ COUNT " + str(count) + Style.RESET_ALL)
 			restart = True
@@ -179,6 +177,8 @@ while restart:
 			print(Style.BRIGHT + Back.MAGENTA + Fore.CYAN +"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESTARTING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + Style.RESET_ALL)
 			break
 
+
+print(Style.BRIGHT + Fore.YELLOW + "\n$$$$$$$$$$ FINAL COUNT is " + str(count) + Style.RESET_ALL)
 
 
 plt.figure("NODE VALUES")
