@@ -103,22 +103,24 @@ print("\n")
 
 print("### PROFITS FOR NODE IN COLOURING C BASED ON CURRENT COLORS ##\n")
 
+
 for (node,data) in G.nodes(data=True):
-    swnode = int(profits[data['color']])
-    print("swnode of COLOR " + str(data['color']) + " of NODE " + str(node) + " is --> " + str(swnode))
-    list_neighbors = G.neighbors(node)
-
-    for neighbor in list_neighbors:
-        if(G.node[neighbor]['color'] != G.node[node]['color']):
-            edgeweight = G[node][neighbor]['weight']
-            print(str(node) + " " + str(neighbor) + " COLORE DEI NODI DIVERSO --> sommo: " + str(edgeweight) + " a swnode")
-            swnode += edgeweight
-        else :
-            print("COLORE DEI NODI " + str(node) + " e " + str(neighbor) + " UGUALE --> non sommo nulla a swnode")
-
-    print("FINAL SWNODE VALUE FOR NODE " + str(node) + " is " + str(swnode))
-    print("\n")
-
+	color_init = data['color']
+	color_old = data['color']
+	profit_old = profits[data['color']]
+	print(profit_old)
+	neighbors = G.neighbors(node)
+	for neighbor in neighbors:
+		if(G.node[neighbor]['color'] != G.node[node]['color']):
+			edgeweight = G[node][neighbor]['weight']
+			profit_old += edgeweight
+			print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) SOMMO " + str(edgeweight) + " a profit_old")
+		else:
+			print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) NON SOMMO NULLA a profit_old")
+	print(profit_old)
+	print('\n')
+	for k in colors:
+		pass
 
 
 plt.figure("NODE VALUES")
