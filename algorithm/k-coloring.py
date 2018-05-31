@@ -103,12 +103,15 @@ print("\n")
 
 print("### PROFITS FOR NODE IN COLOURING C BASED ON CURRENT COLORS ##\n")
 
-
+count = 0;
 for (node,data) in G.nodes(data=True):
+	if(count == count + 1):
+		print("next step --> node = 0")
 	color_init = data['color']
 	color_old = data['color']
 	profit_old = profits[data['color']]
-	print(profit_old)
+	print("----------------------------------------\n")
+	print("profit_old value --> " + str(profit_old))
 	neighbors = G.neighbors(node)
 	for neighbor in neighbors:
 		if(G.node[neighbor]['color'] != G.node[node]['color']):
@@ -117,10 +120,29 @@ for (node,data) in G.nodes(data=True):
 			print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) SOMMO " + str(edgeweight) + " a profit_old")
 		else:
 			print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) NON SOMMO NULLA a profit_old")
-	print(profit_old)
+	print("profit_old value UPDATED --> " + str(profit_old))
 	print('\n')
-	for k in colors:
-		pass
+	for current_color in colors:
+		if(current_color != color_init):
+			print("different color " + str(current_color) + " for node " + str(node) + " colored with " + str(color_init))
+			data['color'] = current_color
+			color_new = current_color
+			profit_new = profits[current_color]
+			print("profit_new value --> " + str(profit_new))
+			neighbors = G.neighbors(node)
+			for neighbor in neighbors:
+				if(G.node[neighbor]['color'] != G.node[node]['color']):
+					edgeweight = G[node][neighbor]['weight']
+					profit_new += edgeweight
+					print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) SOMMO " + str(edgeweight) + " a profit_new")
+				else:
+					print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) NON SOMMO NULLA a profit_new")
+			print("\nprofit_new value UPDATED --> " + str(profit_new))
+			print('\n')
+		else:
+			print("equal color " + str(current_color) + " for node " + str(node) + " colored with " + str(color_init))
+			continue
+
 
 
 plt.figure("NODE VALUES")
