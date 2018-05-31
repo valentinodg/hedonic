@@ -32,7 +32,7 @@ matplotdraw  = False
 
 n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
-G=nx.star_graph(n,create_using=nx.Graph())
+G=nx.complete_graph(n,create_using=nx.Graph())
 
 print("\nnodes:  " + str(list(G.nodes)))
 print("edges:  " + str(list(G.edges)))
@@ -101,30 +101,42 @@ for (u,v,w) in G.edges(data=True):
 
 print("\n")
 
+plt.figure("INITIAL NODE COLORS")
+
+nx.draw_networkx(G, nx.circular_layout(G), with_labels=False, node_size=400, node_color='yellow', width=2.0, style='solid', font_color='black', font_weight='bold')
+
+edge_labels = nx.get_edge_attributes(G,'weight')
+nx.draw_networkx_edge_labels(G, nx.circular_layout(G), edge_labels = edge_labels)
+
+node_labels = nx.get_node_attributes(G,'color')
+nx.draw_networkx_labels(G, nx.circular_layout(G), labels = node_labels, font_color = 'black', font_weight = 'bold')
+
+plt.axis('off')
+
 print("### PROFITS FOR NODE IN COLOURING C BASED ON CURRENT COLORS ##\n")
 
 count = 0;
 for (node,data) in G.nodes(data=True):
-	if(count == count + 1):
-		print("next step --> node = 0")
 	color_init = data['color']
 	color_best = data['color']
 	profit_old = profits[data['color']]
-	print("----------------------------------------\n")
-	print("profit_old value --> " + str(profit_old))
+	print("count value is " + str(count))
+	print("----------------------------------------")
+	print(Style.BRIGHT + Fore.GREEN + "$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(color_init) + Style.RESET_ALL)
+	print(Style.BRIGHT + Fore.GREEN + "with INITIAL PROFIT " + str(profit_old) + Style.RESET_ALL)
 	neighbors = G.neighbors(node)
 	for neighbor in neighbors:
 		if(G.node[neighbor]['color'] != G.node[node]['color']):
 			edgeweight = G[node][neighbor]['weight']
 			profit_old += edgeweight
-			print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) SOMMO " + str(edgeweight) + " a profit_old")
+			print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a profit_old")
 		else:
-			print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) NON SOMMO NULLA a profit_old")
-	print("profit_old value UPDATED --> " + str(profit_old))
+			print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a profit_old")
+	print(Style.BRIGHT + Fore.GREEN + "with TOTAL PROFIT " + str(profit_old) + Style.RESET_ALL)
 	print('\n')
 	for current_color in colors:
 		if(current_color != color_init):
-			print("different color " + str(current_color) + " for node " + str(node) + " colored with " + str(color_init))
+			print(Style.BRIGHT + Fore.CYAN + "PROVO colore " + str(current_color) + " per il NODO " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL)
 			data['color'] = current_color
 			color_new = current_color
 			profit_new = profits[current_color]
@@ -134,9 +146,9 @@ for (node,data) in G.nodes(data=True):
 				if(G.node[neighbor]['color'] != G.node[node]['color']):
 					edgeweight = G[node][neighbor]['weight']
 					profit_new += edgeweight
-					print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) SOMMO " + str(edgeweight) + " a profit_new")
+					print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a profit_new")
 				else:
-					print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) NON SOMMO NULLA a profit_new")
+					print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a profit_new")
 			print("\nprofit_new value UPDATED --> " + str(profit_new))
 			if(profit_new > profit_old):
 				print(str(profit_new) + " > " + str(profit_old))
@@ -147,13 +159,17 @@ for (node,data) in G.nodes(data=True):
 				print(str(profit_new) + " <= " + str(profit_old))
 				print('\n')
 		else:
-			print("equal color " + str(current_color) + " for node " + str(node) + " colored with " + str(color_init))
+			print(Style.BRIGHT + Fore.RED + "NON PROVO colore " + str(current_color) + " per il nodo " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL)
 			continue
 	print("best color for node " + str(node) + " is " + str(color_best) + " with profit = " + str(profit_old))
 	data['color'] = color_best
 	print("color for node " + str(node) + " is " + str(data['color']))
-	if(color_best != color_init):
+	if(data['color'] != color_init):
+		print(Style.BRIGHT + Fore.MAGENTA + "$$$$$$$$$$ NEW COLOR " + str(data['color']) + " with PROFIT " + str(profit_old) + Style.RESET_ALL)
 		count += 1
+		print(Style.BRIGHT + Fore.YELLOW + "$$$$$$$$$$ COUNT " + str(count) + Style.RESET_ALL)
+		node = 0
+		print(Style.BRIGHT + Fore.CYAN + "$$$$$$$$$$ NODE " + str(node) + Style.RESET_ALL)
 
 
 
