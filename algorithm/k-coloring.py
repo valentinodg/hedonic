@@ -108,7 +108,7 @@ for (node,data) in G.nodes(data=True):
 	if(count == count + 1):
 		print("next step --> node = 0")
 	color_init = data['color']
-	color_old = data['color']
+	color_best = data['color']
 	profit_old = profits[data['color']]
 	print("----------------------------------------\n")
 	print("profit_old value --> " + str(profit_old))
@@ -138,10 +138,22 @@ for (node,data) in G.nodes(data=True):
 				else:
 					print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) NON SOMMO NULLA a profit_new")
 			print("\nprofit_new value UPDATED --> " + str(profit_new))
-			print('\n')
+			if(profit_new > profit_old):
+				print(str(profit_new) + " > " + str(profit_old))
+				print('\n')
+				profit_old = profit_new
+				color_best = current_color
+			else:
+				print(str(profit_new) + " <= " + str(profit_old))
+				print('\n')
 		else:
 			print("equal color " + str(current_color) + " for node " + str(node) + " colored with " + str(color_init))
 			continue
+	print("best color for node " + str(node) + " is " + str(color_best) + " with profit = " + str(profit_old))
+	data['color'] = color_best
+	print("color for node " + str(node) + " is " + str(data['color']))
+	if(color_best != color_init):
+		count += 1
 
 
 
