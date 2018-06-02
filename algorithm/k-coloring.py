@@ -7,6 +7,9 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import pydot
 
+import sys
+from pprint import pprint
+
 from pick import pick
 from colorama import Fore, Back, Style, init
 
@@ -55,51 +58,50 @@ while(True):
 print("\n")
 maxp = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX COLOR PROFIT ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
 
-
 print("\n")
+
+################################################################################
 
 for (u,v,w) in G.edges(data=True):
     w['weight'] = random.randint(MinInt, MaxInt)
 
-print("COLOR (LIST)\n")
+print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
 colors = list(range(maxc))
 print(colors)
 print("\n")
 
-profits = {i:random.randint(0, maxp) for i in colors}
-
-# colprof = random.sample(range(maxp), maxc)
-#
-# print(colprof)
-# print("\n")
-#
-# print(len(colprof))
-# print("\n")
-#
-# profits = dict(zip(colors, colprof))
-
-print("COLOR -- PROFIT (DICTIONARY)\n")
-
-for (k,v) in profits.items():
-    print(k,v)
-print("\n")
+################################################################################
 
 for (n,c) in G.nodes(data=True):
     c['color'] = random.choice(colors)
 
+print(Style.BRIGHT + Fore.RED + "NODE -- COLOR (DICTIONARY) == INITIAL COLOURING\n" + Style.RESET_ALL)
+for (node,data) in G.nodes(data=True):
+    print(node,data)
 
-print("NODE -- COLOR (DICTIONARY)\n")
-for (node,color) in G.nodes(data=True):
-    print(node,color)
-
+print("\nnumber of nodes:  " + str(G.number_of_nodes()))
 print("\n")
 
-print("NODE -- NODE -- EDGE WEIGHT (DICTIONARY OF DICTIONARY)\n")
+################################################################################
+
+print(Style.BRIGHT + Fore.RED + "NODE -- COLORS -- PROFITS (DICTIONARY)\n" + Style.RESET_ALL)
+
+result = {node:{color:random.randint(0,maxp) for color in colors} for node in G.nodes()}
+
+pprint(result)
+print("\n")
+
+################################################################################
+
+print(Style.BRIGHT + Fore.RED + "NODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n" + Style.RESET_ALL)
 for (u,v,w) in G.edges(data=True):
     print(u,v,w)
 
-
+print("\nnumber of edges:  " + str(G.number_of_edges()))
 print("\n")
+
+################################################################################
+################################################################################
 
 plt.figure("INITIAL NODE COLORS")
 
@@ -113,7 +115,9 @@ nx.draw_networkx_labels(G, nx.circular_layout(G), labels = node_labels, font_col
 
 plt.axis('off')
 
-print("### PROFITS FOR NODE IN COLOURING C BASED ON CURRENT COLORS ##\n")
+################################################################################
+
+print(Style.BRIGHT + Fore.MAGENTA + "### PROFITS FOR NODE IN COLOURING C BASED ON CURRENT COLORS ##\n" + Style.RESET_ALL)
 
 count = 0;
 restart = True
@@ -124,7 +128,7 @@ while restart:
 	for (node,data) in G.nodes(data=True):
 		color_init = data['color']
 		color_best = data['color']
-		profit_old = profits[data['color']]
+		profit_old = result[node][data['color']]
 		if(node == last_improved_node):
 			print("\n----------------------------------------------------------------------\n")
 			print(Style.BRIGHT + Back.RED + Fore.WHITE + "&&&&&&&&&&&&&&&&&&&&&&&&& LAST IMPROVED NODE &&&&&&&&&&&&&&&&&&&&&&&&&" + Style.RESET_ALL)
@@ -146,7 +150,7 @@ while restart:
 				print(Style.BRIGHT + Fore.CYAN + "PROVO colore " + str(current_color) + " per il NODO " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL)
 				data['color'] = current_color
 				color_new = current_color
-				profit_new = profits[current_color]
+				profit_new = result[node][current_color]
 				print("profit_new value --> " + str(profit_new) + "\n")
 				neighbors = G.neighbors(node)
 				for neighbor in neighbors:
@@ -180,6 +184,7 @@ while restart:
 
 print(Style.BRIGHT + Fore.YELLOW + "\n$$$$$$$$$$ FINAL COUNT is " + str(count) + Style.RESET_ALL)
 
+################################################################################
 
 plt.figure("NODE VALUES")
 
