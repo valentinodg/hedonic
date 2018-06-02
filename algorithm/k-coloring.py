@@ -6,6 +6,7 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 import pydot
+import itertools
 
 import sys
 from pprint import pprint
@@ -114,6 +115,21 @@ node_labels = nx.get_node_attributes(G,'color')
 nx.draw_networkx_labels(G, nx.circular_layout(G), labels = node_labels, font_color = 'black', font_weight = 'bold')
 
 plt.axis('off')
+
+################################################################################
+
+permlist = list(itertools.permutations(colors))
+print('COLOR LIST PERMUTATION (pre-assignment)\n')
+print(permlist)
+print('\n')
+for perm in permlist:
+	print(perm)
+	for node,data in G.nodes(data=True):
+		data['color'] = perm[node]
+		print(str("color " + str(data['color'])) + " for node " + str(node))
+	print("##### INIT SOCIAL-WELFARE CYCLE HERE\n")
+
+sys.exit()
 
 ################################################################################
 
