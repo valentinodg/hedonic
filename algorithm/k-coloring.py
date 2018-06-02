@@ -85,7 +85,7 @@ print("\n")
 
 ################################################################################
 
-print(Style.BRIGHT + Fore.RED + "NODE -- COLORS -- PROFITS (DICTIONARY)\n" + Style.RESET_ALL)
+print(Style.BRIGHT + Fore.RED + "NODE -- COLORS -- PROFITS (NESTED DICTIONARY)\n" + Style.RESET_ALL)
 
 result = {node:{color:random.randint(0,maxp) for color in colors} for node in G.nodes()}
 
@@ -118,7 +118,7 @@ plt.axis('off')
 
 ################################################################################
 
-permlist = list(itertools.permutations(colors))
+permlist = list(itertools.product(colors, repeat=G.number_of_nodes()))
 print('COLOR LIST PERMUTATION (pre-assignment)\n')
 print(permlist)
 print('\n')
