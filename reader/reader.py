@@ -61,44 +61,16 @@ title = 'Select .edgelist file'
 options = optionfilelist
 option, index = pick(options, title, indicator='>', multi_select=False)
 
-print(option)
-input("")
-print(index)
-input("")
 
+G = nx.read_weighted_edgelist(absfilepath[index], create_using=nx.Graph())
 
-title2 = 'Choose random graph type: '
+#name = "read-copy-of--" + str(filelist[index].name)
 
-# TYPES :
-#
-# MultiGraph() (grafo non-diretto)
-# MultiDiGraph() (grafo diretto)
-#
-
-options2 = ['MultiGraph', 'MultiDiGraph']
-option2, index2 = pick(options2, title2, indicator='>', multi_select=False)
-
-if option2 is "MultiGraph":
-	G = nx.read_weighted_edgelist(absfilepath[index], create_using=nx.MultiGraph())
-
-if option2 is "MultiDiGraph":
-	G = nx.read_weighted_edgelist(absfilepath[index], create_using=nx.MultiDiGraph())
-
-print(absfilepath[index])
-input("")
-print(option2)
-input("")
-print(index2)
-input("")
-
-name = "read-copy-of--" + str(filelist[index].name)
-print(name)
-input("")
-
-for (node) in G.nodes(data=True):
-    print(node)
-
+for (node,data) in G.nodes(data=True):
+    print(node,data)
+print('\n')
 for (u,v,w) in G.edges(data=True):
-    print(u,v,w)
+    print(u,v,int(w['weight']))
 
-nx.write_weighted_edgelist(G, name)
+
+#nx.write_weighted_edgelist(G, name)
