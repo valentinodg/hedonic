@@ -40,8 +40,6 @@ G=nx.complete_graph(n,create_using=nx.Graph())
 
 print("\nnodes:  " + str(list(G.nodes)))
 print("edges:  " + str(list(G.edges)))
-print("number of nodes:  " + str(G.number_of_nodes()))
-print("number of edges:  " + str(G.number_of_edges()))
 
 print("\n")
 MinInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MIN EDGE VALUE ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
@@ -118,16 +116,47 @@ plt.axis('off')
 
 ################################################################################
 
+print(Style.BRIGHT + Fore.MAGENTA + "### PROFITS FOR NODE IN COLOURING C BASED ON CURRENT COLORS ##\n" + Style.RESET_ALL)
+
+social_welfare_old = 0
 permlist = list(itertools.product(colors, repeat=G.number_of_nodes()))
-print('COLOR LIST PERMUTATION (pre-assignment)\n')
+print(Style.BRIGHT + Fore.RED + 'COLOR LIST PERMUTATION (pre-assignment)\n' + Style.RESET_ALL)
 print(permlist)
 print('\n')
 for perm in permlist:
-	print(perm)
-	for node,data in G.nodes(data=True):
+	print("\n----------------------------------------------------------------------")
+	colouring_old = perm
+	print(colouring_old)
+	for (node,data) in G.nodes(data=True):
 		data['color'] = perm[node]
 		print(str("color " + str(data['color'])) + " for node " + str(node))
-	print("##### INIT SOCIAL-WELFARE CYCLE HERE\n")
+	temp_social_welfare = 0
+	for (node,data) in G.nodes(data=True):
+		temp_social_welfare += result[node][data['color']]
+		print(Style.BRIGHT + Fore.GREEN + "\n$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(data['color']) + Style.RESET_ALL)
+		print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(result[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(temp_social_welfare) + Style.RESET_ALL)
+		neighbors = G.neighbors(node)
+		for neighbor in neighbors:
+			if(G.node[neighbor]['color'] != G.node[node]['color']):
+				edgeweight = G[node][neighbor]['weight']
+				temp_social_welfare += edgeweight
+				print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a temp_social_welfare")
+			else:
+				print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a temp_social_welfare")
+		print(Style.BRIGHT + Fore.RED + "temp SOCIAL WELFARE VALUE is " + str(temp_social_welfare) + Style.RESET_ALL + "\n")
+	print(Style.BRIGHT + Fore.YELLOW + "\nTOTAL SOCIAL WELFARE VALUE is " + str(temp_social_welfare) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+	if(temp_social_welfare > social_welfare_old):
+		print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " > " + str(social_welfare_old) + Style.RESET_ALL)
+		social_welfare_old = temp_social_welfare
+		colouring_best = colouring_old
+		print(Style.BRIGHT + Fore.CYAN + "BEST SOCIAL WELFARE : " + str(social_welfare_old) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+	else:
+		print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " <= " + str(social_welfare_old) + Style.RESET_ALL)
+
+
+print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL SOCIAL WELFARE is " + str(social_welfare_old) + " for COLOURING " + str(colouring_best) + Style.RESET_ALL)
+
+
 
 sys.exit()
 
@@ -194,11 +223,11 @@ while restart:
 			restart = True
 			last_improved_node = node
 			print(Style.BRIGHT + Fore.CYAN + "$$$$$$$$$$ LAST IMPROVED NODE " + str(last_improved_node) + Style.RESET_ALL)
-			print(Style.BRIGHT + Back.MAGENTA + Fore.CYAN +"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESTARTING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + Style.RESET_ALL)
+			print(Style.BRIGHT + Back.MAGENTA + Fore.CYAN + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESTARTING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + Style.RESET_ALL)
 			break
 
 
-print(Style.BRIGHT + Fore.YELLOW + "\n$$$$$$$$$$ FINAL COUNT is " + str(count) + Style.RESET_ALL)
+print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL COUNT is " + str(count) + Style.RESET_ALL)
 
 ################################################################################
 
