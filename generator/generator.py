@@ -630,7 +630,8 @@ edgelistname = name + ext
 print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.YELLOW + " Name " + Fore.CYAN + "of" + Fore.YELLOW + " .edgelist file " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + edgelistname + Style.RESET_ALL)
 
 # build .edgelist file
-nx.write_weighted_edgelist(G, edgelistname)
+# nx.write_weighted_edgelist(G, edgelistname)
+nx.write_edgelist(G, edgelistname, data=True)
 
 # move .edgelist file into home directory
 edgelistpath = pathlib.Path.cwd().joinpath(edgelistname)
