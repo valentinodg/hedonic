@@ -120,6 +120,11 @@ print(Style.BRIGHT + Fore.MAGENTA + "### PROFITS FOR NODE IN COLOURING C BASED O
 
 social_welfare_old = 0
 permlist = list(itertools.product(colors, repeat=G.number_of_nodes()))
+neighbors_check = True
+opt_check = True
+temp_social_welfare_old = 0
+count = 0
+
 print(Style.BRIGHT + Fore.RED + 'COLOR LIST PERMUTATION (pre-assignment)\n' + Style.RESET_ALL)
 print(permlist)
 print('\n')
@@ -130,8 +135,8 @@ for perm in permlist:
 	for (node,data) in G.nodes(data=True):
 		data['color'] = perm[node]
 		print(str("color " + str(data['color'])) + " for node " + str(node))
-	temp_social_welfare = 0
 	for (node,data) in G.nodes(data=True):
+		temp_social_welfare = 0
 		temp_social_welfare += result[node][data['color']]
 		print(Style.BRIGHT + Fore.GREEN + "\n$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(data['color']) + Style.RESET_ALL)
 		print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(result[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(temp_social_welfare) + Style.RESET_ALL)
@@ -144,21 +149,41 @@ for perm in permlist:
 			else:
 				print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a temp_social_welfare")
 		print(Style.BRIGHT + Fore.RED + "temp SOCIAL WELFARE VALUE is " + str(temp_social_welfare) + Style.RESET_ALL + "\n")
-	print(Style.BRIGHT + Fore.YELLOW + "\nTOTAL SOCIAL WELFARE VALUE is " + str(temp_social_welfare) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
-	if(temp_social_welfare > social_welfare_old):
-		print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " > " + str(social_welfare_old) + Style.RESET_ALL)
-		social_welfare_old = temp_social_welfare
+		if(neighbors_check):
+			print(Style.BRIGHT + Fore.MAGENTA + "FIRST CYCLE :" + str(temp_social_welfare) + Style.RESET_ALL)
+			temp_social_welfare_old = temp_social_welfare
+			neighbors_check = False
+			continue
+		if(temp_social_welfare < temp_social_welfare_old):
+			print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " < " + str(temp_social_welfare_old) + Style.RESET_ALL)
+			temp_social_welfare_old = temp_social_welfare
+		else:
+			print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " >= " + str(temp_social_welfare_old) + Style.RESET_ALL)
+			continue
+	print(Style.BRIGHT + Fore.YELLOW + "\nMINOR SOCIAL WELFARE VALUE is " + str(temp_social_welfare_old) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+	neighbors_check = True
+	if(opt_check):
+		print(Style.BRIGHT + Fore.CYAN + "FIRST CYCLE -- BEST SOCIAL WELFARE : " + str(temp_social_welfare_old) + Style.RESET_ALL)
+		social_welfare_old = temp_social_welfare_old
 		colouring_best = colouring_old
-		print(Style.BRIGHT + Fore.CYAN + "BEST SOCIAL WELFARE : " + str(social_welfare_old) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+		opt_check = False
+		continue
+	if(temp_social_welfare_old > social_welfare_old):
+		print(Style.BRIGHT + Fore.CYAN + str(temp_social_welfare_old) + " > " + str(social_welfare_old) + Style.RESET_ALL)
+		social_welfare_old = temp_social_welfare_old
+		colouring_best = colouring_old
+		count += 1
+		print(Style.BRIGHT + Fore.CYAN + "\nBEST SOCIAL WELFARE : " + str(social_welfare_old) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
 	else:
-		print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " <= " + str(social_welfare_old) + Style.RESET_ALL)
+		print(Style.BRIGHT + Fore.CYAN + str(temp_social_welfare_old) + " <= " + str(social_welfare_old) + Style.RESET_ALL)
 
 
-print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL SOCIAL WELFARE is " + str(social_welfare_old) + " for COLOURING " + str(colouring_best) + Style.RESET_ALL)
-
-
+print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL SOCIAL WELFARE is " + str(social_welfare_old) + " for COLOURING " + str(colouring_best) + " -- COUNT " + str(count) + Style.RESET_ALL)
 
 sys.exit()
+
+
+
 
 ################################################################################
 
