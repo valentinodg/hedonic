@@ -6,6 +6,7 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 import pydot
+import sys
 
 from pick import pick
 from colorama import Fore, Back, Style, init
@@ -48,7 +49,7 @@ title = 'Choose random graph class: '
 #
 #
 
-options = ['Classics', 'Expanders', 'Small', 'Random', 'Duplication Divergence', 'Degree Sequence']
+options = ['Classics', 'Expanders', 'Small', 'Random', 'Duplication Divergence', 'Degree Sequence', 'MULTIPLE']
 option, index = pick(options, title, indicator='>', multi_select=False)
 
 
@@ -541,8 +542,34 @@ elif option is "Duplication Divergence":
 #########################################################
 #################### DEGREE SEQUENCE ####################
 #########################################################
-'''
-elif option is "Degree Sequence":
+
+# elif option is "Degree Sequence":
+#
+# 	title = 'Choose random graph type: '
+#
+# 	# TYPES :
+# 	#
+# 	# types
+# 	#
+# 	#
+#
+# 	options = ['type', 'type', 'type', 'type', 'type', 'type', 'type']
+# 	option, index = pick(options, title, indicator='>', multi_select=False)
+#
+# 	# only Graph()
+# 	if option is "type":
+#
+# 		n = int(input('[*] Insert (int): '))
+# 		p = float(input('[*] Insert (float): '))
+#
+# 		G=nx.typefunction(n, p)
+
+
+###########################################################
+#################### MULTIPLE CREATION ####################
+###########################################################
+
+elif option is "MULTIPLE":
 
 	title = 'Choose random graph type: '
 
@@ -552,18 +579,53 @@ elif option is "Degree Sequence":
 	#
 	#
 
-	options = ['type', 'type', 'type', 'type', 'type', 'type', 'type']
+	options = ['complete_graph']
 	option, index = pick(options, title, indicator='>', multi_select=False)
 
 	# only Graph()
-	if option is "type":
+	if option is "complete_graph":
 
-		n = int(input('[*] Insert (int): '))
-		p = float(input('[*] Insert (float): '))
+		print("\n")
+		iter = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' How many graphs you want to create ? ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
-		G=nx.typefunction(n, p)
-'''
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes [ RANGE : 1 <= random <= INPUT VALUE ] ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
+		print("\n")
+		MinInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MIN ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
+		MaxInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
+		print("\n")
+
+		for i in range(iter):
+
+			random_nodes_number = random.randint(1, n)
+			G=nx.complete_graph(random_nodes_number, create_using=nx.Graph())
+
+			for (u,v,w) in G.edges(data=True):
+			    w['weight'] = random.randint(MinInt, MaxInt)
+
+			# set .edgelist filename
+			name = str(i) + "_clique_with_" + str(random_nodes_number) + "_nodes"
+
+			# build home directory path
+			hubdir = pathlib.Path.cwd().joinpath('gen').joinpath(name)
+			pathlib.Path(hubdir).mkdir(parents=True, exist_ok=True)
+
+			# build .edgelist filename
+			ext = ".edgelist"
+
+			edgelistname = name + ext
+
+			# build .edgelist file
+			# nx.write_weighted_edgelist(G, edgelistname)
+			nx.write_edgelist(G, edgelistname, data=True)
+
+			# move .edgelist file into home directory
+			edgelistpath = pathlib.Path.cwd().joinpath(edgelistname)
+			newedgelistpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(edgelistname)
+			shutil.move(edgelistpath, newedgelistpath)
+
+		sys.exit()
 
 ####################################################
 #################### MAIN BLOCK ####################
