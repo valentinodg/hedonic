@@ -586,26 +586,23 @@ elif option is "MULTIPLE":
 	if option is "complete_graph":
 
 		print("\n")
-		iter = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' How many graphs you want to create ? ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
-
-		print("\n")
-		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes [ RANGE : 1 <= random <= INPUT VALUE ] ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		n_min = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the MIN number of nodes [ RANGE : MIN <= node_num <= max ] ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+		n_max = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the MAX number of nodes [ RANGE : min <= node_num <= MAX ] ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		print("\n")
 		MinInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MIN ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
 		MaxInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
 		print("\n")
 
-		for i in range(iter):
+		for i in range(n_min, n_max+1):
 
-			random_nodes_number = random.randint(2, n)
-			G=nx.complete_graph(random_nodes_number, create_using=nx.Graph())
+			G=nx.complete_graph(i, create_using=nx.Graph())
 
 			for (u,v,w) in G.edges(data=True):
 			    w['weight'] = random.randint(MinInt, MaxInt)
 
 			# set .edgelist filename
-			name = str(i) + "_clique_with_" + str(random_nodes_number) + "_nodes"
+			name = "complete_graph_with_" + str(i) + "_nodes"
 
 			# build home directory path
 			hubdir = pathlib.Path.cwd().joinpath('mgen').joinpath(name)
@@ -726,6 +723,7 @@ if graphviz:
 # (works with Graph/DiGraph/MultiGraph/MultiDiGraph)
 
 if graphviz:
+
 	title = 'Do you want to draw(.dot -> .png)/save the graph with Graphviz Library? '
 
 	# ANSWER :

@@ -456,14 +456,157 @@ if option is "MULTIPLE EXEC":
 		absfilepath.append(str(i)) # string path from root
 		filelist.append(i) # pathlib path from root
 
-for i in range(len(absfilepath)):
+	first_iter = True
+	for i in range(len(absfilepath)):
 
-	G = nx.read_edgelist(absfilepath[i], nodetype=int, edgetype=int, create_using=nx.Graph())
-	print('\n')
-	for (node,data) in G.nodes(data=True):
-	    print(node,data)
-	print('\n')
-	for (u,v,w) in G.edges(data=True):
-	    print(u,v,w)
-	print('\n')
-	input()
+		G = nx.read_edgelist(absfilepath[i], nodetype=int, edgetype=int, create_using=nx.Graph())
+
+		########################################################################
+		#################### COLOURING/PROFITS CHOICE BLOCK ####################
+		########################################################################
+
+		if first_iter:
+
+			print("\n")
+			out = str(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NAME ' + Fore.CYAN + 'for ' + Fore.YELLOW + ' OUTPUT FILE ' + Fore.CYAN + ']: ' + Style.RESET_ALL))
+			out_name = str(out) + ".txt"
+
+			print("\n")
+			while(True):
+			    maxc = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX COLOR ' + Fore.CYAN + 'range int number [ 0 <= colors <= ' + Fore.YELLOW + ' MAX COLOR ' + Fore.CYAN + '] [ <= ' + str(G.number_of_nodes()) + ' ]: ' + Style.RESET_ALL))
+			    if(maxc <= G.number_of_nodes()):
+			        break
+			    else:
+			        print(Style.BRIGHT + Fore.RED + "[!] INVALID VALUE --> NUMBER OF COLORS MUST BE <= NUMBER OF NODES (" + str(G.number_of_nodes()) + ")\n" + Style.RESET_ALL)
+			        continue
+
+			print("\n")
+			maxp = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX PROFIT ' + Fore.CYAN + 'range int number: [ 0 <= profit <= ' + Fore.YELLOW + ' MAX PROFIT ' + Fore.CYAN + ']: ' + Style.RESET_ALL))
+
+			print("\n")
+			first_iter = False
+
+
+		################################################################
+		#################### COLORS LIST INIT BLOCK ####################
+		################################################################
+
+		print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
+		colors = list(range(maxc))
+		print(colors)
+		print("\n")
+
+
+		######################################################################
+		#################### INITIAL COLOURING INIT BLOCK ####################
+		######################################################################
+
+		for (n,c) in G.nodes(data=True):
+		    c['color'] = random.choice(colors)
+
+		print(Style.BRIGHT + Fore.RED + "NODE -- COLOR (LIST OF DICTIONARY) == INITIAL COLOURING\n" + Style.RESET_ALL)
+		for (node,data) in G.nodes(data=True):
+		    print(node,data)
+
+		print("\nnumber of nodes:  " + str(G.number_of_nodes()))
+		print("\n")
+
+
+		######################################################################
+		#################### COLORS -- PROFITS INIT BLOCK ####################
+		######################################################################
+
+		print(Style.BRIGHT + Fore.RED + "NODE -- COLORS -- PROFITS (NESTED DICTIONARY)\n" + Style.RESET_ALL)
+
+		result = {node:{color:random.randint(0,maxp) for color in colors} for node in G.nodes()}
+
+		pprint(result)
+		print("\n")
+
+
+		#####################################################################
+		#################### EDGE -- WEIGHTS PRINT BLOCK ####################
+		#####################################################################
+
+		print(Style.BRIGHT + Fore.RED + "NODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n" + Style.RESET_ALL)
+		for (u,v,w) in G.edges(data=True):
+		    print(u,v,w)
+
+		print("\nnumber of edges:  " + str(G.number_of_edges()))
+		print("\n")
+
+
+		##########################################################
+		#################### K-COLORING BLOCK ####################
+		##########################################################
+
+		count = 0;
+		restart = True
+		last_improved_node = None
+
+		while restart:
+			restart = False
+			for (node,data) in G.nodes(data=True):
+				color_init = data['color']
+				color_best = data['color']
+				profit_old = result[node][data['color']]
+				if(node == last_improved_node):
+					print("\n----------------------------------------------------------------------\n")
+					print(Style.BRIGHT + Back.RED + Fore.WHITE + "&&&&&&&&&&&&&&&&&&&&&&&&& LAST IMPROVED NODE &&&&&&&&&&&&&&&&&&&&&&&&&" + Style.RESET_ALL)
+					continue
+				print("\n----------------------------------------------------------------------\n")
+				print(Style.BRIGHT + Fore.GREEN + "$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(color_init) + Style.RESET_ALL)
+				print(Style.BRIGHT + Fore.GREEN + "with INITIAL PROFIT " + str(profit_old) + Style.RESET_ALL)
+				neighbors = G.neighbors(node)
+				for neighbor in neighbors:
+					if(G.node[neighbor]['color'] != G.node[node]['color']):
+						edgeweight = G[node][neighbor]['weight']
+						profit_old += edgeweight
+						print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a profit_old")
+					else:
+						print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a profit_old")
+				print(Style.BRIGHT + Fore.GREEN + "with TOTAL PROFIT " + str(profit_old) + Style.RESET_ALL + "\n")
+				for current_color in colors:
+					if(current_color != color_init):
+						print(Style.BRIGHT + Fore.CYAN + "PROVO colore " + str(current_color) + " per il NODO " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL)
+						data['color'] = current_color
+						color_new = current_color
+						profit_new = result[node][current_color]
+						print("profit_new value --> " + str(profit_new) + "\n")
+						neighbors = G.neighbors(node)
+						for neighbor in neighbors:
+							if(G.node[neighbor]['color'] != G.node[node]['color']):
+								edgeweight = G[node][neighbor]['weight']
+								profit_new += edgeweight
+								print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a profit_new")
+							else:
+								print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a profit_new")
+						print("\nprofit_new value UPDATED --> " + str(profit_new))
+						if(profit_new > profit_old):
+							print(str(profit_new) + " > " + str(profit_old) + "\n")
+							profit_old = profit_new
+							color_best = current_color
+						else:
+							print(str(profit_new) + " <= " + str(profit_old) + "\n")
+					else:
+						print(Style.BRIGHT + Fore.RED + "NON PROVO colore " + str(current_color) + " per il nodo " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL + "\n")
+						continue
+				data['color'] = color_best
+				if(data['color'] != color_init):
+					print(Style.BRIGHT + Fore.MAGENTA + "$$$$$$$$$$ NEW COLOR " + str(data['color']) + " with PROFIT " + str(profit_old) + " for NODE " + str(node) + Style.RESET_ALL)
+					count += 1
+					print(Style.BRIGHT + Fore.YELLOW + "$$$$$$$$$$ COUNT " + str(count) + Style.RESET_ALL)
+					restart = True
+					last_improved_node = node
+					print(Style.BRIGHT + Fore.CYAN + "$$$$$$$$$$ LAST IMPROVED NODE " + str(last_improved_node) + Style.RESET_ALL)
+					print(Style.BRIGHT + Back.MAGENTA + Fore.CYAN + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESTARTING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + Style.RESET_ALL)
+					break
+
+
+		print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL COUNT is " + str(count) + Style.RESET_ALL)
+
+
+		with open(out_name,'a') as f:
+		        f.write("\nGRAPH : " + str(filelist[i].name) + "\nNUMBER OF NODES : " + str(G.number_of_nodes()) + "\nCOUNT : " + str(count) + "\n")
+
+		#input("\nPress any Enter to continue...")
