@@ -598,7 +598,7 @@ elif option is "MULTIPLE":
 
 		for i in range(iter):
 
-			random_nodes_number = random.randint(1, n)
+			random_nodes_number = random.randint(2, n)
 			G=nx.complete_graph(random_nodes_number, create_using=nx.Graph())
 
 			for (u,v,w) in G.edges(data=True):
@@ -608,7 +608,7 @@ elif option is "MULTIPLE":
 			name = str(i) + "_clique_with_" + str(random_nodes_number) + "_nodes"
 
 			# build home directory path
-			hubdir = pathlib.Path.cwd().joinpath('gen').joinpath(name)
+			hubdir = pathlib.Path.cwd().joinpath('mgen').joinpath(name)
 			pathlib.Path(hubdir).mkdir(parents=True, exist_ok=True)
 
 			# build .edgelist filename
@@ -622,7 +622,7 @@ elif option is "MULTIPLE":
 
 			# move .edgelist file into home directory
 			edgelistpath = pathlib.Path.cwd().joinpath(edgelistname)
-			newedgelistpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(edgelistname)
+			newedgelistpath = pathlib.Path.cwd().joinpath('mgen').joinpath(name).joinpath(edgelistname)
 			shutil.move(edgelistpath, newedgelistpath)
 
 		sys.exit()
@@ -701,21 +701,23 @@ newedgelistpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(edg
 shutil.move(edgelistpath, newedgelistpath)
 print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.CYAN + " Final" + Fore.YELLOW + " .edgelist file path " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + str(newedgelistpath) + Style.RESET_ALL)
 
-# build .dot filename
-ext2 = ".dot"
+if graphviz:
 
-dotname = name + ext2
-print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.YELLOW + " Name " + Fore.CYAN + "of" + Fore.YELLOW + " .dot file " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + dotname + Style.RESET_ALL)
+	# build .dot filename
+	ext2 = ".dot"
 
-# build .dot file
-nx.nx_pydot.write_dot(G, dotname)
+	dotname = name + ext2
+	print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.YELLOW + " Name " + Fore.CYAN + "of" + Fore.YELLOW + " .dot file " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + dotname + Style.RESET_ALL)
 
-# move .dot file into home directory
-dotpath = pathlib.Path.cwd().joinpath(dotname)
-newdotpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(dotname)
-shutil.move(dotpath, newdotpath)
-print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.CYAN + " Final" + Fore.YELLOW + " .dot file path " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + str(newdotpath) + Style.RESET_ALL)
-print("\n")
+	# build .dot file
+	nx.nx_pydot.write_dot(G, dotname)
+
+	# move .dot file into home directory
+	dotpath = pathlib.Path.cwd().joinpath(dotname)
+	newdotpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(dotname)
+	shutil.move(dotpath, newdotpath)
+	print(Style.BRIGHT + Fore.MAGENTA + "[" + Fore.YELLOW + "!" + Fore.MAGENTA + "]" + Fore.CYAN + " Final" + Fore.YELLOW + " .dot file path " + Fore.CYAN + "is: " + Back.MAGENTA + Fore.CYAN + str(newdotpath) + Style.RESET_ALL)
+	print("\n")
 
 #################################################################
 #################### DRAW BLOCK [ GRAPHVIZ ] ####################
