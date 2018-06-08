@@ -582,7 +582,7 @@ elif option is "MULTIPLE":
 	options = ['complete_graph']
 	option, index = pick(options, title, indicator='>', multi_select=False)
 
-	# only Graph()
+	# TODO FORSE AGGIUNGI SEQUENTIAL MODE O RANDOM MODE
 	if option is "complete_graph":
 
 		print("\n")
