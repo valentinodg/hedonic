@@ -468,17 +468,41 @@ if option is "MULTIPLE EXEC":
 		if first_iter:
 
 			print("\n")
-			out = str(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NAME ' + Fore.CYAN + 'for ' + Fore.YELLOW + ' OUTPUT FILE ' + Fore.CYAN + ']: ' + Style.RESET_ALL))
-			out_name = str(out) + ".txt"
+			out_name = str(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NAME ' + Fore.CYAN + 'for ' + Fore.YELLOW + ' OUTPUT FILE ' + Fore.CYAN + ']: ' + Style.RESET_ALL))
+			out_ext = str(out_name) + ".out"
 
 			print("\n")
-			while(True):
-			    maxc = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX COLOR ' + Fore.CYAN + 'range int number [ 0 <= colors <= ' + Fore.YELLOW + ' MAX COLOR ' + Fore.CYAN + '] [ <= ' + str(G.number_of_nodes()) + ' ]: ' + Style.RESET_ALL))
-			    if(maxc <= G.number_of_nodes()):
-			        break
-			    else:
-			        print(Style.BRIGHT + Fore.RED + "[!] INVALID VALUE --> NUMBER OF COLORS MUST BE <= NUMBER OF NODES (" + str(G.number_of_nodes()) + ")\n" + Style.RESET_ALL)
-			        continue
+			title = 'STATIC MODE or DINAMIC MODE for color insert ? '
+
+			# FILESYSTEM :
+			#
+			# STATIC MODE
+			# DINAMIC MODE
+			#
+			#
+
+			options = ['STATIC MODE ([input]:numero di colori <= numero di nodi)', 'DINAMIC MODE (numero di nodi - [input]:numero di colori)']
+			option, index = pick(options, title, indicator='>', multi_select=False)
+
+			if option is "STATIC MODE ([input]:numero di colori <= numero di nodi)":
+				dinamic_mode = False
+				while(True):
+				    maxc = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX COLOR ' + Fore.CYAN + 'range int number [ 0 <= colors <= ' + Fore.YELLOW + ' MAX COLOR ' + Fore.CYAN + '] [ <= ' + str(G.number_of_nodes()) + ' ]: ' + Style.RESET_ALL))
+				    if(maxc <= G.number_of_nodes()):
+				        break
+				    else:
+				        print(Style.BRIGHT + Fore.RED + "[!] INVALID VALUE --> NUMBER OF COLORS MUST BE <= NUMBER OF NODES (" + str(G.number_of_nodes()) + ")\n" + Style.RESET_ALL)
+				        continue
+
+			elif option is "DINAMIC MODE (numero di nodi - [input]:numero di colori)":
+				dinamic_mode = True
+				while(True):
+				    maxc = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NUM COLOR ' + Fore.CYAN + 'sub int number [ number_of_nodes - ' + Fore.YELLOW + ' NUM COLOR ' + Fore.CYAN + '] [ <= ' + str(G.number_of_nodes()) + ' ]: ' + Style.RESET_ALL))
+				    if(maxc < G.number_of_nodes()):
+				        break
+				    else:
+				        print(Style.BRIGHT + Fore.RED + "[!] INVALID VALUE --> NUMBER OF COLORS TO SUBTRACT MUST BE < NUMBER OF NODES (" + str(G.number_of_nodes()) + ")\n" + Style.RESET_ALL)
+				        continue
 
 			print("\n")
 			maxp = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX PROFIT ' + Fore.CYAN + 'range int number: [ 0 <= profit <= ' + Fore.YELLOW + ' MAX PROFIT ' + Fore.CYAN + ']: ' + Style.RESET_ALL))
@@ -491,10 +515,19 @@ if option is "MULTIPLE EXEC":
 		#################### COLORS LIST INIT BLOCK ####################
 		################################################################
 
-		print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
-		colors = list(range(maxc))
-		print(colors)
-		print("\n")
+		if dinamic_mode:
+			print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
+			colors = list(range(G.number_of_nodes() - maxc))
+			num_colors = len(colors)
+			print(colors)
+			print("\n")
+
+		else:
+			print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
+			colors = list(range(maxc))
+			num_colors = len(colors)
+			print(colors)
+			print("\n")
 
 
 		######################################################################
@@ -606,7 +639,7 @@ if option is "MULTIPLE EXEC":
 		print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL COUNT is " + str(count) + Style.RESET_ALL)
 
 
-		with open(out_name,'a') as f:
-		        f.write("\nGRAPH : " + str(filelist[i].name) + "\nNUMBER OF NODES : " + str(G.number_of_nodes()) + "\nCOUNT : " + str(count) + "\n")
+		with open(out_ext,'a') as f:
+		        f.write("\nGRAPH : " + str(filelist[i].name) + "\nNUMBER OF NODES : " + str(G.number_of_nodes()) + "\nNUMBER OF COLORS : " + str(num_colors) + "\nCOUNT VALUE : " + str(count) + "\n")
 
-		#input("\nPress any Enter to continue...")
+		input("\nPress any Enter to continue...")
