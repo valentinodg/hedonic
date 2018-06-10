@@ -28,14 +28,14 @@ else :
 
 # colorama init
 init()
-matplotlib = True
+matplotlib = False
 
 
 #############################################################
 #################### PROGRAM MODE BLOCK #####################
 #############################################################
 
-title = 'Select PROGRAM MODE'
+title = 'Select EXEC MODE'
 
 # FILESYSTEM :
 #
@@ -94,22 +94,27 @@ if option is "SINGLE EXEC":
 	G = nx.read_edgelist(absfilepath[index], nodetype=int, edgetype=int, create_using=nx.Graph())
 
 	#name = "read-copy-of--" + str(filelist[index].name)
+	dirname = str(filelist[index].stem)
+	init_ext = str(filelist[index].stem) + ".init"
 
-	print('\n')
-	for (node,data) in G.nodes(data=True):
-	    print(node,data)
-	print('\n')
-	for (u,v,w) in G.edges(data=True):
-	    print(u,v,w)
-	print('\n')
+
+	# print(Style.BRIGHT + Fore.RED + "\nGRAPH PRINT == NODES/NO-COLORS -- EDGES/WEIGHTS\n" + Style.RESET_ALL)
+	#
+	# for (node,data) in G.nodes(data=True):
+	# 	print(node,data)
+	# print('\n')
+	# for (u,v,w) in G.edges(data=True):
+	#     print(u,v,w)
+	# print('\n')
 
 
 	########################################################################
 	#################### COLOURING/PROFITS CHOICE BLOCK ####################
 	########################################################################
 
+	print('\n')
 	while(True):
-	    maxc = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX COLOR ' + Fore.CYAN + 'range int number [ 0 <= colors <= ' + Fore.YELLOW + ' MAX COLOR ' + Fore.CYAN + '] [ <= ' + str(G.number_of_nodes()) + ' ]: ' + Style.RESET_ALL))
+	    maxc = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' COLOR MAX NUMBER ' + Fore.CYAN + '--- [ 0 <= colors <= ' + Fore.YELLOW + ' COLOR MAX NUMBER ' + Fore.CYAN + '] [ MUST BE <= ' + str(G.number_of_nodes()) + ' ]: ' + Style.RESET_ALL))
 	    if(maxc <= G.number_of_nodes()):
 	        break
 	    else:
@@ -117,19 +122,21 @@ if option is "SINGLE EXEC":
 	        continue
 
 	print("\n")
-	maxp = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX PROFIT ' + Fore.CYAN + 'range int number: [ 0 <= profit <= ' + Fore.YELLOW + ' MAX PROFIT ' + Fore.CYAN + ']: ' + Style.RESET_ALL))
+	maxp = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' PROFIT MAX VALUE ' + Fore.CYAN + '--- [ 0 <= profits <= ' + Fore.YELLOW + ' PROFIT MAX VALUE ' + Fore.CYAN + ']: ' + Style.RESET_ALL))
 
 	print("\n")
-
 
 	################################################################
 	#################### COLORS LIST INIT BLOCK ####################
 	################################################################
 
-	print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
 	colors = list(range(maxc))
-	print(colors)
-	print("\n")
+	# print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
+	# print(colors)
+	# print("\n")
+
+	with open(init_ext,'w') as f:
+			f.write("\nCOLORS (LIST)\n\n" + str(colors))
 
 
 	######################################################################
@@ -139,36 +146,64 @@ if option is "SINGLE EXEC":
 	for (n,c) in G.nodes(data=True):
 	    c['color'] = random.choice(colors)
 
-	print(Style.BRIGHT + Fore.RED + "NODE -- COLOR (LIST OF DICTIONARY) == INITIAL COLOURING\n" + Style.RESET_ALL)
-	for (node,data) in G.nodes(data=True):
-	    print(node,data)
+	# print(Style.BRIGHT + Fore.RED + "NODE -- COLOR (LIST OF DICTIONARY) == INITIAL COLOURING\n" + Style.RESET_ALL)
+	# for (node,data) in G.nodes(data=True):
+	#     print(node,data)
+	#
+	# print("\nnumber of nodes:  " + str(G.number_of_nodes()))
+	# print("\n")
 
-	print("\nnumber of nodes:  " + str(G.number_of_nodes()))
-	print("\n")
+	with open(init_ext,'a') as f:
+		f.write("\n\n\nNODE -- COLOR (LIST OF DICTIONARY) == INITIAL COLOURING\n\n")
+		for (node,data) in G.nodes(data=True):
+			f.write(str(node) + " " + str(data) + "\n")
+		f.write("\n[number of nodes] = " + str(G.number_of_nodes()))
 
 
 	######################################################################
 	#################### COLORS -- PROFITS INIT BLOCK ####################
 	######################################################################
 
-	print(Style.BRIGHT + Fore.RED + "NODE -- COLORS -- PROFITS (NESTED DICTIONARY)\n" + Style.RESET_ALL)
+	profits = {node:{color:random.randint(0,maxp) for color in colors} for node in G.nodes()}
 
-	result = {node:{color:random.randint(0,maxp) for color in colors} for node in G.nodes()}
+	# print(Style.BRIGHT + Fore.RED + "NODE -- COLORS -- PROFITS (NESTED DICTIONARY)\n" + Style.RESET_ALL)
+	# pprint(profits)
+	# print("\n")
 
-	pprint(result)
-	print("\n")
+	with open(init_ext,'a') as f:
+		f.write("\n\n\nNODE -- COLORS -- PROFITS (NESTED DICTIONARY)\n\n")
+		for k,v in profits.items():
+			f.write(str(k) + " " + str(v) + "\n")
 
 
 	#####################################################################
 	#################### EDGE -- WEIGHTS PRINT BLOCK ####################
 	#####################################################################
 
-	print(Style.BRIGHT + Fore.RED + "NODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n" + Style.RESET_ALL)
-	for (u,v,w) in G.edges(data=True):
-	    print(u,v,w)
+	# print(Style.BRIGHT + Fore.RED + "NODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n" + Style.RESET_ALL)
+	# for (u,v,w) in G.edges(data=True):
+	#     print(u,v,w)
+	#
+	# print("\nnumber of edges:  " + str(G.number_of_edges()))
+	# print("\n")
 
-	print("\nnumber of edges:  " + str(G.number_of_edges()))
-	print("\n")
+	with open(init_ext,'a') as f:
+		f.write("\n\n\nNODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n\n")
+		for (u,v,w) in G.edges(data=True):
+			f.write(str(u) + " " + str(v) + " " + str(w) + "\n")
+		f.write("\n[number of edges] = " + str(G.number_of_edges()))
+
+
+	###########################################################
+	#################### MOVING .init FILE ####################
+	###########################################################
+
+	hub_dir = pathlib.Path.cwd().joinpath('result').joinpath(dirname)
+	pathlib.Path(hub_dir).mkdir(parents=True, exist_ok=True)
+
+	init_file_path = pathlib.Path.cwd().joinpath(init_ext)
+	new_init_file_path = pathlib.Path.cwd().joinpath('result').joinpath(dirname).joinpath(init_ext)
+	shutil.move(init_file_path, new_init_file_path)
 
 
 	################################################################################################
@@ -209,7 +244,8 @@ if option is "SINGLE EXEC":
 
 		# OPTIONS :
 		#
-		# optimal colouring
+		# optimal colouring (utilitarian social welfare)
+		# optimal colouring (egalitarian social welfare)
 		# stable colouring (nash equilibrium)
 		# exit
 		#
@@ -222,44 +258,44 @@ if option is "SINGLE EXEC":
 		# optimal colouring computation [UTILITARIAN SOCIAL WELFARE]
 		if option is "optimal colouring [OPT -- UTILITARIAN SOCIAL WELFARE]":
 
-			social_welfare_old = 0
-			permlist = list(itertools.product(colors, repeat=G.number_of_nodes()))
+			utilitarian_social_welfare = 0
+			permutations = list(itertools.product(colors, repeat=G.number_of_nodes()))
 
 			print(Style.BRIGHT + Fore.RED + 'COLOR LIST PERMUTATION (pre-assignment)\n' + Style.RESET_ALL)
-			print(permlist)
+			print(permutations)
 			print('\n')
-			for perm in permlist:
+			for permutation in permutations:
 				print("\n----------------------------------------------------------------------")
-				colouring_old = perm
+				colouring_old = permutation
 				print(colouring_old)
 				for (node,data) in G.nodes(data=True):
-					data['color'] = perm[node]
+					data['color'] = permutation[node]
 					print(str("color " + str(data['color'])) + " for node " + str(node))
-				temp_social_welfare = 0
+				temp_utilitarian_social_welfare = 0
 				for (node,data) in G.nodes(data=True):
-					temp_social_welfare += result[node][data['color']]
+					temp_utilitarian_social_welfare += profits[node][data['color']]
 					print(Style.BRIGHT + Fore.GREEN + "\n$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(data['color']) + Style.RESET_ALL)
-					print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(result[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(temp_social_welfare) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(profits[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(temp_utilitarian_social_welfare) + Style.RESET_ALL)
 					neighbors = G.neighbors(node)
 					for neighbor in neighbors:
 						if(G.node[neighbor]['color'] != G.node[node]['color']):
-							edgeweight = G[node][neighbor]['weight']
-							temp_social_welfare += edgeweight
-							print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a temp_social_welfare")
+							edge_weight = G[node][neighbor]['weight']
+							temp_utilitarian_social_welfare += edge_weight
+							print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edge_weight) + " a temp_utilitarian_social_welfare")
 						else:
-							print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a temp_social_welfare")
-					print(Style.BRIGHT + Fore.RED + "temp SOCIAL WELFARE VALUE is " + str(temp_social_welfare) + Style.RESET_ALL + "\n")
-				print(Style.BRIGHT + Fore.YELLOW + "\nTOTAL SOCIAL WELFARE VALUE is " + str(temp_social_welfare) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
-				if(temp_social_welfare > social_welfare_old):
-					print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " > " + str(social_welfare_old) + Style.RESET_ALL)
-					social_welfare_old = temp_social_welfare
+							print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a temp_utilitarian_social_welfare")
+					print(Style.BRIGHT + Fore.RED + "temp SOCIAL WELFARE VALUE is " + str(temp_utilitarian_social_welfare) + Style.RESET_ALL + "\n")
+				print(Style.BRIGHT + Fore.YELLOW + "\nTOTAL SOCIAL WELFARE VALUE is " + str(temp_utilitarian_social_welfare) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+				if(temp_utilitarian_social_welfare > utilitarian_social_welfare):
+					print(Style.BRIGHT + Fore.MAGENTA + str(temp_utilitarian_social_welfare) + " > " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+					utilitarian_social_welfare = temp_utilitarian_social_welfare
 					colouring_best = colouring_old
-					print(Style.BRIGHT + Fore.CYAN + "BEST SOCIAL WELFARE : " + str(social_welfare_old) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+					print(Style.BRIGHT + Fore.CYAN + "BEST SOCIAL WELFARE : " + str(utilitarian_social_welfare) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
 				else:
-					print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " <= " + str(social_welfare_old) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.MAGENTA + str(temp_utilitarian_social_welfare) + " <= " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 
 
-			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL SOCIAL WELFARE is " + str(social_welfare_old) + " for COLOURING " + str(colouring_best) + Style.RESET_ALL)
+			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL SOCIAL WELFARE is " + str(utilitarian_social_welfare) + " for COLOURING " + str(colouring_best) + Style.RESET_ALL)
 
 			input("\nPress any key to continue...")
 
@@ -287,9 +323,9 @@ if option is "SINGLE EXEC":
 					print(str("color " + str(data['color'])) + " for node " + str(node))
 				for (node,data) in G.nodes(data=True):
 					temp_social_welfare = 0
-					temp_social_welfare += result[node][data['color']]
+					temp_social_welfare += profits[node][data['color']]
 					print(Style.BRIGHT + Fore.GREEN + "\n$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(data['color']) + Style.RESET_ALL)
-					print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(result[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(temp_social_welfare) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(profits[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(temp_social_welfare) + Style.RESET_ALL)
 					neighbors = G.neighbors(node)
 					for neighbor in neighbors:
 						if(G.node[neighbor]['color'] != G.node[node]['color']):
@@ -346,7 +382,7 @@ if option is "SINGLE EXEC":
 				for (node,data) in G.nodes(data=True):
 					color_init = data['color']
 					color_best = data['color']
-					profit_old = result[node][data['color']]
+					profit_old = profits[node][data['color']]
 					if(node == last_improved_node):
 						print("\n----------------------------------------------------------------------\n")
 						print(Style.BRIGHT + Back.RED + Fore.WHITE + "&&&&&&&&&&&&&&&&&&&&&&&&& LAST IMPROVED NODE &&&&&&&&&&&&&&&&&&&&&&&&&" + Style.RESET_ALL)
@@ -368,7 +404,7 @@ if option is "SINGLE EXEC":
 							print(Style.BRIGHT + Fore.CYAN + "PROVO colore " + str(current_color) + " per il NODO " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL)
 							data['color'] = current_color
 							color_new = current_color
-							profit_new = result[node][current_color]
+							profit_new = profits[node][current_color]
 							print("profit_new value --> " + str(profit_new) + "\n")
 							neighbors = G.neighbors(node)
 							for neighbor in neighbors:
@@ -405,10 +441,10 @@ if option is "SINGLE EXEC":
 			first_iter_check = True
 			for (node,data) in G.nodes(data=True):
 				print(Style.BRIGHT + Fore.GREEN + "\n$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(data['color']) + Style.RESET_ALL)
-				print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(result[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+				print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(profits[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 				temp_egalitarian_social_welfare = 0
-				temp_egalitarian_social_welfare += result[node][data['color']]
-				utilitarian_social_welfare += result[node][data['color']]
+				temp_egalitarian_social_welfare += profits[node][data['color']]
+				utilitarian_social_welfare += profits[node][data['color']]
 				print(Style.BRIGHT + Fore.YELLOW + "temp EGALITARIAN VALUE " + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
 				print(Style.BRIGHT + Fore.YELLOW + "UTILITARIAN VALUE " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 				neighbors = G.neighbors(node)
@@ -439,7 +475,7 @@ if option is "SINGLE EXEC":
 
 			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL COUNT is " + str(count) + Style.RESET_ALL)
 
-			input("\nPress any key to continue...")
+			break
 
 
 		################################################################################
@@ -467,8 +503,6 @@ if option is "SINGLE EXEC":
 
 		plt.show()
 
-
-sys.exit()
 
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -591,9 +625,9 @@ if option is "MULTIPLE EXEC":
 
 		print(Style.BRIGHT + Fore.RED + "NODE -- COLORS -- PROFITS (NESTED DICTIONARY)\n" + Style.RESET_ALL)
 
-		result = {node:{color:random.randint(0,maxp) for color in colors} for node in G.nodes()}
+		profits = {node:{color:random.randint(0,maxp) for color in colors} for node in G.nodes()}
 
-		pprint(result)
+		pprint(profits)
 		print("\n")
 
 
@@ -622,7 +656,7 @@ if option is "MULTIPLE EXEC":
 			for (node,data) in G.nodes(data=True):
 				color_init = data['color']
 				color_best = data['color']
-				profit_old = result[node][data['color']]
+				profit_old = profits[node][data['color']]
 				if(node == last_improved_node):
 					print("\n----------------------------------------------------------------------\n")
 					print(Style.BRIGHT + Back.RED + Fore.WHITE + "&&&&&&&&&&&&&&&&&&&&&&&&& LAST IMPROVED NODE &&&&&&&&&&&&&&&&&&&&&&&&&" + Style.RESET_ALL)
@@ -644,7 +678,7 @@ if option is "MULTIPLE EXEC":
 						print(Style.BRIGHT + Fore.CYAN + "PROVO colore " + str(current_color) + " per il NODO " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL)
 						data['color'] = current_color
 						color_new = current_color
-						profit_new = result[node][current_color]
+						profit_new = profits[node][current_color]
 						print("profit_new value --> " + str(profit_new) + "\n")
 						neighbors = G.neighbors(node)
 						for neighbor in neighbors:
