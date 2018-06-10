@@ -96,6 +96,7 @@ if option is "SINGLE EXEC":
 	#name = "read-copy-of--" + str(filelist[index].name)
 	dirname = str(filelist[index].stem)
 	init_ext = str(filelist[index].stem) + ".init"
+	out_ext = str(filelist[index].stem) + ".out"
 
 
 	# print(Style.BRIGHT + Fore.RED + "\nGRAPH PRINT == NODES/NO-COLORS -- EDGES/WEIGHTS\n" + Style.RESET_ALL)
@@ -238,6 +239,9 @@ if option is "SINGLE EXEC":
 	#################### OPT / NASH / EXIT CHOICE BLOCK ####################
 	########################################################################
 
+	with open(out_ext,'w') as f:
+			f.write("")
+
 	while(True):
 
 		title = 'What do you want to calculate ?'
@@ -258,63 +262,71 @@ if option is "SINGLE EXEC":
 		# optimal colouring computation [UTILITARIAN SOCIAL WELFARE]
 		if option is "optimal colouring [OPT -- UTILITARIAN SOCIAL WELFARE]":
 
+			with open(out_ext,'a') as f:
+				f.write("\n######################################################################\n[EXEC : UTILITARIAN SOCIAL WELFARE]\n\n\n")
+
 			utilitarian_social_welfare = 0
 			permutations = list(itertools.product(colors, repeat=G.number_of_nodes()))
 
-			print(Style.BRIGHT + Fore.RED + 'COLOR LIST PERMUTATION (pre-assignment)\n' + Style.RESET_ALL)
-			print(permutations)
-			print('\n')
+			with open(out_ext,'a') as f:
+				f.write("COLOR LIST PERMUTATION (pre-assignment)\n\n" + str(permutations) + "\n\n\n")
+			# print(Style.BRIGHT + Fore.RED + 'COLOR LIST PERMUTATION (pre-assignment)\n' + Style.RESET_ALL)
+			# print(permutations)
+			# print('\n')
 			for permutation in permutations:
 				print("\n----------------------------------------------------------------------")
 				colouring_old = permutation
-				print(colouring_old)
+				print(Style.BRIGHT + Fore.CYAN + str(colouring_old))
 				for (node,data) in G.nodes(data=True):
 					data['color'] = permutation[node]
-					print(str("color " + str(data['color'])) + " for node " + str(node))
+					print(Style.BRIGHT + Fore.YELLOW + str("NODE " + str(node) + " --- COLOR " + str(data['color'])))
 				temp_utilitarian_social_welfare = 0
 				for (node,data) in G.nodes(data=True):
 					temp_utilitarian_social_welfare += profits[node][data['color']]
-					print(Style.BRIGHT + Fore.GREEN + "\n$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(data['color']) + Style.RESET_ALL)
-					print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(profits[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(temp_utilitarian_social_welfare) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.GREEN + "\nNODE " + str(node) + " --- COLOR " + str(data['color']) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.GREEN + "INITIAL PROFIT " + str(profits[node][data['color']]) + " ---> [TEMP] UTILITARIAN SOCIAL WELFARE " + str(temp_utilitarian_social_welfare) + Style.RESET_ALL)
 					neighbors = G.neighbors(node)
 					for neighbor in neighbors:
 						if(G.node[neighbor]['color'] != G.node[node]['color']):
 							edge_weight = G[node][neighbor]['weight']
 							temp_utilitarian_social_welfare += edge_weight
-							print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edge_weight) + " a temp_utilitarian_social_welfare")
+							print("DIFFERENT COLORS --- NODES ( " + str(node) + ", " + str(neighbor) + " ) --- COLORS [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] ---> ADD " + str(edge_weight) + " to [TEMP] UTILITARIAN SOCIAL WELFARE")
 						else:
-							print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a temp_utilitarian_social_welfare")
-					print(Style.BRIGHT + Fore.RED + "temp SOCIAL WELFARE VALUE is " + str(temp_utilitarian_social_welfare) + Style.RESET_ALL + "\n")
-				print(Style.BRIGHT + Fore.YELLOW + "\nTOTAL SOCIAL WELFARE VALUE is " + str(temp_utilitarian_social_welfare) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+							print("EQUAL COLORS --- NODES ( " + str(node) + ", " + str(neighbor) + " ) --- COLORS [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] ---> NO ADD")
+					print(Style.BRIGHT + Fore.RED + "[TEMP] UTILITARIAN SOCIAL WELFARE VALUE " + str(temp_utilitarian_social_welfare) + Style.RESET_ALL + "\n")
+				print(Style.BRIGHT + Fore.YELLOW + "\nUTILITARIAN SOCIAL WELFARE VALUE " + str(temp_utilitarian_social_welfare) + " --- COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
 				if(temp_utilitarian_social_welfare > utilitarian_social_welfare):
-					print(Style.BRIGHT + Fore.MAGENTA + str(temp_utilitarian_social_welfare) + " > " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.CYAN + str(temp_utilitarian_social_welfare) + " > " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 					utilitarian_social_welfare = temp_utilitarian_social_welfare
 					colouring_best = colouring_old
-					print(Style.BRIGHT + Fore.CYAN + "BEST SOCIAL WELFARE : " + str(utilitarian_social_welfare) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+					print(Style.BRIGHT + Back.MAGENTA + Fore.CYAN + "\nBEST UTILITARIAN SOCIAL WELFARE VALUE " + str(utilitarian_social_welfare) + " --- COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+					with open(out_ext,'a') as f:
+						f.write("[NEW BEST] UTILITARIAN SOCIAL WELFARE ---> VALUE " + str(utilitarian_social_welfare) + " --- COLOURING " + str(colouring_old) + "\n")
 				else:
-					print(Style.BRIGHT + Fore.MAGENTA + str(temp_utilitarian_social_welfare) + " <= " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.CYAN + str(temp_utilitarian_social_welfare) + " <= " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 
 
-			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL SOCIAL WELFARE is " + str(utilitarian_social_welfare) + " for COLOURING " + str(colouring_best) + Style.RESET_ALL)
+			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n[FINAL] UTILITARIAN SOCIAL WELFARE VALUE " + str(utilitarian_social_welfare) + " --- COLOURING " + str(colouring_best) + Style.RESET_ALL)
+			with open(out_ext,'a') as f:
+				f.write("\n[FINAL] UTILITARIAN SOCIAL WELFARE ---> VALUE " + str(utilitarian_social_welfare) + " --- COLOURING " + str(colouring_old) + "\n")
 
-			input("\nPress any key to continue...")
+			input("\nPress ENTER key to continue...")
 
 
 		################################################################################
 		# optimal colouring computation [EGALITARIAN SOCIAL WELFARE]
 		if option is "optimal colouring [OPT -- EGALITARIAN SOCIAL WELFARE]":
 
-			social_welfare_old = 0
-			permlist = list(itertools.product(colors, repeat=G.number_of_nodes()))
+			temp_egalitarian_social_welfare = 0
+			egalitarian_social_welfare = 0
+			permutations = list(itertools.product(colors, repeat=G.number_of_nodes()))
 			neighbors_check = True
 			opt_check = True
-			temp_social_welfare_old = 0
-			count = 0
 
 			print(Style.BRIGHT + Fore.RED + 'COLOR LIST PERMUTATION (pre-assignment)\n' + Style.RESET_ALL)
-			print(permlist)
+			print(permutations)
 			print('\n')
-			for perm in permlist:
+			for perm in permutations:
 				print("\n----------------------------------------------------------------------")
 				colouring_old = perm
 				print(colouring_old)
@@ -337,36 +349,35 @@ if option is "SINGLE EXEC":
 					print(Style.BRIGHT + Fore.RED + "temp SOCIAL WELFARE VALUE is " + str(temp_social_welfare) + Style.RESET_ALL + "\n")
 					if(neighbors_check):
 						print(Style.BRIGHT + Fore.MAGENTA + "FIRST CYCLE :" + str(temp_social_welfare) + Style.RESET_ALL)
-						temp_social_welfare_old = temp_social_welfare
+						temp_egalitarian_social_welfare = temp_social_welfare
 						neighbors_check = False
 						continue
-					if(temp_social_welfare < temp_social_welfare_old):
-						print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " < " + str(temp_social_welfare_old) + Style.RESET_ALL)
-						temp_social_welfare_old = temp_social_welfare
+					if(temp_social_welfare < temp_egalitarian_social_welfare):
+						print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " < " + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
+						temp_egalitarian_social_welfare = temp_social_welfare
 					else:
-						print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " >= " + str(temp_social_welfare_old) + Style.RESET_ALL)
+						print(Style.BRIGHT + Fore.MAGENTA + str(temp_social_welfare) + " >= " + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
 						continue
-				print(Style.BRIGHT + Fore.YELLOW + "\nMINOR SOCIAL WELFARE VALUE is " + str(temp_social_welfare_old) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+				print(Style.BRIGHT + Fore.YELLOW + "\nMINOR SOCIAL WELFARE VALUE is " + str(temp_egalitarian_social_welfare) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
 				neighbors_check = True
 				if(opt_check):
-					print(Style.BRIGHT + Fore.CYAN + "FIRST CYCLE -- BEST SOCIAL WELFARE : " + str(temp_social_welfare_old) + Style.RESET_ALL)
-					social_welfare_old = temp_social_welfare_old
+					print(Style.BRIGHT + Fore.CYAN + "FIRST CYCLE -- BEST SOCIAL WELFARE : " + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
+					egalitarian_social_welfare = temp_egalitarian_social_welfare
 					colouring_best = colouring_old
 					opt_check = False
 					continue
-				if(temp_social_welfare_old > social_welfare_old):
-					print(Style.BRIGHT + Fore.CYAN + str(temp_social_welfare_old) + " > " + str(social_welfare_old) + Style.RESET_ALL)
-					social_welfare_old = temp_social_welfare_old
+				if(temp_egalitarian_social_welfare > egalitarian_social_welfare):
+					print(Style.BRIGHT + Fore.CYAN + str(temp_egalitarian_social_welfare) + " > " + str(egalitarian_social_welfare) + Style.RESET_ALL)
+					egalitarian_social_welfare = temp_egalitarian_social_welfare
 					colouring_best = colouring_old
-					count += 1
-					print(Style.BRIGHT + Fore.CYAN + "\nBEST SOCIAL WELFARE : " + str(social_welfare_old) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
+					print(Style.BRIGHT + Fore.CYAN + "\nBEST SOCIAL WELFARE : " + str(egalitarian_social_welfare) + " for COLOURING " + str(colouring_old) + Style.RESET_ALL + "\n")
 				else:
-					print(Style.BRIGHT + Fore.CYAN + str(temp_social_welfare_old) + " <= " + str(social_welfare_old) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.CYAN + str(temp_egalitarian_social_welfare) + " <= " + str(egalitarian_social_welfare) + Style.RESET_ALL)
 
 
-			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL SOCIAL WELFARE is " + str(social_welfare_old) + " for COLOURING " + str(colouring_best) + " -- COUNT " + str(count) + Style.RESET_ALL)
+			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL SOCIAL WELFARE is " + str(egalitarian_social_welfare) + " for COLOURING " + str(colouring_best) + Style.RESET_ALL)
 
-			input("\nPress any key to continue...")
+			input("\nPress ENTER key to continue...")
 
 
 		################################################################################
@@ -716,4 +727,4 @@ if option is "MULTIPLE EXEC":
 		with open(out_ext,'a') as f:
 		        f.write("\nGRAPH : " + str(filelist[i].name) + "\nNUMBER OF NODES : " + str(G.number_of_nodes()) + "\nNUMBER OF COLORS : " + str(num_colors) + "\nCOUNT VALUE : " + str(count) + "\n")
 
-		input("\nPress any Enter to continue...")
+		input("\nPress ENTER to continue...")
