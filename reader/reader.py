@@ -28,7 +28,7 @@ else :
 
 # colorama init
 init()
-matplotlib = False
+matplotlib = True
 
 
 #############################################################
@@ -399,6 +399,43 @@ if option is "SINGLE EXEC":
 						print(Style.BRIGHT + Back.MAGENTA + Fore.CYAN + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESTARTING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + Style.RESET_ALL)
 						break
 
+			print(Style.BRIGHT + Fore.YELLOW + "################################################## \n" + Style.RESET_ALL)
+			egalitarian_social_welfare = 0
+			utilitarian_social_welfare = 0
+			first_iter_check = True
+			for (node,data) in G.nodes(data=True):
+				print(Style.BRIGHT + Fore.GREEN + "\n$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(data['color']) + Style.RESET_ALL)
+				print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(result[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+				temp_egalitarian_social_welfare = 0
+				temp_egalitarian_social_welfare += result[node][data['color']]
+				utilitarian_social_welfare += result[node][data['color']]
+				print(Style.BRIGHT + Fore.YELLOW + "temp EGALITARIAN VALUE " + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
+				print(Style.BRIGHT + Fore.YELLOW + "UTILITARIAN VALUE " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+				neighbors = G.neighbors(node)
+				for neighbor in neighbors:
+					if(G.node[neighbor]['color'] != G.node[node]['color']):
+						edgeweight = G[node][neighbor]['weight']
+						print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a utilitarian_social_welfare e a temp_egalitarian_social_welfare")
+						utilitarian_social_welfare += edgeweight
+						temp_egalitarian_social_welfare += edgeweight
+					else:
+						print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a profit_new")
+
+				print(Style.BRIGHT + Fore.YELLOW + "\ntemp EGALITARIAN " + str(temp_egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+
+				if(first_iter_check):
+					egalitarian_social_welfare = temp_egalitarian_social_welfare
+					first_iter_check = False
+					print(Style.BRIGHT + Fore.CYAN + "\n[first-cycle] EGALITARIAN " + str(egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+					continue
+				if(temp_egalitarian_social_welfare < egalitarian_social_welfare):
+					egalitarian_social_welfare = temp_egalitarian_social_welfare
+					print(Style.BRIGHT + Fore.CYAN + "\n[<] EGALITARIAN " + str(egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+				else:
+					print(Style.BRIGHT + Fore.RED + "\n[>=] EGALITARIAN " + str(egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+
+
+			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\nUTILITARIAN is " + str(utilitarian_social_welfare) + "\n\nEGALITARIAN is " + str(egalitarian_social_welfare) + Style.RESET_ALL)
 
 			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL COUNT is " + str(count) + Style.RESET_ALL)
 
@@ -407,7 +444,7 @@ if option is "SINGLE EXEC":
 
 		################################################################################
 		elif option is "exit":
-			sys.exit()
+			break
 
 
 	################################################################################
@@ -429,6 +466,9 @@ if option is "SINGLE EXEC":
 		plt.axis('off')
 
 		plt.show()
+
+
+sys.exit()
 
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
