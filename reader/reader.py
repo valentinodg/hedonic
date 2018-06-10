@@ -355,7 +355,7 @@ if option is "SINGLE EXEC":
 					if(first_iter_check):
 						temp_egalitarian_social_welfare = local_egalitarian_social_welfare
 						first_iter_check = False
-						print(Style.BRIGHT + Fore.MAGENTA + "[FIRST CYCLE] [TEMP] EGALITARIAN SOCIAL WELFARE" + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
+						print(Style.BRIGHT + Fore.MAGENTA + "[FIRST CYCLE] [TEMP] EGALITARIAN SOCIAL WELFARE " + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
 						continue
 					if(local_egalitarian_social_welfare < temp_egalitarian_social_welfare):
 						print(Style.BRIGHT + Fore.MAGENTA + "[NEW BEST] [TEMP] EGALITARIAN SOCIAL WELFARE " + str(local_egalitarian_social_welfare) + " < " + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
@@ -375,7 +375,7 @@ if option is "SINGLE EXEC":
 					print(Style.BRIGHT + Fore.CYAN + "[NEW BEST] EGALITARIAN SOCIAL WELFARE " + str(temp_egalitarian_social_welfare) + " > " + str(egalitarian_social_welfare) + Style.RESET_ALL)
 					egalitarian_social_welfare = temp_egalitarian_social_welfare
 					colouring_best = colouring_old
-					print(Style.BRIGHT + Fore.CYAN + "\nBEST SOCIAL WELFARE : " + str(egalitarian_social_welfare) + " for COLOURING " + str(colouring_best) + Style.RESET_ALL + "\n")
+					print(Style.BRIGHT + Fore.CYAN + "\nBEST SOCIAL WELFARE " + str(egalitarian_social_welfare) + " for COLOURING " + str(colouring_best) + Style.RESET_ALL + "\n")
 					with open(out_ext,'a') as f:
 						f.write("[NEW BEST] EGALITARIAN SOCIAL WELFARE ---> VALUE " + str(egalitarian_social_welfare) + " --- COLOURING " + str(colouring_best) + "\n")
 				else:
