@@ -539,13 +539,13 @@ if option is "SINGLE EXEC":
 		plt.show()
 
 
-##########################################################
-#################### MOVING .out FILE ####################
-##########################################################
+	##########################################################
+	#################### MOVING .out FILE ####################
+	##########################################################
 
-out_file_path = pathlib.Path.cwd().joinpath(out_ext)
-new_out_file_path = pathlib.Path.cwd().joinpath('result').joinpath(dirname).joinpath(out_ext)
-shutil.move(out_file_path, new_out_file_path)
+	out_file_path = pathlib.Path.cwd().joinpath(out_ext)
+	new_out_file_path = pathlib.Path.cwd().joinpath('result').joinpath(dirname).joinpath(out_ext)
+	shutil.move(out_file_path, new_out_file_path)
 
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -585,7 +585,7 @@ if option is "MULTIPLE EXEC":
 		if first_iter:
 
 			print("\n")
-			out_name = str(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NAME ' + Fore.CYAN + 'for ' + Fore.YELLOW + ' OUTPUT FILE ' + Fore.CYAN + ']: ' + Style.RESET_ALL))
+			out_name = str(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NAME ' + Fore.CYAN + 'for ' + Fore.YELLOW + ' OUTPUT FILE ' + Fore.CYAN + ': ' + Style.RESET_ALL))
 			out_ext = str(out_name) + ".out"
 
 			print("\n")

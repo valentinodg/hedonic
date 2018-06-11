@@ -584,6 +584,8 @@ elif option is "MULTIPLE":
 
 	# TODO FORSE AGGIUNGI SEQUENTIAL MODE O RANDOM MODE
 	if option is "complete_graph":
+		print("\n")
+		rounds = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + 'How many graphs you want to create ? ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
 
 		print("\n")
 		n_min = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the MIN number of nodes [ RANGE : MIN <= node_num <= max ] ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
@@ -594,18 +596,24 @@ elif option is "MULTIPLE":
 		MaxInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
 		print("\n")
 
-		for i in range(n_min, n_max+1):
+		# set home directory name
+		dirname = input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NAME ' + Fore.CYAN + 'for ' + Fore.YELLOW + ' HOME DIRECTORY ' + Fore.CYAN + ': ' + Style.RESET_ALL)
+		print("\n")
 
-			G=nx.complete_graph(i, create_using=nx.Graph())
+		for i in range(rounds):
+
+			rand_nodes_num = random.randint(n_min, n_max)
+
+			G=nx.complete_graph(rand_nodes_num, create_using=nx.Graph())
 
 			for (u,v,w) in G.edges(data=True):
 			    w['weight'] = random.randint(MinInt, MaxInt)
 
 			# set .edgelist filename
-			name = "complete_graph_with_" + str(i) + "_nodes"
+			name = str(i) + "_complete_graph_with_" + str(rand_nodes_num) + "_nodes"
 
 			# build home directory path
-			hubdir = pathlib.Path.cwd().joinpath('mgen').joinpath(name)
+			hubdir = pathlib.Path.cwd().joinpath('mgen').joinpath(dirname).joinpath(name)
 			pathlib.Path(hubdir).mkdir(parents=True, exist_ok=True)
 
 			# build .edgelist filename
@@ -619,7 +627,7 @@ elif option is "MULTIPLE":
 
 			# move .edgelist file into home directory
 			edgelistpath = pathlib.Path.cwd().joinpath(edgelistname)
-			newedgelistpath = pathlib.Path.cwd().joinpath('mgen').joinpath(name).joinpath(edgelistname)
+			newedgelistpath = pathlib.Path.cwd().joinpath('mgen').joinpath(dirname).joinpath(name).joinpath(edgelistname)
 			shutil.move(edgelistpath, newedgelistpath)
 
 		sys.exit()
