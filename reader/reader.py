@@ -235,12 +235,17 @@ if option is "SINGLE EXEC":
 		plt.axis('off')
 
 
-	########################################################################
-	#################### OPT / NASH / EXIT CHOICE BLOCK ####################
-	########################################################################
+	##############################################################
+	#################### 'ZEROFILL' .out FILE ####################
+	##############################################################
 
 	with open(out_ext,'w') as f:
 			f.write("")
+
+
+	########################################################################
+	#################### OPT / NASH / EXIT CHOICE BLOCK ####################
+	########################################################################
 
 	while(True):
 
@@ -393,6 +398,9 @@ if option is "SINGLE EXEC":
 		# stable colouring computation
 		elif option is "stable colouring [NASH EQUILIBRIUM]":
 
+			with open(out_ext,'a') as f:
+				f.write("\n######################################################################\n[EXEC : NASH EQUILIBRIUM]\n\n\n")
+
 			count = 0;
 			restart = True
 			last_improved_node = None
@@ -408,92 +416,99 @@ if option is "SINGLE EXEC":
 						print(Style.BRIGHT + Back.RED + Fore.WHITE + "&&&&&&&&&&&&&&&&&&&&&&&&& LAST IMPROVED NODE &&&&&&&&&&&&&&&&&&&&&&&&&" + Style.RESET_ALL)
 						continue
 					print("\n----------------------------------------------------------------------\n")
-					print(Style.BRIGHT + Fore.GREEN + "$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(color_init) + Style.RESET_ALL)
-					print(Style.BRIGHT + Fore.GREEN + "with INITIAL PROFIT " + str(profit_old) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.GREEN + "\nNODE " + str(node) + " --- COLOR " + str(color_init) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.GREEN + "INITIAL PROFIT " + str(profit_old) + Style.RESET_ALL)
 					neighbors = G.neighbors(node)
 					for neighbor in neighbors:
 						if(G.node[neighbor]['color'] != G.node[node]['color']):
-							edgeweight = G[node][neighbor]['weight']
-							profit_old += edgeweight
-							print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a profit_old")
+							edge_weight = G[node][neighbor]['weight']
+							profit_old += edge_weight
+							print("DIFFERENT COLORS --- NODES ( " + str(node) + ", " + str(neighbor) + " ) --- COLORS [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] ---> ADD " + str(edge_weight) + " to PROFIT")
 						else:
-							print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a profit_old")
-					print(Style.BRIGHT + Fore.GREEN + "with TOTAL PROFIT " + str(profit_old) + Style.RESET_ALL + "\n")
+							print("EQUAL COLORS --- NODES ( " + str(node) + ", " + str(neighbor) + " ) --- COLORS [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] ---> NO ADD")
+					print(Style.BRIGHT + Fore.GREEN + "TOTAL PROFIT " + str(profit_old) + Style.RESET_ALL + "\n")
 					for current_color in colors:
 						if(current_color != color_init):
-							print(Style.BRIGHT + Fore.CYAN + "PROVO colore " + str(current_color) + " per il NODO " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL)
+							print(Style.BRIGHT + Fore.CYAN + "TEST COLOR " + str(current_color) + " --- NODE " + str(node) + " --- COLOR " + str(color_init) + Style.RESET_ALL)
 							data['color'] = current_color
 							color_new = current_color
 							profit_new = profits[node][current_color]
-							print("profit_new value --> " + str(profit_new) + "\n")
+							print(Style.BRIGHT + Fore.CYAN + "NEW INITIAL PROFIT " + str(profit_new) + Style.RESET_ALL)
 							neighbors = G.neighbors(node)
 							for neighbor in neighbors:
 								if(G.node[neighbor]['color'] != G.node[node]['color']):
-									edgeweight = G[node][neighbor]['weight']
-									profit_new += edgeweight
-									print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a profit_new")
+									edge_weight = G[node][neighbor]['weight']
+									profit_new += edge_weight
+									print("DIFFERENT COLORS --- NODES ( " + str(node) + ", " + str(neighbor) + " ) --- COLORS [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] ---> ADD " + str(edge_weight) + " to PROFIT_NEW")
 								else:
-									print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a profit_new")
-							print("\nprofit_new value UPDATED --> " + str(profit_new))
+									print("EQUAL COLORS --- NODES ( " + str(node) + ", " + str(neighbor) + " ) --- COLORS [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] ---> NO ADD")
+							print(Style.BRIGHT + Fore.CYAN + "NEW TOTAL PROFIT " + str(profit_new) + Style.RESET_ALL)
 							if(profit_new > profit_old):
-								print(str(profit_new) + " > " + str(profit_old) + "\n")
+								print(Style.BRIGHT + Fore.YELLOW + "\n" + str(profit_new) + " > " + str(profit_old) + "\n" + Style.RESET_ALL)
 								profit_old = profit_new
 								color_best = current_color
 							else:
-								print(str(profit_new) + " <= " + str(profit_old) + "\n")
+								print(Style.BRIGHT + Fore.YELLOW + "\n" + str(profit_new) + " <= " + str(profit_old) + "\n" + Style.RESET_ALL)
 						else:
-							print(Style.BRIGHT + Fore.RED + "NON PROVO colore " + str(current_color) + " per il nodo " + str(node) + " colorato con " + str(color_init) + Style.RESET_ALL + "\n")
+							print(Style.BRIGHT + Fore.RED + "NO TEST COLOR " + str(current_color) + " --- NODE " + str(node) + " --- COLOR " + str(color_init) + Style.RESET_ALL + "\n")
 							continue
 					data['color'] = color_best
 					if(data['color'] != color_init):
-						print(Style.BRIGHT + Fore.MAGENTA + "$$$$$$$$$$ NEW COLOR " + str(data['color']) + " with PROFIT " + str(profit_old) + " for NODE " + str(node) + Style.RESET_ALL)
+						print(Style.BRIGHT + Back.MAGENTA + Fore.CYAN + "!!!!!!!!!!!!!!!!!!!!!!!!!!! IMPROVING MOVE !!!!!!!!!!!!!!!!!!!!!!!!!!!" + Style.RESET_ALL)
+						print(Style.BRIGHT + Fore.YELLOW + "NEW COLOR " + str(data['color']) + " --- NODE " + str(node) + " --- NEW PROFIT " + str(profit_old) + Style.RESET_ALL)
 						count += 1
-						print(Style.BRIGHT + Fore.YELLOW + "$$$$$$$$$$ COUNT " + str(count) + Style.RESET_ALL)
+						print(Style.BRIGHT + Fore.YELLOW + "NEW COUNT VALUE " + str(count) + Style.RESET_ALL)
 						restart = True
 						last_improved_node = node
-						print(Style.BRIGHT + Fore.CYAN + "$$$$$$$$$$ LAST IMPROVED NODE " + str(last_improved_node) + Style.RESET_ALL)
-						print(Style.BRIGHT + Back.MAGENTA + Fore.CYAN + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESTARTING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + Style.RESET_ALL)
+						print(Style.BRIGHT + Fore.YELLOW + "LAST IMPROVED NODE " + str(last_improved_node) + Style.RESET_ALL)
+						print(Style.BRIGHT + Back.MAGENTA + Fore.CYAN + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESTARTING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + Style.RESET_ALL)
+						with open(out_ext,'a') as f:
+							f.write("[IMPROVING MOVE] [NEW BEST] COLOR " + str(data['color']) + " --- NODE " + str(node) + " --- [NEW BEST] PROFIT " + str(profit_old) + "\n")
 						break
 
-			print(Style.BRIGHT + Fore.YELLOW + "################################################## \n" + Style.RESET_ALL)
+			print(Style.BRIGHT + Fore.YELLOW + "\n#######################################################################" + Style.RESET_ALL)
 			egalitarian_social_welfare = 0
 			utilitarian_social_welfare = 0
 			first_iter_check = True
 			for (node,data) in G.nodes(data=True):
-				print(Style.BRIGHT + Fore.GREEN + "\n$$$$$$$$$$ NODE " + str(node) + " with COLOR " + str(data['color']) + Style.RESET_ALL)
-				print(Style.BRIGHT + Fore.GREEN + "sommo INITIAL PROFIT " + str(profits[node][data['color']]) + " a SOCIAL WELFARE TEMP " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+				print("\n----------------------------------------------------------------------\n")
+				print(Style.BRIGHT + Fore.GREEN + "\nNODE " + str(node) + " --- COLOR " + str(data['color']) + Style.RESET_ALL)
+				print(Style.BRIGHT + Fore.GREEN + "INITIAL PROFIT " + str(profits[node][data['color']]) + " ---> UTILITARIAN SOCIAL WELFARE " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 				temp_egalitarian_social_welfare = 0
 				temp_egalitarian_social_welfare += profits[node][data['color']]
 				utilitarian_social_welfare += profits[node][data['color']]
-				print(Style.BRIGHT + Fore.YELLOW + "temp EGALITARIAN VALUE " + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
+				print(Style.BRIGHT + Fore.YELLOW + "\n[TEMP] EGALITARIAN VALUE " + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
 				print(Style.BRIGHT + Fore.YELLOW + "UTILITARIAN VALUE " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 				neighbors = G.neighbors(node)
 				for neighbor in neighbors:
 					if(G.node[neighbor]['color'] != G.node[node]['color']):
-						edgeweight = G[node][neighbor]['weight']
-						print("colore DIVERSO per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] SOMMO " + str(edgeweight) + " a utilitarian_social_welfare e a temp_egalitarian_social_welfare")
-						utilitarian_social_welfare += edgeweight
-						temp_egalitarian_social_welfare += edgeweight
+						edge_weight = G[node][neighbor]['weight']
+						print("DIFFERENT COLORS --- NODES ( " + str(node) + ", " + str(neighbor) + " ) --- COLORS [ " + str(G.node[node]['color']) + " != " + str(G.node[neighbor]['color']) + " ] ---> ADD " + str(edge_weight) + " to UTILITARIAN SOCIAL WELFARE and [TEMP] EGALITARIAN SOCIAL WELFARE")
+						utilitarian_social_welfare += edge_weight
+						temp_egalitarian_social_welfare += edge_weight
 					else:
-						print("colore UGUALE per i nodi ( " + str(node) + ", " + str(neighbor) + " ) = [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] NON SOMMO NULLA a profit_new")
-
-				print(Style.BRIGHT + Fore.YELLOW + "\ntemp EGALITARIAN " + str(temp_egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
-
+						print("EQUAL COLORS --- NODES ( " + str(node) + ", " + str(neighbor) + " ) --- COLORS [ " + str(G.node[node]['color']) + " == " + str(G.node[neighbor]['color']) + " ] ---> NO ADD")
+				print(Style.BRIGHT + Fore.YELLOW + "\n[TEMP] EGALITARIAN VALUE " + str(temp_egalitarian_social_welfare) + Style.RESET_ALL)
+				print(Style.BRIGHT + Fore.YELLOW + "UTILITARIAN VALUE " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 				if(first_iter_check):
 					egalitarian_social_welfare = temp_egalitarian_social_welfare
 					first_iter_check = False
-					print(Style.BRIGHT + Fore.CYAN + "\n[first-cycle] EGALITARIAN " + str(egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.CYAN + "\n[FIRST ITER] EGALITARIAN " + str(egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 					continue
 				if(temp_egalitarian_social_welfare < egalitarian_social_welfare):
 					egalitarian_social_welfare = temp_egalitarian_social_welfare
-					print(Style.BRIGHT + Fore.CYAN + "\n[<] EGALITARIAN " + str(egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+					print(Style.BRIGHT + Fore.CYAN + "\n[<] NEW EGALITARIAN " + str(egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 				else:
 					print(Style.BRIGHT + Fore.RED + "\n[>=] EGALITARIAN " + str(egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 
 
-			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\nUTILITARIAN is " + str(utilitarian_social_welfare) + "\n\nEGALITARIAN is " + str(egalitarian_social_welfare) + Style.RESET_ALL)
+			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n[FINAL] EGALITARIAN " + str(egalitarian_social_welfare) + "\n\n[FINAL] UTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n[FINAL] COUNT " + str(count) + Style.RESET_ALL)
 
-			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n$$$$$$$$$$ FINAL COUNT is " + str(count) + Style.RESET_ALL)
+			with open(out_ext,'a') as f:
+				f.write("\n[FINAL] EGALITARIAN SOCIAL WELFARE ---> VALUE " + str(egalitarian_social_welfare))
+				f.write("\n[FINAL] UTILITARIAN SOCIAL WELFARE ---> VALUE " + str(utilitarian_social_welfare))
+				f.write("\n[FINAL] COUNT ---> VALUE " + str(count))
 
 			break
 
@@ -522,6 +537,7 @@ if option is "SINGLE EXEC":
 		plt.axis('off')
 
 		plt.show()
+
 
 ##########################################################
 #################### MOVING .out FILE ####################

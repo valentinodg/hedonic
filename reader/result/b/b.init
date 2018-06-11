@@ -7,19 +7,19 @@ COLORS (LIST)
 NODE -- COLOR (LIST OF DICTIONARY) == INITIAL COLOURING
 
 0 {'color': 2}
-1 {'color': 3}
-2 {'color': 3}
-3 {'color': 3}
+1 {'color': 0}
+2 {'color': 2}
+3 {'color': 1}
 
 [number of nodes] = 4
 
 
 NODE -- COLORS -- PROFITS (NESTED DICTIONARY)
 
-0 {0: 29, 1: 22, 2: 28, 3: 39}
-1 {0: 9, 1: 4, 2: 26, 3: 21}
-2 {0: 34, 1: 17, 2: 16, 3: 44}
-3 {0: 26, 1: 44, 2: 4, 3: 13}
+0 {0: 27, 1: 38, 2: 34, 3: 29}
+1 {0: 40, 1: 18, 2: 33, 3: 25}
+2 {0: 21, 1: 1, 2: 23, 3: 16}
+3 {0: 25, 1: 12, 2: 32, 3: 35}
 
 
 
