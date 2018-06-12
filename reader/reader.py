@@ -189,7 +189,7 @@ if option is "SINGLE EXEC":
 	# print("\n")
 
 	with open(init_ext,'a') as f:
-		f.write("\n\n\nNODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n\n")
+		f.write("\n\nNODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n\n")
 		for (u,v,w) in G.edges(data=True):
 			f.write(str(u) + " " + str(v) + " " + str(w) + "\n")
 		f.write("\n[number of edges] = " + str(G.number_of_edges()))
@@ -502,7 +502,7 @@ if option is "SINGLE EXEC":
 					print(Style.BRIGHT + Fore.RED + "\n[>=] EGALITARIAN " + str(egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 
 
-			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n[FINAL] EGALITARIAN " + str(egalitarian_social_welfare) + "\n\n[FINAL] UTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n[FINAL] EGALITARIAN " + str(egalitarian_social_welfare) + Style.RESET_ALL + Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n\n[FINAL] UTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 			print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n[FINAL] COUNT " + str(count) + Style.RESET_ALL)
 
 			with open(out_ext,'a') as f:
@@ -678,7 +678,7 @@ if option is "MULTIPLE EXEC":
 		################################################################
 
 		with open(init_ext,'a') as f:
-			f.write("\n\n\n######################################################################\n[INIT : " + str(a[i].name) + " ]\n\n")
+			f.write("\n\n\n######################################################################\n[INIT : " + str(a[i].name) + "]\n\n")
 
 		if dinamic_mode:
 			# print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
@@ -696,7 +696,7 @@ if option is "MULTIPLE EXEC":
 			# print(colors)
 			# print("\n")
 			with open(init_ext,'a') as f:
-					f.write("\nCOLORS (LIST) [STATIC MODE]\n\n" + str(colors) + "\n\n" + str(num_colors))
+					f.write("\nCOLORS (LIST) [STATIC MODE]\n\n" + str(colors) + "\n\n[number of colors] = " + str(num_colors))
 
 
 		######################################################################
@@ -749,7 +749,7 @@ if option is "MULTIPLE EXEC":
 		# print("\n")
 
 		with open(init_ext,'a') as f:
-			f.write("\n\n\nNODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n\n")
+			f.write("\n\nNODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n\n")
 			for (u,v,w) in G.edges(data=True):
 				f.write(str(u) + " " + str(v) + " " + str(w) + "\n")
 			f.write("\n[number of edges] = " + str(G.number_of_edges()))
@@ -760,7 +760,7 @@ if option is "MULTIPLE EXEC":
 		##########################################################
 
 		with open(out_ext,'a') as f:
-			f.write("\n\n\n######################################################################\n[EXEC : NASH EQUILIBRIUM]\n[GRAPH : " + str(a[i].name) + " ]\n\n")
+			f.write("\n\n\n######################################################################\n[EXEC : NASH EQUILIBRIUM]\n[GRAPH : " + str(a[i].name) + "]\n\n")
 
 		count = 0;
 		restart = True
@@ -863,7 +863,7 @@ if option is "MULTIPLE EXEC":
 				print(Style.BRIGHT + Fore.RED + "\n[>=] EGALITARIAN " + str(egalitarian_social_welfare) + "\nUTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 
 
-		print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n[FINAL] EGALITARIAN " + str(egalitarian_social_welfare) + "\n\n[FINAL] UTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
+		print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n[FINAL] EGALITARIAN " + str(egalitarian_social_welfare) + Style.RESET_ALL + Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n\n[FINAL] UTILITARIAN " + str(utilitarian_social_welfare) + Style.RESET_ALL)
 		print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\n[FINAL] COUNT " + str(count) + Style.RESET_ALL)
 
 		with open(out_ext,'a') as f:
