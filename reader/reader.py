@@ -558,10 +558,30 @@ if option is "MULTIPLE EXEC":
 	#################### SEARCH BLOCK #####################
 	#######################################################
 
+	list_hub_dir = []
+
 	p = pathlib.Path.cwd().parents[0].joinpath('generator').joinpath('mgen')
+	hub_path = [x for x in p.iterdir() if x.is_dir()]
+
+	for path in hub_path:
+		list_hub_dir.append(path.name)
+
+	title = 'hub dir select '
+
+	# DIRECTORY SELECTION :
+	#
+	#
+	#
+	#
+
+	options = list_hub_dir
+	option, index = pick(options, title, indicator='>', multi_select=False)
+
+	p = pathlib.Path.cwd().parents[0].joinpath('generator').joinpath('mgen').joinpath(option)
 	[x for x in p.iterdir() if x.is_dir()]
 
 	a = list(p.glob('**/*.edgelist'))
+
 
 	filelist =[]
 	optionfilelist =[]
@@ -572,6 +592,31 @@ if option is "MULTIPLE EXEC":
 		optionfilelist.append(str(rel)) #string path from /hedonic
 		absfilepath.append(str(i)) # string path from root
 		filelist.append(i) # pathlib path from root
+
+
+	############################################################
+	#################### PATH ELEMENTS INIT ####################
+	############################################################
+
+	dirname = str(option)
+	init_ext = str(option) + ".init"
+	out_ext = str(option) + ".out"
+
+
+	#########################################################################
+	#################### 'ZEROFILL' .init and .out FILES ####################
+	#########################################################################
+
+	with open(init_ext,'w') as f:
+			f.write("")
+
+	with open(out_ext,'w') as f:
+			f.write("")
+
+
+	########################################################
+	#################### ITERATION INIT ####################
+	########################################################
 
 	first_iter = True
 	for i in range(len(absfilepath)):
@@ -584,9 +629,9 @@ if option is "MULTIPLE EXEC":
 
 		if first_iter:
 
-			print("\n")
-			out_name = str(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NAME ' + Fore.CYAN + 'for ' + Fore.YELLOW + ' OUTPUT FILE ' + Fore.CYAN + ': ' + Style.RESET_ALL))
-			out_ext = str(out_name) + ".out"
+			# print("\n")
+			# out_name = str(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NAME ' + Fore.CYAN + 'for ' + Fore.YELLOW + ' OUTPUT FILE ' + Fore.CYAN + ': ' + Style.RESET_ALL))
+			# out_ext = str(out_name) + ".out"
 
 			print("\n")
 			title = 'STATIC MODE or DINAMIC MODE for color insert ? '
@@ -598,31 +643,31 @@ if option is "MULTIPLE EXEC":
 			#
 			#
 
-			options = ['STATIC MODE ([input]:numero di colori <= numero di nodi)', 'DINAMIC MODE (numero di nodi - [input]:numero di colori)']
+			options = ['STATIC MODE ---> ([input]:numero di colori <= numero di nodi)', 'DINAMIC MODE ---> numero di colori = (numero di nodi - [input]:valore da sottrarre)']
 			option, index = pick(options, title, indicator='>', multi_select=False)
 
-			if option is "STATIC MODE ([input]:numero di colori <= numero di nodi)":
+			if option is "STATIC MODE ---> ([input]:numero di colori <= numero di nodi)":
 				dinamic_mode = False
 				while(True):
-				    maxc = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX COLOR ' + Fore.CYAN + 'range int number [ 0 <= colors <= ' + Fore.YELLOW + ' MAX COLOR ' + Fore.CYAN + '] [ <= ' + str(G.number_of_nodes()) + ' ]: ' + Style.RESET_ALL))
+				    maxc = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' COLOR MAX NUMBER ' + Fore.CYAN + '--- [ 0 <= colors <= ' + Fore.YELLOW + ' COLOR MAX NUMBER ' + Fore.CYAN + '] : ' + Style.RESET_ALL))
 				    if(maxc <= G.number_of_nodes()):
 				        break
 				    else:
 				        print(Style.BRIGHT + Fore.RED + "[!] INVALID VALUE --> NUMBER OF COLORS MUST BE <= NUMBER OF NODES (" + str(G.number_of_nodes()) + ")\n" + Style.RESET_ALL)
 				        continue
 
-			elif option is "DINAMIC MODE (numero di nodi - [input]:numero di colori)":
+			elif option is "DINAMIC MODE ---> numero di colori = (numero di nodi - [input]:valore da sottrarre)":
 				dinamic_mode = True
 				while(True):
-				    maxc = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' NUM COLOR ' + Fore.CYAN + 'sub int number [ number_of_nodes - ' + Fore.YELLOW + ' NUM COLOR ' + Fore.CYAN + '] [ <= ' + str(G.number_of_nodes()) + ' ]: ' + Style.RESET_ALL))
+				    maxc = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' VALUE TO SUBTRACT ' + Fore.CYAN + '--- number_of_colors = [ number_of_nodes - ' + Fore.YELLOW + ' VALUE TO SUBTRACT ' + Fore.CYAN + '] : ' + Style.RESET_ALL))
 				    if(maxc < G.number_of_nodes()):
 				        break
 				    else:
-				        print(Style.BRIGHT + Fore.RED + "[!] INVALID VALUE --> NUMBER OF COLORS TO SUBTRACT MUST BE < NUMBER OF NODES (" + str(G.number_of_nodes()) + ")\n" + Style.RESET_ALL)
+				        print(Style.BRIGHT + Fore.RED + "[!] INVALID VALUE --> VALUE TO SUBTRACT MUST BE < NUMBER OF NODES (" + str(G.number_of_nodes()) + ")\n" + Style.RESET_ALL)
 				        continue
 
 			print("\n")
-			maxp = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX PROFIT ' + Fore.CYAN + 'range int number: [ 0 <= profit <= ' + Fore.YELLOW + ' MAX PROFIT ' + Fore.CYAN + ']: ' + Style.RESET_ALL))
+			maxp = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' PROFIT MAX VALUE ' + Fore.CYAN + '--- [ 0 <= profits <= ' + Fore.YELLOW + ' PROFIT MAX VALUE ' + Fore.CYAN + ']: ' + Style.RESET_ALL))
 
 			print("\n")
 			first_iter = False
@@ -632,19 +677,26 @@ if option is "MULTIPLE EXEC":
 		#################### COLORS LIST INIT BLOCK ####################
 		################################################################
 
+		with open(init_ext,'a') as f:
+			f.write("\n######################################################################\n[INIT : GRAPH NAME]\n\n\n")
+
 		if dinamic_mode:
-			print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
+			# print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
 			colors = list(range(G.number_of_nodes() - maxc))
 			num_colors = len(colors)
-			print(colors)
-			print("\n")
+			# print(colors)
+			# print("\n")
+			with open(init_ext,'a') as f:
+					f.write("\nCOLORS (LIST) [DINAMIC MODE]\n\n" + str(colors) + "\n\n" + str(num_colors))
 
 		else:
-			print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
+			# print(Style.BRIGHT + Fore.RED + "COLORS (LIST)\n" + Style.RESET_ALL)
 			colors = list(range(maxc))
 			num_colors = len(colors)
-			print(colors)
-			print("\n")
+			# print(colors)
+			# print("\n")
+			with open(init_ext,'a') as f:
+					f.write("\nCOLORS (LIST) [STATIC MODE]\n\n" + str(colors) + "\n\n" + str(num_colors))
 
 
 		######################################################################
@@ -654,38 +706,55 @@ if option is "MULTIPLE EXEC":
 		for (n,c) in G.nodes(data=True):
 		    c['color'] = random.choice(colors)
 
-		print(Style.BRIGHT + Fore.RED + "NODE -- COLOR (LIST OF DICTIONARY) == INITIAL COLOURING\n" + Style.RESET_ALL)
-		for (node,data) in G.nodes(data=True):
-		    print(node,data)
+		# print(Style.BRIGHT + Fore.RED + "NODE -- COLOR (LIST OF DICTIONARY) == INITIAL COLOURING\n" + Style.RESET_ALL)
+		# for (node,data) in G.nodes(data=True):
+		#     print(node,data)
+		#
+		# print("\nnumber of nodes:  " + str(G.number_of_nodes()))
+		# print("\n")
 
-		print("\nnumber of nodes:  " + str(G.number_of_nodes()))
-		print("\n")
+		with open(init_ext,'a') as f:
+			f.write("\n\n\nNODE -- COLOR (LIST OF DICTIONARY) == INITIAL COLOURING\n\n")
+			for (node,data) in G.nodes(data=True):
+				f.write(str(node) + " " + str(data) + "\n")
+			f.write("\n[number of nodes] = " + str(G.number_of_nodes()))
 
 
 		######################################################################
 		#################### COLORS -- PROFITS INIT BLOCK ####################
 		######################################################################
 
-		print(Style.BRIGHT + Fore.RED + "NODE -- COLORS -- PROFITS (NESTED DICTIONARY)\n" + Style.RESET_ALL)
 
 		profits = {node:{color:random.randint(0,maxp) for color in colors} for node in G.nodes()}
 
-		pprint(profits)
-		print("\n")
+		# print(Style.BRIGHT + Fore.RED + "NODE -- COLORS -- PROFITS (NESTED DICTIONARY)\n" + Style.RESET_ALL)
+		# pprint(profits)
+		# print("\n")
+
+		with open(init_ext,'a') as f:
+			f.write("\n\n\nNODE -- COLORS -- PROFITS (NESTED DICTIONARY)\n\n")
+			for k,v in profits.items():
+				f.write(str(k) + " " + str(v) + "\n")
 
 
 		#####################################################################
 		#################### EDGE -- WEIGHTS PRINT BLOCK ####################
 		#####################################################################
 
-		print(Style.BRIGHT + Fore.RED + "NODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n" + Style.RESET_ALL)
-		for (u,v,w) in G.edges(data=True):
-		    print(u,v,w)
+		# print(Style.BRIGHT + Fore.RED + "NODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n" + Style.RESET_ALL)
+		# for (u,v,w) in G.edges(data=True):
+		#     print(u,v,w)
+		#
+		# print("\nnumber of edges:  " + str(G.number_of_edges()))
+		# print("\n")
 
-		print("\nnumber of edges:  " + str(G.number_of_edges()))
-		print("\n")
+		with open(init_ext,'a') as f:
+			f.write("\n\n\nNODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)\n\n")
+			for (u,v,w) in G.edges(data=True):
+				f.write(str(u) + " " + str(v) + " " + str(w) + "\n")
+			f.write("\n[number of edges] = " + str(G.number_of_edges()))
 
-
+		continue
 		##########################################################
 		#################### K-COLORING BLOCK ####################
 		##########################################################
@@ -760,3 +829,23 @@ if option is "MULTIPLE EXEC":
 		        f.write("\nGRAPH : " + str(filelist[i].name) + "\nNUMBER OF NODES : " + str(G.number_of_nodes()) + "\nNUMBER OF COLORS : " + str(num_colors) + "\nCOUNT VALUE : " + str(count) + "\n")
 
 		input("\nPress ENTER to continue...")
+
+
+	###########################################################
+	#################### MOVING .init FILE ####################
+	###########################################################
+
+	hub_dir = pathlib.Path.cwd().joinpath('mresult').joinpath(dirname)
+	pathlib.Path(hub_dir).mkdir(parents=True, exist_ok=True)
+
+	init_file_path = pathlib.Path.cwd().joinpath(init_ext)
+	new_init_file_path = pathlib.Path.cwd().joinpath('mresult').joinpath(dirname).joinpath(init_ext)
+	shutil.move(init_file_path, new_init_file_path)
+
+	##########################################################
+	#################### MOVING .out FILE ####################
+	##########################################################
+
+	out_file_path = pathlib.Path.cwd().joinpath(out_ext)
+	new_out_file_path = pathlib.Path.cwd().joinpath('mresult').joinpath(dirname).joinpath(out_ext)
+	shutil.move(out_file_path, new_out_file_path)
