@@ -23,4 +23,17 @@ L'equilibrio di Nash è conosciuto anche con il nome di equilibrio non cooperati
 L'equilibrio di Nash non deriva dall'accordo tra i giocatori, bensì dall'adozione di strategie dominanti perseguite da tutti i giocatori, tali da garantire sia il migior profitto possibile per ciascun giocatore (ottimo individuale), sia il miglior equilibrio collettivo (ottimo sociale).\newline
 
 Definiamo ora alcuni concetti basilari e chiariamo alcuni aspetti matematici della teoria dei giochi al fine di delineare in modo più accurato il concetto di equilibrio di Nash.\\
-Un gioco è caratterizzato da:
+Un gioco è caratterizzato da :
+\begin{itemize}
+	\item un insieme G di giocatori, o agenti, che indicheremo con \(i = 1,\ldots,N\)
+	\item un insieme S di strategie, costituito da un insieme di M vettori \[S_{i}=\left(s_{{i,1}},s_{{i,2}},\ldots,s_{{i,j}},\ldots,s_{{i,M_{i}}}\right)\] ciasuno dei quali contiene l'insieme l'insieme delle strategie che il giocatore i-esimo ha a disposizione, cioè l'insieme delle azioni che esso può compiere.\\(indichiamo con \(s_i\) la strategia scelta dal giocatore \(i\))
+	\item un insieme U di funzioni \[u_{i}=U_{i}\left(s_{1},s_{2},\ldots,s_{i},\ldots,s_{N}\right)\] che associano ad ogni giocatore \(i\) il guadagno (detto anche payoff) \(u_i\) derivamente da una data combinazione di strategie (il guadagno di un giocatore in generale non dipende solo dalla propria strategia ma anche dalle strategie scelte dagli avversari)
+\end{itemize}
+Un equilibrio di Nash per un dato gioco è una combinazione di strategie (che indichiamo con l'apice \(e\))
+\[s_{1}^{e},s_{2}^{e},...,s_{N}^{e}\]
+tale che
+\[U_{i}\left(s_{1}^{e},s_{2}^{e},...,s_{i}^{e},...,s_{N}^{e}\right)\geq U_{i}\left(s_{1}^{e},s_{2}^{e},...,s_{i},...,s_{N}^{e}\right)\]
+\(\forall i\) e \(\forall s_i\) scelta dal giocatore i-esimo.\newline
+
+Il significato di quest'ultima disuguaglianza è il seguente : se un gioco ammette almeno un equilibrio di Nash, ciascun agente ha a dispozione almeno una strategia \(s_i^e\) dalla quale non ha alcun interesse ad allontanarsi se tutti gli altri giocatori hanno giocato la propria strategia \(s_j^e\).\\
+Come si può facilmente desumere direttamente dalla suddetta disequazione, se il giocatore i gioca una qualunque strategia a sua dispozione diversa da \(s_i^e\), mentre tutti gli altri giocatori hanno giocato la propria strategia \(s_j^e\), può solo peggiorare il proprio guadagno o, al più, lasciarlo invariato.
