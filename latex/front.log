@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  21 JUN 2018 02:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  21 JUN 2018 18:21
 entering extended mode
 **./front.tex
 (front.tex
@@ -70,7 +70,7 @@ Missing character: There is no w in font nullfont!
 Missing character: There is no b in font nullfont!
 ! Undefined control sequence.
 l.8 \includegraphics
-                    [width=2.7cm]{disimlogowb}		
+                    [width=2.7cm]{disimlogowb}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -469,8 +469,8 @@ Overfull \hbox (53.02052pt too wide) in paragraph at lines 32--45
  []
 
 ! Undefined control sequence.
-l.48 {\scshape\Large
-                     ANNO ACCADEMICO 2017-2018 \\}
+l.48 {\scshape\large
+                     ANNO ACCADEMICO 2017 - 2018 \\}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -498,8 +498,13 @@ Overfull \hbox (45.95786pt too wide) in paragraph at lines 48--48
  []
 
 
-Overfull \hbox (25.88864pt too wide) in paragraph at lines 48--48
- \OT1/cmr/m/sc/10 2017- 
+Overfull \hbox (22.1109pt too wide) in paragraph at lines 48--48
+ \OT1/cmr/m/sc/10 2017 
+ []
+
+
+Overfull \hbox (3.77774pt too wide) in paragraph at lines 48--48
+ \OT1/cmr/m/sc/10 - 
  []
 
 

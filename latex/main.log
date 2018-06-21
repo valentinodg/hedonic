@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  21 JUN 2018 17:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  21 JUN 2018 18:25
 entering extended mode
 **./main.tex
 (main.tex
@@ -567,7 +567,7 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 \RaggedLeftParindent=\skip61
 \RaggedRightParindent=\skip62
 \JustifyingParindent=\skip63
-) (main.aux (front.aux) (chapter_1.aux))
+) (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -705,100 +705,123 @@ qlogowb.png> <./img/disimlogowb.png (PNG copy)>]) (main.toc)
 ]
 \openout2 = `chapter_1.aux'.
 
- (chapter_1.tex [3
-
-]
+ (chapter_1.tex
 Capitolo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--15
+Underfull \hbox (badness 10000) in paragraph at lines 5--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--22
+Underfull \hbox (badness 10000) in paragraph at lines 16--21
 
  []
 
-[4
+[3
+
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 24--32
 
  []
 
-[5]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 37.
+[4]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 38.
  ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 38.
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--46
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--51
+Underfull \hbox (badness 10000) in paragraph at lines 48--52
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 70--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--79
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 68--71
+Underfull \hbox (badness 10000) in paragraph at lines 82--85
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--77
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
-
- []
-
-[8]
 Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
-) [9] (main.aux (front.aux) (chapter_1.aux)) ) 
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
+
+ []
+
+) [8] [9
+
+
+]
+\openout2 = `chapter_2.aux'.
+
+ (chapter_2.tex
+Capitolo 2.
+
+Package blindtext Warning: italian not defined, using English instead.
+(blindtext)                 on input line 4.
+
+
+Package blindtext Warning: italian not defined, using English instead.
+(blindtext)                 on input line 7.
+
+)
+
+Package blindtext Warning: italian not defined, using English instead.
+(blindtext)                 on input line 44.
+
+[10
+
+
+] [11] (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux)) ) 
 Here is how much of TeX's memory you used:
- 4220 strings out of 493305
- 60388 string characters out of 3129802
- 138761 words of memory out of 3000000
- 7667 multiletter control sequences out of 15000+200000
+ 4229 strings out of 493305
+ 60631 string characters out of 3129802
+ 139303 words of memory out of 3000000
+ 7669 multiletter control sequences out of 15000+200000
  11732 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,25p,802b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/valen/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/valen/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Use
-rs/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc
-10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi6.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/valen/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/valen/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/va
-len/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb
-><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (10 pages, 252061 bytes).
+ 41i,7n,25p,802b,207s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/valen/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:
+/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmcsc10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/valen/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/valen/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/valen/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Us
+ers/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmsl10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (12 pages, 257033 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
+ 89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
