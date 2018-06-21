@@ -49,15 +49,72 @@ Come si può facilmente desumere direttamente dalla suddetta disequazione, se il
 Da qui si può dedurre quindi che se i giocatori raggiungono un eequilibrio di Nash, nessuno può più migliorare il proprio risultato modificando solo la propria strategia, ed è quindi vincolato alle scelte degli altri.\\
 Poiché questo vale per tutti i giocatori, è evidente che se esiste un equilibrio di Nash ed è unico, esso rappresenta la soluzione del gioco, in quanto nessuno dei giocatori ha interesse a cambiare strategia.\newline
 
+Nella seguente matrice di payoff è rappresentato un esempio di equilibrio di Nash in un gioco non-cooperativo a 2 giocatori (tale equilibrio può essere esteso a N giocatori).
+
 \begin{center}
   \begin{tabular}{ | l | c | r | }
     \cline{2-3}
-    \multicolumn{1}{ c| }{} & \textbf{4} & \textbf{4} \\ \hline
-    \textbf{4} & 5 & 6 \\ \hline
-    \textbf{4} & 8 & 9 \\
+    \multicolumn{2}{ c! }{\textbf{giocatore 2}}
+    \multicolumn{1}{ c| }{} & \textbf{S1} & \textbf{S1} \\ \hline
+    \textbf{S1} & A [2;2] & B [2;1] \\ \hline
+    \textbf{S2} & C [1;2] & D [1;1] \\
     \hline
   \end{tabular}
 \end{center}
 
+Nella suddetta matrice ciascun giocatore può scegliere S1 o la strategia S2. Il giocatore 1 si aspetta che il giocatore 2 scelga S1 (strategia dominante) e, quindi, adotta anch'egli la strategia S1 in quanto gli consente di ottenere un payoff individuale pari a 2.\\
+Anche il giocatore 2 formula delle aspettative sulle scelte dell'avversario e si attende che il giocatore 1 scelga S1, scegliendo a sua volta la strategia S1.\\
+L'equilibrio del gioco converge verso la cella A della matrice nella quale entrambi i giocatori massimizzano il proprio payoff individuale (ottimo individuale) dopo aver scelto la propria strategia dominante. Entrambi i giocatori hanno formulato un'ipotesi sulla migliore scelta del giocatore avversario e, sulla base di questa, hanno scelto la propria strategia dominante.\newline
+
+Cerchiamo ora di comprendere al meglio il funzionamento del processo decisionale alla base dell'equilibrio di Nash.\\
+Il giocatore 1 avrebbe potuto scegliere sia S1 che S2, in entrambi i casi avrebbe potuto sperare di ottenere per sè il payoff più alto (2) nelle celle A e D. Il giocatore 1 sa bene però che se scegliesse S2, il giocatore 2 sceglierebbe in seguito S1 e l'equilibrio finale si collocherebbe nella cella C, nella quale egli otterrebbe il payoff più basso (1).\\
+Qualora scegliesse invece S1, il giocatore 1 sarebbe consapevole che anche il giocatore 2 sceglierebbe S1 e l'equilibrio finale in questo caso si collocherebbe nella cella A, nella quale il giocatore 1 otterrebbe il payoff più alto (2).\\
+Seguendo il medesimo ragionamento, qualora spettasse al giocatore 2 scegliere per primo, questi sarebbe consapevole che scegliendo S1 anche il giocatore 1 sceglierebbe S1. Dunque anche il questo caso l'equilibrio strategico si collocherebbe nella cella A.\\
+Il giocatore 2 non sceglierebbe mai S2 in quanto in ogni caso avrebbe il payoff più basso (1).\newline
+
+Nell'esempio appena trattata possiamo inoltre constatare facilmente che l'equilibrio di Nash trovato (cella A della matrice) è anche un ottimo sociale. Nel suddetto equilibrio coesistono una situazione ottimale per entrambi i giocatori (entrambi i giocatori possiedono un payoff massimo) e una situazione ottimale per l'intera collettività (in quanto la somma dei valori di payoff di entrambi i giocatori è uguale 4, il valore maggiore all'interno della matrice)\\
+Specifichiamo inoltre che un gioco non-cooperativo può presentare più equilibri di Nash. Anche il presenza di equilibri multipli, ciascun equillibrio è comunque stabile, poichè dalla propria posizione di equilibrio locale qualsiasi scelta è peggiorativa per ogni giocatore.\\
+Al fine di verificare quest'ultima affermazione viene presentata la seguente matrice di payoff nella quale sono presenti 2 equilibri di Nash simmetrici (nelle celle A e D).\\
+
+\begin{center}
+  \begin{tabular}{ | l | c | r | }
+    \cline{2-3}
+    \multicolumn{2}{ c! }{\textbf{giocatore 2}}
+    \multicolumn{1}{ c| }{} & \textbf{S1} & \textbf{S1} \\ \hline
+    \textbf{S1} & A [2;2] & B [2;1] \\ \hline
+    \textbf{S2} & C [1;2] & D [2;2] \\
+    \hline
+  \end{tabular}
+\end{center}
+
+In alcuni casi possono essere del tutto assenti le condizioni per determinare un equilibrio di Nash e di conseguenza molti giochi sono privi di equilibrio. Per verificare tale asserzione mostriamo la matrice di payoff relativa ad un gioco nel quale non è possibile trovare un equilibrio di Nash.\\
+
+\begin{center}
+  \begin{tabular}{ | l | c | r | }
+    \cline{2-3}
+    \multicolumn{2}{ c! }{\textbf{giocatore 2}}
+    \multicolumn{1}{ c| }{} & \textbf{S1} & \textbf{S1} \\ \hline
+    \textbf{S1} & A [2;2] & B [2;1] \\ \hline
+    \textbf{S2} & C [1;2] & D [2;2] \\
+    \hline
+  \end{tabular}
+\end{center}
+
+Nell'esempio appena descritto, se il giocatore 1 sceglie la strategia S2 (tentando di ottenere il payoff 2), il giocatore 2 sceglierà la strategia S2 (payoff 2) e l'equilibrio si posiziona nella cella D della matrice.\\
+Se al contrario è il giocatore 2 a scegliere la strategia S2 (tentando a sua volta di ottenere il payoff 2), il giocatore 1 sceglierà la strategia S1 (payoff 1) e l'equilibrio si posiziona nella cella B della matrice. Nel suddetto esempio non esiste dunque un equilibrio di Nash.\newline
+
+L'adozione di strategie dominanti non assicura sempre un equilibrio di ottimo sociale. In assenza di informazioni, un gioco non-cooperativo potrebbe converfere cerso un equililbrio stabile ma non ottimale.\\
+L'ipotesi è dimostrata nel problema del "dilemma del prigioniero" in cui due attori, pur formulando delle aspettative razionali sul comportamento dell'avversario e adottando strategie dominanti, determinano un equilibrio sub-ottimale ( D ) sia dal punto individuale che sociale.\\
+
+\begin{center}
+  \begin{tabular}{ | l | c | r | }
+    \cline{2-3}
+    \multicolumn{2}{ c! }{\textbf{giocatore 2}}
+    \multicolumn{1}{ c| }{} & \textbf{S1} & \textbf{S1} \\ \hline
+    \textbf{S1} & A [2;2] & B [2;1] \\ \hline
+    \textbf{S2} & C [1;2] & D [2;2] \\
+    \hline
+  \end{tabular}
+\end{center}
 
 \end{flushleft}
