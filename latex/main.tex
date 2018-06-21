@@ -1,18 +1,44 @@
-\documentclass[11pt, a4paper, oneside]{book}
+\documentclass[11pt,a4paper,oneside,openright]{book}
 
 %\usepackage{showframe}
 \usepackage{mathtools}
+\usepackage{blindtext}
+
+%\usepackage{enumitem}
+
+%\usepackage{titlesec}
+%\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+%\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+
+%\usepackage{fancyhdr}
+% 
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead[LE,RO]{\LaTeX}
+%\fancyhead[RE,LO]{Guides and tutorials}
+%\fancyfoot[CE,CO]{\leftmark}
+%\fancyfoot[LE,RO]{\thepage}
+% 
+%\renewcommand{\headrulewidth}{1pt}
+%\renewcommand{\footrulewidth}{1pt}
 
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 %\usepackage[T1]{fontenc}
+\usepackage[document]{ragged2e}
+%\renewcommand{\familydefault}{\rmdefault}
+
 
 \begin{document}
 
-\begin{flushleft}
+    \include{front}
+    \tableofcontents
+    
+    \part{Equilibri di Nash}
+    \include{chapter_1}
 
-\include{chapter_1}
-
-\end{flushleft}
-
+	
 \end{document}
