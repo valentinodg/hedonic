@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  22 JUN 2018 15:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.8)  22 JUN 2018 18:43
 entering extended mode
 **./main.tex
 (main.tex
@@ -774,17 +774,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--88
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 115--117
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--122
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
 
  []
 
@@ -815,12 +815,12 @@ Package blindtext Warning: italian not defined, using English instead.
 ] [12] (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux)) ) 
 Here is how much of TeX's memory you used:
  4323 strings out of 493305
- 62028 string characters out of 3129802
- 140580 words of memory out of 3000000
+ 62028 string characters out of 3129803
+ 143580 words of memory out of 3000000
  7757 multiletter control sequences out of 15000+200000
  11732 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,25p,802b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,10n,25p,802b,254s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/valen/
 AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:
 /Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
@@ -835,7 +835,7 @@ ers/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
 nts/cm/cmsl10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (13 pages, 257855 bytes).
+Output written on main.pdf (13 pages, 258001 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

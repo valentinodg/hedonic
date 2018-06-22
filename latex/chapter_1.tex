@@ -58,8 +58,8 @@ Nella seguente matrice di payoff è rappresentato un esempio di equilibrio di Na
 
 \vspace{0.5cm}
 \begin{center}
-\scalebox{1} {
-  \begin{tabular}{cc|m{2cm}|c|}
+\scalebox{0.8} {
+  \begin{tabular}{>{\centering\arraybackslash}m{1.5cm}>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|}
 	\cline{3-4} 
  	& & \multicolumn{2}{c|}{\textbf{G2}} \\ \cline{3-4} 
  	& & \textbf{S1} & \textbf{S2} \\ \hline
@@ -86,31 +86,37 @@ Nell'esempio appena trattata possiamo inoltre constatare facilmente che l'equili
 Specifichiamo inoltre che un gioco non-cooperativo può presentare più equilibri di Nash. Anche il presenza di equilibri multipli, ciascun equilibrio è comunque stabile, poiché dalla propria posizione di equilibrio locale qualsiasi scelta è peggiorativa per ogni giocatore.\\
 Al fine di verificare quest'ultima affermazione viene presentata la seguente matrice di payoff nella quale sono presenti 2 equilibri di Nash simmetrici (nelle celle A e D).\\
 
+\vspace{0.5cm}
 \begin{center}
-  \begin{tabular}{ | c | c | c | }
-    \cline{2-3}
-    \multicolumn{1}{ c| }{} & \multicolumn{2}{ c| }{\textbf{giocatore 2}} \\ \cline{2-3}
-    \multicolumn{1}{ c| }{} & \textbf{S1} & \textbf{S1} \\ \hline
-    \textbf{S1} & A [2;2] & B [2;1] \\ \hline
-    \textbf{S2} & C [1;2] & D [2;2] \\
-    \hline
-  \end{tabular}
+\scalebox{0.8} {
+  \begin{tabular}{>{\centering\arraybackslash}m{1.5cm}>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|}
+	\cline{3-4} 
+ 	& & \multicolumn{2}{c|}{\textbf{G2}} \\ \cline{3-4} 
+ 	& & \textbf{S1} & \textbf{S2} \\ \hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{G1}}} & \textbf{S1} & A [2,2] & B [2,1] \\ \cline{2-4} 
+	\multicolumn{1}{|c|}{} & \textbf{S2} & C [1,2] & D [2,2] \\ \hline
+\end{tabular}
+}
 \end{center}
+\vspace{0.5cm}
 
 \subsection{Assenza di equilibri di Nash}
 \justify
 In alcuni casi possono essere del tutto assenti le condizioni per determinare un equilibrio di Nash e di conseguenza molti giochi sono privi di equilibrio. Per verificare tale asserzione mostriamo la matrice di payoff relativa ad un gioco nel quale non è possibile trovare un equilibrio di Nash.\\
 
+\vspace{0.5cm}
 \begin{center}
-  \begin{tabular}{ | c | c | c | }
-    \cline{2-3}
-    \multicolumn{1}{ c| }{} & \multicolumn{2}{ c| }{\textbf{giocatore 2}} \\ \cline{2-3}
-    \multicolumn{1}{ c| }{} & \textbf{S1} & \textbf{S1} \\ \hline
-    \textbf{S1} & A [2;2] & B [2;1] \\ \hline
-    \textbf{S2} & C [1;2] & D [2;2] \\
-    \hline
-  \end{tabular}
+\scalebox{0.8} {
+  \begin{tabular}{>{\centering\arraybackslash}m{1.5cm}>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|}
+	\cline{3-4} 
+ 	& & \multicolumn{2}{c|}{\textbf{G2}} \\ \cline{3-4} 
+ 	& & \textbf{S1} & \textbf{S2} \\ \hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{G1}}} & \textbf{S1} & A [ 1,1 ] & B [ 1,0 ] \\ \cline{2-4} 
+	\multicolumn{1}{|c|}{} & \textbf{S2} & C [ 2,1 ] & D [ 0,2 ] \\ \hline
+\end{tabular}
+}
 \end{center}
+\vspace{0.5cm}
 
 Nell'esempio appena descritto, se il giocatore 1 sceglie la strategia S2 (tentando di ottenere il payoff 2), il giocatore 2 sceglierà la strategia S2 (payoff 2) e l'equilibrio si posiziona nella cella D della matrice.\\
 Se al contrario è il giocatore 2 a scegliere la strategia S2 (tentando a sua volta di ottenere il payoff 2), il giocatore 1 sceglierà la strategia S1 (payoff 1) e l'equilibrio si posiziona nella cella B della matrice. Nel suddetto esempio non esiste dunque un equilibrio di Nash.\newline
@@ -120,16 +126,19 @@ Se al contrario è il giocatore 2 a scegliere la strategia S2 (tentando a sua vo
 L'adozione di strategie dominanti non assicura sempre un equilibrio di ottimo sociale. In assenza di informazioni, un gioco non-cooperativo potrebbe convergere verso un equilibrio stabile ma non ottimale.\\
 L'ipotesi è dimostrata nel problema del "dilemma del prigioniero" in cui due attori, pur formulando delle aspettative razionali sul comportamento dell'avversario e adottando strategie dominanti, determinano un equilibrio sub-ottimale ( D ) sia dal punto individuale che sociale.\\
 
+\vspace{0.5cm}
 \begin{center}
-  \begin{tabular}{ | c | c | c | }
-    \cline{2-3}
-    \multicolumn{1}{ c| }{} & \multicolumn{2}{ c| }{\textbf{giocatore 2}} \\ \cline{2-3}
-    \multicolumn{1}{ c| }{} & \textbf{non confessa} & \textbf{confessa} \\ \hline
-    \textbf{non confessa} & A [5;5] & B [0;9] \\ \hline
-    \textbf{confessa} & C [9;0] & D [2;2] \\
-    \hline
-  \end{tabular}
+\scalebox{0.8} {
+  \begin{tabular}{>{\centering\arraybackslash}m{1.5cm}>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
+	\cline{3-4} 
+ 	& & \multicolumn{2}{c|}{\textbf{G2}} \\ \cline{3-4} 
+ 	& & \textbf{non confessa} & \textbf{confessa} \\ \hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{G1}}} & \textbf{non confessa} & A [2,2] & B [2,1] \\ \cline{2-4} 
+	\multicolumn{1}{|c|}{} & \textbf{confessa} & C [1,2] & D [2,2] \\ \hline
+\end{tabular}
+}
 \end{center}
+\vspace{0.5cm}
 
 Nell'esempio il giocatore 1 si aspetta che il giocatore 2 confessi, poiché la strategia dominante del giocatore 2 è confessare poiché grazie alla confessione quest'ultimo otterrebbe la libertà (payoff 9).\\
 Sulla base di questa aspettativa il giocatore 1 sceglie la propria strategia dominante tra B e D, scegliendo a sua volta di confessare per ottenere un payoff uguale a 2. Lo stesso ragionamento viene adottato, in modo inverso, dal giocatore 2.\\
