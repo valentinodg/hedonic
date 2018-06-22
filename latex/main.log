@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  21 JUN 2018 18:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  22 JUN 2018 15:27
 entering extended mode
 **./main.tex
 (main.tex
@@ -151,6 +151,22 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \c@blind@pangramcount=\count120
 \c@blind@pangrammax=\count121
 )
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\multirow\multirow.
+sty"
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip50
+\multirow@cntb=\count122
+\multirow@dima=\skip51
+\bigstrutjot=\dimen121
+)
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen122
+\extrarowheight=\dimen123
+\NC@list=\toks20
+\extratabsurround=\skip52
+\backup@length=\skip53
+)
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
 sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -172,13 +188,13 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 x.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen121
-\Gin@req@width=\dimen122
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks20
-\inpenc@posthook=\toks21
+\inpenc@prehook=\toks21
+\inpenc@posthook=\toks22
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
@@ -512,21 +528,21 @@ Language: italian 2015/03/26 v1.3n Italian support from the babel system
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count122
-\U@D=\dimen123
+\babel@savecnt=\count123
+\U@D=\dimen126
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel.d
 ef")
-\bbl@dirlevel=\count123
+\bbl@dirlevel=\count124
 )
-\it@lettering=\count124
-\it@doublequoteactive=\count125
-\it@ISOcompliance=\count126
+\it@lettering=\count125
+\it@doublequoteactive=\count126
+\it@ISOcompliance=\count127
 ))
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.
 sty"
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count127
+\etb@tempcnta=\count128
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\ragged2e.sty"
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
@@ -541,9 +557,9 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\footmisc\footmisc.
 sty"
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
-\FN@temptoken=\toks22
-\footnotemargin=\dimen124
-\c@pp@next@reset=\count128
+\FN@temptoken=\toks23
+\footnotemargin=\dimen127
+\c@pp@next@reset=\count129
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -553,50 +569,50 @@ Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 .
 )
-\CenteringLeftskip=\skip50
-\RaggedLeftLeftskip=\skip51
-\RaggedRightLeftskip=\skip52
-\CenteringRightskip=\skip53
-\RaggedLeftRightskip=\skip54
-\RaggedRightRightskip=\skip55
-\CenteringParfillskip=\skip56
-\RaggedLeftParfillskip=\skip57
-\RaggedRightParfillskip=\skip58
-\JustifyingParfillskip=\skip59
-\CenteringParindent=\skip60
-\RaggedLeftParindent=\skip61
-\RaggedRightParindent=\skip62
-\JustifyingParindent=\skip63
+\CenteringLeftskip=\skip54
+\RaggedLeftLeftskip=\skip55
+\RaggedRightLeftskip=\skip56
+\CenteringRightskip=\skip57
+\RaggedLeftRightskip=\skip58
+\RaggedRightRightskip=\skip59
+\CenteringParfillskip=\skip60
+\RaggedLeftParfillskip=\skip61
+\RaggedRightParfillskip=\skip62
+\JustifyingParfillskip=\skip63
+\CenteringParindent=\skip64
+\RaggedLeftParindent=\skip65
+\RaggedRightParindent=\skip66
+\JustifyingParindent=\skip67
 ) (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count129
-\scratchdimen=\dimen125
+\scratchcounter=\count130
+\scratchdimen=\dimen128
 \scratchbox=\box28
-\nofMPsegments=\count130
-\nofMParguments=\count131
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count132
-\MPscratchDim=\dimen126
-\MPnumerator=\count133
-\makeMPintoPDFobject=\count134
-\everyMPtoPDFconversion=\toks24
+\nofMPsegments=\count131
+\nofMParguments=\count132
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen129
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
+\everyMPtoPDFconversion=\toks25
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
 base.sty"
@@ -661,8 +677,8 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Info: Redefining \it@ocap on input line 35.
-LaTeX Info: Redefining \it@ccap on input line 35.
+LaTeX Info: Redefining \it@ocap on input line 39.
+LaTeX Info: Redefining \it@ccap on input line 39.
 
 
 File italian.ldf warning: 
@@ -670,11 +686,11 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 35.
+italian.ldf    on input line 39.
 
-Package ragged2e Info: ABD: executing \RaggedRight on input line 35.
+Package ragged2e Info: ABD: executing \RaggedRight on input line 39.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 35.
+LaTeX Info: Redefining \selectfont on input line 39.
 \openout2 = `front.aux'.
 
  (front.tex
@@ -743,36 +759,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--52
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 70--73
+Underfull \hbox (badness 10000) in paragraph at lines 73--76
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--79
+Underfull \hbox (badness 10000) in paragraph at lines 77--82
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 82--85
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--114
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 117--119
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
 
  []
 
-) [8] [9
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--122
+
+ []
+
+) [8] [9] [10
 
 
 ]
@@ -791,20 +807,20 @@ Package blindtext Warning: italian not defined, using English instead.
 )
 
 Package blindtext Warning: italian not defined, using English instead.
-(blindtext)                 on input line 44.
+(blindtext)                 on input line 48.
 
-[10
+[11
 
 
-] [11] (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux)) ) 
+] [12] (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux)) ) 
 Here is how much of TeX's memory you used:
- 4229 strings out of 493305
- 60631 string characters out of 3129802
- 139303 words of memory out of 3000000
- 7669 multiletter control sequences out of 15000+200000
+ 4323 strings out of 493305
+ 62028 string characters out of 3129802
+ 140580 words of memory out of 3000000
+ 7757 multiletter control sequences out of 15000+200000
  11732 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,25p,802b,207s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,10n,25p,802b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/valen/
 AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:
 /Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
@@ -819,9 +835,9 @@ ers/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
 nts/cm/cmsl10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (12 pages, 257033 bytes).
+Output written on main.pdf (13 pages, 257855 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

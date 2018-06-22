@@ -56,16 +56,19 @@ Poiché questo vale per tutti i giocatori, è evidente che se esiste un equilibr
 \justify
 Nella seguente matrice di payoff è rappresentato un esempio di equilibrio di Nash in un gioco non-cooperativo a 2 giocatori (tale equilibrio può essere esteso a N giocatori).
 
+\vspace{0.5cm}
 \begin{center}
-  \begin{tabular}{ | c | c | c | }
-    \cline{2-3}
-    \multicolumn{1}{ c| }{} & \multicolumn{2}{ c| }{\textbf{giocatore 2}} \\ \cline{2-3}
-    \multicolumn{1}{ c| }{} & \textbf{S1} & \textbf{S1} \\ \hline
-    \textbf{S1} & A [2;2] & B [2;1] \\ \hline
-    \textbf{S2} & C [1;2] & D [1;1] \\
-    \hline
-  \end{tabular}
+\scalebox{1} {
+  \begin{tabular}{cc|m{2cm}|c|}
+	\cline{3-4} 
+ 	& & \multicolumn{2}{c|}{\textbf{G2}} \\ \cline{3-4} 
+ 	& & \textbf{S1} & \textbf{S2} \\ \hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{G1}}} & \textbf{S1} & A [2,2] & B [2,1] \\ \cline{2-4} 
+	\multicolumn{1}{|c|}{} & \textbf{S2} & C [1,2] & D [1,1] \\ \hline
+\end{tabular}
+}
 \end{center}
+\vspace{0.5cm}
 
 Nella suddetta matrice ciascun giocatore può scegliere S1 o la strategia S2. Il giocatore 1 si aspetta che il giocatore 2 scelga S1 (strategia dominante) e, quindi, adotta anch'egli la strategia S1 in quanto gli consente di ottenere un payoff individuale pari a 2.\\
 Anche il giocatore 2 formula delle aspettative sulle scelte dell'avversario e si attende che il giocatore 1 scelga S1, scegliendo a sua volta la strategia S1.\\

@@ -1,9 +1,18 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  21 JUN 2018 18:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  22 JUN 2018 15:27
 entering extended mode
 **./chapter_1.tex
 (chapter_1.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
+! Undefined control sequence.
+l.1 \chapter
+            {Introduzione agli equilibri di Nash}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -11,24 +20,10 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1 \begin{flushleft}
-                     
+l.1 \chapter{I
+              ntroduzione agli equilibri di Nash}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 1--1
-[] 
- []
-
-! Undefined control sequence.
-l.3 \chapter
-            {Introduzione agli equilibri di Nash}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 Missing character: There is no I in font nullfont!
 Missing character: There is no n in font nullfont!
@@ -61,23 +56,31 @@ Missing character: There is no N in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no h in font nullfont!
-! Undefined control sequence.
-l.5 \justify
-            
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--2
+[]
+ []
 
 ! Undefined control sequence.
-l.7 \section
+l.3 \section
             {Teoria dei giochi}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \section{T
+              eoria dei giochi}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no T in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -94,6 +97,15 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no i in font nullfont!
+! Undefined control sequence.
+l.4 \justify
+            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 Missing character: There is no L in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -1440,14 +1452,31 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 3--13
+[]
+ []
+
 ! Undefined control sequence.
-l.17 \subsection
+l.14 \subsection
                 {Giochi non-cooperativi}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \subsection{G
+                  iochi non-cooperativi}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no G in font nullfont!
 Missing character: There is no i in font nullfont!
@@ -1470,6 +1499,15 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no v in font nullfont!
 Missing character: There is no i in font nullfont!
+! Undefined control sequence.
+l.15 \justify
+             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 Missing character: There is no I in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no q in font nullfont!
@@ -2385,14 +2423,31 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no v in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 14--21
+[]
+ []
+
 ! Undefined control sequence.
-l.24 \section
+l.22 \section
              {Equilibri di Nash}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 \section{E
+               quilibri di Nash}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no E in font nullfont!
 Missing character: There is no q in font nullfont!
@@ -2409,6 +2464,15 @@ Missing character: There is no N in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no h in font nullfont!
+! Undefined control sequence.
+l.23 \justify
+             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 Missing character: There is no L in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no p in font nullfont!
@@ -3775,14 +3839,31 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 22--32
+[]
+ []
+
 ! Undefined control sequence.
-l.34 \subsection
+l.33 \subsection
                 {Definizione formale}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 \subsection{D
+                  efinizione formale}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no D in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -3802,6 +3883,15 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+l.34 \justify
+             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 Missing character: There is no D in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no f in font nullfont!
@@ -3979,6 +4069,11 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no : in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 33--37
+[]
+ []
+
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no i in font nullfont!
@@ -4032,12 +4127,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 38.
 
 Overfull \hbox (14.00064pt too wide) in paragraph at lines 38--39
-\OML/cmm/m/it/10 i \OT1/cmr/m/n/10 = 
+\OML/cmm/m/it/10 i \OT1/cmr/m/n/10 =
  []
 
 
 Overfull \hbox (36.34705pt too wide) in paragraph at lines 38--39
-\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; [] ; N$  
+\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; [] ; N$ 
  []
 
 Missing character: There is no u in font nullfont!
@@ -4282,12 +4377,12 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no ) in font nullfont!
 
 Overfull \hbox (8.01678pt too wide) in paragraph at lines 39--40
-\OML/cmm/m/it/10 s[]$ 
+\OML/cmm/m/it/10 s[]$
  []
 
 
 Overfull \hbox (3.44513pt too wide) in paragraph at lines 39--40
-\OML/cmm/m/it/10 i$  
+\OML/cmm/m/it/10 i$ 
  []
 
 Missing character: There is no u in font nullfont!
@@ -4524,12 +4619,12 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no ) in font nullfont!
 
 Overfull \hbox (3.44513pt too wide) in paragraph at lines 40--41
-     $\OML/cmm/m/it/10 i$ 
+     $\OML/cmm/m/it/10 i$
  []
 
 
 Overfull \hbox (9.05386pt too wide) in paragraph at lines 40--41
-\OML/cmm/m/it/10 u[]$ 
+\OML/cmm/m/it/10 u[]$
  []
 
 Missing character: There is no U in font nullfont!
@@ -4619,7 +4714,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no ) in font nullfont!
 
 Overfull \hbox (4.65627pt too wide) in paragraph at lines 42--43
-                 $\OML/cmm/m/it/10 e$  
+                 $\OML/cmm/m/it/10 e$ 
  []
 
 
@@ -4668,12 +4763,12 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
 
 Overfull \hbox (9.0007pt too wide) in paragraph at lines 45--47
-$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 i$ 
+$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 i$
  []
 
 
 Overfull \hbox (13.57236pt too wide) in paragraph at lines 45--47
-\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 s[]$ 
+\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 s[]$
  []
 
 Missing character: There is no I in font nullfont!
@@ -4915,16 +5010,6 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no . in font nullfont!
-
-Overfull \hbox (8.98161pt too wide) in paragraph at lines 48--48
-\OML/cmm/m/it/10 s[]$ 
- []
-
-
-Overfull \hbox (8.98161pt too wide) in paragraph at lines 48--48
-\OML/cmm/m/it/10 s[]$  
- []
-
 Missing character: There is no C in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no m in font nullfont!
@@ -5179,16 +5264,6 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
-
-Overfull \hbox (8.98161pt too wide) in paragraph at lines 49--49
-\OML/cmm/m/it/10 s[]$ 
- []
-
-
-Overfull \hbox (8.98161pt too wide) in paragraph at lines 49--49
-\OML/cmm/m/it/10 s[]$ 
- []
-
 Missing character: There is no D in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no q in font nullfont!
@@ -5552,6 +5627,31 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 48--52
+[]
+ []
+
+
+Overfull \hbox (8.98161pt too wide) in paragraph at lines 48--52
+\OML/cmm/m/it/10 s[]$
+ []
+
+
+Overfull \hbox (8.98161pt too wide) in paragraph at lines 48--52
+\OML/cmm/m/it/10 s[]$ 
+ []
+
+
+Overfull \hbox (8.98161pt too wide) in paragraph at lines 48--52
+\OML/cmm/m/it/10 s[]$
+ []
+
+
+Overfull \hbox (8.98161pt too wide) in paragraph at lines 48--52
+\OML/cmm/m/it/10 s[]$
+ []
+
 ! Undefined control sequence.
 l.53 \section
              {Nozioni di base}
@@ -5574,6 +5674,11 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 53--54
+[]
+ []
+
 ! Undefined control sequence.
 l.55 \subsection
                 {Rappresentazione con matrici di payoff e descrizione del pr...
@@ -5655,6 +5760,15 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+l.56 \justify
+             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 Missing character: There is no N in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
@@ -5804,32 +5918,89 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 55--58
+[]
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 60--60
+[] 
+ []
+
+! Undefined control sequence.
+l.61 \scalebox
+              {1} {
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 1 in font nullfont!
+
+! LaTeX Error: Illegal character in array arg.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62   \begin{tabular}{cc|m{2cm}|c|}
+                                    
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Illegal character in array arg.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62   \begin{tabular}{cc|m{2cm}|c|}
+                                    
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@sharp ->\multirow 
+                    {2}{*}{\textbf {G1}}
+l.66 ...lumn{1}{|c|}{\multirow{2}{*}{\textbf{G1}}}
+                                                   & \textbf{S1} & A [2,2] &...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no * in font nullfont!
 Missing character: There is no A in font nullfont!
 Missing character: There is no [ in font nullfont!
 Missing character: There is no 2 in font nullfont!
-Missing character: There is no ; in font nullfont!
+Missing character: There is no , in font nullfont!
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no B in font nullfont!
 Missing character: There is no [ in font nullfont!
 Missing character: There is no 2 in font nullfont!
-Missing character: There is no ; in font nullfont!
+Missing character: There is no , in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no C in font nullfont!
 Missing character: There is no [ in font nullfont!
 Missing character: There is no 1 in font nullfont!
-Missing character: There is no ; in font nullfont!
+Missing character: There is no , in font nullfont!
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no D in font nullfont!
 Missing character: There is no [ in font nullfont!
 Missing character: There is no 1 in font nullfont!
-Missing character: There is no ; in font nullfont!
+Missing character: There is no , in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no ] in font nullfont!
 
-Overfull \hbox (67.6663pt too wide) in paragraph at lines 59--67
+Overfull \hbox (51.20805pt too wide) in paragraph at lines 61--70
  [] 
  []
 
@@ -6510,6 +6681,11 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 73--76
+[]
+ []
+
 Missing character: There is no C in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -7404,8 +7580,13 @@ Missing character: There is no ( in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 77--82
+[]
+ []
+
 ! Undefined control sequence.
-l.79 \subsection
+l.83 \subsection
                 {Equilibri di Nash e ottimo sociale}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7442,6 +7623,15 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+l.84 \justify
+             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 Missing character: There is no N in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
@@ -8228,6 +8418,16 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no D in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 83--88
+[]
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 89--89
+[] 
+ []
+
 Missing character: There is no A in font nullfont!
 Missing character: There is no [ in font nullfont!
 Missing character: There is no 2 in font nullfont!
@@ -8253,13 +8453,13 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no ] in font nullfont!
 
-Overfull \hbox (67.6663pt too wide) in paragraph at lines 85--93
+Overfull \hbox (67.6663pt too wide) in paragraph at lines 90--98
  [] 
  []
 
 ! Undefined control sequence.
-l.95 \subsection
-                {Assenza di equilibri di Nash}
+l.100 \subsection
+                 {Assenza di equilibri di Nash}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -8290,6 +8490,15 @@ Missing character: There is no N in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no h in font nullfont!
+! Undefined control sequence.
+l.101 \justify
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 Missing character: There is no I in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -8539,6 +8748,16 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 100--103
+[]
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 104--104
+[] 
+ []
+
 Missing character: There is no A in font nullfont!
 Missing character: There is no [ in font nullfont!
 Missing character: There is no 2 in font nullfont!
@@ -8564,7 +8783,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no ] in font nullfont!
 
-Overfull \hbox (67.6663pt too wide) in paragraph at lines 99--107
+Overfull \hbox (67.6663pt too wide) in paragraph at lines 105--113
  [] 
  []
 
@@ -8985,8 +9204,13 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 115--117
+[]
+ []
+
 ! Undefined control sequence.
-l.112 \subsection
+l.118 \subsection
                  {Il dilemma del prigioniero : sub-ottimalità individuale e...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9052,6 +9276,15 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+l.119 \justify
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 Missing character: There is no L in font nullfont!
 Missing character: There is no ' in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -9471,6 +9704,16 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 118--122
+[]
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 123--123
+[] 
+ []
+
 Missing character: There is no A in font nullfont!
 Missing character: There is no [ in font nullfont!
 Missing character: There is no 5 in font nullfont!
@@ -9496,7 +9739,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no ] in font nullfont!
 
-Overfull \hbox (166.81287pt too wide) in paragraph at lines 117--125
+Overfull \hbox (166.81287pt too wide) in paragraph at lines 124--132
  [] 
  []
 
@@ -10333,11 +10576,11 @@ Missing character: There is no . in font nullfont!
 
  
 Here is how much of TeX's memory you used:
- 14 strings out of 493305
- 252 string characters out of 3129802
- 69825 words of memory out of 3000000
- 3664 multiletter control sequences out of 15000+200000
+ 15 strings out of 493305
+ 260 string characters out of 3129802
+ 63825 words of memory out of 3000000
+ 3665 multiletter control sequences out of 15000+200000
  3948 words of font info for 15 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 18i,7n,13p,486b,253s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 18i,7n,16p,486b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

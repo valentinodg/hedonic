@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {1.3.2}Equilibri di Nash e ottimo sociale}{7}
 \contentsline {subsection}{\numberline {1.3.3}Assenza di equilibri di Nash}{7}
 \contentsline {subsection}{\numberline {1.3.4}Il dilemma del prigioniero : sub-ottimalit\IeC {\`a} individuale e sociale}{8}
-\contentsline {part}{II\hspace {1em}Gioco della K-Colorazione Generalizzata}{9}
-\contentsline {chapter}{\numberline {2}Capitolo 2}{10}
-\contentsline {section}{\numberline {2.1}Sezione 1}{10}
-\contentsline {subsection}{\numberline {2.1.1}Sottosezione 1}{10}
+\contentsline {part}{II\hspace {1em}Gioco della K-Colorazione Generalizzata}{10}
+\contentsline {chapter}{\numberline {2}Capitolo 2}{11}
+\contentsline {section}{\numberline {2.1}Sezione 1}{11}
+\contentsline {subsection}{\numberline {2.1.1}Sottosezione 1}{11}
