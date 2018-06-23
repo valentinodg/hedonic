@@ -1,9 +1,35 @@
-\chapter{Capitolo 2}
+\chapter{Introduzione}
 \justify
-\blindtext
-\section{Sezione 1}
+Esaminiamo ora gli equilibri di Nash puri per i giochi della k-colorazione generalizzata nei quali viene fornito un grafo orientato e un insieme di k colori.\\
+I nodi rappresentano i giocatori e gli archi catturano i loro reciproci interessi.\\
+La strategia di ciascun giocatore è composta da k colori.\\
+L'utilità di un giocatore v in un dato stato o colorazione è data dalla somma dei pesi degli archi (v, u) incidenti a v tale che il colore scelto da v sia diverso da quello scelto da u, più il profitto guadagnato dall'utilizzo del colore scelto.\\
+Per prima cosa dimostriamo che i giochi della k-colorazione generalizzata sono convergenti e dunque esiste sempre almeno un equilibrio di Nash per ogni istanza del gioco in questione.\\
+Valutiamo dunque in seguito una descrizione delle prestazioni dei giochi della k-colorazione generalizzata per mezzo delle nozioni largamente usate di prezzo dell'anarchia (price of anarchy) e di prezzo della stabilità (price of stability).\\
+Forniamo inoltre limiti stretti per 2 tipi di benessere sociale ampiamente utilizzati, il benessere sociale utilitario (utilitarian social welfare) e il benessere sociale egalitario (egalitarian social welfare).\newline
+
+\section{Descrizione generale}
 \justify
-\blindtext
-\subsection{Sottosezione 1}
+Le istanze appartenenti al gioco della k-colorazione generalizzata sono giocati su grafi non-orientati pesati in cui i nodi corrispondono ai giocati e in cui gli archi identificano le connessioni sociali o le relazioni tra i giocatori.\\
+Il set di strategie di ciascun giocatore + un insieme di k colori disponibili (assumiamo che i colori siano gli stessi per ogni giocatore).\\
+Quando i giocatori selezionano un colore inducono una colorazione k (o semplicemente una colorazione).\\
+Ciascun giocatore possiede una funzione di profitto legata all'apprezzamento da parte di quest'ultimo del colore scelto (vale per tutti i colori disponibili per il giocatore).\\
+Data una colorazione, l'utilità (o il guadagno) di un giocatore v colorato con il colore i è la somma dei pesi degli archi (v, u) incidenti a v, tale che il colore scelto da v è diverso da quello scelto da u, più il profitto derivante dalla scelta del colore i da parte del giocatore v.\\
+Assumiamo che i giocatori siano egoisti, dunque un concetto di soluzione ben noto per questo tipo di impostazione è l'equilibrio di Nash.\\
+L'equilibrio di Nash è uno dei concetti più importanti nella teoria dei giochi e fornisce una soluzione stabile che è robusta alle deviazioni dei singoli giocatori.\\
+Formalmente, una colorazione è un equilibrio di Nash puro se nessun giocatore può migliorare la propria utilità deviando unilateralmente dalla proria strategia attuale.\\
+L'egoismo dei giocatori può causare in molti casi la perdita di benessere sociale e quindi una soluzione stabile non è sempre buona rispetto al benessere della società.\newline
+
+Consideriamo ora 2 nozioni di benessere sociale, naturali e ampiamente utilizzate.\\
+Data una colorazione k, il benessere sociale utilitario (utilitarian social welfare) è definito come la somma delle utilità dei giocatori nella colorazione k, mentre il benessere sociale egalitario (egalitarian sociale welfare) è definito come l'utilità minima tra tutti i giocatori nella colorazione k.\newline
+
+Utilizziamo inoltre 2 metodi per misurare la bontà di un equilibrio di Nash rispetto a un benessere sociale, il prezzo dell'anarchia (price of anarchy) e il prezzo della stabilità (price of stability).\\
+Il prezzo dell'anarchia descrive, nel peggiore dei casi, come l'efficienza di un sistema degrada a causa del comportamento egoistico dei suoi giocatori, mentre il prezzo della stabilità ha un naturale significato di stabilità, poiché è la soluzione ottimale tra quelle che possono essere accettate da giocatori egoisti.\\
+Studiamo ora l'esistenza e le performance degli equilibri di Nash nei giochi della k-colorazione generalizzata.\\
+Ci concentriamo solo sui grafi non-orientati poiché per i grafi orientati anche il problema di decidere se un'istanza ammetta un equilibrio di Nash è un problema difficile (NP-Hard), inoltre esistono casi per i quali un equilibrio di Nash non esiste affatto.
+
+\subsection{Nozioni sul problema}
 \justify
-\blindtext
+Sappiamo che in caso di grafi non-orientati non-pesati è possibile calcolare un equilibrio di Nash in tempo polinomiale.
+Nel nostro caso, il problema di calcolare un equilibrio di Nash su grafi non-orientati pesati è PLS-Completo anche per \(k = 2\), dato che il gioco del taglio massimo (Max-cut game) è un caso speciale del nostro gioco.
+
