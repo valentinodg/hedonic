@@ -193,7 +193,14 @@ Se al contrario è il giocatore 2 a scegliere la strategia S2 (tentando a sua vo
 \subsection{Il dilemma del prigioniero : sub-ottimalità individuale e sociale}
 \justify
 L'adozione di strategie dominanti non assicura sempre un equilibrio di ottimo sociale. In assenza di informazioni, un gioco non-cooperativo potrebbe convergere verso un equilibrio stabile ma non ottimale.\\
-L'ipotesi è dimostrata nel problema del "dilemma del prigioniero" in cui due attori, pur formulando delle aspettative razionali sul comportamento dell'avversario e adottando strategie dominanti, determinano un equilibrio sub-ottimale ( D ) sia dal punto individuale che sociale.\\
+L'ipotesi è dimostrata nel problema del "dilemma del prigioniero" in cui due attori, pur formulando delle aspettative razionali sul comportamento dell'avversario e adottando strategie dominanti, determinano un equilibrio sub-ottimale ( D ) sia dal punto individuale che sociale.\newline
+La seguente matrice payoff evidenzia il tipico caso del dilemma del prigioniero : vi sono 2 giocatori separati in stanze differenti, senza che abbiano la possibilità di comunicare (informazione imperfetta) ; i 2 giocatori sono accusati di un reato e interrogati contemporaneamente.
+
+\begin{itemize}
+	\item il giocatore che confessa il reato accusando l'altro ottiene la scarcerazione (utilità 9), mentre il giocatore accusato subisce il massimo della pena (utilità 0)
+	\item se entrambi i giocatori evitano di confessare, ai 2 viene applicata un pena molto lieve (utilità 5)
+	\item se entrambi i giocatori confessano, vengono condannati alla pena ordinaria (utilità 2)
+\end{itemize}
 
 \vspace{0.5cm}
 \begin{table}[h]
@@ -205,8 +212,8 @@ L'ipotesi è dimostrata nel problema del "dilemma del prigioniero" in cui due at
 	\cline{3-4}
  	& & \multicolumn{2}{c|}{\textbf{G2}} \\ \cline{3-4}
  	& & \textbf{non confessa} & \textbf{confessa} \\ \hline
-	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{G1}}} & \textbf{non confessa} & A [ 2, 2 ] & B [ 2, 1 ] \\ \cline{2-4}
-	\multicolumn{1}{|c|}{} & \textbf{confessa} & C [ 1, 2 ] & D [ 2, 2 ] \\ \hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{G1}}} & \textbf{non confessa} & A [ 5, 5 ] & B [ 0, 9 ] \\ \cline{2-4}
+	\multicolumn{1}{|c|}{} & \textbf{confessa} & C [ 9, 0 ] & D [ 2, 2 ] \\ \hline
 \end{tabular}
 
 }
@@ -216,7 +223,9 @@ L'ipotesi è dimostrata nel problema del "dilemma del prigioniero" in cui due at
 \end{table}
 \vspace{0.5cm}
 
-Nell'esempio il giocatore 1 si aspetta che il giocatore 2 confessi, poiché la strategia dominante del giocatore 2 è confessare poiché grazie alla confessione quest'ultimo otterrebbe la libertà (payoff 9).\\
+Nell'esempio il giocatore 1 si aspetta che il giocatore 2 confessi, poiché la strategia dominante del giocatore 2 è confessare, grazie alla confessione quest'ultimo otterrebbe la libertà (payoff 9).\\
 Sulla base di questa aspettativa il giocatore 1 sceglie la propria strategia dominante tra B e D, scegliendo a sua volta di confessare per ottenere un payoff uguale a 2. Lo stesso ragionamento viene adottato, in modo inverso, dal giocatore 2.\\
 L'equilibrio D è un equilibrio di Nash ed è un equilibrio stabile poiché nessuno dei 2 giocatori ha interessa a modificare le proprie scelte.
-In tale equilibrio però entrambi i giocatori ottengono un payoff sub-ottimale pari a 2 rispetto a quello che avrebbero se decidessero entrambi di non confessare (payoff 5 - equilibrio A) e in più l'equilibrio D presenta un valore di ottimo sociale (4) inferiore rispetto a quello che si può ottenere dall'equilibrio A (10) che rappresenta l'ottimo individuale e sociale del gioco.
+In tale equilibrio però entrambi i giocatori ottengono un payoff sub-ottimale pari a 2 rispetto a quello che avrebbero se decidessero entrambi di non confessare (payoff 5 - equilibrio A) e in più l'equilibrio D presenta un valore di ottimo sociale (4) inferiore rispetto a quello che si potrebbe ottenere dall'equilibrio A (10) che rappresenta l'ottimo individuale e sociale del gioco.\newline
+
+In conclusione, il dilemma del prigioniero rappresenta una situazione in cui le scelte individuali del giocatori, pur essendo strategie dominanti, determinano un equilibrio inefficiente. Nel dilemma del prigioniero l'equilibrio del gioco non è né un ottimo individuale né un ottimo sociale.\newline
