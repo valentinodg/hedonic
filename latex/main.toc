@@ -17,3 +17,5 @@
 \contentsline {section}{\numberline {2.1}Descrizione generale}{12}
 \contentsline {subsection}{\numberline {2.1.1}Nozioni sul problema}{14}
 \contentsline {section}{\numberline {2.2}Dettagli sul modello}{14}
+\contentsline {part}{III\hspace {1em}Modellazione degli algoritmi}{15}
+\contentsline {part}{IV\hspace {1em}Sperimentazione}{16}

@@ -38,11 +38,11 @@ Inoltre il gioco della k-colorazione generalizzata è un'estensione del gioco de
 
 \section{Dettagli sul modello}
 \justify
-Dato un grafo semplice non-orientato \(G = (V, E, w)\), dove \(|V| = n\), \(|E| = m\) e \(w : E\rightarrow\mathds{R}_\geq0\) è la funzione per i pesi sugli archi che associa un peso positivo a ciascun arco.\\
+Dato un grafo semplice non-orientato \(G = (V, E, w)\), dove \(|V| = n\), \(|E| = m\) e \(w : E\rightarrow\mathds{R}_{\geq 0}\) è la funzione per i pesi sugli archi che associa un peso positivo a ciascun arco.\\
 Denotiamo con \(\delta^v (G)\) la domma dei pesi di tutti gli archi incidenti a v.\\
-L'insieme dei nodi con cui un nodo v ha un arco in comune è chiamato insieme dei vicini di v (insieme dei nodi adiancenti a v).\\
-Un'istanza di gioco della k-colorazione generalizzata è un tupla\((G, K, P)\). \(G = (V, E, w)\) è un grafo pesato non-orientato senza self loops, in cui ogni \(v \in V\) è un giocatore egoista.\\
+L'insieme dei nodi con cui un nodo v ha un arco in comune è chiamato insieme dei vicini di v (insieme dei nodi adiacenti a v).\\
+Un'istanza di gioco della k-colorazione generalizzata è un tupla \((G, K, P)\). \(G = (V, E, w)\) è un grafo pesato non-orientato senza self loops, in cui ogni \(v \in V\) è un giocatore egoista.\\
 K è un insieme di colori disponibili (assumiamo \(K \geq 0\)).\\
 Il set di strategia di ciascun giocatore è dato dai k colori disponibili, ovvero i giocatori hanno lo stesso insieme di azioni.\\
-Denotiamo con \(P : V \times K \rightarrow \mathds{R}_\geq 0\) la funzione di profitto del colore, che definisce quanto un giocatore apprezza un colore, ovvero se il giocatore v scegli di usare il colore i, allora guadagna \(P_v (i)\).\\
-Per ciascun giocatore v, definiamo \(P_v^M\) come il massimo profitto che v può guadagnare da un colore, formalmente \(P_v^M = max_i=1,\ldots,k P_v (i)\).\\
+Denotiamo con \(P : V \times K \rightarrow \mathds{R}_{\geq 0}\) la funzione di profitto del colore, che definisce quanto un giocatore apprezza un colore, ovvero se il giocatore v scegli di usare il colore i, allora guadagna \(P_v (i)\).\\
+Per ciascun giocatore v, definiamo \(P_v^M\) come il massimo profitto che v può guadagnare da un colore, formalmente \(P_v^M = max_{i=1,\ldots,k} P_v (i)\).\\
