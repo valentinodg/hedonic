@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.8)  26 JUN 2018 18:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.8)  26 JUN 2018 18:30
 entering extended mode
 **./main.tex
 (main.tex
@@ -1129,33 +1129,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--38
 
  []
 
-
-Overfull \hbox (6.82544pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
-mr/m/n/10.95 13
- []
-
 [13]
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 41.
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\doublestroke\udsro
 m.fd"
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
-Overfull \hbox (6.82544pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
-mr/m/n/10.95 14
- []
-
-[14]
+) [14]
 Underfull \hbox (badness 10000) in paragraph at lines 62--68
 
- []
-
-
-Overfull \hbox (6.82544pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
-mr/m/n/10.95 15
  []
 
 [15]
@@ -1190,12 +1172,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
-
-Overfull \hbox (6.82544pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
-mr/m/n/10.95 16
- []
-
 [16]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
@@ -1207,13 +1183,7 @@ Overfull \hbox (5.9792pt too wide) in paragraph at lines 105--105
  of anar-
  []
 
-)
-Overfull \hbox (6.82544pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
-mr/m/n/10.95 17
- []
-
-[17]
+) [17]
 
 LaTeX Warning: Empty bibliography on input line 61.
 
@@ -1249,7 +1219,7 @@ y8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmti10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on main.pdf (18 pages, 332729 bytes).
+Output written on main.pdf (18 pages, 332152 bytes).
 PDF statistics:
  128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

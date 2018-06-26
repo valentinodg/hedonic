@@ -28,7 +28,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{II\hspace {1em}Gioco della K-Colorazione Generalizzata}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Gioco della k-colorazione generalizzata}{12}
+\contentsline {chapter}{\numberline {2}Introduzione}{12}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Descrizione generale}{12}
 \defcounter {refsection}{0}\relax 
@@ -42,6 +42,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.1}Prezzo dell'anarchia utilitario (utilitarian price of anarchy)}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}(Benessere sociale egalitario (egalitarian social welfare))}{17}
+\contentsline {section}{\numberline {2.4}Benessere sociale egalitario (egalitarian social welfare)}{17}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.1}Prezzo dell'anarchia egalitario (egalitarian price of anarchy)}{17}
