@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  26 JUN 2018 02:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  26 JUN 2018 15:41
 entering extended mode
 **./main.tex
 (main.tex
@@ -872,6 +872,7 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 \RaggedRightParindent=\skip88
 \JustifyingParindent=\skip89
 )
+\c@theorem=\count317
 Package biblatex Info: Trying to load language 'italian'...
 Package biblatex Info: ... file 'italian.lbx' found.
 
@@ -883,23 +884,23 @@ File: italian.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count317
-\@quotereset=\count318
+\@quotelevel=\count318
+\@quotereset=\count319
 (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -909,22 +910,22 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' not found.
 
 No file main.bbl.
-Package biblatex Info: Reference section=0 on input line 47.
-Package biblatex Info: Reference segment=0 on input line 47.
+Package biblatex Info: Reference section=0 on input line 49.
+Package biblatex Info: Reference segment=0 on input line 49.
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count319
+\scratchcounter=\count320
 \scratchdimen=\dimen128
 \scratchbox=\box28
-\nofMPsegments=\count320
-\nofMParguments=\count321
+\nofMPsegments=\count321
+\nofMParguments=\count322
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count322
+\MPscratchCnt=\count323
 \MPscratchDim=\dimen129
-\MPnumerator=\count323
-\makeMPintoPDFobject=\count324
+\MPnumerator=\count324
+\makeMPintoPDFobject=\count325
 \everyMPtoPDFconversion=\toks25
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
@@ -946,8 +947,8 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Info: Redefining \it@ocap on input line 47.
-LaTeX Info: Redefining \it@ccap on input line 47.
+LaTeX Info: Redefining \it@ocap on input line 49.
+LaTeX Info: Redefining \it@ccap on input line 49.
 
 
 File italian.ldf warning: 
@@ -955,11 +956,11 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 47.
+italian.ldf    on input line 49.
 
-Package ragged2e Info: ABD: executing \RaggedRight on input line 47.
+Package ragged2e Info: ABD: executing \RaggedRight on input line 49.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 47.
+LaTeX Info: Redefining \selectfont on input line 49.
 \openout2 = `front.aux'.
 
  (front.tex
@@ -1075,7 +1076,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 226--230
  []
 
 [9])
-Underfull \hbox (badness 10000) in paragraph at lines 231--53
+Underfull \hbox (badness 10000) in paragraph at lines 231--55
 
  []
 
@@ -1144,7 +1145,109 @@ Overfull \hbox (6.82544pt too wide) has occurred while \output is active
 mr/m/n/10.95 15
  []
 
-[15])
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 	\(
+        \forall k\), ogni gioco della k-colorazione generalizzata finito \((...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--90
+
+ []
+
+
+LaTeX Warning: Command \` invalid in math mode on input line 92.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.92 ...gioco della k-colorazione generalizzata è
+                                                   al più 2.
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.92 ...gioco della k-colorazione generalizzata è
+                                                   al più 2.
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \` invalid in math mode on input line 92.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.92 ...lla k-colorazione generalizzata è al più
+                                                   2.
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.92 ...lla k-colorazione generalizzata è al più
+                                                   2.
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.93 \end(
+          theorem)
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no � in font cmex10!
+Missing character: There is no � in font cmex10!
+
+Overfull \hbox (99.08466pt too wide) in paragraph at lines 91--94
+[]$\OML/cmm/m/it/10.95 theorem\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 Ilprezzod
+ell[]anarchiaperilgiocodellak \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 coloraz
+ionegeneralizzata[]alpi[]\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 :$\OT1/cmr/m/n
+/10.95 theorem) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+
 Overfull \hbox (6.82544pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
 mr/m/n/10.95 16
@@ -1152,7 +1255,66 @@ mr/m/n/10.95 16
 
 [16]
 
-LaTeX Warning: Empty bibliography on input line 61.
+LaTeX Warning: Command \` invalid in math mode on input line 98.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.98 ...gioco della k-colorazione generalizzata è
+                                                   almeno 2, anche per il ca...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.98 ...gioco della k-colorazione generalizzata è
+                                                   almeno 2, anche per il ca...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.99 \end(
+          theorem)
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no � in font cmex10!
+
+Overfull \hbox (315.59036pt too wide) in paragraph at lines 97--100
+[]$\OML/cmm/m/it/10.95 theorem\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 Ilprezzod
+ell[]anarchiautilitarioperilgiocodellak \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.
+95 colorazionegeneralizzata[]almeno\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; an
+cheperilcasospecialedigrafistellanon \OMS/cmsy/m/n/10.95  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+
+Overfull \hbox (5.9792pt too wide) in paragraph at lines 105--105
+[]\OT1/cmr/bx/n/12 Prezzo del-l'a-nar-chia ega-li-ta-rio (ega-li-ta-rian pri-ce
+ of anar-
+ []
+
+)
+Overfull \hbox (6.82544pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
+mr/m/n/10.95 17
+ []
+
+[17]
+
+LaTeX Warning: Empty bibliography on input line 63.
 
 (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux))
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1160,10 +1322,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10783 strings out of 493305
- 182244 string characters out of 3129802
- 597310 words of memory out of 3000000
- 14137 multiletter control sequences out of 15000+200000
+ 10790 strings out of 493305
+ 182303 string characters out of 3129802
+ 597356 words of memory out of 3000000
+ 14144 multiletter control sequences out of 15000+200000
  13556 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,11n,31p,820b,1290s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1186,9 +1348,9 @@ y8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmti10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on main.pdf (17 pages, 324552 bytes).
+Output written on main.pdf (18 pages, 330793 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
+ 128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
