@@ -1,3 +1,6 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX spellcheck = it_IT
+
 \documentclass[11pt,a4paper,oneside,openany]{book}
 
 %\usepackage{showframe}
@@ -7,6 +10,9 @@
 \usepackage{array}
 \usepackage{amssymb}
 \usepackage{dsfont}
+
+\usepackage{biblatex}
+\addbibresource{bibl.bib}
 
 \renewcommand{\arraystretch}{1.5}
 
@@ -49,7 +55,9 @@
     \part{Gioco della K-Colorazione Generalizzata}
     \include{chapter_2}
     
-    \part{Modellazione degli algoritmi}
-	\part{Sperimentazione}
+    %\part{Modellazione degli algoritmi}
+	%\part{Sperimentazione}
+	
+	\printbibliography
 	
 \end{document}
