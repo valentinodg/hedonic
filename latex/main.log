@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.8)  26 JUN 2018 18:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  27 JUN 2018 01:50
 entering extended mode
 **./main.tex
 (main.tex
@@ -1007,51 +1007,162 @@ qlogowb.png> <./img/disimlogowb.png (PNG copy)>]) (main.toc)
  [1
 
 
-] [2
+] [2]
+[3
 
 ]
 \openout2 = `chapter_1.aux'.
 
-
-(chapter_1.tex
+ (chapter_1.tex
 Capitolo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--13
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--21
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-[3
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+[4
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 24--32
-
- []
-
-[4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 38.
- ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 38.
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--47
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--52
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+
+ []
+
+
+Overfull \hbox (1.4692pt too wide) in paragraph at lines 26--27
+[]\OT1/cmr/m/n/10.95 Il cri-te-rio di com-por-ta-men-to ra-zio-na-le adot-ta-to
+ nei gio-chi non-cooperativi
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 80--83
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
@@ -1059,41 +1170,116 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--83
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--112
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 141--143
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--192
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 226--230
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
-[9])
-Underfull \hbox (badness 10000) in paragraph at lines 231--53
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
-[10] [11
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 267--53
+
+ []
+
+[12] [13
 
 
 ]
@@ -1102,58 +1288,201 @@ Underfull \hbox (badness 10000) in paragraph at lines 231--53
  (chapter_2.tex
 Capitolo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--10
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--22
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-[12
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+[14
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 23--25
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--30
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--38
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-[13]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 41.
 
-("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\doublestroke\udsro
-m.fd"
-File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [14]
-Underfull \hbox (badness 10000) in paragraph at lines 62--68
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
 [15]
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 63.
+
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\doublestroke\udsro
+m.fd"
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+
+ []
+
+
+Overfull \hbox (0.39459pt too wide) in paragraph at lines 69--70
+[]\OT1/cmr/m/n/10.95 Un'istanza di gio-co del-la k-colorazione ge-ne-ra-liz-za-
+ta e un tu-pla $(\OML/cmm/m/it/10.95 G; K; P\OT1/cmr/m/n/10.95 )$.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
 
-Overfull \hbox (20.08253pt too wide) in paragraph at lines 74--75
-\OT1/cmr/bx/n/10.95 Proposizione 1. $\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 k
-$\OT1/cmr/m/it/10.95 , ogni gio-co del-la k-colorazione ge-ne-ra-liz-za-ta fi-n
-i-to $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 G; K; P\OT1/cmr/m/n/10.95 )$
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--80
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
@@ -1163,7 +1492,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--84
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--90
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
@@ -1172,31 +1521,156 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
 
-Overfull \hbox (5.9792pt too wide) in paragraph at lines 105--105
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Overfull \hbox (20.08253pt too wide) in paragraph at lines 121--122
+\OT1/cmr/bx/n/10.95 Proposizione 1. $\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 k
+$\OT1/cmr/m/it/10.95 , ogni gio-co del-la k-colorazione ge-ne-ra-liz-za-ta fi-n
+i-to $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 G; K; P\OT1/cmr/m/n/10.95 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
+
+Overfull \hbox (5.9792pt too wide) in paragraph at lines 158--158
 []\OT1/cmr/bx/n/12 Prezzo del-l'a-nar-chia ega-li-ta-rio (ega-li-ta-rian pri-ce
  of anar-
  []
 
-) [17]
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+) [21] [22
+
+
+] [23
+
+]
 
 LaTeX Warning: Empty bibliography on input line 61.
 
 (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10862 strings out of 493305
- 183219 string characters out of 3129803
- 598548 words of memory out of 3000000
- 14212 multiletter control sequences out of 15000+200000
+ 10866 strings out of 493305
+ 183263 string characters out of 3129802
+ 597585 words of memory out of 3000000
+ 14216 multiletter control sequences out of 15000+200000
  13556 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,11n,31p,820b,1290s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1219,9 +1693,9 @@ y8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmti10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on main.pdf (18 pages, 332152 bytes).
+Output written on main.pdf (24 pages, 338002 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
+ 147 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

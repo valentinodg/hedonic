@@ -1,69 +1,115 @@
 \chapter{Introduzione}
 \justify
 Esaminiamo ora gli equilibri di Nash puri per il gioco della k-colorazione generalizzata nel quale viene fornito un grafo orientato e un insieme di k colori.\\
+
 I nodi rappresentano i giocatori e gli archi catturano i loro reciproci interessi.\\
+
 La strategia di ciascun giocatore è composta da k colori.\\
+
 L'utilità di un giocatore v in un dato stato o colorazione è data dalla somma dei pesi degli archi \((v, u)\) incidenti a v tale che il colore scelto da v sia diverso da quello scelto da u, più il profitto guadagnato dall'utilizzo del colore scelto.\\
+
 Per prima cosa dimostriamo che il gioco della k-colorazione generalizzata è convergente e dunque esiste sempre almeno un equilibrio di Nash per ogni istanza del gioco in questione.\\
+
 Valutiamo dunque in seguito una descrizione delle prestazioni dei giochi della k-colorazione generalizzata per mezzo delle nozioni largamente utilizzate di prezzo dell'anarchia (price of anarchy) e prezzo della stabilità (price of stability).\\
-Forniamo inoltre limiti stretti per 2 tipi di benessere sociale ampiamente utilizzati, il benessere sociale utilitario (utilitarian social welfare) e il benessere sociale egalitario (egalitarian social welfare).\newline
+
+Forniamo inoltre limiti stretti per 2 tipi di benessere sociale ampiamente utilizzati, il benessere sociale utilitario (utilitarian social welfare) e il benessere sociale egalitario (egalitarian social welfare).\\
 
 \section{Descrizione generale}
 \justify
 Le istanze appartenenti al gioco della k-colorazione generalizzata sono giocati su grafi non-orientati pesati in cui i nodi corrispondono ai giocati e in cui gli archi identificano le connessioni sociali o le relazioni tra i giocatori.\\
+
 Il set di strategie di ciascun giocatore è un insieme di k colori disponibili (assumiamo che i colori siano gli stessi per ogni giocatore).\\
+
 Quando i giocatori selezionano un colore inducono una colorazione k (o semplicemente una colorazione).\\
+
 Ciascun giocatore possiede una funzione di profitto legata all'apprezzamento da parte di quest'ultimo del colore scelto (vale per tutti i colori disponibili per il giocatore).\\
+
 Data una colorazione, l'utilità (o il guadagno) di un giocatore v colorato con il colore i è la somma dei pesi degli archi \((v, u)\) incidenti a v, tale che il colore scelto da v è diverso da quello scelto da u, più il profitto derivante dalla scelta del colore i da parte del giocatore v.\\
+
 Assumiamo che i giocatori siano egoisti, dunque un concetto di soluzione ben noto per questo tipo di impostazione è l'equilibrio di Nash.\\
+
 L'equilibrio di Nash è uno dei concetti più importanti nella teoria dei giochi e fornisce una soluzione stabile che è robusta alle deviazioni dei singoli giocatori.\\
+
 Formalmente, una colorazione è un equilibrio di Nash puro se nessun giocatore può migliorare la propria utilità deviando unilateralmente dalla propria strategia attuale.\\
-L'egoismo dei giocatori può causare in molti casi la perdita di benessere sociale e quindi una soluzione stabile non è sempre buona rispetto al benessere della società.\newline
+
+L'egoismo dei giocatori può causare in molti casi la perdita di benessere sociale e quindi una soluzione stabile non è sempre buona rispetto al benessere della società.\\
 
 Consideriamo ora 2 nozioni di benessere sociale, naturali e ampiamente utilizzate.\\
-Data una colorazione k, il benessere sociale utilitario (utilitarian social welfare) è definito come la somma delle utilità dei giocatori nella colorazione k, mentre il benessere sociale egalitario (egalitarian sociale welfare) è definito come l'utilità minima tra tutti i giocatori nella colorazione k.\newline
+
+Data una colorazione k, il benessere sociale utilitario (utilitarian social welfare) è definito come la somma delle utilità dei giocatori nella colorazione k, mentre il benessere sociale egalitario (egalitarian sociale welfare) è definito come l'utilità minima tra tutti i giocatori nella colorazione k.\\
 
 Utilizziamo inoltre 2 metodi per misurare la bontà di un equilibrio di Nash rispetto a un benessere sociale, il prezzo dell'anarchia (price of anarchy) e il prezzo della stabilità (price of stability).\\
+
 Il prezzo dell'anarchia descrive, nel peggiore dei casi, come l'efficienza di un sistema degrada a causa del comportamento egoistico dei suoi giocatori, mentre il prezzo della stabilità ha un naturale significato di stabilità, poiché è la soluzione ottimale tra quelle che possono essere accettate da giocatori egoisti.\\
+
 Studiamo ora l'esistenza e le performance degli equilibri di Nash nei giochi della k-colorazione generalizzata.\\
-Ci concentriamo solo sui grafi non-orientati poiché per i grafi orientati anche il problema di decidere se un'istanza ammetta un equilibrio di Nash è un problema difficile (NP-Hard), inoltre esistono casi per i quali un equilibrio di Nash non esiste affatto.\newline
+
+Ci concentriamo solo sui grafi non-orientati poiché per i grafi orientati anche il problema di decidere se un'istanza ammetta un equilibrio di Nash è un problema difficile (NP-Hard), inoltre esistono casi per i quali un equilibrio di Nash non esiste affatto.\\
 
 \subsection{Nozioni sul problema}
 \justify
 Sappiamo che in caso di grafi non-orientati non-pesati è possibile calcolare un equilibrio di Nash in tempo polinomiale.\\
+
 Nel nostro caso, il problema di calcolare un equilibrio di Nash su grafi non-orientati pesati è PLS-Completo anche per \(k = 2\), dato che il gioco del taglio massimo (Max-cut game) è un caso speciale del nostro gioco.\\
+
 Proprio riguardo questo aspetto è bene delineare la relazione che esiste tra il gioco della k-colorazione generalizzata e il gioco del taglio massimo, un problema molto importante e ampiamente trattato in letteratura.\\
+
 Il gioco della k-colorazione generalizzata è un estensione del gioco del taglio massimo, infatti quest'ultimo può essere ottenuto ponendo a 0 i profitti relativi ai colori e ponendo a 2 il numero di colori presenti nel set disponibile per ciascun giocatore.\\
-Inoltre il gioco della k-colorazione generalizzata è un'estensione del gioco della k-colorazione nel quale vi sono k-colori ma i profitti relativi ai colori sono impostati a 0.\newline
+
+Inoltre il gioco della k-colorazione generalizzata è un'estensione del gioco della k-colorazione nel quale vi sono k-colori ma i profitti relativi ai colori sono impostati a 0.\\
 
 \section{Dettagli sul modello}
 \justify
 Dato un grafo semplice non-orientato \(G = (V, E, w)\), dove \(|V| = n\), \(|E| = m\) e \(w : E\rightarrow\mathds{R}_{\geq 0}\) è la funzione per i pesi sugli archi che associa un peso positivo a ciascun arco.\\
+
 Denotiamo con \(\delta^v (G) = \sum_{u \in V : \{v, u\} \in E} w(\{v, u\})\) la somma dei pesi di tutti gli archi incidenti a v.\\
+
 L'insieme dei nodi con cui un nodo v ha un arco in comune è chiamato insieme dei vicini di v (insieme dei nodi adiacenti a v).\\
+
 Un'istanza di gioco della k-colorazione generalizzata è un tupla \((G, K, P)\). \(G = (V, E, w)\) è un grafo pesato non-orientato senza self loops, in cui ogni \(v \in V\) è un giocatore egoista.\\
+
 K è un insieme di colori disponibili (assumiamo \(K \geq 0\)).\\
+
 Il set di strategia di ciascun giocatore è dato dai k colori disponibili, ovvero i giocatori hanno lo stesso insieme di azioni.\\
+
 Denotiamo con \(P : V \times K \rightarrow \mathds{R}_{\geq 0}\) la funzione di profitto del colore, che definisce quanto un giocatore apprezza un colore, ovvero se il giocatore v scegli di usare il colore i, allora guadagna \(P_v (i)\).\\
+
 Per ciascun giocatore v, definiamo \(P_v^M\) come il massimo profitto che v può guadagnare da un colore, formalmente \(P_v^M = max_{i=1,\ldots,k} P_v (i)\).\\
+
 Quando \(P_v (i) = 0 \forall v \in V\) e \(\forall i \in k\), si ha il caso in cui non vi sono profitti associati ai colori scelti, quindi possiamo riferirci a questo gioco come a un gioco della k-colorazione (graph k-coloring game).\\
+
 Uno stato del gioco \(c = \{c_1,\ldots,c_n\}\) è una k-colorazione, o semplicemente una colorazione, dove \(c_v\) è il colore (cioè un numero \(1 \leq c_v \leq k\)) scelto dal giocatore v.\\
+
 In una determinata colorazione c, il payoff (o l'utilità) di un giocatore v è la somma dei pesi degli archi \((v, u)\) incidenti a v, tale che il colore scelto da v è diverso da quello scelto da u, oltre al profitto ottenuto dall'utilizzo il colore scelto.\\
+
 In modo formale, per una colorazione c, il payoff di un giocatore v è \(\mu_c (v) = \sum_{u \in V:\{v, u\} \in E \wedge c_v \neq c_u} w(\{v, u\}) + P_v(c_v)\).\\
+
 Quando un arco \((v, u)\) fornisce utilità ai suoi endpoints in una colorazione c, cioè quando \(c_v \neq c_u\) diciamo che tale arco è corretto.\\
+
 diciamo anche che un arco \((v, u)\) è monocromatico in una colorazione c quanto \(c_v = c_u\).\\
+
 Sia \(c_{-v}, c_u^{\prime}\) la colorazione ottenuta da c cambiando la strategia del giocatore v da \(c_v\) a \(c_v^{\prime}\).\\
+
 Data una colorazione \(c = \{c_1,\ldots,c_n\}\), una mossa migliorativa (improving move) del giocatore v nella colorazione c è una strategia \(c_v^{\prime}\) tale che \(\mu_{(c_{-v}, c_v^{\prime})} (v) > \mu_c (v)\).\\
+
 Uno stato del gioco è un equilibrio di Nash puro o equilibrio stabile se e so se nessun giocatore può effettuare una mossa migliorativa.\\
+
 In modo formale, \(c = \{c_1,\ldots,c_n\}\) è un equilibrio di Nash se \(\mu_c (v) \geq \mu_{(c_{-v}, c_v^{\prime})} (v)\) per ogni possibile colorazione \(c_v^{\prime}\) e per ogni giocatore \(v \in V\).\\
-Una dinamica di miglioramento (improving dynamic), o brevemente dinamica (dynamic), è una sequenza di mosse migliorative. Si dice che un gioco sia convergente se, dato un qualsiasi stato iniziale c, qualsiasi sequenza di mosse migliorative porta a un equilibrio di Nash.\newline
+
+Una dinamica di miglioramento (improving dynamic), o brevemente dinamica (dynamic), è una sequenza di mosse migliorative. Si dice che un gioco sia convergente se, dato un qualsiasi stato iniziale c, qualsiasi sequenza di mosse migliorative porta a un equilibrio di Nash.\\
+
 Data una colorazione c, definiamo una funzione di benessere sociale utilitario (utilitarian social welfare) \(SW_{UT}(c)\) e una funzione di benessere sociale egalitario (egalitarian sociale welfare) \(SW_{EG}(c)\) come segue :
 \[SW_{UT} (c) = \sum_{v \in V} \mu_c (v) = \sum_{v \in V} P_v(c_v) + \sum_{\{v, u\} \in E : c_v \neq c_u} 2w(\{v, u\})\]
 \[SW_{EG} (c) = min_{v \in V} \mu_c (v)\]
-Indichiamo con C l'insieme di tutte le possibili colorazioni e denotiamo con Q l'insieme di tutte le colorazioni stabili. Data una funzione di benessere sociale SW, definiamo il prezzo dell'anarchia (price of anarchy) (PoA) per il gioco della k-colorazione generalizzata come il rapporto tra il massimo benessere sociale tra tutte le possibili colorazioni sul minimo benessere sociale tra tutte le possibili colorazioni stabili.\\
+Indichiamo con C l'insieme di tutte le possibili colorazioni e denotiamo con Q l'insieme di tutte le colorazioni stabili.\\
+
+Data una funzione di benessere sociale SW, definiamo il prezzo dell'anarchia (price of anarchy) (PoA) per il gioco della k-colorazione generalizzata come il rapporto tra il massimo benessere sociale tra tutte le possibili colorazioni sul minimo benessere sociale tra tutte le possibili colorazioni stabili.\\
+
 In modo formale, \(PoA = \frac{max_{c \in C} SW(c)}{min_{c^{\prime} \in Q} SW(c^{\prime})}\).\\
+
 Definiamo inoltre il prezzo della stabilità (price of stability) (PoS) per il gioco della k-colorazione generalizzata come il rapporto tra il massimo benessere sociale tra tutte le possibili colorazioni sul massimo benessere sociale tra tutte le possibili colorazioni stabili.\\
 In modo formale, \(PoS = \frac{max_{c \in C} SW(c)}{max_{c^{\prime} \in Q} SW(c^{\prime})}\).\\
+
 Intuitivamente, il PoA (rispettivamente PoS) ci dice quanto è peggiore il benessere sociale nel peggiore (rispettivamente migliore) equilibrio di Nash, relativo al benessere sociale dell'ottimo.\\
 
 \subsection{Convergenza ed esistenza degli equilibri di Nash}
@@ -71,30 +117,37 @@ Intuitivamente, il PoA (rispettivamente PoS) ci dice quanto è peggiore il benes
 Per prima cosa mostriamo che il gioco della k-colorazione generalizzata è convergente. Ciò implica chiaramente che gli equilibri di Nash esistono sempre.\\
 
 \begin{prop}
-	\(\forall k\), ogni gioco della k-colorazione generalizzata finito \((G, K, P)\) è convergente
+\label{proposition1}
+	\(\forall k\), ogni gioco della k-colorazione generalizzata finito \((G, K, P)\) è convergente.
 \end{prop}
 
 Notiamo che, da un lato, se il grafo non è pesato, la dinamica, partendo dalla colorazione in cui ogni giocatore v selezione il colore in modo tale da ottenere il massimo profitto possibile, che è, il colore i tale che \(P_v (i) = P_v^M\), converge ad un equilibrio di Nash in al massimo \(|E|\) mosse migliorative.\\
+
 D'altra parte, se il grafo è pesato, il calcolo di un equilibrio di Nash è PLS-Completo.\\
-Ne consegue il fatto che, quando \(k = 2\), il nostro gioco è una generalizzazione del gioco del taglio (cut game) che è uno dei primi problemi che si sono dimostrati essere PLS-Completi.\newline
+
+Ne consegue il fatto che, quando \(k = 2\), il nostro gioco è una generalizzazione del gioco del taglio (cut game) che è uno dei primi problemi che si sono dimostrati essere PLS-Completi.\\
 
 \section{Benessere sociale utilitario (utilitarian social welfare)}
 \justify
-In questa sezione ci concentreremo sul benessere sociale utilitario. Mostriamo limiti stretti per il prezzo dell'anarchia utilitario e tralasciamo quelli per il prezzo della stabilità utilitario.\newline
+In questa sezione ci concentreremo sul benessere sociale utilitario. Mostriamo limiti stretti per il prezzo dell'anarchia utilitario e tralasciamo quelli per il prezzo della stabilità utilitario.\\
 
 \subsection{Prezzo dell'anarchia utilitario (utilitarian price of anarchy)}
 \justify
 Ricordiamo che nel caso senza profitti associati ai colori, il prezzo dell'anarchia utilitario è esattamente \(\frac{k}{(k-1)}\).\\
+
 Qui dimostriamo che il gioco della k-colorazione generalizzata il prezzo dell'anarchia utilitario è pari a 2, cioè indipendente dal numero di colori.\\
+
 Iniziamo dimostrando che il prezzo dell'anarchia utilitario è al più 2.\\
 
 \begin{theorem}
+\label{theorem1}
 	Il prezzo dell'anarchia per il gioco della k-colorazione generalizzata è al più 2. 
 \end{theorem}
 
 Mostriamo ora che il prezzo dell'anarchia utilitario è almeno 2 anche per il caso speciale di grafi stella non-pesati.\\
 
 \begin{theorem}
+\label{theorem2}
 	Il prezzo dell'anarchia utilitario per il gioco della k-colorazione generalizzata è almeno 2, anche per il caso speciale di grafi stella non-pesati.
 \end{theorem}
 
@@ -104,3 +157,21 @@ In questa sezione ci concentriamo sul benessere sociale egalitario. Mostriamo li
 
 \subsection{Prezzo dell'anarchia egalitario (egalitarian price of anarchy)}
 \justify
+Per un gioco della k-colorazione (ovvero senza profitti associati ai colori), un limite inferiore per il prezzo dell'anarchia egalitario è fornito.\\
+
+In tal caso, la soluzione ottimale è tale che ciascun giocatore v ha un'utilità uguale al suo grado \(\delta^v\), tuttavia esiste una colorazione stabile in cui ciascun giocatore v ha un'utilità pari a \(\frac{(k-1)}{k} \delta^v\), per qualsiasi numero di colori \(k \geq 2\).\\
+
+Questo risultato insieme al fatto che secondo il pidgehole principle, per qualsiasi colorazione stabile ogni giocatore v raggiunge almeno un'utilità pari a \(\frac{(k-1)}{k} \delta^v\), implica che il prezzo dell'anarchia egalitario è esattamente \(\frac{(k-1)}{k}\) per il gioco della k-colorazione generalizzata.\\
+
+Pertanto ora consideriamo il gioco della k-colorazione generalizzata. Per prima cosa notiamo che l'istanza definita nel Teorema \ref{theorem2} fornisce un limite inferiore di 2 per il prezzo dell'anarchia egalitario.\\
+
+Infatti, nella colorazione ottimale l'utilità minima è 2 ed esiste una colorazione stabile in cui l'utilità minima è 1.\\
+
+Inoltre, si sottolinea che la dimostrazione del Teorema \ref{theorem1} mostra sostanzialmente che per ogni giocatore i, la propria utilità in un qualsiasi risultato stabile è almeno la metà del profitto che ha nell'ottimo.\\
+
+Quindi otteniamo facilmente il seguente teorema relativo al prezzo dell'anarchia egalitario per il gioco della k-colorazione generalizzata.
+
+\begin{theorem}
+\label{theorem3}
+	Il prezzo dell'anarchia egalitario per il gioco della k-colorazione generalizzata è 2.
+\end{theorem}

@@ -3,58 +3,81 @@
 \section{Teoria dei giochi}
 \justify
 La teoria dei giochi è la disciplina scientifica che si occupa dello studio e dell'analisi del comportamento e delle decisioni di soggetti razionali in un contesto di interdipendenza strategica.\\
+
 Si definisce interdipendenza strategica, o interazione strategica, lo scenario in cui le decisioni di un individuo influenzano anche le scelte e gli scenari relativi agli altri individui.\\
+
 Il principale oggetto di studio della teoria dei giochi sono le situazioni di conflitto nelle quali gli attori sono costretti ad intraprendere una strategia di competizione o cooperazione.\\
+
 Tale scenario è definito gioco strategico e gli individui sono denominati giocatori.\\
+
 Sulla base delle premesse e delle regole compositive del gioco in oggetto, viene costruito un modello matematico nel quale ciascun giocatore effettua le proprie decisioni (mosse migliorative) seguendo una strategia finalizzata ad aumentare il proprio vantaggio netto.\\
 A ciascuna scelta positiva corrisponde un ritorno favorevole in termini di beneficio (payoff), il medesimo concetto vale in modo contrario in caso di scelta negativa, in tal caso il ritorno sarà sfavorevole.\\
+
 In tali scenari le decisioni di un soggetto possono influire direttamente sui risultati conseguibili dagli altri e viceversa secondo un meccanismo di retroazione.\\
-La teoria dei giochi è un concetto di soluzione applicabile ad un'ingente molteplicità di casi nei quali una pluralità di agenti decisionali possono operare in maniere competitiva, seguendo interessi contrastanti, o in maniera  cooperativa, seguendo l'interesse comune.\newline
+
+La teoria dei giochi è un concetto di soluzione applicabile ad un'ingente molteplicità di casi nei quali una pluralità di agenti decisionali possono operare in maniere competitiva, seguendo interessi contrastanti, o in maniera  cooperativa, seguendo l'interesse comune.\\
 
 \subsection{Giochi non-cooperativi}
 \justify
 In questo documento, la trattazione sarà incentrata sull'analisi di una particolare tipologia di giochi : i giochi non-cooperativi.\\
+
 I giochi non-cooperativi, detti anche competitivi, rappresentano una specifica classe di giochi nella quale i giocatori non possono stipulare accordi vincolanti di cooperazione (anche normativamente), indipendentemente dai loro obiettivi.\\
+
 Il criterio di comportamento razionale adottato nei giochi non-cooperativi è di carattere individuale ed è denominato strategia del massimo.\\
+
 La suddetta definizione di razionalità va a modellare il comportamento di un individuo intelligente e ottimista che si prefigge l'obiettivo di prendere sempre la decisione che consegue il massimo guadagno possibile, perseguendo di conseguenza sempre la strategia più vantaggiosa per se stesso.\\
-Si parla dunque di punto di equilibrio qualora nel gioco esista una strategia che presenti il massimo guadagno per tutti i giocatori, ovvero uno stato stabile del gioco nel quale tutti gli attori ottengono il massimo profitto individuale e collettivo.\newline
+
+Si parla dunque di punto di equilibrio qualora nel gioco esista una strategia che presenti il massimo guadagno per tutti i giocatori, ovvero uno stato stabile del gioco nel quale tutti gli attori ottengono il massimo profitto individuale e collettivo.\\
 
 \section{Equilibri di Nash}
 \justify
 La precedente affermazione muove l'oggetto della trattazione verso l'argomento centrale di questo studio, ovvero gli equilibri di Nash.\\
+
 L'equilibrio di Nash è una combinazione di strategie nella quale ciascun giocatore effettua la migliore scelta possibile, seguendo cioè una strategia dominante, sulla base delle aspettative di scelta dell'altro giocatore.\\
+
 L'equilibrio di Nash è la combinazione di mosse (m1, m2) in cui la mossa di ciascun giocatore è la migliore risposta alla mossa effettuata da un altro giocatore.\\
-Ciascun giocatore formula delle aspettative sulla scelta dell'altro giocatore e in base a queste decide la propria strategia, con l'obiettivo di massimizzare il proprio profitto e di conseguenza quello degli altri.
+
+Ciascun giocatore formula delle aspettative sulla scelta dell'altro giocatore e in base a queste decide la propria strategia, con l'obiettivo di massimizzare il proprio profitto e di conseguenza quello degli altri.\\
+
 Un equilibrio di Nash è un equilibrio stabile, poiché nessun giocatore ha interesse a modificare la propria strategia.\\
+
 Ciascun giocatore trae la massima utilità possibile dalle proprie scelte, tenendo conto della migliore scelta dell'altro giocatore, e dunque qualunque variazione alla propria strategia potrebbe soltanto peggiorare il proprio valore di tornaconto (payoff o utilità).\\
+
 L'equilibrio di Nash è conosciuto anche con il nome di equilibrio non cooperativo poiché rappresenta una situazione di equilibrio ottimale per un gioco non-cooperativo.\\
-L'equilibrio di Nash non deriva dall'accordo tra i giocatori, bensì dall'adozione di strategie dominanti perseguite da tutti i giocatori, tali da garantire sia il miglior profitto possibile per ciascun giocatore (ottimo individuale), sia il miglior equilibrio collettivo (ottimo sociale).\newline
+
+L'equilibrio di Nash non deriva dall'accordo tra i giocatori, bensì dall'adozione di strategie dominanti perseguite da tutti i giocatori, tali da garantire sia il miglior profitto possibile per ciascun giocatore (ottimo individuale), sia il miglior equilibrio collettivo (ottimo sociale).\\
 
 \subsection{Definizione formale}
 \justify
 Definiamo ora alcuni concetti basilari e chiariamo alcuni aspetti matematici della teoria dei giochi al fine di delineare in modo più accurato il concetto di equilibrio di Nash.\\
+
 Un gioco è caratterizzato da :
+
 \begin{itemize}
 	\item un insieme G di giocatori, o agenti, che indicheremo con \(i = 1,\ldots,N\)
 	\item un insieme S di strategie, costituito da un insieme di M vettori \[S_{i}=\left(s_{{i,1}},s_{{i,2}},\ldots,s_{{i,j}},\ldots,s_{{i,M_{i}}}\right)\] ciascuno dei quali contiene l'insieme l'insieme delle strategie che il giocatore i-esimo ha a disposizione, cioè l'insieme delle azioni che esso può compiere.\\(indichiamo con \(s_i\) la strategia scelta dal giocatore \(i\))
 	\item un insieme U di funzioni \[u_{i}=U_{i}\left(s_{1},s_{2},\ldots,s_{i},\ldots,s_{N}\right)\] che associano ad ogni giocatore \(i\) il guadagno (detto anche payoff) \(u_i\) derivante da una data combinazione di strategie (il guadagno di un giocatore in generale non dipende solo dalla propria strategia ma anche dalle strategie scelte dagli avversari)
 \end{itemize}
+
 Un equilibrio di Nash per un dato gioco è una combinazione di strategie (che indichiamo con l'apice \(e\))
 \[s_{1}^{e},s_{2}^{e},...,s_{N}^{e}\]
 tale che
 \[U_{i}\left(s_{1}^{e},s_{2}^{e},...,s_{i}^{e},...,s_{N}^{e}\right)\geq U_{i}\left(s_{1}^{e},s_{2}^{e},...,s_{i},...,s_{N}^{e}\right)\]
-\(\forall i\) e \(\forall s_i\) scelta dal giocatore i-esimo.\newline
+\(\forall i\) e \(\forall s_i\) scelta dal giocatore i-esimo.\\
 
 Il significato di quest'ultima disuguaglianza è il seguente : se un gioco ammette almeno un equilibrio di Nash, ciascun agente ha a disposizione almeno una strategia \(s_i^e\) dalla quale non ha alcun interesse ad allontanarsi se tutti gli altri giocatori hanno giocato la propria strategia \(s_j^e\).\\
+
 Come si può facilmente desumere direttamente dalla suddetta disequazione, se il giocatore i gioca una qualunque strategia a sua disposizione diversa da \(s_i^e\), mentre tutti gli altri giocatori hanno giocato la propria strategia \(s_j^e\), può solo peggiorare il proprio guadagno o, al più, lasciarlo invariato.\\
+
 Da qui si può dedurre quindi che se i giocatori raggiungono un equilibrio di Nash, nessuno può più migliorare il proprio risultato modificando solo la propria strategia, ed è quindi vincolato alle scelte degli altri.\\
-Poiché questo vale per tutti i giocatori, è evidente che se esiste un equilibrio di Nash ed è unico, esso rappresenta la soluzione del gioco, in quanto nessuno dei giocatori ha interesse a cambiare strategia.\newline
+
+Poiché questo vale per tutti i giocatori, è evidente che se esiste un equilibrio di Nash ed è unico, esso rappresenta la soluzione del gioco, in quanto nessuno dei giocatori ha interesse a cambiare strategia.\\
 
 \section{Nozioni di base}
 
 \subsection{Rappresentazione con matrici di payoff e descrizione del procedimento decisionale}
 \justify
-Nella seguente matrice di payoff è rappresentato un esempio di equilibrio di Nash in un gioco non-cooperativo a 2 giocatori (tale equilibrio può essere esteso a N giocatori).
+Nella seguente matrice di payoff è rappresentato un esempio di equilibrio di Nash in un gioco non-cooperativo a 2 giocatori (tale equilibrio può essere esteso a N giocatori).\\
 
 \vspace{0.5cm}
 \begin{table}[h]
@@ -78,10 +101,12 @@ Nella seguente matrice di payoff è rappresentato un esempio di equilibrio di Na
 \vspace{0.5cm}
 
 Nella suddetta matrice ciascun giocatore può scegliere la strategia S1 o la strategia S2. Il giocatore 1 si aspetta che il giocatore 2 scelga S1 (strategia dominante) e, quindi, adotta anch'egli la strategia S1 in quanto gli consente di ottenere un payoff individuale pari a 2.\\
-Anche il giocatore 2 formula delle aspettative sulle scelte dell'avversario e si attende che il giocatore 1 scelga S1, scegliendo a sua volta la strategia S1.\\
-L'equilibrio del gioco converge verso la cella A della matrice nella quale entrambi i giocatori massimizzano il proprio payoff individuale (ottimo individuale) dopo aver scelto la propria strategia dominante. Entrambi i giocatori hanno formulato un'ipotesi sulla migliore scelta del giocatore avversario e, sulla base di questa, hanno scelto la propria strategia dominante.\newline
 
-Cerchiamo ora di comprendere al meglio il funzionamento del processo decisionale alla base dell'equilibrio di Nash.
+Anche il giocatore 2 formula delle aspettative sulle scelte dell'avversario e si attende che il giocatore 1 scelga S1, scegliendo a sua volta la strategia S1.\\
+
+L'equilibrio del gioco converge verso la cella A della matrice nella quale entrambi i giocatori massimizzano il proprio payoff individuale (ottimo individuale) dopo aver scelto la propria strategia dominante. Entrambi i giocatori hanno formulato un'ipotesi sulla migliore scelta del giocatore avversario e, sulla base di questa, hanno scelto la propria strategia dominante.\\
+
+Cerchiamo ora di comprendere al meglio il funzionamento del processo decisionale alla base dell'equilibrio di Nash.\\
 
 \vspace{0.5cm}
 \begin{table}[h]
@@ -105,10 +130,14 @@ Cerchiamo ora di comprendere al meglio il funzionamento del processo decisionale
 \vspace{0.5cm}
 
 Il giocatore 1 potrebbe scegliere sia S1 che S2, in entrambi i casi potrebbe sperare di ottenere per sé il payoff più alto (2) nelle celle A e D. Il giocatore 1 sa bene però che se scegliesse S2, il giocatore 2 sceglierebbe in seguito S1 e l'equilibrio finale si collocherebbe nella cella C, nella quale egli otterrebbe il payoff più basso (1).\\
+
 Qualora scegliesse invece S1, il giocatore 1 sarebbe consapevole che anche il giocatore 2 sceglierebbe S1 e l'equilibrio finale in questo caso si collocherebbe nella cella A, nella quale il giocatore 1 otterrebbe il payoff più alto (2).\\
+
 Seguendo il medesimo ragionamento, qualora spettasse al giocatore 2 scegliere per primo, questi sarebbe consapevole che scegliendo S1 anche il giocatore 1 sceglierebbe S1. Dunque anche il questo caso l'equilibrio strategico si collocherebbe nella cella A.\\
+
 Il giocatore 2 non sceglierebbe mai S2 in quanto in ogni caso avrebbe il payoff più basso (1).\\
-La cella A è un equilibrio di Nash, tutte le altre non lo sono.\newline
+
+La cella A è un equilibrio di Nash, tutte le altre non lo sono.\\
 
 \subsection{Equilibri di Nash e ottimo sociale}
 \justify
@@ -134,11 +163,12 @@ La cella A è un equilibrio di Nash, tutte le altre non lo sono.\newline
 \end{table}
 \vspace{0.5cm}
 
-Nell'esempio \ref{tab:matrice-payoff} appena trattato possiamo inoltre constatare facilmente che l'equilibrio di Nash trovato (cella A della matrice) è anche un ottimo sociale. Nel suddetto equilibrio coesistono una situazione ottimale per entrambi i giocatori (entrambi i giocatori possiedono un payoff massimo) e una situazione ottimale per l'intera collettività (in quanto la somma dei valori di payoff di entrambi i giocatori è uguale 4, il valore maggiore all'interno della matrice)\newline
+Nell'esempio \ref{tab:matrice-payoff} appena trattato possiamo inoltre constatare facilmente che l'equilibrio di Nash trovato (cella A della matrice) è anche un ottimo sociale. Nel suddetto equilibrio coesistono una situazione ottimale per entrambi i giocatori (entrambi i giocatori possiedono un payoff massimo) e una situazione ottimale per l'intera collettività (in quanto la somma dei valori di payoff di entrambi i giocatori è uguale 4, il valore maggiore all'interno della matrice)\\
 
 \subsection{Equilibri di Nash multipli}
 \justify
 Specifichiamo inoltre che un gioco non-cooperativo può presentare più equilibri di Nash. Anche il presenza di equilibri multipli, ciascun equilibrio è comunque stabile, poiché dalla propria posizione di equilibrio locale qualsiasi scelta è peggiorativa per ogni giocatore.\\
+
 Al fine di verificare quest'ultima affermazione viene presentata la seguente matrice di payoff nella quale sono presenti 2 equilibri di Nash simmetrici (nelle celle A e D).\\
 
 \vspace{0.5cm}
@@ -188,12 +218,15 @@ In alcuni casi possono essere del tutto assenti le condizioni per determinare un
 \vspace{0.5cm}
 
 Nell'esempio appena descritto, se il giocatore 1 sceglie la strategia S2 (tentando di ottenere il payoff 2), il giocatore 2 sceglierà la strategia S2 (payoff 2) e l'equilibrio si posiziona nella cella D della matrice.\\
-Se al contrario è il giocatore 2 a scegliere la strategia S2 (tentando a sua volta di ottenere il payoff 2), il giocatore 1 sceglierà la strategia S1 (payoff 1) e l'equilibrio si posiziona nella cella B della matrice. Nel suddetto esempio non esiste dunque un equilibrio di Nash.\newline
+
+Se al contrario è il giocatore 2 a scegliere la strategia S2 (tentando a sua volta di ottenere il payoff 2), il giocatore 1 sceglierà la strategia S1 (payoff 1) e l'equilibrio si posiziona nella cella B della matrice. Nel suddetto esempio non esiste dunque un equilibrio di Nash.\\
 
 \subsection{Il dilemma del prigioniero : sub-ottimalità individuale e sociale}
 \justify
 L'adozione di strategie dominanti non assicura sempre un equilibrio di ottimo sociale. In assenza di informazioni, un gioco non-cooperativo potrebbe convergere verso un equilibrio stabile ma non ottimale.\\
+
 L'ipotesi è dimostrata nel problema del "dilemma del prigioniero" in cui due attori, pur formulando delle aspettative razionali sul comportamento dell'avversario e adottando strategie dominanti, determinano un equilibrio sub-ottimale ( D ) sia dal punto individuale che sociale.\\
+
 La seguente matrice payoff evidenzia il tipico caso del dilemma del prigioniero : vi sono 2 giocatori separati in stanze differenti, senza che abbiano la possibilità di comunicare (informazione imperfetta) ; i 2 giocatori sono accusati di un reato e interrogati contemporaneamente.
 
 \begin{itemize}
@@ -224,8 +257,11 @@ La seguente matrice payoff evidenzia il tipico caso del dilemma del prigioniero 
 \vspace{0.5cm}
 
 Nell'esempio il giocatore 1 si aspetta che il giocatore 2 confessi, poiché la strategia dominante del giocatore 2 è confessare, grazie alla confessione quest'ultimo otterrebbe la libertà (payoff 9).\\
-Sulla base di questa aspettativa il giocatore 1 sceglie la propria strategia dominante tra B e D, scegliendo a sua volta di confessare per ottenere un payoff uguale a 2. Lo stesso ragionamento viene adottato, in modo inverso, dal giocatore 2.\\
-L'equilibrio D è un equilibrio di Nash ed è un equilibrio stabile poiché nessuno dei 2 giocatori ha interessa a modificare le proprie scelte.
-In tale equilibrio però entrambi i giocatori ottengono un payoff sub-ottimale pari a 2 rispetto a quello che avrebbero se decidessero entrambi di non confessare (payoff 5 - equilibrio A) e in più l'equilibrio D presenta un valore di ottimo sociale (4) inferiore rispetto a quello che si potrebbe ottenere dall'equilibrio A (10) che rappresenta l'ottimo individuale e sociale del gioco.\newline
 
-In conclusione, il dilemma del prigioniero rappresenta una situazione in cui le scelte individuali del giocatori, pur essendo strategie dominanti, determinano un equilibrio inefficiente. Nel dilemma del prigioniero l'equilibrio del gioco non è né un ottimo individuale né un ottimo sociale.\newline
+Sulla base di questa aspettativa il giocatore 1 sceglie la propria strategia dominante tra B e D, scegliendo a sua volta di confessare per ottenere un payoff uguale a 2. Lo stesso ragionamento viene adottato, in modo inverso, dal giocatore 2.\\
+
+L'equilibrio D è un equilibrio di Nash ed è un equilibrio stabile poiché nessuno dei 2 giocatori ha interessa a modificare le proprie scelte.\\
+
+In tale equilibrio però entrambi i giocatori ottengono un payoff sub-ottimale pari a 2 rispetto a quello che avrebbero se decidessero entrambi di non confessare (payoff 5 - equilibrio A) e in più l'equilibrio D presenta un valore di ottimo sociale (4) inferiore rispetto a quello che si potrebbe ottenere dall'equilibrio A (10) che rappresenta l'ottimo individuale e sociale del gioco.\\
+
+In conclusione, il dilemma del prigioniero rappresenta una situazione in cui le scelte individuali del giocatori, pur essendo strategie dominanti, determinano un equilibrio inefficiente. Nel dilemma del prigioniero l'equilibrio del gioco non è né un ottimo individuale né un ottimo sociale.\\
