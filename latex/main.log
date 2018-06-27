@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  27 JUN 2018 01:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  27 JUN 2018 15:42
 entering extended mode
 **./main.tex
 (main.tex
@@ -183,6 +183,29 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 t.sty"
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\dirtree\dirtree.st
+y"
+Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
+
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\generic\dirtree\dirtree.
+tex" `dirtree' v0.32, 2012/12/11 (jcc)
+\DT@offset=\dimen124
+\DT@width=\dimen125
+\DT@sep=\dimen126
+\DT@all=\dimen127
+\DT@rulewidth=\dimen128
+\DT@dotwidth=\dimen129
+\DTbaselineskip=\dimen130
+\DT@counti=\count123
+\DT@countii=\count124
+\DT@countiii=\count125
+\DT@countiv=\count126
+\DT@indent=\dimen131
+\DT@parskip=\dimen132
+\DT@baselineskip=\dimen133
+)
+File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
+)
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.
 sty"
 Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
@@ -217,7 +240,7 @@ Package pdftexcmds Info: \pdfdraftmode found.
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.
 sty"
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count123
+\etb@tempcnta=\count127
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
 .sty"
@@ -237,7 +260,7 @@ Package etexcmds Info: Could not find \expanded.
 )))
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty"
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count124
+\lrq@indent=\count128
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.def"
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty
@@ -252,49 +275,49 @@ y"
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xstring\xstring.
 tex"
 \@xs@message=\write3
-\integerpart=\count125
-\decimalpart=\count126
+\integerpart=\count129
+\decimalpart=\count130
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\c@tabx@nest=\count127
-\c@listtotal=\count128
-\c@listcount=\count129
-\c@liststart=\count130
-\c@liststop=\count131
-\c@citecount=\count132
-\c@citetotal=\count133
-\c@multicitecount=\count134
-\c@multicitetotal=\count135
-\c@instcount=\count136
-\c@maxnames=\count137
-\c@minnames=\count138
-\c@maxitems=\count139
-\c@minitems=\count140
-\c@citecounter=\count141
-\c@savedcitecounter=\count142
-\c@uniquelist=\count143
-\c@uniquename=\count144
-\c@refsection=\count145
-\c@refsegment=\count146
-\c@maxextratitle=\count147
-\c@maxextratitleyear=\count148
-\c@maxextradate=\count149
-\c@maxextraalpha=\count150
-\c@abbrvpenalty=\count151
-\c@highnamepenalty=\count152
-\c@lownamepenalty=\count153
-\c@maxparens=\count154
-\c@parenlevel=\count155
-\blx@tempcnta=\count156
-\blx@tempcntb=\count157
-\blx@tempcntc=\count158
-\blx@maxsection=\count159
-\blx@maxsegment@0=\count160
-\blx@notetype=\count161
-\blx@parenlevel@text=\count162
-\blx@parenlevel@foot=\count163
-\blx@sectionciteorder@0=\count164
+\c@tabx@nest=\count131
+\c@listtotal=\count132
+\c@listcount=\count133
+\c@liststart=\count134
+\c@liststop=\count135
+\c@citecount=\count136
+\c@citetotal=\count137
+\c@multicitecount=\count138
+\c@multicitetotal=\count139
+\c@instcount=\count140
+\c@maxnames=\count141
+\c@minnames=\count142
+\c@maxitems=\count143
+\c@minitems=\count144
+\c@citecounter=\count145
+\c@savedcitecounter=\count146
+\c@uniquelist=\count147
+\c@uniquename=\count148
+\c@refsection=\count149
+\c@refsegment=\count150
+\c@maxextratitle=\count151
+\c@maxextratitleyear=\count152
+\c@maxextradate=\count153
+\c@maxextraalpha=\count154
+\c@abbrvpenalty=\count155
+\c@highnamepenalty=\count156
+\c@lownamepenalty=\count157
+\c@maxparens=\count158
+\c@parenlevel=\count159
+\blx@tempcnta=\count160
+\blx@tempcntb=\count161
+\blx@tempcntc=\count162
+\blx@maxsection=\count163
+\blx@maxsegment@0=\count164
+\blx@notetype=\count165
+\blx@parenlevel@text=\count166
+\blx@parenlevel@foot=\count167
+\blx@sectionciteorder@0=\count168
 \labelnumberwidth=\skip54
 \labelalphawidth=\skip55
 \biblabelsep=\skip56
@@ -305,9 +328,9 @@ Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 \bibhang=\skip61
 \blx@bcfin=\read1
 \blx@bcfout=\write4
-\c@mincomprange=\count165
-\c@maxcomprange=\count166
-\c@mincompwidth=\count167
+\c@mincomprange=\count169
+\c@maxcomprange=\count170
+\c@mincompwidth=\count171
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -317,74 +340,74 @@ File: blx-dm.def 2018/03/04 v3.11 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count168
-\c@savedafterword=\count169
-\c@annotator=\count170
-\c@savedannotator=\count171
-\c@author=\count172
-\c@savedauthor=\count173
-\c@bookauthor=\count174
-\c@savedbookauthor=\count175
-\c@commentator=\count176
-\c@savedcommentator=\count177
-\c@editor=\count178
-\c@savededitor=\count179
-\c@editora=\count180
-\c@savededitora=\count181
-\c@editorb=\count182
-\c@savededitorb=\count183
-\c@editorc=\count184
-\c@savededitorc=\count185
-\c@foreword=\count186
-\c@savedforeword=\count187
-\c@holder=\count188
-\c@savedholder=\count189
-\c@introduction=\count190
-\c@savedintroduction=\count191
-\c@namea=\count192
-\c@savednamea=\count193
-\c@nameb=\count194
-\c@savednameb=\count195
-\c@namec=\count196
-\c@savednamec=\count197
-\c@translator=\count198
-\c@savedtranslator=\count199
-\c@shortauthor=\count266
-\c@savedshortauthor=\count267
-\c@shorteditor=\count268
-\c@savedshorteditor=\count269
-\c@labelname=\count270
-\c@savedlabelname=\count271
-\c@institution=\count272
-\c@savedinstitution=\count273
-\c@lista=\count274
-\c@savedlista=\count275
-\c@listb=\count276
-\c@savedlistb=\count277
-\c@listc=\count278
-\c@savedlistc=\count279
-\c@listd=\count280
-\c@savedlistd=\count281
-\c@liste=\count282
-\c@savedliste=\count283
-\c@listf=\count284
-\c@savedlistf=\count285
-\c@location=\count286
-\c@savedlocation=\count287
-\c@organization=\count288
-\c@savedorganization=\count289
-\c@origlocation=\count290
-\c@savedoriglocation=\count291
-\c@origpublisher=\count292
-\c@savedorigpublisher=\count293
-\c@publisher=\count294
-\c@savedpublisher=\count295
-\c@language=\count296
-\c@savedlanguage=\count297
-\c@origlanguage=\count298
-\c@savedoriglanguage=\count299
-\c@pageref=\count300
-\c@savedpageref=\count301
+\c@afterword=\count172
+\c@savedafterword=\count173
+\c@annotator=\count174
+\c@savedannotator=\count175
+\c@author=\count176
+\c@savedauthor=\count177
+\c@bookauthor=\count178
+\c@savedbookauthor=\count179
+\c@commentator=\count180
+\c@savedcommentator=\count181
+\c@editor=\count182
+\c@savededitor=\count183
+\c@editora=\count184
+\c@savededitora=\count185
+\c@editorb=\count186
+\c@savededitorb=\count187
+\c@editorc=\count188
+\c@savededitorc=\count189
+\c@foreword=\count190
+\c@savedforeword=\count191
+\c@holder=\count192
+\c@savedholder=\count193
+\c@introduction=\count194
+\c@savedintroduction=\count195
+\c@namea=\count196
+\c@savednamea=\count197
+\c@nameb=\count198
+\c@savednameb=\count199
+\c@namec=\count266
+\c@savednamec=\count267
+\c@translator=\count268
+\c@savedtranslator=\count269
+\c@shortauthor=\count270
+\c@savedshortauthor=\count271
+\c@shorteditor=\count272
+\c@savedshorteditor=\count273
+\c@labelname=\count274
+\c@savedlabelname=\count275
+\c@institution=\count276
+\c@savedinstitution=\count277
+\c@lista=\count278
+\c@savedlista=\count279
+\c@listb=\count280
+\c@savedlistb=\count281
+\c@listc=\count282
+\c@savedlistc=\count283
+\c@listd=\count284
+\c@savedlistd=\count285
+\c@liste=\count286
+\c@savedliste=\count287
+\c@listf=\count288
+\c@savedlistf=\count289
+\c@location=\count290
+\c@savedlocation=\count291
+\c@organization=\count292
+\c@savedorganization=\count293
+\c@origlocation=\count294
+\c@savedoriglocation=\count295
+\c@origpublisher=\count296
+\c@savedorigpublisher=\count297
+\c@publisher=\count298
+\c@savedpublisher=\count299
+\c@language=\count300
+\c@savedlanguage=\count301
+\c@origlanguage=\count302
+\c@savedoriglanguage=\count303
+\c@pageref=\count304
+\c@savedpageref=\count305
 \shorthandwidth=\skip62
 \shortjournalwidth=\skip63
 \shortserieswidth=\skip64
@@ -412,13 +435,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex.
 def"
 File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
-\c@textcitecount=\count302
-\c@textcitetotal=\count303
-\c@textcitemaxnames=\count304
-\c@biburlnumpenalty=\count305
-\c@biburlucpenalty=\count306
-\c@biburllcpenalty=\count307
-\c@smartand=\count308
+\c@textcitecount=\count306
+\c@textcitetotal=\count307
+\c@textcitemaxnames=\count308
+\c@biburlnumpenalty=\count309
+\c@biburlucpenalty=\count310
+\c@biburllcpenalty=\count311
+\c@smartand=\count312
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -432,8 +455,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\stand
 ard.bbx"
 File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count309
-\c@bbx:relatedtotal=\count310
+\c@bbx:relatedcount=\count313
+\c@bbx:relatedtotal=\count314
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -481,8 +504,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 x.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen124
-\Gin@req@width=\dimen125
+\Gin@req@height=\dimen134
+\Gin@req@width=\dimen135
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -821,16 +844,16 @@ Language: italian 2015/03/26 v1.3n Italian support from the babel system
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count311
-\U@D=\dimen126
+\babel@savecnt=\count315
+\U@D=\dimen136
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel.d
 ef")
-\bbl@dirlevel=\count312
+\bbl@dirlevel=\count316
 )
-\it@lettering=\count313
-\it@doublequoteactive=\count314
-\it@ISOcompliance=\count315
+\it@lettering=\count317
+\it@doublequoteactive=\count318
+\it@ISOcompliance=\count319
 ))
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\ragged2e.sty"
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
@@ -846,8 +869,8 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 sty"
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
 \FN@temptoken=\toks23
-\footnotemargin=\dimen127
-\c@pp@next@reset=\count316
+\footnotemargin=\dimen137
+\c@pp@next@reset=\count320
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -884,8 +907,8 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip92
 \dth@everypar=\toks29
 )
-\c@prop=\count317
-\c@theorem=\count318
+\c@prop=\count321
+\c@theorem=\count322
 Package biblatex Info: Trying to load language 'italian'...
 Package biblatex Info: ... file 'italian.lbx' found.
 
@@ -897,9 +920,9 @@ File: italian.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count319
-\@quotereset=\count320
-(main.aux (front.aux) (chapter_1.aux) (chapter_2.aux))
+\@quotelevel=\count323
+\@quotereset=\count324
+(main.aux (front.aux) (chapter_1.aux) (chapter_2.aux) (chapter_3.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
@@ -929,16 +952,16 @@ Package biblatex Info: Reference segment=0 on input line 47.
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count321
-\scratchdimen=\dimen128
+\scratchcounter=\count325
+\scratchdimen=\dimen138
 \scratchbox=\box28
-\nofMPsegments=\count322
-\nofMParguments=\count323
+\nofMPsegments=\count326
+\nofMParguments=\count327
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count324
-\MPscratchDim=\dimen129
-\MPnumerator=\count325
-\makeMPintoPDFobject=\count326
+\MPscratchCnt=\count328
+\MPscratchDim=\dimen139
+\MPnumerator=\count329
+\makeMPintoPDFobject=\count330
 \everyMPtoPDFconversion=\toks31
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
@@ -1000,14 +1023,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {C:/Users/valen/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/univa
-qlogowb.png> <./img/disimlogowb.png (PNG copy)>]) (main.toc)
+qlogowb.png> <./img/disimlogowb.png (PNG copy)>]) (main.toc [1
+
+
+])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [1
-
-
-] [2]
+ [2]
 [3
 
 ]
@@ -1385,6 +1408,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
+
+Overfull \hbox (6.82544pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
+mr/m/n/10.95 15
+ []
+
 [15]
 Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
@@ -1433,6 +1462,12 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
 Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
+ []
+
+
+Overfull \hbox (6.82544pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
+mr/m/n/10.95 16
  []
 
 [16]
@@ -1501,6 +1536,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
+
+Overfull \hbox (6.82544pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
+mr/m/n/10.95 17
+ []
+
 [17]
 Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
@@ -1551,6 +1592,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--112
 
  []
 
+
+Overfull \hbox (6.82544pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
+mr/m/n/10.95 18
+ []
+
 [18]
 Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
@@ -1591,6 +1638,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
 Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
+ []
+
+
+Overfull \hbox (6.82544pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
+mr/m/n/10.95 19
  []
 
 [19]
@@ -1639,6 +1692,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
+
+Overfull \hbox (6.82544pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
+mr/m/n/10.95 20
+ []
+
 [20]
 Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
@@ -1649,29 +1708,66 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-) [21] [22
+)
+Overfull \hbox (6.82544pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10.95 CAPITOLO 2.  GIOCO DELLA K-COLORAZIONE GENERALIZZATA \OT1/c
+mr/m/n/10.95 21
+ []
+
+[21] [22
 
 
-] [23
+]
+\openout2 = `chapter_3.aux'.
+
+ (chapter_3.tex
+Capitolo 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--18
+
+ []
+
+[23
+
+
+] [24]) [25] [26
+
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 61.
+LaTeX Warning: Empty bibliography on input line 63.
 
-(main.aux (front.aux) (chapter_1.aux) (chapter_2.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(main.aux (front.aux) (chapter_1.aux) (chapter_2.aux) (chapter_3.aux))
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10866 strings out of 493305
- 183263 string characters out of 3129802
- 597585 words of memory out of 3000000
- 14216 multiletter control sequences out of 15000+200000
- 13556 words of font info for 51 fonts, out of 3000000 for 9000
+ 11043 strings out of 493305
+ 185810 string characters out of 3129802
+ 601044 words of memory out of 3000000
+ 14378 multiletter control sequences out of 15000+200000
+ 13724 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,11n,31p,820b,1290s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
@@ -1692,10 +1788,11 @@ sers/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmti10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on main.pdf (24 pages, 338002 bytes).
+2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/valen/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
+Output written on main.pdf (27 pages, 358703 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
+ 161 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

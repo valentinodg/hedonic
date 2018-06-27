@@ -1,0 +1,71 @@
+\chapter{Implementazione}
+
+In questo capitolo andremo a delineare e descrivere gli aspetti fondamentali ed essenziali relativi all'attività di implementazione.\\
+
+Inizieremo con una presentazione della struttura generale dei programmi assieme ad una descrizione accurata dei componenti utilizzati e delle scelte effettuate in fase di progettazione.\\
+
+In seguito procederemo con un'attenta analisi degli algoritmi implementati, ovvero il l'algoritmo per il calcolo degli equilibri di Nash, quello per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario e quello per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario.\\
+Tale sezione sarà caratterizzata dall'ultilizzo di pseudocodice per ciascuno degli algoritmi in modo tale da rendere più comprensibile la descrizione dei cicli e delle operazioni.\\
+
+Tratteremo in modo approfondito questa porzione del documento poichè precede la sezione relativa alla sperimentazione effettuata attraverso i programmi implementati e dunque è di fondamentale importanza.\\
+
+\section{Struttura generale}
+\justify
+
+Procediamo presentando la struttura generale relativa programmi implementati.\\ 
+Quest'ultima è rappresentata attraverso una struttura ad albero che riproduce una porzione di filesystem partendo dalla root del progetto.\\
+Al fine di rendere più chiara la lettura viene inoltre fornita un breve leggenda sulla nomenclatura utilizzata.\\
+
+\begin{itemize}
+	\item La nomenclatura \textbf{nome.dir} indica che l'oggetto è una cartella
+	\item La nomenclatura \textbf{nome.edgelist} indica che l'oggetto è una file con estensione .edgelist (oggetto principale modellato dal programma)
+	\item La nomenclatura \textbf{nome.dot} indica che l'oggetto è una file con estensione .dot (oggetto utilizzato su macchine GNU/Linux per il disegno attraverso la libreria Pygraphviz in fase di debug)
+	\item le lettere \textbf{X,K,Y,Z,...} rappresentano numeri casuali (sono utilizzate per descrivere la moltitudine di cartelle, grafi creati e risultati, ottenuti durante un generale caso d'uso dei programmi)
+	
+\end{itemize}
+
+\newpage
+\dirtree{%
+.1 /.
+.2 generator.dir.
+.3 gen.dir.
+.4 gen-dir-1.dir.
+.5 graph-1.edgelist.
+.5 graph-1.dot.
+.4 .....
+.4 gen-dir-X.dir.
+.5 graph-X.edgelist.
+.5 graph-X.dot.
+.3 m-gen.dir.
+.4 m-gen-dir-1.dir. 
+.5 graph-1.edgelist.
+.5 graph-1.dot.
+.5 .....
+.5 graph-K.edgelist.
+.5 graph-K.dot.
+.4 .....
+.4 m-gen-dir-Y.dir.
+.5 graph-1.edgelist.
+.5 graph-1.dot.
+.5 .....
+.5 graph-Z.edgelist.
+.5 graph-Z.dot.
+.3 generator.py.
+.2 reader.dir.
+.3 result.dir.
+.4 result-dir-1.dir.
+.5 graph-1.init.
+.5 graph-1.out.
+.4 .....
+.4 result-dir-X.dir.
+.5 graph-X.init.
+.5 graph-X.out.
+.3 m-result.dir.
+.4 m-result-dir-1.dir.
+.5 graph-1.init.
+.5 graph-1.out.
+.4 .....
+.4 m-result-dir-X.dir.
+.5 graph-X.init.
+.5 graph-X.out.
+}

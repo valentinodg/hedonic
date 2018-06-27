@@ -28,7 +28,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{II\hspace {1em}Gioco della K-Colorazione Generalizzata}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Introduzione}{14}
+\contentsline {chapter}{\numberline {2}Gioco della k-colorazione generalizzata}{14}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Descrizione generale}{15}
 \defcounter {refsection}{0}\relax 
@@ -48,4 +48,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{III\hspace {1em}Implementazione}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{IV\hspace {1em}Sperimentazione}{23}
+\contentsline {chapter}{\numberline {3}Implementazione}{23}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Struttura generale}{23}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{IV\hspace {1em}Sperimentazione}{26}
