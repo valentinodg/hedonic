@@ -14,7 +14,7 @@ Tratteremo in modo approfondito questa porzione del documento poiché precede la
 
 Procediamo presentando la struttura generale relativa programmi implementati.\\ 
 Quest'ultima è rappresentata attraverso una struttura ad albero che riproduce una porzione di filesystem partendo dalla root del progetto.\\
-Al fine di rendere più chiara la lettura viene inoltre fornita un breve leggenda sulla nomenclatura utilizzata.\\
+Al fine di rendere più chiara la lettura viene inoltre fornita un breve leggenda sulla nomenclatura utilizzata.
 
 \begin{itemize}
 	\item La nomenclatura \textbf{nome.dir} indica che l'oggetto è una cartella
@@ -25,7 +25,7 @@ Al fine di rendere più chiara la lettura viene inoltre fornita un breve leggend
 	\item la nomenclatura \textbf{nome.out} indica che l'oggetto è un file con estensione .out (oggetto utilizzato in fase di lettura per salvare i risultati derivanti da esecuzioni singole o multiple usando gli algoritmi per il calcolo del nash, dell'ottimo con funzione di benessere sociale utilitario e dell'ottimo con funzione di benessere sociale egalitario)
 \end{itemize}
 
-Descriviamo ora la funzione basilare di alcuni componenti dell'albero sottostante rappresentante un esempio generale relativo ad un caso d'uso dei programmi.\\
+Descriviamo ora la funzione basilare di alcuni componenti dell'albero sottostante rappresentante un esempio generale relativo ad un caso d'uso dei programmi.
 
 \begin{itemize}
 	\item La cartella \textbf{generator} contiene al suo interno l'intera struttura relativa al generatore di grafi
@@ -147,7 +147,7 @@ Altre librerie minori sono state scelte in fase di progettazione ed utilizzate a
 
 Un altro esempio è l'utilizzo della libreria cross-platform Pick, che rende semplice ed efficace la selezione delle opzioni all'interno dei terminal emulators durante l'esecuzione dei programmi.\\
 
-L'elenco completo delle librerie utilizzate all'interno dei programmi è il seguente 
+L'elenco completo delle librerie utilizzate all'interno dei programmi è il seguente.
 
 \begin{itemize}
 	\item Python Standard Library (Python 3.6.5 - Python 2.7.14)\\
@@ -191,11 +191,61 @@ In compenso è però disponibile per l'utente la libreria MatPlotLib che consent
 
 Come prima operazione all'avvio del programma è disponibile per l'utente una scelta della classe di grafo da generare effettuata attraverso un interfaccia di selezione da console implementata grazie alla libreria Pick.\\
 
-Le classi implementate fanno riferimento a quelle presenti nella libreria NetworkX, ovvero le seguenti.\\
+Sono disponibili per l'utente 2 modalità di funzionamento per la generazione, la modalità SINGLE MODE (la modalità di default del programma) e la modalità MULTIPLE MODE (accessibile attraverso la selezione dell'opzione MULTIPLE nella scelta della classe).\\
+
+\subsection{generator.py : SINGLE MODE}
+\justify
+Le classi implementate fanno riferimento a quelle presenti nella libreria NetworkX, ovvero le seguenti (se ne citano solo alcune).
 
 \begin{itemize}
-	\item lista 
+	\item Classic
+	\item Expanders
+	\item Small 
+	\item Random graphs 
+	\item Duplication divergence 
+	\item ...
+	\item MULTIPLE
 \end{itemize}
+
+Una volta selezionata la classe desiderata l'utente si troverà davanti una nuova interfaccia di selezione da console implementata attraverso l'uso del modulo Pick.\\
+
+L'opzione MULTIPLE cambia la tipologia di funzionamento del programma, che da SINGLE MODE (modalità di generazione di un singolo grafo per volta) passa a MULTIPLE MODE (nella quale possono essere generati da 1 a n grafi della stessa tipologia in un solo processo di creazione, con n scelto dall'utente).\\
+Concentriamoci ora sulla SINGLE MODE, la default mode del programma.\\
+
+Questa volta l'utente dovrà scegliere la tipologia di grafo da creare.\\
+Per ogni classe vi sono molteplici tipologie di grafo che l'utente può scegliere di generare.\\
+
+Le tipologie implementate fanno riferimento a quelle presenti nel modulo NetworkX, in particolare ciascuna tipologia ha un costruttore di libreria corrispondente che provvede a generare le strutture elementari e a comporre l'oggetto matematico richiesto dall'utente.\\
+
+Solo per far comprendere al lettore la vastità delle scelte possibili per l'utente in fase di selezione del grafo da generare, vengono qui si seguito riportate le tipologie di grafi implementate per la sola classe di grafi Classic.
+
+\begin{itemize}
+	\item balanced tree
+	\item complete graph
+	\item circular ladder graph
+	\item cycle graph
+	\item dorogovtsev goltsev mendes graph
+	\item ladder graph
+	\item lollipop graph
+	\item path graph
+	\item star graph
+	\item turan graph
+	\item wheel graph
+	\item ...
+\end{itemize}
+
+Una volta selezionata la tipologia di grafo da implementare, l'utente potrà inserire i parametri di creazione per quest'ultimo.\\
+I parametri associati ai grafi variano da tipologia a tipologia e sono necessari e fondamentali per la corretta generazione del grafo scelto.\\
+
+Per una migliore comprensione, ad esempio i parametri associati alla tipologia balanced tree sono il branching factor e l'height dell'albero, invece per la tipologia di grafo complete graph vi è un unico parametro da passare al programma, il node number del grafo.\\
+L'esempio ovviamente ricopre solo 2 tipologie di grafo, ma ciò vale per ogni tipologia implementata nel programma.\\
+
+A questo punto l'utente è chiamato a scegliere quale tipologia di dato utilizzare per codificare i pesi associati agli archi del grafo, peso flottante (tipo float) o peso intero (tipo int).\\
+Possiamo tralasciare il tipo flottante, dato che quest'ultimo, non essendo interessante e significativo per la sperimentazione, è stato eliminato in favore del tipo intero.\\
+
+L'utente dunque dovrà scegliere il range di valori all'interno dei quali oscilleranno randomicamente i pesi interi associati agli archi del grafo.\\
+È possibile scegliere solo pesi interi positivi, ovvero i valori minimo e massimo del range devono essere compresi tra \(0 \geq minimo \geq massimo \geq n\), con \(n\to\infty\).\\
+
 
 %\section{reader.py : il lettore di grafi}
 %\justify
