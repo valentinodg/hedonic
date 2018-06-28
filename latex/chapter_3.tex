@@ -5,9 +5,9 @@ In questo capitolo andremo a delineare e descrivere gli aspetti fondamentali ed 
 Inizieremo con una presentazione della struttura generale dei programmi assieme ad una descrizione accurata dei componenti utilizzati e delle scelte effettuate in fase di progettazione.\\
 
 In seguito procederemo con un'attenta analisi degli algoritmi implementati, ovvero il l'algoritmo per il calcolo degli equilibri di Nash, quello per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario e quello per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario.\\
-Tale sezione sarà caratterizzata dall'ultilizzo di pseudocodice per ciascuno degli algoritmi in modo tale da rendere più comprensibile la descrizione dei cicli e delle operazioni.\\
+Tale sezione sarà caratterizzata dall'utilizzo di pseudocodice per ciascuno degli algoritmi in modo tale da rendere più comprensibile la descrizione dei cicli e delle operazioni.\\
 
-Tratteremo in modo approfondito questa porzione del documento poichè precede la sezione relativa alla sperimentazione effettuata attraverso i programmi implementati e dunque è di fondamentale importanza.\\
+Tratteremo in modo approfondito questa porzione del documento poiché precede la sezione relativa alla sperimentazione effettuata attraverso i programmi implementati e dunque è di fondamentale importanza.\\
 
 \section{Struttura generale}
 \justify
@@ -20,7 +20,7 @@ Al fine di rendere più chiara la lettura viene inoltre fornita un breve leggend
 	\item La nomenclatura \textbf{nome.dir} indica che l'oggetto è una cartella
 	\item La nomenclatura \textbf{nome.edgelist} indica che l'oggetto è un file con estensione .edgelist (oggetto principale modellato dal programma)
 	\item La nomenclatura \textbf{nome.dot} indica che l'oggetto è un file con estensione .dot (oggetto utilizzato su macchine GNU/Linux per il disegno attraverso la libreria Pygraphviz in fase di debug)
-	\item le lettere \textbf{X,K,Y,Z,...} rappresentano numeri casuali (sono utilizzate per descrivere la moltitudine di cartelle, grafi creati e risultati, ottenuti durante un generale caso d'uso dei programmi)
+	\item le lettere \textbf{X,K,Y,Z,H,W} rappresentano numeri casuali (sono utilizzate per descrivere la moltitudine di cartelle, grafi creati e risultati, ottenuti durante un generale caso d'uso dei programmi)
 	\item la nomenclatura \textbf{nome.init} indica che l'oggetto è un file con estensione .init (oggetto utilizzato in fase di lettura per salvare le caratteristiche dei grafi (nodi, archi, pesi, colorazione) e dei colori (colori, profitti))
 	\item la nomenclatura \textbf{nome.out} indica che l'oggetto è un file con estensione .out (oggetto utilizzato in fase di lettura per salvare i risultati derivanti da esecuzioni singole o multiple usando gli algoritmi per il calcolo del nash, dell'ottimo con funzione di benessere sociale utilitario e dell'ottimo con funzione di benessere sociale egalitario)
 \end{itemize}
@@ -28,8 +28,37 @@ Al fine di rendere più chiara la lettura viene inoltre fornita un breve leggend
 Descriviamo ora la funzione basilare di alcuni componenti dell'albero sottostante rappresentante un esempio generale relativo ad un caso d'uso dei programmi.\\
 
 \begin{itemize}
-	\item La nomenclatura \textbf{nome.dir} indica che l'oggetto è una cartella
-	
+	\item La cartella \textbf{generator} contiene al suo interno l'intera struttura relativa al generatore di grafi
+	\item La cartella \textbf{gen} contiene i risultati delle generazioni singole di grafi
+	\begin{enumerate}
+		\item Al suo interno vi sono X cartelle gen-dir-X (il nome viene assegnato dinamicamente dall'utente) generate dinamicamente
+		\item Ciascuna cartella contiene il risultato di una generazione singola di un grafo sotto forma di una coppia di file .edgelist e .dot (utilizzato solo in fase di debug)
+		\item Ogni gruppo cartella-file.edgelist-file.dot rappresenta il risultato di una generazione singola
+	\end{enumerate}
+	\item La cartella \textbf{m-gen} contiene i risultati delle generazioni multiple di grafi
+	\begin{enumerate}
+		\item Al suo interno vi sono Y cartelle m-gen-dir-Y (il nome viene assegnato dinamicamente dall'utente) generate dinamicamente
+		\item Ciascuna cartella contiene il risultato di una generazione multipla di grafi sotto forma di molteplici coppie (nell'esempio K,Z,...) di file .edgelist e .dot (utilizzato solo in fase di debug)
+		\item Ogni gruppo cartella-file.edgelist-file.dot-file.edgelist-file.dot-... rappresenta il risultato di una generazione multipla
+	\end{enumerate}
+	\item Il file \textbf{generator.py} contiene al suo interno il codice del generatore di grafi scritto interamente in linguaggio Python
+\end{itemize}
+
+\begin{itemize}
+	\item La cartella \textbf{reader} contiene al suo interno l'intera struttura relativa al lettore di grafi
+	\item La cartella \textbf{result} contiene i risultati delle letture/sperimentazioni su grafi singoli
+	\begin{enumerate}
+		\item Al suo interno vi sono H cartelle result-dir-H (il nome viene preso dinamicamente dal grafo in lettura) generate dinamicamente
+		\item Ciascuna cartella contiene il singolo risultato di una lettura/sperimentazione su un grafo sotto forma di una coppia di file .init e .out
+		\item Ogni gruppo cartella-file.init-file.out rappresenta il risultato di una singola lettura/sperimentazione 
+	\end{enumerate}
+	\item La cartella \textbf{m-result} contiene i risultati delle letture/sperimentazioni su molteplici grafi
+	\begin{enumerate}
+		\item Al suo interno vi sono W cartelle m-result-dir-W (il nome viene preso dinamicamente dalla cartella relativa alla moltitudine di grafi in lettura) generate dinamicamente
+		\item Ciascuna cartella contiene multipli risultati di multiple letture/sperimentazioni su grafo multipli sotto forma di una coppia di file .init e .out
+		\item Ogni gruppo cartella-file.init-file.out rappresenta il risultato di una lettura/sperimentazione multipla
+	\end{enumerate}
+	\item Il file \textbf{reader.py} contiene al suo interno il codice del lettore di grafi scritto interamente in linguaggio Python 
 \end{itemize}
 
 \newpage
@@ -65,15 +94,91 @@ Descriviamo ora la funzione basilare di alcuni componenti dell'albero sottostant
 .5 graph-1.init.
 .5 graph-1.out.
 .4 .....
-.4 result-dir-X.dir.
-.5 graph-X.init.
-.5 graph-X.out.
+.4 result-dir-H.dir.
+.5 graph-H.init.
+.5 graph-H.out.
 .3 m-result.dir.
 .4 m-result-dir-1.dir.
 .5 graph-1.init.
 .5 graph-1.out.
 .4 .....
-.4 m-result-dir-X.dir.
-.5 graph-X.init.
-.5 graph-X.out.
+.4 m-result-dir-W.dir.
+.5 graph-W.init.
+.5 graph-W.out.
 }
+
+\section{Componenti utilizzati e progettazione}
+\justify
+I programmi generator.py e reader.py sono stati interamente scritti utilizzando il linguaggio Python [versione 3.6.5].\\
+
+Il codice è stato scritto utilizzando differenti editor di testo (vim(neovim), spacemacs, sublime-text, atom,...) e testato su diverse macchine GNU/Linux e Windows, in particolare su differenti shell (bash, zsh, fish) e su cmd.\\
+
+Per agevolare il processo di progettazione e scrittura del codice l'intera struttura del progetto è stata caricata in una repository sul sito github e gestita in remoto (attraverso il software git).\\
+
+Per questioni di compatibilità e versatilità è stata utilizzata in modo massiccio la libreria standard relativa al linguaggio Python per effettuare la quasi totalità delle operazioni in entrambi i programmi.\\
+
+La versione di riferimento della libreria è quella associata alla versione del linguaggio utilizzato, dunque la 3.6.5.\\
+
+Al fine di trascurare alcuni aspetti relativi alla strutturazione e costruzione dei grafi è stata utilizzata una potente libreria per la creazione e la manipolazione di questi oggetti matematici, ovvero NetworkX.\\
+
+Tale scelta di progettazione ha permesso al sottoscritto di concentrarsi maggiormente sulla progettazione e sull'ottimizzazione degli algoritmi.\\
+
+Inoltre tale scelta ha consentito al sottoscritto di rendere totalmente dinamici i processi di creazione e lettura dei grafi, ciò ha facilitato di molto il carico di lavoro in fase di sperimentazione.\\
+
+La libreria standard del linguaggio Python è stata utilizzata in particolare per rendere totalmente dinamica e cross-platform la gestione del filesystem.\\
+
+Ciò è stato necessario per garantire il funzionamento asincrono del generatore e del lettore, in modo tale da facilitare il lavoro in fase di sperimentazione.\\
+
+Le fasi di generazione e lettura dei grafi infatti sono state completamente separate al livello di utilizzo, per fare ciò è stato necessario manipolare efficientemente il filesystem in modo da salvare i grafi creati e i risultati delle sperimentazioni su file.\\
+
+Tali operazioni sono perfettamente funzionanti sia su sistemi che rispettano lo standard POSIX (Sistemi Unix-like) per il filesystem sia per sistemi che non lo rispettano (Sistemi Windows), dunque l'intero progetto è totalmente cross-platform e può essere facilmente migrato rendendo la portabilità un importante fattore di forza di quest'ultimo.\\
+
+Il formato principale manipolato dai programmi è il formato .edgelist che analizzeremo in seguito.\\
+
+In fase di debug è stata utilizzata la libreria di disegno MatPlotLib per rappresentare i grafi, quest'ultima è integrata in modo nativo all'interno della libreria NetworkX, dunque tale scelta di utilizzo ha reso più facili le operazioni di analisi e debug.\\
+
+Un'altra libreria che è stata utilizzata in fase di analisi e debug per rappresentare i grafi in ambiente GNU/Linux è la libreria di disegno PyGraphViz.\\
+
+Anche quest'ultima è integrata in modo nativo all'interno della libreria NetworkX.\\
+
+Il formato di descrizione testuale dei grafi .dot è stato utilizzato solo in fase di debug in ambiente GNU/Linux assieme alla libreria di disegno PyGraphViz, dunque possiamo tralasciare la sua definizione e descrizione poiché non viene utilizzato all'interno dei programmi durante l'esecuzione.\\
+
+Altre librerie minori sono state scelte in fase di progettazione ed utilizzate all'interno dei programmi, ad esempio la libreria per la colorazione dell'output testuale su terminal emulators cross-platform Colorama è stata utilizzata in fase di analisi e debug per semplificare e rendere più chiara la lettura dell'output relativo all'esecuzione degli algoritmi.\\
+
+Un altro esempio è l'utilizzo della libreria cross-platform Pick, che rende semplice ed efficace la selezione delle opzioni all'interno dei terminal emulators durante l'esecuzione dei programmi.\\
+
+L'elenco completo delle librerie utilizzate all'interno dei programmi è il seguente 
+
+\begin{itemize}
+	\item Python Standard Library (Python 3.6.5 - Python 2.7.14) [https://docs.python.org/3/library/]
+	\item NetworkX Library (NetworkX 2.1) [https://pypi.org/project/networkx/]
+	\item Matplotlib Library (Matplotlib 2.2) [https://pypi.org/project/matplotlib/]
+	\item Pick Library (Pick 0.6.4) [https://pypi.org/project/pick/]
+	\item Pydot Library (Pydot 1.2.4) [https://pypi.org/project/pydot/]
+	\item Graphviz Library (Graphviz 0.8.2) [https://pypi.org/project/graphviz/]
+	\item PyParsing Library (PyParsing 2.2.0) [https://pypi.org/project/pyparsing/]
+	\item Colorama Library (Colorama 0.3.9) [https://pypi.org/project/colorama/]
+\end{itemize}
+
+Per il funzionamento completo dei programmi è necessaria l'installazione di Python e dei suddetti componenti attraverso l'uso del modulo Pip e/o l'uso di package manager (apt, pacman, ...).\\
+
+Procediamo ora nella trattazione descrivendo il funzionamento dei programmi generator.py e reader.py.\\
+Saranno poi analizzati in modo approfondito gli algoritmi per il calcolo degli equilibri di Nash e degli ottimi.\\
+
+%\section{generator.py : il generatore di grafi}
+%\justify
+%
+%\section{reader.py : il lettore di grafi}
+%\justify
+%
+%\section{Analisi e descrizione degli algoritmi}
+%\justify
+%
+%\subsection{nash_equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}
+%\justify
+%
+%\subsection{utilitarian_social_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}
+%\justify
+%
+%\subsection{egalitarian_social_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}
+%\justify

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  27 JUN 2018 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.8)  28 JUN 2018 02:02
 entering extended mode
 **./main.tex
 (main.tex
@@ -1750,7 +1750,171 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--18
 [23
 
 
-] [24]) [25] [26
+]
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+
+Overfull \hbox (11.56033pt too wide) in paragraph at lines 42--43
+[]\OT1/cmr/m/n/10.95 Ogni grup-po cartella-file.edgelist-file.dot-file.edgelist
+-file.dot-... rap-
+ []
+
+[24]
+Overfull \hbox (49.22636pt too wide) in paragraph at lines 52--53
+[]\OT1/cmr/m/n/10.95 Ciascuna car-tel-la con-tie-ne il sin-go-lo ri-sul-ta-to d
+i una let-tu-ra/sperimentazione
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+[26]
+Overfull \hbox (0.83844pt too wide) in paragraph at lines 114--115
+\OT1/cmr/m/n/10.95 spa-ce-macs, sublime-text, atom,...) e te-sta-to su di-ver-s
+e mac-chi-ne GNU/Linux
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
+
+Overfull \hbox (109.02576pt too wide) in paragraph at lines 153--154
+[]\OT1/cmr/m/n/10.95 Python Stan-dard Li-bra-ry (Py-thon 3.6.5 - Py-thon 2.7.14
+) [https://docs.python.org/3/library/] 
+ []
+
+
+Overfull \hbox (9.98642pt too wide) in paragraph at lines 154--155
+[]\OT1/cmr/m/n/10.95 NetworkX Li-bra-ry (Net-wor-kX 2.1) [https://pypi.org/proj
+ect/networkx/] 
+ []
+
+
+Overfull \hbox (20.84772pt too wide) in paragraph at lines 155--156
+[]\OT1/cmr/m/n/10.95 Matplotlib Li-bra-ry (Mat-plo-tlib 2.2) [https://pypi.org/
+project/matplotlib/] 
+ []
+
+[28]
+Overfull \hbox (6.49097pt too wide) in paragraph at lines 158--159
+[]\OT1/cmr/m/n/10.95 Graphviz Li-bra-ry (Gra-ph-viz 0.8.2) [https://pypi.org/pr
+oject/graphviz/] 
+ []
+
+
+Overfull \hbox (22.33803pt too wide) in paragraph at lines 159--160
+[]\OT1/cmr/m/n/10.95 PyParsing Li-bra-ry (Py-Par-sing 2.2.0) [https://pypi.org/
+project/pyparsing/] 
+ []
+
+
+Overfull \hbox (13.63887pt too wide) in paragraph at lines 160--161
+[]\OT1/cmr/m/n/10.95 Colorama Li-bra-ry (Co-lo-ra-ma 0.3.9) [https://pypi.org/p
+roject/colorama/] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
+
+ []
+
+) [29] [30
 
 
 ]
@@ -1764,12 +1928,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  11043 strings out of 493305
- 185810 string characters out of 3129802
+ 185810 string characters out of 3129803
  601044 words of memory out of 3000000
  14378 multiletter control sequences out of 15000+200000
  13724 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,11n,31p,820b,1290s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,11n,31p,820b,1324s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmbx12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/f
@@ -1790,9 +1954,9 @@ fonts/cm/cmti10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/valen/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on main.pdf (27 pages, 359149 bytes).
+Output written on main.pdf (31 pages, 369348 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
+ 174 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
