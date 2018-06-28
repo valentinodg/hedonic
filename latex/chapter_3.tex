@@ -241,15 +241,77 @@ Per una migliore comprensione, ad esempio i parametri associati alla tipologia b
 L'esempio ovviamente ricopre solo 2 tipologie di grafo, ma ciò vale per ogni tipologia implementata nel programma.\\
 
 A questo punto l'utente è chiamato a scegliere quale tipologia di dato utilizzare per codificare i pesi associati agli archi del grafo, peso flottante (tipo float) o peso intero (tipo int).\\
-Possiamo tralasciare il tipo flottante, dato che quest'ultimo, non essendo interessante e significativo per la sperimentazione, è stato eliminato in favore del tipo intero.\\
+Possiamo tralasciare il tipo flottante, dato che quest'ultimo, non essendo interessante e significativo per la sperimentazione, è stato tralasciato in favore del tipo intero.\\
 
-L'utente dunque dovrà scegliere il range di valori all'interno dei quali oscilleranno randomicamente i pesi interi associati agli archi del grafo.\\
+L'utente dunque dovrà scegliere i valori massimo e minimo relativi al range all'interno del quale oscilleranno randomicamente i pesi interi associati agli archi del grafo.\\
 È possibile scegliere solo pesi interi positivi, ovvero i valori minimo e massimo del range devono essere compresi tra \(0 \geq minimo \geq massimo \geq n\), con \(n\to\infty\).\\
 
+L'utente inoltre dovrà inserire il nome del grafo da creare il quale sarà utilizzato dal programma per creare la sotto porzione di filesystem relativa al grafo generato, ovvero nome-scelto.dir/nomescelto.edgelist, in modo da non creare conflitti tra i dati.\\
 
-%\section{reader.py : il lettore di grafi}
-%\justify
-%
+A questo punto il programma procederà a scrivere sul filesystem la struttura cartella/file.edgelist relativa al grafo appena creato.\\
+
+Il file nel quale è codificato il grafo generato ha estensione .edgelist (il file .dot come specificato sopra è stato utilizzato solo in fase di debug e quindi non viene considerato nella trattazione).\\
+
+Il file .edgelist è un file di tipo testuale che codifica sotto forma di lista (nodo, nodo, peso) la matrice di adiacenza che descrive il grafo generato.\\
+Il file si presenta nella forma qui di seguito (ciascuna coppia (nodo, nodo) codifica un arco al quale viene associato il terzo valore della tupla, ovvero il peso intero).\\
+
+\begin{description}
+	\item nodo nodo peso
+	\item 0    1    9
+	\item 0    2    20
+	\item 1    2    15
+	\item 2    3    3
+	\item ...
+\end{description}
+
+I nodi sono generati in modo totalmente dinamico utilizzando valori da 0 a n interi positivi, con n scelto dall'utente in fase di creazione quando richiesto come parametro associato alla tipologia di grafo da generare.\\
+
+Per completezza specifichiamo che la libreria offre i seguenti 4 tipi di grafi.
+
+\begin{itemize}
+	\item Graph (grafo senza parallelismo non-orientato)
+	\item Directed Graph (grafo senza parallelismo orientato)
+	\item MultiGraph (grafo con parallelismo non-orientato)
+	\item Directed MultiGraph (grafo con parallelismo orientato)
+\end{itemize}
+
+Nel programma è stata implementata solo la tipologia Graph, cioè grafi senza parallelismo non-orientati (con pesi interi positivi associati agli archi e valori interi positivi associati ai nodi) come richiesto dal problema modellato in precedenza, ovvero il gioco della k-colorazione generalizzata.\\
+
+Il programma termina a questo punto l'esecuzione permettendo all'utente di scegliere se disegnare il grafo appena creato attraverso la libreria MatPlotLib, l'utente può saltare l'esecuzione di questa operazione rispondendo negativamente alla richiesta.\\
+
+\subsection{generator.py : MULTIPLE MODE}
+\justify
+Il funzionamento della modalità MULTIPLE MODE, accessibile selezionando l'opzione MULTIPLE durante la scelta della classe, è quasi del tutto analogo a quello descritto in precedenza, le uniche differenze sono le seguenti.\\
+
+Dopo aver scelto la tipologia di grafo da generare, all'utente verrà chiesto come parametro aggiuntivo il numero di iterazioni relativo all'algoritmo di generazione multipla.\\
+In sostanza l'utente dovrà scegliere quanti grafi generare (appartenenti alla tipologia scelta in precedenza).\\
+
+In seguito l'utente dovrà inserire un ulteriore parametro aggiuntivo, ovvero il valore minimo e massimo relativi al range all'interno del quale dovrà oscillare randomicamente il numero di nodi dei grafi da generare.\\
+I valori minimo e massimo dovranno ovviamente essere compresi tra \(0 \geq minimo \geq massimo \geq n\), con \(n\to\infty\), come specificato in precedenza.\\
+
+All'utente verrà inoltre chiesto di inserire il nome della cartella nella quale inserire gli output delle generazioni multiple, come nel caso descritto nella sezione SINGLE MODE.\\
+
+A questo punto l'algoritmo di generazione provvederà a creare n grafi (con n scelto dall'utente, come descritto poco sopra) appartenenti alla tipologia scelta (ad esempio complete graph).\\
+Ciascun grafo creato avrà un valore randomico di nodi compreso tra \(0 \geq minimo \geq numero di nodi \geq massimo \geq n\).\\
+
+Il programma provverà automaticamente e in modo totalmente dinamico a creare le strutture nel filesystem necessarie a salvare correttamente i file .edgelist relativi a ciascun grafo creato durante la generazione multipla.\\
+È stato implementato un processo di assegnamento automatico del nome per ciascun output generato che utilizza il round di iterazione assieme alla tipologia e al numero di nodi del grafo creato, in modo da evitare conflitti, inconsistenza e perdita dei dati.\\
+
+Passiamo ora a descrivere il programma reader.py, il lettore di grafi, nel quale sono includi gli algoritmi per il calcolo degli equilibri di Nash e per il calcolo degli ottimi utilizzando le 2 funzioni di benessere sociale utilitario e egalitario, il vero cuore dell'implementazione.\\
+
+
+\section{reader.py : il lettore di grafi}
+\justify
+reader.py
+
+
+
+
+
+
+
+
+
 %\section{Analisi e descrizione degli algoritmi}
 %\justify
 %

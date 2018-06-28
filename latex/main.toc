@@ -28,4 +28,6 @@
 \contentsline {section}{\numberline {3.2}Componenti utilizzati e progettazione}{27}
 \contentsline {section}{\numberline {3.3}generator.py : il generatore di grafi}{29}
 \contentsline {subsection}{\numberline {3.3.1}generator.py : SINGLE MODE}{30}
-\contentsline {part}{IV\hspace {1em}Sperimentazione}{33}
+\contentsline {subsection}{\numberline {3.3.2}generator.py : MULTIPLE MODE}{33}
+\contentsline {section}{\numberline {3.4}reader.py : il lettore di grafi}{34}
+\contentsline {part}{IV\hspace {1em}Sperimentazione}{35}
