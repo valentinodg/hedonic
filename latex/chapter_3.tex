@@ -173,9 +173,24 @@ Per il funzionamento completo dei programmi è necessaria l'installazione di Pyt
 Procediamo ora nella trattazione descrivendo il funzionamento dei programmi generator.py e reader.py.\\
 Saranno poi analizzati in modo approfondito gli algoritmi per il calcolo degli equilibri di Nash e degli ottimi.\\
 
-%\section{generator.py : il generatore di grafi}
-%\justify
-%
+\section{generator.py : il generatore di grafi}
+\justify
+Il programma generator.py è un generatore dinamico di grafi scritto interamente in Python in grado di semplificare le operazioni di creazione e manipolazione di questi oggetti matematici e in grado di creare automaticamente tutte le strutture di filesystem necessarie al salvataggio dei grafi generati su file.\\
+
+Il programma come specificato in precedenza è completamente cross-platform e per ciò che riguarda la gestione del filesystem è stato accuratamente ottimizzato per non generare conflitti e problemi di inconsistenza dei dati.\\
+
+Principalmente il programma utilizza due moduli principali necessari al corretto funzionamento dello stesso, la Standard Library del linguaggio Python per le funzioni di base e la libreria NetworkX per la creazione e manipolazione dei grafi.\\
+
+Di seguito vengono riportate le caratteristiche del programma assieme ad un esempio generale di un caso d'uso.\\
+
+Per prima cosa vengono impostati i motori di disegno, ovvero le librerie MatPlotLib e PyGraphViz.\\
+Quest'ultima è stata utilizzata solo in ambiente GNU/Linux in fase di debug, dunque non è disponibile per l'utente.\\
+
+In compenso è però disponibile per l'utente la libreria MatPlotLib che consente a quest'ultimo, qualora volesse, di disegnare al termine della generazione i grafi appena creati.\\
+È di fondamentale importanza però specificare che il processo di disegno per grafi di grandi dimensioni è molto dispendioso e dunque può richiedere un tempo considerevole.\\
+
+
+
 %\section{reader.py : il lettore di grafi}
 %\justify
 %
