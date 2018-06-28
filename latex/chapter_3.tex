@@ -19,7 +19,7 @@ Al fine di rendere più chiara la lettura viene inoltre fornita un breve leggend
 \begin{itemize}
 	\item La nomenclatura \textbf{nome.dir} indica che l'oggetto è una cartella
 	\item La nomenclatura \textbf{nome.edgelist} indica che l'oggetto è un file con estensione .edgelist (oggetto principale modellato dal programma)
-	\item La nomenclatura \textbf{nome.dot} indica che l'oggetto è un file con estensione .dot (oggetto utilizzato su macchine GNU/Linux per il disegno attraverso la libreria Pygraphviz in fase di debug)
+	\item La nomenclatura \textbf{nome.dot} indica che l'oggetto è un file con estensione .dot (oggetto utilizzato su macchine GNU/Linux per il disegno attraverso la libreria PyGraphViz in fase di debug)
 	\item le lettere \textbf{X,K,Y,Z,H,W} rappresentano numeri casuali (sono utilizzate per descrivere la moltitudine di cartelle, grafi creati e risultati, ottenuti durante un generale caso d'uso dei programmi)
 	\item la nomenclatura \textbf{nome.init} indica che l'oggetto è un file con estensione .init (oggetto utilizzato in fase di lettura per salvare le caratteristiche dei grafi (nodi, archi, pesi, colorazione) e dei colori (colori, profitti))
 	\item la nomenclatura \textbf{nome.out} indica che l'oggetto è un file con estensione .out (oggetto utilizzato in fase di lettura per salvare i risultati derivanti da esecuzioni singole o multiple usando gli algoritmi per il calcolo del nash, dell'ottimo con funzione di benessere sociale utilitario e dell'ottimo con funzione di benessere sociale egalitario)
@@ -39,24 +39,24 @@ Descriviamo ora la funzione basilare di alcuni componenti dell'albero sottostant
 	\begin{enumerate}
 		\item Al suo interno vi sono Y cartelle m-gen-dir-Y (il nome viene assegnato dinamicamente dall'utente) generate dinamicamente
 		\item Ciascuna cartella contiene il risultato di una generazione multipla di grafi sotto forma di molteplici coppie (nell'esempio K,Z,...) di file .edgelist e .dot (utilizzato solo in fase di debug)
-		\item Ogni gruppo cartella-file.edgelist-file.dot-file.edgelist-file.dot-... rappresenta il risultato di una generazione multipla
+		\item Ogni gruppo cartella-file.edgelist-file.dot-file.edgelist-file.dot-... indica il risultato di una generazione multipla
 	\end{enumerate}
 	\item Il file \textbf{generator.py} contiene al suo interno il codice del generatore di grafi scritto interamente in linguaggio Python
 \end{itemize}
 
 \begin{itemize}
 	\item La cartella \textbf{reader} contiene al suo interno l'intera struttura relativa al lettore di grafi
-	\item La cartella \textbf{result} contiene i risultati delle letture/sperimentazioni su grafi singoli
+	\item La cartella \textbf{result} contiene i risultati delle letture / sperimentazioni su grafi singoli
 	\begin{enumerate}
 		\item Al suo interno vi sono H cartelle result-dir-H (il nome viene preso dinamicamente dal grafo in lettura) generate dinamicamente
-		\item Ciascuna cartella contiene il singolo risultato di una lettura/sperimentazione su un grafo sotto forma di una coppia di file .init e .out
-		\item Ogni gruppo cartella-file.init-file.out rappresenta il risultato di una singola lettura/sperimentazione 
+		\item Ciascuna cartella contiene il singolo risultato di una lettura / sperimentazione su un grafo sotto forma di una coppia di file .init e .out
+		\item Ogni gruppo cartella-file.init-file.out rappresenta il risultato di una singola lettura / sperimentazione 
 	\end{enumerate}
-	\item La cartella \textbf{m-result} contiene i risultati delle letture/sperimentazioni su molteplici grafi
+	\item La cartella \textbf{m-result} contiene i risultati delle letture / sperimentazioni su molteplici grafi
 	\begin{enumerate}
 		\item Al suo interno vi sono W cartelle m-result-dir-W (il nome viene preso dinamicamente dalla cartella relativa alla moltitudine di grafi in lettura) generate dinamicamente
-		\item Ciascuna cartella contiene multipli risultati di multiple letture/sperimentazioni su grafo multipli sotto forma di una coppia di file .init e .out
-		\item Ogni gruppo cartella-file.init-file.out rappresenta il risultato di una lettura/sperimentazione multipla
+		\item Ciascuna cartella contiene multipli risultati di multiple letture / sperimentazioni su grafo multipli sotto forma di una coppia di file .init e .out
+		\item Ogni gruppo cartella-file.init-file.out rappresenta il risultato di una lettura / sperimentazione multipla
 	\end{enumerate}
 	\item Il file \textbf{reader.py} contiene al suo interno il codice del lettore di grafi scritto interamente in linguaggio Python 
 \end{itemize}
@@ -111,7 +111,7 @@ Descriviamo ora la funzione basilare di alcuni componenti dell'albero sottostant
 \justify
 I programmi generator.py e reader.py sono stati interamente scritti utilizzando il linguaggio Python [versione 3.6.5].\\
 
-Il codice è stato scritto utilizzando differenti editor di testo (vim(neovim), spacemacs, sublime-text, atom,...) e testato su diverse macchine GNU/Linux e Windows, in particolare su differenti shell (bash, zsh, fish) e su cmd.\\
+Il codice è stato scritto utilizzando differenti editor di testo (vim [neovim], spacemacs, sublime-text, atom,...) e testato su diverse macchine GNU/Linux e Windows, in particolare su differenti shell (bash, zsh, fish) e su cmd.\\
 
 Per agevolare il processo di progettazione e scrittura del codice l'intera struttura del progetto è stata caricata in una repository sul sito github e gestita in remoto (attraverso il software git).\\
 
@@ -150,17 +150,25 @@ Un altro esempio è l'utilizzo della libreria cross-platform Pick, che rende sem
 L'elenco completo delle librerie utilizzate all'interno dei programmi è il seguente 
 
 \begin{itemize}
-	\item Python Standard Library (Python 3.6.5 - Python 2.7.14) [https://docs.python.org/3/library/]
-	\item NetworkX Library (NetworkX 2.1) [https://pypi.org/project/networkx/]
-	\item Matplotlib Library (Matplotlib 2.2) [https://pypi.org/project/matplotlib/]
-	\item Pick Library (Pick 0.6.4) [https://pypi.org/project/pick/]
-	\item Pydot Library (Pydot 1.2.4) [https://pypi.org/project/pydot/]
-	\item Graphviz Library (Graphviz 0.8.2) [https://pypi.org/project/graphviz/]
-	\item PyParsing Library (PyParsing 2.2.0) [https://pypi.org/project/pyparsing/]
-	\item Colorama Library (Colorama 0.3.9) [https://pypi.org/project/colorama/]
+	\item Python Standard Library (Python 3.6.5 - Python 2.7.14)\\
+	https://docs.python.org/3/library/
+	\item NetworkX Library (NetworkX 2.1)\\ 	
+	https://pypi.org/project/networkx/	
+	\item Matplotlib Library (Matplotlib 2.2)\\
+	https://pypi.org/project/matplotlib/
+	\item Pick Library (Pick 0.6.4)\\
+	https://pypi.org/project/pick/
+	\item Pydot Library (Pydot 1.2.4)\\
+	https://pypi.org/project/pydot/
+	\item Graphviz Library (Graphviz 0.8.2)\\
+	https://pypi.org/project/graphviz/
+	\item PyParsing Library (PyParsing 2.2.0)\\
+	https://pypi.org/project/pyparsing/
+	\item Colorama Library (Colorama 0.3.9)\\
+	https://pypi.org/project/colorama/
 \end{itemize}
 
-Per il funzionamento completo dei programmi è necessaria l'installazione di Python e dei suddetti componenti attraverso l'uso del modulo Pip e/o l'uso di package manager (apt, pacman, ...).\\
+Per il funzionamento completo dei programmi è necessaria l'installazione di Python e dei suddetti componenti attraverso l'uso del modulo pip e/o l'uso di package manager (apt, pacman, ...).\\
 
 Procediamo ora nella trattazione descrivendo il funzionamento dei programmi generator.py e reader.py.\\
 Saranno poi analizzati in modo approfondito gli algoritmi per il calcolo degli equilibri di Nash e degli ottimi.\\

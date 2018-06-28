@@ -1,57 +1,29 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\defcounter {refsection}{0}\relax 
 \contentsline {part}{I\hspace {1em}Equilibri di Nash}{3}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduzione agli equilibri di Nash}{4}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Teoria dei giochi}{4}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.1}Giochi non-cooperativi}{5}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Equilibri di Nash}{5}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.1}Definizione formale}{6}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}Nozioni di base}{7}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.1}Rappresentazione con matrici di payoff e descrizione del procedimento decisionale}{7}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.2}Equilibri di Nash e ottimo sociale}{9}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.3}Equilibri di Nash multipli}{9}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.4}Assenza di equilibri di Nash}{10}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.5}Il dilemma del prigioniero : sub-ottimalit\IeC {\`a} individuale e sociale}{11}
-\defcounter {refsection}{0}\relax 
 \contentsline {part}{II\hspace {1em}Gioco della K-Colorazione Generalizzata}{13}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Gioco della k-colorazione generalizzata}{14}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Descrizione generale}{15}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.1}Nozioni sul problema}{16}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Dettagli sul modello}{17}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Convergenza ed esistenza degli equilibri di Nash}{19}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Benessere sociale utilitario (utilitarian social welfare)}{19}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.1}Prezzo dell'anarchia utilitario (utilitarian price of anarchy)}{20}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Benessere sociale egalitario (egalitarian social welfare)}{20}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.1}Prezzo dell'anarchia egalitario (egalitarian price of anarchy)}{20}
-\defcounter {refsection}{0}\relax 
 \contentsline {part}{III\hspace {1em}Implementazione}{22}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Implementazione}{23}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Struttura generale}{23}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Componenti utilizzati e progettazione}{27}
-\defcounter {refsection}{0}\relax 
 \contentsline {part}{IV\hspace {1em}Sperimentazione}{30}
