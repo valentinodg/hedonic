@@ -30,4 +30,5 @@
 \contentsline {subsection}{\numberline {3.3.1}generator.py : SINGLE MODE}{30}
 \contentsline {subsection}{\numberline {3.3.2}generator.py : MULTIPLE MODE}{33}
 \contentsline {section}{\numberline {3.4}reader.py : il lettore di grafi}{34}
-\contentsline {part}{IV\hspace {1em}Sperimentazione}{35}
+\contentsline {subsection}{\numberline {3.4.1}reader.py : SINGLE EXEC}{36}
+\contentsline {part}{IV\hspace {1em}Sperimentazione}{39}

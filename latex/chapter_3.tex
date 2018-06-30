@@ -302,14 +302,75 @@ Passiamo ora a descrivere il programma reader.py, il lettore di grafi, nel quale
 
 \section{reader.py : il lettore di grafi}
 \justify
-reader.py
+il programma reader.py è un lettore dinamico di grafi anche esso scritto interamente in linguaggio Python che consente la lettura e la manipolazione dei grafi creati in modo asincrono attraverso l'utilizzo del generatore generator.py.\\
+
+Inoltre il programma consente la modellazione del problema del gioco della k-colorazione generalizzata attraverso un massiccio uso della Standard Library del linguaggio Python.\\
+
+Nel reader.py sono incluse le definizioni degli algoritmi per il calcolo degli equilibri di Nash e quelli per il calcolo dell'ottimo con funzione di benessere utilitario e egalitario.\\
+Il programma permette la lettura di un singolo o di molteplici grafi per volta e consente l'esecuzione dei suddetti algoritmi sulle istanze lette.\\
+
+Per rendere meno faticoso il lavoro relativo alla sperimentazione il programma è in grado di raccogliere efficacemente e organizzare i dati derivanti dalle esecuzioni in tempo reale.\\
+
+In modo totalmente dinamico il lettore è in grado di salvare i risultati delle sperimentazioni manipolando le strutture relative al filesystem.\\
+Come per il generatore il programma utilizza principalmente e in modo quasi esclusivo la libreria standard del linguaggio Python per eseguire queste operazioni.\\
+Anche in questo caso le primitive e le funzioni utilizzate garantiscono la il funzionamento cross-platform e dunque la portabilità del programma.\\ Il tutto è stato ampiamente testato su macchine con sistema POSIX e non, il programma è totalmente ottimizzato e funzionale in questo senso.\\
+
+I file di output per ciascuna esecuzione sono 2, il file .init (file testuale che contiene il salvataggio delle informazioni basilari del grafo, creato dopo aver effettuato la modellazione del problema) e il file.out (file testuale che contiene i risultati finali derivanti dall'esecuzione di uno o più algoritmi).\\
+
+Sia per esecuzioni singole che multiple il risultato prodotto sarà sempre e comunque una coppia file.init / file.out.\\  
+
+Anche in questo caso sono disponibili per l'utente moduli per il disegno dei grafi, in particolare pre e post modellazione e per rappresentare i risultati delle esecuzioni (ad esempio le colorazioni stabili ottenute dal calcolo degli equillibri di Nash).\\
+La principale libreria in questo senso è MatPlotLib (la libreria PyGraphViz è stata utilizzata in fase di debug come specificato in precedenza).\\
+
+Per non tediare il lettore confermiamo che anche il programma reader.py fa uso delle medesime librerie addizionali utilizzate nel programma generator.py, il loro uso è però marginale e dunque non verranno trattate, come in precedenza.\\
+L'utilizzo più intesivo è relativo alle librerie Pick, per fornire un interfaccia di selezione da console all'utente, e alla libreria Colorama, utilizzata in fase di lettura e debug per colore l'output su console e mettere in risalto i dati fondamentali relativi alle esecuzioni degli algoritmi e alle operazioni essenziali di gestione del programma.\\
+
+Di fondamentale importanza è l'utilizzo della libreria NetworkX che consente la lettura e l'interpretazione delle informazioni relative ai file testuali di creazione .edgelist e la ricostruzione in modo asincrono dei grafi generati in precedenza, in modo da utilizzarli per la sperimentazione.\\
+
+Anche in questo caso qui di seguito vengono riportate le caratteristiche del programma assieme ad un esempio generale di un caso d'uso in modo da descrivere il funzionamento del programma e le operazioni disponibili per l'utente
+
+Sono disponibili per l'utente, in modo speculare e simmetrico rispetto alla definizione del programma generator.py, 2 modalità di funzionamento per la lettura e l'esecuzione, la modalità SINGLE EXEC e la modalità MULTIPLE EXEC.\\
+All'avvio del programma l'utente dovrà scegliere una delle 2 modaliltà d'uso attraverso un'interfaccia si selezione da console implementata attraverso l'utilizzo della libreria Pick.\\
 
 
+\subsection{reader.py : SINGLE EXEC}
+\justify
+In modalità SINGLE EXEC il programma effettuerà una ricerca globale automatica e dinamica dei file con estensione .edgelist all'interno della cartella gen, la cartella relativa alle generazioni di grafi singoli creata dal generatore generator.py in modalità SINGLE MODE.\\
 
+A questo punto l'utente dovrà selezione il grafo da modellare e sul quale eseguire una sperimentazione utilizzando gli algoritmi forniti all'interno del programma.\\
+La scelta è implementata attraverso un'interfaccia di selezione creata con la libreria Pick nella quale apparirà la lista di file .edgelist trovati.\\
 
+Il programma leggerà e interpreterà il contenuto del file.edgelist relativo al grafo selezionato dall'utente e attraverso le funzioni della libreria NetworkX ricostruire l'istanza dell'oggetto matematico desiderato creato in precedenza e sul quale si vuole iniziare una sperimentazione.\\
 
+Ovviamente l'operazione genererà sempre e comunque un'istanza di grafo senza parallelismo non-orientato e con valori interi positivi associati ai nodi e pesi interi positivi associati agli archi (parametri scelti in precedenza, durante la fase di creazione del grafo e ricostruiti dalle funzioni di libreria).\\
 
+In seguito l'utente sarà nuovamente chiamato a scegliere 2 parametri fondamentali per la modellazione del problema, ovvero il numero di colori e valore massimo per il profitto associato a questi ultimi.\\
 
+L'utente potrà scegliere il numero massimo di colori presenti all'interno dell'istanza che si sta modellando.\\
+Il numero massimo di colori non può essere superiore al numero di nodi del grafo, altrimenti la sperimentazione perderebbe di senso e in più non verrebbe rispettata la definizione del problema presentata nel Capitolo 2.\\
+I colori, come ogni altro parametro del quale non è richiesto un range (valore minimo e massimo), saranno numerati da 0 a n, con n scelto dall'utente e sempre \(n \leq numero di nodi del grafo\).\\
+
+Come struttura dati è stata scelta la lista poichè l'elenco dei colori non necessità di essere manipolato in maniera complessa, non vi è inoltre l'esigenza di effettuare query di ricerca indicizzate e altre operazioni poco efficaci sulle liste.\\
+Semplicemente la lista dei colori andrà iterata più volte e in modo innestato durante i vari cicli degli algoritmi implementati.\\
+Per la creazione è stata utilizzata la potente list comprehension interna a al linguaggio Python.\\
+
+L'utente inoltre potrà scegliere il valore massimo all'interno del quale oscilleranno randomicamente i profitto associati ai colori per ciascun giocatore.\\
+In questo caso non vi sono restrizioni, scelto n, i valori oscilleranno in modo randomico tra 0 e n.\\
+I profitti legati ai colori, per definizione del modello potranno essere differenti da giocatore a giocatore, ad esempio il giocatore 0 avrà un profitto di 56 per il colore 0, il giocatore 1 avrà un profitto di 29 per il colore 0 (i valori sono totalmente casuali e servono solo da esempio).\\
+
+Proprio per questo motivo la struttura dati implementata per soddisfare le caratteristiche del modello è un doppio dizionario innestato.\\
+Assieme alla struttura relativa alle coppie arco-peso e quella relativa all'associazione nodo-colore che presenteremo in seguito, quest'ultima rappresenta uno dei componenti più utilizzati del programma.\\
+È necessaria in questo caso un'implementazione che permetta l'utilizzo di query di ricerca asincrone a doppia chiave (l'operazione più pesante che interessa questa struttura).\\
+È stata utilizzata a questo scopo la potente nested dictionary comprehension del linguaggio Python, in modo da eliminare possibilità di conflitto e inconsistenza dei dati, in modo da disambiguare le entry del dizionario in modo efficace e dunque in modo da garantire l'utilizzo di interrogazioni ad accesso diretto utili nel programma.\\
+È stata generata la seguente struttura (esempio).
+
+\begin{description}
+	\item nodo 0 :: colore 0 : profitto 24 , colore 1 : profitto 38 , colore 2 : profitto 30 , ...
+	\item nodo 1 :: colore 0 : profitto 11 , colore 1 : profitto 55 , colore 2 : profitto 23 , ...
+	\item nodo 2 :: colore 0 : profitto 14 , colore 1 : profitto 65 , colore 2 : profitto 26 , ...
+	\item nodo 3 :: colore 0 : profitto 99 , colore 1 : profitto 66 , colore 2 : profitto 86 , ...
+	\item ...
+\end{description}
 
 
 %\section{Analisi e descrizione degli algoritmi}
