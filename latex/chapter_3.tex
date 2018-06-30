@@ -294,7 +294,7 @@ All'utente verrà inoltre chiesto di inserire il nome della cartella nella quale
 A questo punto l'algoritmo di generazione provvederà a creare n grafi (con n scelto dall'utente, come descritto poco sopra) appartenenti alla tipologia scelta (ad esempio complete graph).\\
 Ciascun grafo creato avrà un valore randomico di nodi compreso tra \(0 \geq minimo \geq numero di nodi \geq massimo \geq n\).\\
 
-Il programma provverà automaticamente e in modo totalmente dinamico a creare le strutture nel filesystem necessarie a salvare correttamente i file .edgelist relativi a ciascun grafo creato durante la generazione multipla.\\
+Il programma provvederà automaticamente e in modo totalmente dinamico a creare le strutture nel filesystem necessarie a salvare correttamente i file .edgelist relativi a ciascun grafo creato durante la generazione multipla.\\
 È stato implementato un processo di assegnamento automatico del nome per ciascun output generato che utilizza il round di iterazione assieme alla tipologia e al numero di nodi del grafo creato, in modo da evitare conflitti, inconsistenza e perdita dei dati.\\
 
 Passiamo ora a descrivere il programma reader.py, il lettore di grafi, nel quale sono includi gli algoritmi per il calcolo degli equilibri di Nash e per il calcolo degli ottimi utilizzando le 2 funzioni di benessere sociale utilitario e egalitario, il vero cuore dell'implementazione.\\
@@ -319,18 +319,18 @@ I file di output per ciascuna esecuzione sono 2, il file .init (file testuale ch
 
 Sia per esecuzioni singole che multiple il risultato prodotto sarà sempre e comunque una coppia file.init / file.out.\\  
 
-Anche in questo caso sono disponibili per l'utente moduli per il disegno dei grafi, in particolare pre e post modellazione e per rappresentare i risultati delle esecuzioni (ad esempio le colorazioni stabili ottenute dal calcolo degli equillibri di Nash).\\
+Anche in questo caso sono disponibili per l'utente moduli per il disegno dei grafi, in particolare pre e post modellazione e per rappresentare i risultati delle esecuzioni (ad esempio le colorazioni stabili ottenute dal calcolo degli equilibri di Nash).\\
 La principale libreria in questo senso è MatPlotLib (la libreria PyGraphViz è stata utilizzata in fase di debug come specificato in precedenza).\\
 
 Per non tediare il lettore confermiamo che anche il programma reader.py fa uso delle medesime librerie addizionali utilizzate nel programma generator.py, il loro uso è però marginale e dunque non verranno trattate, come in precedenza.\\
-L'utilizzo più intesivo è relativo alle librerie Pick, per fornire un interfaccia di selezione da console all'utente, e alla libreria Colorama, utilizzata in fase di lettura e debug per colore l'output su console e mettere in risalto i dati fondamentali relativi alle esecuzioni degli algoritmi e alle operazioni essenziali di gestione del programma.\\
+L'utilizzo più intensivo è relativo alle librerie Pick, per fornire un interfaccia di selezione da console all'utente, e alla libreria Colorama, utilizzata in fase di lettura e debug per colore l'output su console e mettere in risalto i dati fondamentali relativi alle esecuzioni degli algoritmi e alle operazioni essenziali di gestione del programma.\\
 
 Di fondamentale importanza è l'utilizzo della libreria NetworkX che consente la lettura e l'interpretazione delle informazioni relative ai file testuali di creazione .edgelist e la ricostruzione in modo asincrono dei grafi generati in precedenza, in modo da utilizzarli per la sperimentazione.\\
 
 Anche in questo caso qui di seguito vengono riportate le caratteristiche del programma assieme ad un esempio generale di un caso d'uso in modo da descrivere il funzionamento del programma e le operazioni disponibili per l'utente
 
 Sono disponibili per l'utente, in modo speculare e simmetrico rispetto alla definizione del programma generator.py, 2 modalità di funzionamento per la lettura e l'esecuzione, la modalità SINGLE EXEC e la modalità MULTIPLE EXEC.\\
-All'avvio del programma l'utente dovrà scegliere una delle 2 modaliltà d'uso attraverso un'interfaccia si selezione da console implementata attraverso l'utilizzo della libreria Pick.\\
+All'avvio del programma l'utente dovrà scegliere una delle 2 modalità d'uso attraverso un'interfaccia si selezione da console implementata attraverso l'utilizzo della libreria Pick.\\
 
 
 \subsection{reader.py : SINGLE EXEC}
@@ -350,7 +350,7 @@ L'utente potrà scegliere il numero massimo di colori presenti all'interno dell'
 Il numero massimo di colori non può essere superiore al numero di nodi del grafo, altrimenti la sperimentazione perderebbe di senso e in più non verrebbe rispettata la definizione del problema presentata nel Capitolo 2.\\
 I colori, come ogni altro parametro del quale non è richiesto un range (valore minimo e massimo), saranno numerati da 0 a n, con n scelto dall'utente e sempre \(n \leq numero di nodi del grafo\).\\
 
-Come struttura dati è stata scelta la lista poichè l'elenco dei colori non necessità di essere manipolato in maniera complessa, non vi è inoltre l'esigenza di effettuare query di ricerca indicizzate e altre operazioni poco efficaci sulle liste.\\
+Come struttura dati è stata scelta la lista poiché l'elenco dei colori non necessità di essere manipolato in maniera complessa, non vi è inoltre l'esigenza di effettuare query di ricerca indicizzate e altre operazioni poco efficaci sulle liste.\\
 Semplicemente la lista dei colori andrà iterata più volte e in modo innestato durante i vari cicli degli algoritmi implementati.\\
 Per la creazione è stata utilizzata la potente list comprehension interna a al linguaggio Python.\\
 
@@ -375,7 +375,7 @@ Assieme alla struttura relativa alle coppie arco-peso e quella relativa all'asso
 A questo punto viene generata automaticamente la colorazione iniziale per il grafo corrente.\\
 Il colore è stato gestito attraverso la struttura dati del dizionario, ad ogni nodo viene associata una singola entry chiave : valore come etichetta, la chiave rappresenta il nome del parametro, ovvero la stringa "color" e il valore rappresenta il colore con il quale è colorato in nodo.\\
 Le etichette sono gestite a livello di libreria NetworkX, dunque è stato seguito lo standard esplicato in documentazione.\\
-È dunque possibile accedere e manipolare, con facilità e alta velocità computazionale, i dati all'interno dei dizionari che rappresentano i parametri associati al nodo attravero semplici query ad accesso diretto e a singola chiave, ovvero il parametro "color" nel nostro caso.\\
+È dunque possibile accedere e manipolare, con facilità e alta velocità computazionale, i dati all'interno dei dizionari che rappresentano i parametri associati al nodo attraverso semplici query ad accesso diretto e a singola chiave, ovvero il parametro "color" nel nostro caso.\\
 La colorazione iniziale è del tipo seguente.
 
 \begin{description}
@@ -387,9 +387,9 @@ La colorazione iniziale è del tipo seguente.
 \end{description}
 
 Tutti i dati relativi alla modellazione iniziale dell'istanza letta per ricreare le condizioni di partenza del nostro gioco sono salvate nel file.init correlato all'esecuzione corrente.\\
-Specifichiamo nuovamente l'assoluta gestione cross-platform del filesystem e l'efficente ottimizzazione eseguita sul lato input / output su file, il tutto è affiancato ovviamente da numerosissimi test su diverse tipologie di macchine.\\
+Specifichiamo nuovamente l'assoluta gestione cross-platform del filesystem e l'efficiente ottimizzazione eseguita sul lato input / output su file, il tutto è affiancato ovviamente da numerosissimi test su diverse tipologie di macchine.\\
 
-Nel file testuale .init relativo all'esecuzioni vengono inseriti i seguenti parametri.
+Nel file testuale .init relativo all'esecuzione vengono inseriti i seguenti parametri.
 
 \begin{itemize}
 	\item lista dei colori
@@ -401,7 +401,7 @@ Nel file testuale .init relativo all'esecuzioni vengono inseriti i seguenti para
 \end{itemize}
 
 È importante specificare che il peso degli archi è gestito in modo del tutto identico a quello relativo al colore dei nodi.\\
-Infatti il peso (e gli eventuali altri parametri implentabili in modo nativo grazie alla libreria NetworkX) degli archi si presenta come un dizionario chiave : valore, nel quale la chiave corrisponde al nome del parametro, ovvero la stringa "weight" e il valore rappresenta il vero e proprio peso associato all'arco.\\
+Infatti il peso (e gli eventuali altri parametri implementabili in modo nativo grazie alla libreria NetworkX) degli archi si presenta come un dizionario chiave : valore, nel quale la chiave corrisponde al nome del parametro, ovvero la stringa "weight" e il valore rappresenta il vero e proprio peso associato all'arco.\\
 
 Anche qui dunque una struttura dati di questo tipo permette un'alta velocità di calcolo e recupero delle informazioni con query ad accesso diretto a chiave singola, ovvero il nome del parametro richiesto associato all'arco che nel nostro caso è la stringa "weight".\\
 La struttura dati si presenta come segue.
@@ -415,16 +415,16 @@ La struttura dati si presenta come segue.
 \end{description}
 
 Terminata la creazione del file testuale con estensione .init il programma procede e genera tutte le strutture del filesystem necessarie per salvare correttamente i risultati della sperimentazione corrente.\\
-In particolare crea una nuova cartella all'interno della direcotry result (poichè siamo in SINGLE EXEC) in modo dinamico prendendo il nome del grafo corrente importato dall'utente.\\
+In particolare crea una nuova cartella all'interno della directory result (poichè siamo in SINGLE EXEC) in modo dinamico prendendo il nome del grafo corrente importato dall'utente.\\
 Assegna il medesimo nome al file .init (e al file .out che vedremo tra poco) che viene generato all'interno del path appena generato.\\
 
 A questo punto l'utente viene chiamato a compiere un'ennesima scelta, l'ultima relativa al flusso di esecuzione corrente.\\
 All'utente viene chiesto di scegliere tra le 3 opzioni di calcolo disponibili, ciascuna corrispondete a 1 dei 3 algoritmi implementati.
 
 \begin{itemize}
-	\item cacolo della colorazione ottima (ottimo con funzione di benessere sociale utilitaria)
-	\item cacolo della colorazione ottima (ottimo con funzione di benessere sociale egalitaria)
-	\item cacolo della colorazione stabile (equilibrio di Nash)
+	\item calcolo della colorazione ottima (ottimo con funzione di benessere sociale utilitaria)
+	\item calcolo della colorazione ottima (ottimo con funzione di benessere sociale egalitaria)
+	\item calcolo della colorazione stabile (equilibrio di Nash)
 	\item esci
 \end{itemize}
 
@@ -446,22 +446,54 @@ Scegliendo MULTIPLE EXEC il programma effettuerà una ricerca globale di tutte l
 
 A questo punto l'utente sarà nuovamente interpellato e attraverso un'interfaccia di selezione da console dovrà selezionare la cartella contenente i grafi sui quali desidera fare sperimentazione.\\
 Una volta selezionata la cartella il programma utilizzerà tutti i file con estensione .edgelist come istanze dell'esecuzione multipla.\\
-In particolare il programma si sviluppa all'interno di un ciclo principale che scorrè tutti i file con estensione .edgelist presenti nella cartella scelta dall'utente.\\
+In particolare il programma si sviluppa all'interno di un ciclo principale che scorrerà tutti i file con estensione .edgelist presenti nella cartella scelta dall'utente.\\
 
-Il ciclo prende un grafo alla volta, opera la fase di pre-esecuzione modellando l'istanza corrente secondo la definzione del problema e poi esegue l'algoritmo per il calcolo della colorazione stabile trovando l'equilibrio di Nash per il grafo corrente.\\
-Il ciclo e l'esecuzione, che potrebbe coinvolgere un numero molto grande di grafi, avvengono in maniera totalmente automatica e dunque l'utente può disinteressarsi del programma poichè slegato dal flusso di esecuzione.\\
+Il ciclo prende un grafo alla volta, opera la fase di pre-esecuzione modellando l'istanza corrente secondo la definizione del problema e poi esegue l'algoritmo per il calcolo della colorazione stabile trovando l'equilibrio di Nash per l'istanza corrente.\\
+Il ciclo e l'esecuzione, che potrebbe coinvolgere un numero molto grande di grafi, avvengono in maniera totalmente automatica e dunque l'utente può disinteressarsi del programma poiché slegato dal flusso di esecuzione.\\
+
+Proprio a causa del fatto che le istanze potrebbero essere numerose e che la grandezza di ciascuna istanza, in termini di numero di nodi, potrebbe essere elevata, si utilizza come sperimentazione, annessa alla modalità di esecuzione multipla, il solo algoritmo per il calcolo della colorazione stabile (equilibrio di Nash) che vedremo in seguito.\\
+
+L'utente in questa fase che precede l'esecuzione, solo per la prima iterazione, è chiamato a fornire il numero di colori (da utilizzare in tutte le iterazioni) e il valore massimo del profitto associato ai colori per ogni giocatore.\\
+
+Per ciò che riguarda il profitto possiamo affermare che il funzionamento è identico a quello della modalità SINGLE EXEC, ovvero l'utente fornirà un numero n e il profitto da associare a ciascun colore per ciascun giocatore sarà un valore randomico tra 0 e n.\\
+
+Per ciò che riguarda il numero dei colori, in modalità MULTIPLE EXEC, abbiamo 2 modalità di assegnamento, la modalità statica e quella dinamica.\\
+Nella modalità statica la procedura di assegnamento del colore è uguale a quella trattata in precedenza, ovvero l'utente sceglie un numero \(n \leq m\), con m uguale al numero di nodi del grafo più piccolo tra le istanze in esecuzione.\\
+Ovvero se vi sono 3 istanze nell'esecuzione di 3, 4 e 5 nodi, l'utente dovrà fornire un valore per \(n \leq m\), con m uguale al numero di nodi del grafo più piccolo, ovvero 3, cioè n dovrà essere \(\leq 3\).\\
+
+Nella modalità dinamica invece l'utente dovrà fornire un numero n da sottrarre a m, ovvero il numero di nodi del grafo dell'istanza corrente, tutto ciò per ogni istanza.\\
+Ovvero se l'utente fornisce \(n = 1\) e vi sono 3 istanze nell'esecuzione di 3, 4 e 5 nodi, il numero di colori sarà sempre \(m -n\), con m numero di nodi dell'istanza corrente, cioè 2, 3 e 4.\\
+
+A questo punto il programma inizierà l'esecuzione dell'algoritmo per il calcolo della colorazione stabile per ciascun grafo appartenente all'istanza corrente di esecuzione in modalità MULTIPLE EXEC.\\
+La modellazione e le informazioni fondamentali di ciascun grafo saranno salvate in un unico file con estensione .init, accuratamente formattate.\\
+Lo stesso vale per gli output delle varie esecuzioni, anche qui il file in formato .out sarà unico.\\
+
+\section{Analisi e descrizione degli algoritmi}
+\justify
+
+Procediamo ora a descrivere i vari algoritmi implementati e ad analizzare approfonditamente le iterazioni e le operazioni di manipolazione effettuate, in modo da definire e delineare al meglio, anche con l'utilizzo di pseudocodice annesso alla trattazione, il funzionamento di questi ultimi.\\
+
+Gli algoritmi implementati sono i seguenti.
+
+\begin{itemize}
+	\item L'algoritmo per il calcolo di una colorazione stabile (equilibrio di Nash) con annesse le funzioni di calcolo del benessere sociale utilitario ed egalitario per la colorazione finale stabile trovata.
+	\item L'algoritmo per il calcolo della colorazione ottima utilizzando la funzione di benessere sociale utilitario 
+	\item L'algoritmo per il calcolo della colorazione ottima utilizzando la funzione di benessere sociale egalitario 
+\end{itemize}
+
+\subsection{nash equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}
+\justify
+Il seguente algoritmo viene usato per calcolare una colorazione stabile per il gioco della k-colorazione generalizzata modellato in precedenza utilizzando la definizione di equilibrio di Nash.\\
+
+Come abbiamo visto esiste sempre almeno un equilibrio di Nash per ogni istanza di gioco dell k-colorazione generalizzata e il problema di trovare una di queste colorazioni stabili è PLS-Completo.\\
+
+Presentiamo ora lo pseudocodice relativo al suddetto algoritmo e di seguito analizziamo in modo accurato le caratteristiche, le iterazioni e le operazioni eseguite nell'implementazione raggiunta.\\
+
+Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard Library del Python e la libreria di costruzione e manipolazione di grafi NetworkX e che l'implementazione è stata accuratamente ottimizzata nei cicli e nelle operazioni grazie ad un attento uso di funzioni e strutture dati e dunque la computazione è particolarmente snella è rapida.\\
 
 
-
-
-%\section{Analisi e descrizione degli algoritmi}
+%\subsection{opt utilitarian social welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}
 %\justify
 %
-%\subsection{nash_equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}
-%\justify
-%
-%\subsection{utilitarian_social_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}
-%\justify
-%
-%\subsection{egalitarian_social_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}
+%\subsection{opt egalitarian social welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}
 %\justify
