@@ -365,12 +365,93 @@ Assieme alla struttura relativa alle coppie arco-peso e quella relativa all'asso
 È stata generata la seguente struttura (esempio).
 
 \begin{description}
-	\item nodo 0 :: colore 0 : profitto 24 , colore 1 : profitto 38 , colore 2 : profitto 30 , ...
-	\item nodo 1 :: colore 0 : profitto 11 , colore 1 : profitto 55 , colore 2 : profitto 23 , ...
-	\item nodo 2 :: colore 0 : profitto 14 , colore 1 : profitto 65 , colore 2 : profitto 26 , ...
-	\item nodo 3 :: colore 0 : profitto 99 , colore 1 : profitto 66 , colore 2 : profitto 86 , ...
+	\item nodo 0 :: colore 0 : profitto 24, colore 1 : profitto 38, colore 2 : profitto 30, ...
+	\item nodo 1 :: colore 0 : profitto 11, colore 1 : profitto 55, colore 2 : profitto 23, ...
+	\item nodo 2 :: colore 0 : profitto 14, colore 1 : profitto 65, colore 2 : profitto 26, ...
+	\item nodo 3 :: colore 0 : profitto 99, colore 1 : profitto 66, colore 2 : profitto 86, ...
 	\item ...
 \end{description}
+
+A questo punto viene generata automaticamente la colorazione iniziale per il grafo corrente.\\
+Il colore è stato gestito attraverso la struttura dati del dizionario, ad ogni nodo viene associata una singola entry chiave : valore come etichetta, la chiave rappresenta il nome del parametro, ovvero la stringa "color" e il valore rappresenta il colore con il quale è colorato in nodo.\\
+Le etichette sono gestite a livello di libreria NetworkX, dunque è stato seguito lo standard esplicato in documentazione.\\
+È dunque possibile accedere e manipolare, con facilità e alta velocità computazionale, i dati all'interno dei dizionari che rappresentano i parametri associati al nodo attravero semplici query ad accesso diretto e a singola chiave, ovvero il parametro "color" nel nostro caso.\\
+La colorazione iniziale è del tipo seguente.
+
+\begin{description}
+	\item nodo 0 : colore 2
+	\item nodo 1 : colore 1
+	\item nodo 2 : colore 2
+	\item nodo 3 : colore 0
+	\item ...
+\end{description}
+
+Tutti i dati relativi alla modellazione iniziale dell'istanza letta per ricreare le condizioni di partenza del nostro gioco sono salvate nel file.init correlato all'esecuzione corrente.\\
+Specifichiamo nuovamente l'assoluta gestione cross-platform del filesystem e l'efficente ottimizzazione eseguita sul lato input / output su file, il tutto è affiancato ovviamente da numerosissimi test su diverse tipologie di macchine.\\
+
+Nel file testuale .init relativo all'esecuzioni vengono inseriti i seguenti parametri.
+
+\begin{itemize}
+	\item lista dei colori
+	\item colorazione iniziale del grafo
+	\item numero di nodi del grafo
+	\item profitti associati ai colori per ogni giocatore
+	\item lista degli archi del grafo con pesi associati
+	\item numero degli archi del grafo
+\end{itemize}
+
+È importante specificare che il peso degli archi è gestito in modo del tutto identico a quello relativo al colore dei nodi.\\
+Infatti il peso (e gli eventuali altri parametri implentabili in modo nativo grazie alla libreria NetworkX) degli archi si presenta come un dizionario chiave : valore, nel quale la chiave corrisponde al nome del parametro, ovvero la stringa "weight" e il valore rappresenta il vero e proprio peso associato all'arco.\\
+
+Anche qui dunque una struttura dati di questo tipo permette un'alta velocità di calcolo e recupero delle informazioni con query ad accesso diretto a chiave singola, ovvero il nome del parametro richiesto associato all'arco che nel nostro caso è la stringa "weight".\\
+La struttura dati si presenta come segue.
+
+\begin{description}
+	\item nodo 0  nodo 1  weight : 34
+	\item nodo 1  nodo 2  weight : 55
+	\item nodo 2  nodo 5  weight : 5
+	\item nodo 3  nodo 2  weight : 23
+	\item ...
+\end{description}
+
+Terminata la creazione del file testuale con estensione .init il programma procede e genera tutte le strutture del filesystem necessarie per salvare correttamente i risultati della sperimentazione corrente.\\
+In particolare crea una nuova cartella all'interno della direcotry result (poichè siamo in SINGLE EXEC) in modo dinamico prendendo il nome del grafo corrente importato dall'utente.\\
+Assegna il medesimo nome al file .init (e al file .out che vedremo tra poco) che viene generato all'interno del path appena generato.\\
+
+A questo punto l'utente viene chiamato a compiere un'ennesima scelta, l'ultima relativa al flusso di esecuzione corrente.\\
+All'utente viene chiesto di scegliere tra le 3 opzioni di calcolo disponibili, ciascuna corrispondete a 1 dei 3 algoritmi implementati.
+
+\begin{itemize}
+	\item cacolo della colorazione ottima (ottimo con funzione di benessere sociale utilitaria)
+	\item cacolo della colorazione ottima (ottimo con funzione di benessere sociale egalitaria)
+	\item cacolo della colorazione stabile (equilibrio di Nash)
+	\item esci
+\end{itemize}
+
+Vi inoltre un'ulteriore opzione per uscire dal programma, prima dell'esecuzione che potrebbe essere pesante a livello di calcolo e dunque lenta al livello temporale, soprattutto per ciò che concerne il calcolo degli ottimi.\\
+
+Per l'utente che esegue in modalità SINGLE EXEC, questo punto del programma rappresenta un hub di esecuzione.\\
+L'utente infatti può eseguire, quante volte vuole, i vari algoritmi (può anche eseguirli tutti sull'istanza corrente o uscire e non fare nulla come specificato poco sopra).\\
+Terminata l'esecuzione di uno degli algoritmi, all'utente verrà lasciato il pieno controllo.\\
+Quest'ultimo potrà leggere il risultato dell'esecuzione da console e analizzare i vari cicli eseguiti e poi tornare all'hub nel quale potrà avviare una nuova esecuzione o uscire dal programma.\\
+
+Prima di affrontare la descrizione degli algoritmi, il vero cuore dell'implementazione, analizziamo al modalità di funzionamento MULTIPLE EXEC relativa al programma reader.py.\\
+
+\subsection{reader.py : MULTIPLE EXEC}
+\justify
+Per non tediare il lettore, possiamo specificare che la modalità MULTIPLE EXEC esegue le medesime operazioni di preparazione e modellazione delle varie istanze e salva il risultato di tale operazione in un file testuale estensione .init.\\
+
+Una prima differenza sostanziale è relativa al path in cui vengono cercati i file .edgelist nella fase di scelta della modalità di esecuzione del lettore.\\
+Scegliendo MULTIPLE EXEC il programma effettuerà una ricerca globale di tutte le cartelle presenti all'interno della cartella mgen, ovvero la cartella contenente tutti i risultati delle varie generazioni multiple, creata dinamicamente dal generatore di grafi in modalità MULTIPLE MODE.\\
+
+A questo punto l'utente sarà nuovamente interpellato e attraverso un'interfaccia di selezione da console dovrà selezionare la cartella contenente i grafi sui quali desidera fare sperimentazione.\\
+Una volta selezionata la cartella il programma utilizzerà tutti i file con estensione .edgelist come istanze dell'esecuzione multipla.\\
+In particolare il programma si sviluppa all'interno di un ciclo principale che scorrè tutti i file con estensione .edgelist presenti nella cartella scelta dall'utente.\\
+
+Il ciclo prende un grafo alla volta, opera la fase di pre-esecuzione modellando l'istanza corrente secondo la definzione del problema e poi esegue l'algoritmo per il calcolo della colorazione stabile trovando l'equilibrio di Nash per il grafo corrente.\\
+Il ciclo e l'esecuzione, che potrebbe coinvolgere un numero molto grande di grafi, avvengono in maniera totalmente automatica e dunque l'utente può disinteressarsi del programma poichè slegato dal flusso di esecuzione.\\
+
+
 
 
 %\section{Analisi e descrizione degli algoritmi}
