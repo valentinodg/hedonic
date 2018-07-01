@@ -34,4 +34,4 @@
 \contentsline {subsection}{\numberline {3.4.2}reader.py : MULTIPLE EXEC}{40}
 \contentsline {section}{\numberline {3.5}Analisi e descrizione degli algoritmi}{42}
 \contentsline {subsection}{\numberline {3.5.1}nash equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}{42}
-\contentsline {part}{IV\hspace {1em}Sperimentazione}{44}
+\contentsline {part}{IV\hspace {1em}Sperimentazione}{46}

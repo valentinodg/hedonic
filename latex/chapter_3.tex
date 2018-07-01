@@ -491,6 +491,107 @@ Presentiamo ora lo pseudocodice relativo al suddetto algoritmo e di seguito anal
 
 Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard Library del Python e la libreria di costruzione e manipolazione di grafi NetworkX e che l'implementazione è stata accuratamente ottimizzata nei cicli e nelle operazioni grazie ad un attento uso di funzioni e strutture dati e dunque la computazione è particolarmente snella è rapida.\\
 
+\begin{algorithmic}
+\State $count\gets 0$
+\State $restart\gets True$
+\State $last\_improved\_node\gets None$\\
+
+\While{$restart$}
+	\State $restart\gets False$
+	\For{$(node,data) \in G.nodes(data=True)$}
+		\State $color\_init\gets data['color']$
+		\State $color\_best\gets data['color']$
+		\State $profit\_old\gets profits[node][data['color']]$
+		\If{$node = last\_improved\_node$}
+			\State \textbf{continue}
+		\EndIf
+		\State $neighbors\gets G.neighbors(node)$
+		\For{$neighbor \in neighbors$}
+			\If{$G.node[neighbor]['color'] \neq G.node[node]['color']$}
+				\State $edge\_weight\gets G[node][neighbor]['weight']$
+				\State $profit\_old += edge\_weight$
+			\Else
+				\State \textbf{continue}
+			\EndIf
+		\EndFor
+		\For{$current\_color \in colors$}
+			\If{$current\_color \neq color\_init$}
+				\State $data['color']\gets current\_color$
+				\State $color\_new\gets current\_color$
+				\State $profit\_new\gets profits[node][current\_color]$
+				\State $neighbors\gets G.neighbors(node)$
+				\For{$neighbor \in neighbors$}
+					\If{$G.node[neighbor]['color'] \neq G.node[node]['color']$}
+						\State $edge\_weight\gets G[node][neighbor]['weight']$
+						\State $profit\_new += edge\_weight$
+					\Else
+						\State \textbf{continue}
+					\EndIf
+					\If{$profit\_new > profit\_old$}
+						\State $profit\_old\gets profit\_new$
+						\State $color\_best\gets current\_color$
+					\Else
+						\State \textbf{continue}
+					\EndIf
+				\EndFor
+			\Else
+				\State \textbf{continue}
+			\EndIf
+		\EndFor
+		\State $data['color']\gets color\_best$
+		\If{$data['color'] \neq color\_init$}
+			\State $count += 1$
+			\State $restart\gets True$
+			\State $last\_improved\_node\gets node$
+			\State \textbf{break}
+		\EndIf
+	\EndFor
+\EndWhile \\
+
+\State $egalitarian\_social\_welfare\gets 0$
+\State $utilitarian\_social\_welfare\gets 0$
+\State $first\_iter\_check\gets True$ \\
+
+\For{$(node,data) \in G.nodes(data=True)$}
+	\State $temp\_egalitarian\_social\_welfare\gets 0$
+	\State $temp\_egalitarian\_social\_welfare += profits[node][data['color']]$
+	\State $utilitarian\_social\_welfare += profits[node][data['color']]$
+	\State $neighbors\gets G.neighbors(node)$
+	\For{$neighbor \in neighbors$}
+		\If{$G.node[neighbor]['color'] \neq G.node[node]['color']$}
+			\State $edge\_weight\gets G[node][neighbor]['weight']$
+			\State $utilitarian\_social\_welfare += edge\_weight$
+			\State $temp\_egalitarian\_social\_welfare += edge\_weight$
+		\Else
+			\State \textbf{continue}
+		\EndIf
+		\If{$first\_iter\_check$}
+			\State $egalitarian\_social\_welfare\gets temp\_egalitarian\_social\_welfare$
+			\State $first\_iter\_check\gets False$ \\
+			\State \textbf{continue}
+		\EndIf
+		\If{$temp\_egalitarian\_social\_welfare < egalitarian\_social\_welfare$}
+			\State $egalitarian\_social\_welfare\gets temp\_egalitarian\_social\_welfare$
+		\Else
+			\State \textbf{continue}
+		\EndIf
+	\EndFor
+\EndFor \\
+
+\State $nash\_utilitarian\_social\_welfare\gets utilitarian\_social\_welfare$
+\State $nash\_egalitarian\_social\_welfare\gets egalitarian\_social\_welfare$ \\
+
+\If{$check\_utilitarian\_social\_welfare$}
+	\State $utilitarian\_price\_of\_anarchy\gets$ \\
+	$opt\_utilitarian\_social\_welfare / nash\_utilitarian\_social\_welfare$
+\EndIf
+\If{$check\_egalitarian\_social\_welfare$}
+	\State $egalitarian\_price\_of\_anarchy\gets$ \\
+	$opt\_egalitarian\_social\_welfare / nash\_egalitarian\_social\_welfare$
+\EndIf
+
+
+\end{algorithmic}
 
 %\subsection{opt utilitarian social welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}
 %\justify
