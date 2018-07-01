@@ -33,5 +33,7 @@
 \contentsline {subsection}{\numberline {3.4.1}reader.py : SINGLE EXEC}{36}
 \contentsline {subsection}{\numberline {3.4.2}reader.py : MULTIPLE EXEC}{40}
 \contentsline {section}{\numberline {3.5}Analisi e descrizione degli algoritmi}{42}
-\contentsline {subsection}{\numberline {3.5.1}nash equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}{42}
-\contentsline {part}{IV\hspace {1em}Sperimentazione}{46}
+\contentsline {subsection}{\numberline {3.5.1}nash\_equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}{43}
+\contentsline {subsection}{\numberline {3.5.2}opt\_utilitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}{47}
+\contentsline {subsection}{\numberline {3.5.3}opt\_egalitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}{48}
+\contentsline {part}{IV\hspace {1em}Sperimentazione}{50}

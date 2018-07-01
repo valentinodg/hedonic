@@ -253,18 +253,22 @@ A questo punto il programma procederà a scrivere sul filesystem la struttura ca
 Il file nel quale è codificato il grafo generato ha estensione .edgelist (il file .dot come specificato sopra è stato utilizzato solo in fase di debug e quindi non viene considerato nella trattazione).\\
 
 Il file .edgelist è un file di tipo testuale che codifica sotto forma di lista (nodo, nodo, peso) la matrice di adiacenza che descrive il grafo generato.\\
-Il file si presenta nella forma qui di seguito (ciascuna coppia (nodo, nodo) codifica un arco al quale viene associato il terzo valore della tupla, ovvero il peso intero).\\
-
-\begin{description}
-	\item nodo nodo peso
-	\item 0    1    9
-	\item 0    2    20
-	\item 1    2    15
-	\item 2    3    3
-	\item ...
-\end{description}
 
 I nodi sono generati in modo totalmente dinamico utilizzando valori da 0 a n interi positivi, con n scelto dall'utente in fase di creazione quando richiesto come parametro associato alla tipologia di grafo da generare.\\
+
+Il file si presenta nella forma qui di seguito (ciascuna coppia (nodo, nodo) codifica un arco al quale viene associato il terzo valore della tupla, ovvero il peso intero).\\
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc}
+\textbf{nodo} & \textbf{nodo} & \textbf{peso} \\
+0 & 1 & 9 \\
+0 & 2 & 20 \\
+1 & 2 & 15 \\
+2 & 3 & 3 \\
+... & ... & ...
+\end{tabular}
+\end{table}
 
 Per completezza specifichiamo che la libreria offre i seguenti 4 tipi di grafi.
 
@@ -364,13 +368,16 @@ Assieme alla struttura relativa alle coppie arco-peso e quella relativa all'asso
 È stata utilizzata a questo scopo la potente nested dictionary comprehension del linguaggio Python, in modo da eliminare possibilità di conflitto e inconsistenza dei dati, in modo da disambiguare le entry del dizionario in modo efficace e dunque in modo da garantire l'utilizzo di interrogazioni ad accesso diretto utili nel programma.\\
 È stata generata la seguente struttura (esempio).
 
-\begin{description}
-	\item nodo 0 :: colore 0 : profitto 24, colore 1 : profitto 38, colore 2 : profitto 30, ...
-	\item nodo 1 :: colore 0 : profitto 11, colore 1 : profitto 55, colore 2 : profitto 23, ...
-	\item nodo 2 :: colore 0 : profitto 14, colore 1 : profitto 65, colore 2 : profitto 26, ...
-	\item nodo 3 :: colore 0 : profitto 99, colore 1 : profitto 66, colore 2 : profitto 86, ...
-	\item ...
-\end{description}
+\begin{table}[h]
+\centering
+\begin{tabular}{llllll}
+\multicolumn{1}{c}{nodo 0 ::} & \multicolumn{1}{c}{colore 0 :} & \multicolumn{1}{c}{profitto 24,} & \multicolumn{1}{c}{colore 1 :} & \multicolumn{1}{c}{profitto 38,} & \multicolumn{1}{c}{...} \\
+nodo 1 :: & colore 0 : & profitto 11, & colore 1 : & profitto 55, & ... \\
+nodo 2 :: & colore 0 : & profitto 14, & colore 1 : & profitto 65, & ... \\
+nodo 3 :: & colore 0 : & profitto 99, & colore 1 : & profitto 66, & ... \\
+\multicolumn{1}{c}{...} & \multicolumn{1}{c}{...} & \multicolumn{1}{c}{...} & \multicolumn{1}{c}{...} & \multicolumn{1}{c}{...} & \multicolumn{1}{c}{...}
+\end{tabular}
+\end{table}
 
 A questo punto viene generata automaticamente la colorazione iniziale per il grafo corrente.\\
 Il colore è stato gestito attraverso la struttura dati del dizionario, ad ogni nodo viene associata una singola entry chiave : valore come etichetta, la chiave rappresenta il nome del parametro, ovvero la stringa "color" e il valore rappresenta il colore con il quale è colorato in nodo.\\
@@ -378,15 +385,20 @@ Le etichette sono gestite a livello di libreria NetworkX, dunque è stato seguit
 È dunque possibile accedere e manipolare, con facilità e alta velocità computazionale, i dati all'interno dei dizionari che rappresentano i parametri associati al nodo attraverso semplici query ad accesso diretto e a singola chiave, ovvero il parametro "color" nel nostro caso.\\
 La colorazione iniziale è del tipo seguente.
 
-\begin{description}
-	\item nodo 0 : colore 2
-	\item nodo 1 : colore 1
-	\item nodo 2 : colore 2
-	\item nodo 3 : colore 0
-	\item ...
-\end{description}
+\begin{table}[h]
+\centering
+\begin{tabular}{cc}
+nodo 0 & colore 2 \\
+nodo 1 & colore 1 \\
+nodo 2 & colore 1 \\
+nodo 3 & colore 0 \\
+nodo 4 & colore 2 \\
+... & ...
+\end{tabular}
+\end{table}
 
 Tutti i dati relativi alla modellazione iniziale dell'istanza letta per ricreare le condizioni di partenza del nostro gioco sono salvate nel file.init correlato all'esecuzione corrente.\\
+
 Specifichiamo nuovamente l'assoluta gestione cross-platform del filesystem e l'efficiente ottimizzazione eseguita sul lato input / output su file, il tutto è affiancato ovviamente da numerosissimi test su diverse tipologie di macchine.\\
 
 Nel file testuale .init relativo all'esecuzione vengono inseriti i seguenti parametri.
@@ -406,13 +418,16 @@ Infatti il peso (e gli eventuali altri parametri implementabili in modo nativo g
 Anche qui dunque una struttura dati di questo tipo permette un'alta velocità di calcolo e recupero delle informazioni con query ad accesso diretto a chiave singola, ovvero il nome del parametro richiesto associato all'arco che nel nostro caso è la stringa "weight".\\
 La struttura dati si presenta come segue.
 
-\begin{description}
-	\item nodo 0  nodo 1  weight : 34
-	\item nodo 1  nodo 2  weight : 55
-	\item nodo 2  nodo 5  weight : 5
-	\item nodo 3  nodo 2  weight : 23
-	\item ...
-\end{description}
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc}
+nodo 0 & nodo 1 & weight : 34 \\
+nodo 1 & nodo 2 & weight : 55 \\
+nodo 2 & nodo 5 & weight : 5 \\
+nodo 3 & nodo 2 & weight : 23 \\
+... & ... & ...
+\end{tabular}
+\end{table}
 
 Terminata la creazione del file testuale con estensione .init il programma procede e genera tutte le strutture del filesystem necessarie per salvare correttamente i risultati della sperimentazione corrente.\\
 In particolare crea una nuova cartella all'interno della directory result (poichè siamo in SINGLE EXEC) in modo dinamico prendendo il nome del grafo corrente importato dall'utente.\\
@@ -481,7 +496,9 @@ Gli algoritmi implementati sono i seguenti.
 	\item L'algoritmo per il calcolo della colorazione ottima utilizzando la funzione di benessere sociale egalitario 
 \end{itemize}
 
-\subsection{nash equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}
+
+\newpage
+\subsection{nash\_equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}
 \justify
 Il seguente algoritmo viene usato per calcolare una colorazione stabile per il gioco della k-colorazione generalizzata modellato in precedenza utilizzando la definizione di equilibrio di Nash.\\
 
@@ -492,6 +509,7 @@ Presentiamo ora lo pseudocodice relativo al suddetto algoritmo e di seguito anal
 Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard Library del Python e la libreria di costruzione e manipolazione di grafi NetworkX e che l'implementazione è stata accuratamente ottimizzata nei cicli e nelle operazioni grazie ad un attento uso di funzioni e strutture dati e dunque la computazione è particolarmente snella è rapida.\\
 
 \begin{algorithmic}
+
 \State $count\gets 0$
 \State $restart\gets True$
 \State $last\_improved\_node\gets None$\\
@@ -588,13 +606,119 @@ Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard 
 \If{$check\_egalitarian\_social\_welfare$}
 	\State $egalitarian\_price\_of\_anarchy\gets$ \\
 	$opt\_egalitarian\_social\_welfare / nash\_egalitarian\_social\_welfare$
-\EndIf
-
+\EndIf \\
 
 \end{algorithmic}
 
-%\subsection{opt utilitarian social welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}
-%\justify
-%
-%\subsection{opt egalitarian social welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}
-%\justify
+La sintassi dello pseudocodice, in generale nell'aspetto e in particolare in alcuni punti nei quali trascende l'astrazione, è volutamente molto vicina a quella del linguaggio Python in modo tale da coinvolgere il lettore nell'implementazione e in modo da mostrare alcune soluzioni adottate per effettuare le operazioni più significative.\\
+
+In ogni caso le parti più vicine all'implementazione in Python saranno abbondantemente spiegate e rese chiare qui di seguito.\\
+
+Il seguente algoritmo viene utilizzato, seguendo la definizione presentata poco sopra, solo nella modalità SINGLE EXEC, in modalità MULTIPLE EXEC non viene considerata l'ultima porzione del codice, ovvero quella relativa al prezzo dell'anarchia utilitario e egalitario poiché, data la grandezza dei grafi utilizzati in questo tipo di sperimentazione, vengono tralasciati i calcoli dell'ottimo utilitario e egalitario.\\
+
+
+\newpage
+\subsection{opt\_utilitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}
+\justify
+pseudocodice \\
+
+\begin{algorithmic}
+
+\State $utilitarian\_social\_welfare\gets 0$
+\State $permutations\gets list(itertools.product(colors, repeat=G.number\_of\_nodes()))$ \\
+
+\For{$permutation \in permutations$}
+	\State $colouring\_old = permutation$
+	\For{$(node,data) \in G.nodes(data=True)$}
+		\State $data['color']\gets permutation[node]$
+	\EndFor
+	\State $temp\_utilitarian\_social\_welfare\gets 0$
+	\For{$(node,data) \in G.nodes(data=True)$}
+		\State $temp\_utilitarian\_social\_welfare += profits[node][data['color']]$
+		\State $neighbors\gets G.neighbors(node)$
+		\For{$neighbor \in neighbors$}
+			\If{$G.node[neighbor]['color'] \neq G.node[node]['color']$}
+				\State $edge\_weight\gets G[node][neighbor]['weight']$
+				\State $temp\_utilitarian\_social\_welfare += edge\_weight$
+			\Else
+				\State \textbf{continue}
+			\EndIf
+		\EndFor
+	\EndFor
+	\If{$temp\_utilitarian\_social\_welfare > utilitarian\_social\_welfare$}
+		\State $utilitarian\_social\_welfare\gets temp\_utilitarian\_social\_welfare$
+		\State $colouring\_best\gets colouring\_old$
+	\Else
+		\State \textbf{continue}
+	\EndIf
+\EndFor \\
+
+\State $check\_utilitarian\_social\_welfare\gets True$
+\State $opt\_utilitarian\_social\_welfare\gets utilitarian\_social\_welfare$ \\
+
+\end{algorithmic} 
+
+Spiegazione algoritmo.
+
+\newpage
+\subsection{opt\_egalitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}
+\justify
+pseudocodice \\
+
+\begin{algorithmic}
+
+\State $temp\_egalitarian\_social\_welfare\gets 0$
+\State $egalitarian\_social\_welfare\gets 0$
+\State $permutations\gets list(itertools.product(colors, repeat=G.number\_of\_nodes()))$
+\State $first\_iter\_check\gets True$
+\State $first\_iter\_opt\_check\gets True$ \\
+
+\For{$permutation \in permutations$}
+	\State $colouring\_old = permutation$
+	\For{$(node,data) \in G.nodes(data=True)$}
+		\State $data['color']\gets permutation[node]$
+	\EndFor
+	\For{$(node,data) \in G.nodes(data=True)$}
+		\State $local\_egalitarian\_social\_welfare\gets 0$
+		\State $local\_egalitarian\_social\_welfare\gets profits[node][data['color']]$
+		\State $neighbors\gets G.neighbors(node)$
+		\For{$neighbor \in neighbors$}
+			\If{$G.node[neighbor]['color'] \neq G.node[node]['color']$}
+				\State $edge\_weight\gets G[node][neighbor]['weight']$
+				\State $local\_egalitarian\_social\_welfare += edge\_weight$
+			\Else
+				\State \textbf{continue}
+			\EndIf
+		\EndFor
+		\If{$first\_iter\_check$}
+			\State $temp\_egalitarian\_social\_welfare\gets local\_egalitarian\_social\_welfare$
+			\State $first\_iter\_check\gets False$
+			\State \textbf{continue}
+		\EndIf	
+		\If{$local\_egalitarian\_social\_welfare < temp\_egalitarian\_social\_welfare$}
+			\State $temp\_egalitarian\_social\_welfare\gets local\_egalitarian\_social\_welfare$
+		\Else
+			\State \textbf{continue}	
+		\EndIf
+	\State $first\_iter\_check\gets True$
+	\If{$first\_iter\_opt\_check$}
+		\State $egalitarian\_social\_welfare\gets temp\_egalitarian\_social\_welfare$
+		\State $colouring\_best\gets colouring\_old$
+		\State $first\_iter\_opt\_check\gets False$
+		\State \textbf{continue}
+	\EndIf	
+	\If{$temp\_egalitarian\_social\_welfare > egalitarian\_social\_welfare$}
+		\State $egalitarian\_social\_welfare\gets temp\_egalitarian\_social\_welfare$
+		\State $colouring\_best\gets colouring\_old$
+	\Else
+		\State \textbf{continue}	
+	\EndIf
+	\EndFor
+\EndFor \\
+
+\State $check\_egalitarian\_social\_welfare\gets True$
+\State $opt\_egalitarian\_social\_welfare\gets egalitarian\_social\_welfare$ \\
+
+\end{algorithmic}
+
+Spiegazione algoritmo.
