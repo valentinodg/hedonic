@@ -247,6 +247,9 @@ if option is "SINGLE EXEC":
 	#################### OPT / NASH / EXIT CHOICE BLOCK ####################
 	########################################################################
 
+	check_utilitarian_social_welfare = False;
+	check_egalitarian_social_welfare = False;
+
 	while(True):
 
 		title = 'What do you want to calculate ?'
@@ -315,6 +318,8 @@ if option is "SINGLE EXEC":
 			with open(out_ext,'a') as f:
 				f.write("\n[FINAL] UTILITARIAN SOCIAL WELFARE ---> VALUE " + str(utilitarian_social_welfare) + " --- COLOURING " + str(colouring_best) + "\n")
 
+			check_utilitarian_social_welfare = True;
+			opt_utilitarian_social_welfare = utilitarian_social_welfare
 			input("\nPress ENTER key to continue...")
 
 
@@ -391,6 +396,8 @@ if option is "SINGLE EXEC":
 			with open(out_ext,'a') as f:
 				f.write("\n[FINAL] EGALITARIAN SOCIAL WELFARE ---> VALUE " + str(egalitarian_social_welfare) + " --- COLOURING " + str(colouring_best) + "\n")
 
+			check_egalitarian_social_welfare = True;
+			opt_egalitarian_social_welfare = egalitarian_social_welfare
 			input("\nPress ENTER key to continue...")
 
 
@@ -509,6 +516,21 @@ if option is "SINGLE EXEC":
 				f.write("\n[FINAL] EGALITARIAN SOCIAL WELFARE ---> VALUE " + str(egalitarian_social_welfare))
 				f.write("\n[FINAL] UTILITARIAN SOCIAL WELFARE ---> VALUE " + str(utilitarian_social_welfare))
 				f.write("\n[FINAL] COUNT ---> VALUE " + str(count))
+
+			nash_utilitarian_social_welfare = utilitarian_social_welfare
+			nash_egalitarian_social_welfare = egalitarian_social_welfare
+
+			if(check_utilitarian_social_welfare):
+				utilitarian_price_of_anarchy = opt_utilitarian_social_welfare / nash_utilitarian_social_welfare
+				with open(out_ext,'a') as f:
+					f.write("\n\n######################################################################\n[EXEC : UTILITARIAN PRICE OF ANARCHY]\n\n")
+					f.write("\n[OPT] UTILITARIAN SOCIAL WELFARE : " + str(opt_utilitarian_social_welfare) + " / [NASH] UTILITARIAN SOCIAL WELFARE : " + str(nash_utilitarian_social_welfare) + " = " + str(utilitarian_price_of_anarchy))
+
+			if(check_egalitarian_social_welfare):
+				egalitarian_price_of_anarchy = opt_egalitarian_social_welfare / nash_egalitarian_social_welfare
+				with open(out_ext,'a') as f:
+					f.write("\n\n######################################################################\n[EXEC : EGALITARIAN PRICE OF ANARCHY]\n\n")
+					f.write("\n[OPT] EGALITARIAN SOCIAL WELFARE : " + str(opt_egalitarian_social_welfare) + " / [NASH] EGALITARIAN SOCIAL WELFARE : " + str(nash_egalitarian_social_welfare) + " = " + str(egalitarian_price_of_anarchy))
 
 			break
 
