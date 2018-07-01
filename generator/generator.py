@@ -37,19 +37,25 @@ title = 'Choose random graph class: '
 
 # CLASSES :
 #
+# DEFAULT (single mode)
 #
 # Classic
 # Expanders
-# *** Lattice
 # Small
 # Random
 # Duplication Divergence
-# Degree Sequence (TODO)
-# *** Random Clustered
+# Degree Sequence
+# Geometric
+# Intersection
+# Social Networks
+# Community
+# Trees
+# Mycielski
 #
+# MULTIPLE (multiple mode)
 #
 
-options = ['Classics', 'Expanders', 'Small', 'Random', 'Duplication Divergence', 'Degree Sequence', 'MULTIPLE']
+options = ['Classics', 'Expanders', 'Small', 'Random', 'Duplication Divergence', 'Degree Sequence', 'Geometric', 'Intersection', 'Social Networks', 'Community', 'Trees', 'Mycielski', 'MULTIPLE']
 option, index = pick(options, title, indicator='>', multi_select=False)
 
 
@@ -539,30 +545,201 @@ elif option is "Duplication Divergence":
 		G=nx.partial_duplication_graph(N, n, p, q)
 
 
+###################################################
+#################### GEOMETRIC ####################
+###################################################
+
+elif option is "Geometric":
+
+	title = 'Choose random graph type: '
+
+	# TYPES :
+	#
+	# types
+	#
+	#
+
+	options = [	'random_geometric_graph']
+	option, index = pick(options, title, indicator='>', multi_select=False)
+
+	if option is "random_geometric_graph":
+
+		n = int(input('[*] Insert (int): '))
+		radius = float(input('[*] Insert (float): '))
+
+		G=nx.random_geometric_graph(n, radius)
+
+
+######################################################
+#################### INTERSECTION ####################
+######################################################
+
+elif option is "Intersection":
+
+	title = 'Choose random graph type: '
+
+	# TYPES :
+	#
+	# types
+	#
+	#
+
+	options = ['uniform_random_intersection_graph']
+
+	option, index = pick(options, title, indicator='>', multi_select=False)
+
+	if option is "uniform_random_intersection_graph":
+
+		n = int(input('[*] Insert (int): '))
+		m = int(input('[*] Insert (int): '))
+		p = float(input('[*] Insert (float): '))
+
+		G=nx.uniform_random_intersection_graph(n, m, p)
+
+
 #########################################################
-#################### DEGREE SEQUENCE ####################
+#################### SOCIAL NETWORKS ####################
 #########################################################
 
-# elif option is "Degree Sequence":
-#
-# 	title = 'Choose random graph type: '
-#
-# 	# TYPES :
-# 	#
-# 	# types
-# 	#
-# 	#
-#
-# 	options = ['type', 'type', 'type', 'type', 'type', 'type', 'type']
-# 	option, index = pick(options, title, indicator='>', multi_select=False)
-#
-# 	# only Graph()
-# 	if option is "type":
-#
-# 		n = int(input('[*] Insert (int): '))
-# 		p = float(input('[*] Insert (float): '))
-#
-# 		G=nx.typefunction(n, p)
+elif option is "Social Networks":
+
+	title = 'Choose random graph type: '
+
+	# TYPES :
+	#
+	# types
+	#
+	#
+
+	options = ['karate_club_graph']
+
+	option, index = pick(options, title, indicator='>', multi_select=False)
+
+	if option is "karate_club_graph":
+
+		G=nx.karate_club_graph()
+
+
+###################################################
+#################### COMMUNITY ####################
+###################################################
+
+elif option is "Community":
+
+	title = 'Choose random graph type: '
+
+	# TYPES :
+	#
+	# types
+	#
+	#
+
+	options = ['caveman_graph', 'connected_caveman_graph', 'relaxed_caveman_graph', 'planted_partition_graph', 'gaussian_random_partition_graph', 'ring_of_cliques', 'windmill_graph']
+	option, index = pick(options, title, indicator='>', multi_select=False)
+
+	if option is "caveman_graph":
+
+		i = int(input('[*] Insert (int): '))
+		k = int(input('[*] Insert (int): '))
+
+		G=nx.caveman_graph(i, k)
+
+	if option is "connected_caveman_graph":
+
+		i = int(input('[*] Insert (int): '))
+		k = int(input('[*] Insert (int): '))
+
+		G=nx.connected_caveman_graph(i, k)
+
+	if option is "relaxed_caveman_graph":
+
+		i = int(input('[*] Insert (int): '))
+		k = int(input('[*] Insert (int): '))
+		p = float(input('[*] Insert (float): '))
+
+		G=nx.relaxed_caveman_graph(i, k, p)
+
+	if option is "planted_partition_graph":
+
+		i = int(input('[*] Insert (int): '))
+		k = int(input('[*] Insert (int): '))
+		p = float(input('[*] Insert (float): '))
+		p2 = float(input('[*] Insert (float): '))
+
+		G=nx.planted_partition_graph(i, k, p, p2)
+
+	if option is "gaussian_random_partition_graph":
+
+		n = int(input('[*] Insert (int): '))
+		s = int(input('[*] Insert (int): '))
+		v = int(input('[*] Insert (int): '))
+		p = float(input('[*] Insert (float): '))
+		p2 = float(input('[*] Insert (float): '))
+
+		G=nx.gaussian_random_partition_graph(n, s, v, p, p2)
+
+	if option is "ring_of_cliques":
+
+		i = int(input('[*] Insert (int): '))
+		k = int(input('[*] Insert (int): '))
+
+		G=nx.ring_of_cliques(i, k)
+
+	if option is "windmill_graph":
+
+		n = int(input('[*] Insert (int): '))
+		k = int(input('[*] Insert (int): '))
+
+		G=nx.windmill_graph(n, k)
+
+
+###############################################
+#################### TREES ####################
+###############################################
+
+elif option is "Trees":
+
+	title = 'Choose random graph type: '
+
+	# TYPES :
+	#
+	# types
+	#
+	#
+
+	options = [	'random_tree']
+	option, index = pick(options, title, indicator='>', multi_select=False)
+
+	if option is "random_tree":
+
+		n = int(input('[*] Insert (int): '))
+		seed = int(input('[*] Insert (int): '))
+
+		G=nx.random_tree(n, seed)
+
+
+###################################################
+#################### MYCIELSKI ####################
+###################################################
+
+elif option is "Mycielski":
+
+	title = 'Choose random graph type: '
+
+	# TYPES :
+	#
+	# types
+	#
+	#
+
+	options = [	'mycielski_graph']
+	option, index = pick(options, title, indicator='>', multi_select=False)
+
+	if option is "mycielski_graph":
+
+		n = int(input('[*] Insert (int): '))
+
+		G=nx.mycielski_graph(n)
 
 
 ###########################################################
