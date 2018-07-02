@@ -6,6 +6,7 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 import pydot
+import time
 
 import itertools
 import sys
@@ -270,6 +271,9 @@ if option is "SINGLE EXEC":
 		# optimal colouring computation [UTILITARIAN SOCIAL WELFARE]
 		if option is "optimal colouring [OPT -- UTILITARIAN SOCIAL WELFARE]":
 
+			start = time.time()
+			limit = 300 # 5 minuti
+
 			with open(out_ext,'a') as f:
 				f.write("\n######################################################################\n[EXEC : UTILITARIAN SOCIAL WELFARE]\n\n\n")
 
@@ -282,6 +286,11 @@ if option is "SINGLE EXEC":
 			# print(permutations)
 			# print('\n')
 			for permutation in permutations:
+				if(time.time() > start + limit):
+					print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\nTIME LIMIT REACHED !!!" + Style.RESET_ALL)
+					with open(out_ext,'a') as f:
+						f.write("\nTIME LIMIT REACHED !!!\n")
+					sys.exit()
 				print("\n----------------------------------------------------------------------")
 				colouring_old = permutation
 				print(Style.BRIGHT + Fore.CYAN + str(colouring_old))
@@ -327,6 +336,9 @@ if option is "SINGLE EXEC":
 		# optimal colouring computation [EGALITARIAN SOCIAL WELFARE]
 		if option is "optimal colouring [OPT -- EGALITARIAN SOCIAL WELFARE]":
 
+			start = time.time()
+			limit = 300 # 5 minuti
+
 			with open(out_ext,'a') as f:
 				f.write("\n######################################################################\n[EXEC : EGALITARIAN SOCIAL WELFARE]\n\n\n")
 
@@ -342,6 +354,11 @@ if option is "SINGLE EXEC":
 			# print(permutations)
 			# print('\n')
 			for permutation in permutations:
+				if(time.time() > start + limit):
+					print(Style.BRIGHT + Back.MAGENTA + Fore.YELLOW + "\nTIME LIMIT REACHED !!!" + Style.RESET_ALL)
+					with open(out_ext,'a') as f:
+						f.write("\nTIME LIMIT REACHED !!!\n")
+					sys.exit()
 				print("\n----------------------------------------------------------------------")
 				colouring_old = permutation
 				print(Style.BRIGHT + Fore.CYAN + str(colouring_old))
