@@ -616,6 +616,48 @@ In ogni caso le parti più vicine all'implementazione in Python saranno abbondan
 
 Il seguente algoritmo viene utilizzato, seguendo la definizione presentata poco sopra, solo nella modalità SINGLE EXEC, in modalità MULTIPLE EXEC non viene considerata l'ultima porzione del codice, ovvero quella relativa al prezzo dell'anarchia utilitario e egalitario poiché, data la grandezza dei grafi utilizzati in questo tipo di sperimentazione, vengono tralasciati i calcoli dell'ottimo utilitario e egalitario.\\
 
+L'algoritmo presenta 2 importanti porzioni di ottimizzazione dei cicli che verranno presentate qui di seguito, grazie alle quali è possibile snellire la fase di calcolo e diminuire l'impiego di risorse e il tempo di esecuzione.\\
+
+All'inizio del programma la variabile $count$ viene inizializzata con il valore 0.\\
+Quest'ultima serve a contare il numero di miglioramenti effettuati durante la computazione, in particolare registra il numero di mosse migliorative effettuate dalla procedura.\\
+La variabile è restituita alla fine dell'algoritmo (è stata omessa la porzione di codice relativa alla stampa su console e su file.out nello pseudocodice) e rappresenta il numero di passi (step) effettuati dall'algoritmo.\\
+La variabile $count$ è il parametro fondamentale della sperimentazione ed è in oltre il vero e proprio metro di giudizio fra le varie esecuzioni effettuate sulle differenti istanze.\\
+
+La variabile $restar$ viene inizializzata con il valore booleano True.\\
+Quest'ultima serve, come vedremo tra poco, a reinizializzare l'intero ciclo ogni volta che una mossa migliorativa viene trovata dall'algoritmo.\\
+
+Infine un'ulteriore variabile, $last\_improved\_node$ viene dichiarata e inizializzata con il valore None (valore nullo nel linguaggio Python).\\
+Quest'ultima viene utilizzata in una delle 2 strategie di ottimizzazione utilizzate all'interno dell'algoritmo poichè conterrà il valore dell'ultimo nodo che ha effettuato una mossa migliorativa.\\
+
+Il ciclo $while(restart)$ è il ciclo fondamentale e più esterno dell'algoritmo.\\
+Come si evince dalla condizione, l'iterazione continua fin tanto che il valore della variabile $restart$ è True.\\
+
+A questo punto la variabile $restart$ viene inizializzata a False.\\
+Solo quando viene trovato un miglioramento quest'ultima viene inizializzata nuovamente al valore True e dunque, se nessun miglioramento viene trovato dall'algoritmo, la condizione all'interno del $while$ si falsifica è l'esecuzione termina.
+
+L'istruzione successiva è un nuovo loop innestato.\\ Questa volta si tratta di un ciclo for che itera scorrendo, uno per volta, tutti i nodi del grafo.\\
+È stata utilizzata una sintassi molto vicina al codice Python in questa sezione per evidenziare l'utilizzo della funzione $G.nodes(data=True)$.\\
+Quest'ultima è una funzione appartenente alla libreria NetworkX che itera tutti i nodi del grafo $G$.\\
+In particolare il parametro $data=True$ viene utilizzato per prendere in input all'interno dell'iterazione le etichette associate ai nodi.\\
+Le etichette sono dizionari di parametri che caratterizzano il nodo come visto in precedenza, dunque in questo modo possiamo prendere l'etichetta $'color'$ che contiene il valore del colore con il quale è colorato il nodo corrente.\\
+
+Assegnamo alle variabili $color\_init$ e $color\_best$ il colore iniziale del nodo corrente attraverso l'operazione di accesso diretto a chiave singola al dizionario dei parametri associati al nodo con la stringa di codice $data['color']$.\\
+Esso rappresenta dunque il colore iniziale assegnato al nodo ($color\_init$) e inoltre rappresenta, in questo momento, il miglior colore trovato per il nodo corrente ($color\_best$).\\
+
+Nella variabile $profit\_old$ viene ora salvato il valore del profitto legato al colore associato al nodo corrente attraverso l'operazione di accesso diretto a chiave doppia al dizionario $profits$ definita come $profit\_old\gets profits[node][data['color']]$.\\
+Il dizionario profits, come specificato nelle sezioni precedenti, è stato creato in precedenza utilizzando la nested dictionary comprehension, ovvero \textit{profits = \{node:\{color:random.randint(0,maxp) for color in colors\} for node in G.nodes()\}}.\\
+
+A questo punto troviamo il primo controllo che ottimizza l'esecuzione dell'algoritmo.\\
+In particolare viene confrontato se il valore del nodo corrente $node$ è uguale al valore dell'ultimo nodo migliorato dall'algoritmo $last\_improved\_node$.\\
+Questo poichè non è possibile migliorare ulteriormente un nodo che ha appena effettuato una mossa migliorativa e ha indotto un nuovo stato del gioco, ovvero una nuova colorazione.\\
+Se la condizione di uguaglianza relativa al blocco $if$ che effettua il controllo viene soddisfatta, l'algoritmo non esegue operazioni sul nodo corrente e passa alla prossima iterazione analizzando un altro nodo attraverso l'istruzione $continue$.\\
+
+Nella successiva istruzione è nuovamente preservata in parte la sintassi del linguaggio Python.\\
+Nella variabile $neighbors$ viene salvata la lista (iterabile) dei nodi adiancenti al nodo corrente attraverso la funzione appartenente alla libreria NetworkX $G.neighbors(node)$.\\
+
+A questo punto viene dichiarato un ulteriore ciclo for innestato che itera tutti i nodi (adiacenti al nodo corrente) contenuti nella lista neighbors appena creata con l'istruzione precedente.\\
+
+Ora, come nella definizione del modello, controlliamo se il colore del nodo corrente è diverso dal colore 
 
 \newpage
 \subsection{opt\_utilitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}
