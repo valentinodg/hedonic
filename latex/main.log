@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  2 JUL 2018 01:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  2 JUL 2018 14:34
 entering extended mode
 **./main.tex
 (main.tex
@@ -2267,7 +2267,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 623--624
  []
 
 
-Overfull \hbox (33.17488pt too wide) in paragraph at lines 628--629
+Overfull \hbox (33.17488pt too wide) in paragraph at lines 631--632
 []$\OML/cmm/m/it/10.95 permutations \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 l
 ist\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 itertools:product\OT1/cmr/m/n/10.95 
 (\OML/cmm/m/it/10.95 colors; repeat \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 G:
@@ -2275,7 +2275,7 @@ number[]of[]nodes\OT1/cmr/m/n/10.95 ()))$
  []
 
 
-Overfull \hbox (3.88353pt too wide) in paragraph at lines 648--649
+Overfull \hbox (3.88353pt too wide) in paragraph at lines 654--655
 [] \OT1/cmr/bx/n/10.95 if $\OML/cmm/m/it/10.95 temp[]utilitarian[]social[]welfa
 re > utilitarian[]social[]welfare$ \OT1/cmr/bx/n/10.95 then 
  []
@@ -2287,12 +2287,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 672--673
 
  []
 
 
-Overfull \hbox (33.17488pt too wide) in paragraph at lines 672--673
+Overfull \hbox (33.17488pt too wide) in paragraph at lines 681--682
 []$\OML/cmm/m/it/10.95 permutations \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 l
 ist\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 itertools:product\OT1/cmr/m/n/10.95 
 (\OML/cmm/m/it/10.95 colors; repeat \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 G:
@@ -2300,27 +2307,21 @@ number[]of[]nodes\OT1/cmr/m/n/10.95 ()))$
  []
 
 
-Overfull \hbox (32.85724pt too wide) in paragraph at lines 694--695
+Overfull \hbox (32.85724pt too wide) in paragraph at lines 706--707
 [] $\OML/cmm/m/it/10.95 temp[]egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95 
   \OML/cmm/m/it/10.95 local[]egalitarian[]social[]welfare$ 
  []
 
 
-Overfull \hbox (24.97162pt too wide) in paragraph at lines 698--699
+Overfull \hbox (24.97162pt too wide) in paragraph at lines 710--711
 [] \OT1/cmr/bx/n/10.95 if $\OML/cmm/m/it/10.95 local[]egalitarian[]social[]welf
 are < temp[]egalitarian[]social[]welfare$
  []
 
 
-Overfull \hbox (32.85724pt too wide) in paragraph at lines 699--700
+Overfull \hbox (32.85724pt too wide) in paragraph at lines 711--712
 [] $\OML/cmm/m/it/10.95 temp[]egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95 
   \OML/cmm/m/it/10.95 local[]egalitarian[]social[]welfare$ 
- []
-
-
-Overfull \hbox (6.11534pt too wide) in paragraph at lines 705--706
-[] $\OML/cmm/m/it/10.95 egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95   \OML
-/cmm/m/it/10.95 temp[]egalitarian[]social[]welfare$ 
  []
 
 
@@ -2329,8 +2330,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[48]
-Overfull \hbox (6.11534pt too wide) in paragraph at lines 711--712
+[49]
+Overfull \hbox (6.11534pt too wide) in paragraph at lines 717--718
+[] $\OML/cmm/m/it/10.95 egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95   \OML
+/cmm/m/it/10.95 temp[]egalitarian[]social[]welfare$ 
+ []
+
+
+Overfull \hbox (6.11534pt too wide) in paragraph at lines 723--724
 [] $\OML/cmm/m/it/10.95 egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95   \OML
 /cmm/m/it/10.95 temp[]egalitarian[]social[]welfare$ 
  []
@@ -2342,14 +2349,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[49] [50
+[50] [51
 
 
 ] (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux) (chapter_3.aux)) ) 
 Here is how much of TeX's memory you used:
  5556 strings out of 493305
  79014 string characters out of 3129802
- 158847 words of memory out of 3000000
+ 157847 words of memory out of 3000000
  8932 multiletter control sequences out of 15000+200000
  13371 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2374,9 +2381,9 @@ en/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 m/cmti12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmtt10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/public/doublestroke/dsrom10.pfb>
-Output written on main.pdf (51 pages, 405976 bytes).
+Output written on main.pdf (52 pages, 407508 bytes).
 PDF statistics:
- 235 PDF objects out of 1000 (max. 8388607)
+ 238 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

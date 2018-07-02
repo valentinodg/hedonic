@@ -624,10 +624,16 @@ pseudocodice \\
 
 \begin{algorithmic}
 
+\State $start\gets time.time()$
+\State $limit\gets 300$ \Comment 5 minuti \\
+
 \State $utilitarian\_social\_welfare\gets 0$
 \State $permutations\gets list(itertools.product(colors, repeat=G.number\_of\_nodes()))$ \\
 
 \For{$permutation \in permutations$}
+	\If{$time.time() > start + limit$}
+		\State \textbf{sys.exit()}
+	\EndIf
 	\State $colouring\_old = permutation$
 	\For{$(node,data) \in G.nodes(data=True)$}
 		\State $data['color']\gets permutation[node]$
@@ -667,6 +673,9 @@ pseudocodice \\
 
 \begin{algorithmic}
 
+\State $start\gets time.time()$
+\State $limit\gets 300$ \Comment 5 minuti \\
+
 \State $temp\_egalitarian\_social\_welfare\gets 0$
 \State $egalitarian\_social\_welfare\gets 0$
 \State $permutations\gets list(itertools.product(colors, repeat=G.number\_of\_nodes()))$
@@ -674,6 +683,9 @@ pseudocodice \\
 \State $first\_iter\_opt\_check\gets True$ \\
 
 \For{$permutation \in permutations$}
+	\If{$time.time() > start + limit$}
+		\State \textbf{sys.exit()}
+	\EndIf
 	\State $colouring\_old = permutation$
 	\For{$(node,data) \in G.nodes(data=True)$}
 		\State $data['color']\gets permutation[node]$
