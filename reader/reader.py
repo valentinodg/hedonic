@@ -272,7 +272,7 @@ if option is "SINGLE EXEC":
 		if option is "optimal colouring [OPT -- UTILITARIAN SOCIAL WELFARE]":
 
 			start = time.time()
-			limit = 300 # 5 minuti
+			limit = 60 # 1 minuti
 
 			with open(out_ext,'a') as f:
 				f.write("\n######################################################################\n[EXEC : UTILITARIAN SOCIAL WELFARE]\n\n\n")
@@ -337,7 +337,7 @@ if option is "SINGLE EXEC":
 		if option is "optimal colouring [OPT -- EGALITARIAN SOCIAL WELFARE]":
 
 			start = time.time()
-			limit = 300 # 5 minuti
+			limit = 60 # 1 minuti
 
 			with open(out_ext,'a') as f:
 				f.write("\n######################################################################\n[EXEC : EGALITARIAN SOCIAL WELFARE]\n\n\n")
