@@ -430,7 +430,7 @@ nodo 3 & nodo 2 & weight : 23 \\
 \end{table}
 
 Terminata la creazione del file testuale con estensione .init il programma procede e genera tutte le strutture del filesystem necessarie per salvare correttamente i risultati della sperimentazione corrente.\\
-In particolare crea una nuova cartella all'interno della directory result (poichè siamo in SINGLE EXEC) in modo dinamico prendendo il nome del grafo corrente importato dall'utente.\\
+In particolare crea una nuova cartella all'interno della directory result (poiché siamo in SINGLE EXEC) in modo dinamico prendendo il nome del grafo corrente importato dall'utente.\\
 Assegna il medesimo nome al file .init (e al file .out che vedremo tra poco) che viene generato all'interno del path appena generato.\\
 
 A questo punto l'utente viene chiamato a compiere un'ennesima scelta, l'ultima relativa al flusso di esecuzione corrente.\\
@@ -614,7 +614,10 @@ La sintassi dello pseudocodice, in generale nell'aspetto e in particolare in alc
 
 In ogni caso le parti più vicine all'implementazione in Python saranno abbondantemente spiegate e rese chiare qui di seguito.\\
 
-Il seguente algoritmo viene utilizzato, seguendo la definizione presentata poco sopra, solo nella modalità SINGLE EXEC, in modalità MULTIPLE EXEC non viene considerata l'ultima porzione del codice, ovvero quella relativa al prezzo dell'anarchia utilitario e egalitario poiché, data la grandezza dei grafi utilizzati in questo tipo di sperimentazione, vengono tralasciati i calcoli dell'ottimo utilitario e egalitario.\\
+Il seguente algoritmo viene utilizzato, seguendo la definizione presentata poco sopra, solo nella modalità SINGLE EXEC, in modalità MULTIPLE EXEC non viene considerata l'ultima porzione del codice, ovvero quella relativa al prezzo dell'anarchia sperimentale utilitario e egalitario poiché, data la grandezza dei grafi utilizzati in questo tipo di sperimentazione, vengono tralasciati i calcoli dell'ottimo utilitario e egalitario.\\
+
+Il prezzo dell'anarchia sperimentale rappresenta lo studio e l'analisi del prezzo dell'anarchia (benessere sociale utilitario - egalitario della colorazione ottima / benessere sociale utilitario - egalitario della colorazione stabile) ma nel caso medio, laddove il prezzo dell'anarchia rappresenta lo studio e l'analisi nel caso peggiore.\\
+Il prezzo dell'anarchia sperimentale è uno dei risultati fondamentali prodotti dalla sperimentazione.\\
 
 L'algoritmo presenta 2 importanti porzioni di ottimizzazione dei cicli che verranno presentate qui di seguito, grazie alle quali è possibile snellire la fase di calcolo e diminuire l'impiego di risorse e il tempo di esecuzione.\\
 
@@ -627,7 +630,7 @@ La variabile $restar$ viene inizializzata con il valore booleano True.\\
 Quest'ultima serve, come vedremo tra poco, a reinizializzare l'intero ciclo ogni volta che una mossa migliorativa viene trovata dall'algoritmo.\\
 
 Infine un'ulteriore variabile, $last\_improved\_node$ viene dichiarata e inizializzata con il valore None (valore nullo nel linguaggio Python).\\
-Quest'ultima viene utilizzata in una delle 2 strategie di ottimizzazione utilizzate all'interno dell'algoritmo poichè conterrà il valore dell'ultimo nodo che ha effettuato una mossa migliorativa.\\
+Quest'ultima viene utilizzata in una delle 2 strategie di ottimizzazione utilizzate all'interno dell'algoritmo poiché conterrà il valore dell'ultimo nodo che ha effettuato una mossa migliorativa.\\
 
 Il ciclo $while(restart)$ è il ciclo fondamentale e più esterno dell'algoritmo.\\
 Come si evince dalla condizione, l'iterazione continua fin tanto che il valore della variabile $restart$ è True.\\
@@ -649,11 +652,11 @@ Il dizionario profits, come specificato nelle sezioni precedenti, è stato creat
 
 A questo punto troviamo il primo controllo che ottimizza l'esecuzione dell'algoritmo.\\
 In particolare viene confrontato se il valore del nodo corrente $node$ è uguale al valore dell'ultimo nodo migliorato dall'algoritmo $last\_improved\_node$.\\
-Questo poichè non è possibile migliorare ulteriormente un nodo che ha appena effettuato una mossa migliorativa e ha indotto un nuovo stato del gioco, ovvero una nuova colorazione.\\
+Questo poiché non è possibile migliorare ulteriormente un nodo che ha appena effettuato una mossa migliorativa e ha indotto un nuovo stato del gioco, ovvero una nuova colorazione.\\
 Se la condizione di uguaglianza relativa al blocco $if$ che effettua il controllo viene soddisfatta, l'algoritmo non esegue operazioni sul nodo corrente e passa alla prossima iterazione analizzando un altro nodo attraverso l'istruzione $continue$.\\
 
 Nella successiva istruzione è nuovamente preservata in parte la sintassi del linguaggio Python.\\
-Nella variabile $neighbors$ viene salvata la lista (iterabile) dei nodi adiancenti al nodo corrente attraverso la funzione appartenente alla libreria NetworkX $G.neighbors(node)$.\\
+Nella variabile $neighbors$ viene salvata la lista (iterabile) dei nodi adiacenti al nodo corrente attraverso la funzione appartenente alla libreria NetworkX $G.neighbors(node)$.\\
 
 A questo punto viene dichiarato un ulteriore ciclo for innestato che itera tutti i nodi (adiacenti al nodo corrente) contenuti nella lista neighbors appena creata con l'istruzione precedente.\\
 
