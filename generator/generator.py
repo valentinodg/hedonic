@@ -756,10 +756,85 @@ elif option is "MULTIPLE":
 	#
 	#
 
-	options = ['complete_graph']
+	options = ['gnp_random_graph','complete_graph']
 	option, index = pick(options, title, indicator='>', multi_select=False)
 
-	# TODO FORSE AGGIUNGI SEQUENTIAL MODE O RANDOM MODE
+	if option is "gnp_random_graph":
+		print("\n")
+		rounds = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + 'How many graphs you want to create ? ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+
+		print("\n")
+		n = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + ' Insert the number of nodes ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
+
+		print("\n")
+		MinInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MIN ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
+		MaxInt = int(input(Style.BRIGHT + Fore.MAGENTA + '[' + Fore.YELLOW + '*' + Fore.MAGENTA + '] ' + Fore.CYAN + 'Insert' + Fore.YELLOW + ' MAX ' + Fore.CYAN + 'range int number: ' + Style.RESET_ALL))
+		print("\n")
+
+		title = 'Choose generation mode: '
+
+		# TYPES :
+		#
+		# types
+		#
+		#
+
+		options = ['single','multiple']
+		option, index = pick(options, title, indicator='>', multi_select=False)
+
+		if option is "multiple":
+			# set home directory name
+			dirname = "random_" + str(n) + "_nodes"
+			print("\n")
+
+		for i in range(rounds):
+
+			p = round(random.uniform(0, 1), 2)
+
+			G=nx.gnp_random_graph(n, p, directed=False)
+
+			for (u,v,w) in G.edges(data=True):
+			    w['weight'] = random.randint(MinInt, MaxInt)
+
+			# set .edgelist filename
+			name = str(i) + "_gnp_random_graph_" + str(n) + "_nodes_" + str(p) + "_probability"
+
+			if option is "single":
+				# build home directory path
+				hubdir = pathlib.Path.cwd().joinpath('gen').joinpath(name)
+				pathlib.Path(hubdir).mkdir(parents=True, exist_ok=True)
+
+			if option is "multiple":
+				# build home directory path
+				hubdir = pathlib.Path.cwd().joinpath('mgen').joinpath(dirname).joinpath(name)
+				pathlib.Path(hubdir).mkdir(parents=True, exist_ok=True)
+
+			# build .edgelist filename
+			ext = ".edgelist"
+
+			edgelistname = name + ext
+
+			# build .edgelist file
+			# nx.write_weighted_edgelist(G, edgelistname)
+			nx.write_edgelist(G, edgelistname, data=True)
+
+			if option is "single":
+				# move .edgelist file into home directory
+				edgelistpath = pathlib.Path.cwd().joinpath(edgelistname)
+				newedgelistpath = pathlib.Path.cwd().joinpath('gen').joinpath(name).joinpath(edgelistname)
+				shutil.move(edgelistpath, newedgelistpath)
+
+			if option is "multiple":
+				# move .edgelist file into home directory
+				edgelistpath = pathlib.Path.cwd().joinpath(edgelistname)
+				newedgelistpath = pathlib.Path.cwd().joinpath('mgen').joinpath(dirname).joinpath(name).joinpath(edgelistname)
+				shutil.move(edgelistpath, newedgelistpath)
+
+		sys.exit()
+
+
+
+
 	if option is "complete_graph":
 		print("\n")
 		rounds = int(input(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '*' + Fore.CYAN + ']' + Fore.MAGENTA + 'How many graphs you want to create ? ' + Fore.CYAN + '(' + Fore.YELLOW + 'int' + Fore.CYAN + ')' + Fore.MAGENTA + ': ' + Style.RESET_ALL))
