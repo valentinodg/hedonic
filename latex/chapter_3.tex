@@ -648,7 +648,7 @@ Quest'ultima serve a contare il numero di miglioramenti effettuati durante la co
 La variabile è restituita alla fine dell'algoritmo (è stata omessa la porzione di codice relativa alla stampa su console e su file.out nello pseudocodice) e rappresenta il numero di passi (step) effettuati dall'algoritmo.\\
 La variabile $count$ è il parametro fondamentale della sperimentazione ed è in oltre il vero e proprio metro di giudizio fra le varie esecuzioni effettuate sulle differenti istanze.\\
 
-La variabile $restar$ viene inizializzata con il valore booleano True.\\
+La variabile $restart$ viene inizializzata con il valore booleano True.\\
 Quest'ultima serve, come vedremo tra poco, a reinizializzare l'intero ciclo ogni volta che una mossa migliorativa viene trovata dall'algoritmo.\\
 
 Infine un'ulteriore variabile, $last\_improved\_node$ viene dichiarata e inizializzata con il valore None (valore nullo nel linguaggio Python).\\
@@ -656,6 +656,9 @@ Quest'ultima viene utilizzata in una delle 2 strategie di ottimizzazione utilizz
 
 Il ciclo $while(restart)$ è il ciclo fondamentale e più esterno dell'algoritmo.\\
 Come si evince dalla condizione, l'iterazione continua fin tanto che il valore della variabile $restart$ è True.\\
+
+Viene ora fatto il controllo sulla validità del tempo complessivo trascorso, come specificato poco sopra.\\
+In particolare se il tempo corrente $time.time() > start + limit$ allora è trascorso più di 1 minuto e l'esecuzione non ha ancora prodotto alcun risultato, dunque modifichiamo con il valore $True$ il contenuto della variabile $time\_limit$ e interrompiamo l'esecuzione corrente uscendo dal ciclo principale dell'algoritmo attraverso l'istruzione $break$.\\
 
 A questo punto la variabile $restart$ viene inizializzata a False.\\
 Solo quando viene trovato un miglioramento quest'ultima viene inizializzata nuovamente al valore True e dunque, se nessun miglioramento viene trovato dall'algoritmo, la condizione all'interno del $while$ si falsifica è l'esecuzione termina.
@@ -682,7 +685,42 @@ Nella variabile $neighbors$ viene salvata la lista (iterabile) dei nodi adiacent
 
 A questo punto viene dichiarato un ulteriore ciclo for innestato che itera tutti i nodi (adiacenti al nodo corrente) contenuti nella lista neighbors appena creata con l'istruzione precedente.\\
 
-Ora, come nella definizione del modello, controlliamo se il colore del nodo corrente è diverso dal colore 
+Ora, come nella definizione del modello, controlliamo se il colore del nodo corrente è diverso dal colore del nodo adiancente.\\
+Se la condizione viene soddisfatta salviamo nella variabile $edge\_weight$ il valore del peso associato all'arco che collega i 2 nodi in oggetto e aggiorniamo il valore della variabile $profit\_old$ sommandovi il contenuto della variabile $edge\_weight$.\\
+
+Se la condizione non viene soddisfatta saltiamo l'iterazione corrente con l'istruzione $continue$.\\
+
+In questo momento dunque disponiamo del valore di utilità complessivo per il nodo in oggetto colorato con il colore corrente nella colorazione che rappresenta lo stato attuale del gioco.\\
+Con i prossimi cicli innestati tentiamo di trovare un colore che garantisca un'utilità migliore per il nodo corrente.\\
+
+In particolare iteriamo con un ciclo for tutti i colori presenti nella lista $colors$.\\
+Ora utilizziamo la seconda strategia di ottimizzazione per snellire la computazione.\\
+Il colore selezionato dall'iterazione corrente viene confrontato con il colore del nodo corrente, ovvero vi è un controllo che verifica se la disuguaglianza $current\_color \neq color\_init$ viene soddisfatta o meno\\
+
+Se la disuguaglianza non viene soddisfatta, significa che il colore corrente è esattamente quello con cui il nodo in oggetto è colorato, passiamo dunque alla prossima iterazione senza eseguire alcuna operazione attraverso l'istruzione $continue$, ciò poichè non avrebbe senso ricalcolare l'utilità del nodo in oggetto per il colore corrente, dato che ciò è stato fatto nel ciclo precendente.\\
+
+Se il colore iterato è diverso dal colore corrente del nodo in oggetto, coloriamo il nodo corrente con il nuovo colore inserendolo come nuovo valore associato alla chiave $'color'$, con l'istruzione $data['color']\gets current\_color$.\\
+In seguito inizializziamo al variabile $color\_new$ con il valore del colore corrente contenuto in $current\_color$.\\
+Inizializziamo inoltre la variabile $profit\_new$ con il profitto associato al nuovo colore con il quale è colorato ora il nodo corrente.\\
+
+Aggiorniamo ora il valore della variabile $profit\_new$ eseguendo il medesimo ciclo presentato poco sopra, sommandovi il peso degli archi tra il nodo corrente e i suoi vicini se e solo se i colori tra i le coppie di nodi analizzate sono diffenrenti.\\
+
+A questo punto eseguiamo un controllo sul valore dell'utilità trovata.\\ 
+In particolare, se la nuova utilità trovata colorando, con un colore differente da quello iniziale, il nodo corrente è maggiore dell'utilità iniziale (if $profit\_new > profit\_old$), aggiorniamo il contenuto della variabile $profit\_old$ con il nuovo valore della variabile $profit\_new$ e modifichiamo il valore del miglior colore trovato $color\_best$ con quello del colore corrente $current\_color$.\\
+
+Descriviamo ora un'ulteriore strategia di ottimizzazione implementata all'interno dell'algoritmo.\\
+Come vedremo nelle prossime istruzioni, l'algoritmo, preso il nodo e il colore corrente iniziale, cerca di trovare il colore che garantisce la migliore utilità all'iterno della colorazione attuale per il nodo in oggetto.\\
+Ciò significa che l'algoritmo non si ferma al primo miglioramento trovato per il nodo corrente, ma cerca di trovare il miglioramento che garantisce la massima utilità possibile per quest'ultimo.\\
+In parole povere, itera tutti i $k-1$-colori e trova il colore migliore per il nodo corrente, ovvero quello che garantisce il miglior profitto possibile per quest'ultimo nella colorazione attuale.\\
+
+Alla fine del precedente ciclo innestato infatti, l'algoritmo assegna al nodo corrente il miglior colore trovato attraverso l'istruzione $data['color']\gets color\_best$.\\
+Se quest'ultimo è differente dal colore iniziale possiamo affermare che è disponibile un migloramento per il nodo corrente.\\
+Effettuiamo tale miglioramento e aggiorniamo i valori : $count$ (aggiungendo $+1$, poichè l'algoritmo ha eseguito uno step), $restart$ (assegnandole il valore booleano $True$, in modo da garantire la reinizializzazione del ciclo più esterno) e $ last\_improved\_node$ (con il valore del nodo corrente, il quale, essendo stato appena migliorato, non potrà migliorare nuovamente all'iterazione successiva).\\
+A questo punto l'iterazione corrente termina e il ciclo viene interrotto dall'uso dell'istruzione $break$.\\
+La variabile $restart$, che ora contiene nuovamente il valore $True$ permette la reinizializzazione del ciclo poichè la condizione del $while$ più esterno viene soddisfatta.\\
+Se non viene trovato alcun miglioramento, il valore della variabile $restart$ non viene reimpostato a $True$ e dunque, terminata l'iterazione su tutti i nodi del grafo, l'esecuzione corrente termina.\\
+
+Se il calcolo dell'equilibrio viene portato a termine correttamente e nel tempo limite prestabilito, viene eseguito un calcolo congiunto del benessere sociale utilitario e egalitario per la colorazione stabile trovata.\\
 
 \newpage
 \subsection{opt\_utilitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}
