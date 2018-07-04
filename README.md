@@ -3,7 +3,7 @@
 * MODIFIED FRACTIONAL HEDONIC GAMES
 * GENERALIZED GRAPH K-COLORING GAMES ***
 
-## GRAPH GENERATOR (INCOMPLETE)
+## GRAPH GENERATOR (COMPLETE)
 
 Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/downloads/]
 
@@ -44,7 +44,7 @@ python filename.py
 ```
 etc ...
 
-## GRAPH READER (INCOMPLETE)
+## GRAPH READER (COMPLETE)
 
 Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/downloads/]
 
