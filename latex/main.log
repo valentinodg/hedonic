@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  3 JUL 2018 18:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  4 JUL 2018 14:02
 entering extended mode
 **./main.tex
 (main.tex
@@ -2207,7 +2207,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [43]
-Overfull \hbox (3.41571pt too wide) in paragraph at lines 542--543
+Overfull \hbox (3.41571pt too wide) in paragraph at lines 550--551
 [] \OT1/cmr/bx/n/10.95 if $\OML/cmm/m/it/10.95 G:node\OT1/cmr/m/n/10.95 [\OML/c
 mm/m/it/10.95 neighbor\OT1/cmr/m/n/10.95 ][[]\OML/cmm/m/it/10.95 color[]\OT1/cm
 r/m/n/10.95 ] \OMS/cmsy/m/n/10.95 6\OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 G:n
@@ -2222,29 +2222,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [44]
-Overfull \hbox (6.11534pt too wide) in paragraph at lines 587--588
+Overfull \hbox (22.54037pt too wide) in paragraph at lines 596--597
 [] $\OML/cmm/m/it/10.95 egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95   \OML
 /cmm/m/it/10.95 temp[]egalitarian[]social[]welfare$ 
  []
 
 
-Overfull \hbox (6.11534pt too wide) in paragraph at lines 592--593
+Overfull \hbox (14.65475pt too wide) in paragraph at lines 600--601
+[] \OT1/cmr/bx/n/10.95 if $\OML/cmm/m/it/10.95 temp[]egalitarian[]social[]welfa
+re < egalitarian[]social[]welfare$
+ []
+
+
+Overfull \hbox (22.54037pt too wide) in paragraph at lines 601--602
 [] $\OML/cmm/m/it/10.95 egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95   \OML
 /cmm/m/it/10.95 temp[]egalitarian[]social[]welfare$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 615--616
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 617--618
+Underfull \hbox (badness 10000) in paragraph at lines 623--624
 
  []
 
@@ -2255,17 +2251,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [45]
-Underfull \hbox (badness 10000) in paragraph at lines 619--621
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 622--623
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 624--628
+Underfull \hbox (badness 10000) in paragraph at lines 627--628
 
  []
 
@@ -2275,12 +2266,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 629--631
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--634
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 635--637
+Underfull \hbox (badness 10000) in paragraph at lines 634--638
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 639--641
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 642--644
 
  []
 
@@ -2291,24 +2292,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [46]
-Underfull \hbox (badness 10000) in paragraph at lines 641--646
+Underfull \hbox (badness 10000) in paragraph at lines 645--647
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--649
+Underfull \hbox (badness 10000) in paragraph at lines 651--656
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--659
 
  []
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 651.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 661.
 
-Underfull \hbox (badness 10000) in paragraph at lines 650--652
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 653--657
+Underfull \hbox (badness 10000) in paragraph at lines 660--662
 
  []
 
@@ -2319,12 +2320,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 658--660
+Underfull \hbox (badness 10000) in paragraph at lines 663--667
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--662
+Underfull \hbox (badness 10000) in paragraph at lines 668--670
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--672
 
  []
 
@@ -2335,12 +2341,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [48]
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
 
  []
 
 
-Overfull \hbox (33.17488pt too wide) in paragraph at lines 676--677
+Overfull \hbox (33.17488pt too wide) in paragraph at lines 687--688
 []$\OML/cmm/m/it/10.95 permutations \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 l
 ist\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 itertools:product\OT1/cmr/m/n/10.95 
 (\OML/cmm/m/it/10.95 colors; repeat \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 G:
@@ -2348,7 +2354,7 @@ number[]of[]nodes\OT1/cmr/m/n/10.95 ()))$
  []
 
 
-Overfull \hbox (3.88353pt too wide) in paragraph at lines 699--700
+Overfull \hbox (3.88353pt too wide) in paragraph at lines 711--712
 [] \OT1/cmr/bx/n/10.95 if $\OML/cmm/m/it/10.95 temp[]utilitarian[]social[]welfa
 re > utilitarian[]social[]welfare$ \OT1/cmr/bx/n/10.95 then 
  []
@@ -2367,12 +2373,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [50]
-Underfull \hbox (badness 10000) in paragraph at lines 717--718
+Underfull \hbox (badness 10000) in paragraph at lines 731--732
 
  []
 
 
-Overfull \hbox (33.17488pt too wide) in paragraph at lines 726--727
+Overfull \hbox (33.17488pt too wide) in paragraph at lines 741--742
 []$\OML/cmm/m/it/10.95 permutations \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 l
 ist\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 itertools:product\OT1/cmr/m/n/10.95 
 (\OML/cmm/m/it/10.95 colors; repeat \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 G:
@@ -2380,21 +2386,15 @@ number[]of[]nodes\OT1/cmr/m/n/10.95 ()))$
  []
 
 
-Overfull \hbox (32.85724pt too wide) in paragraph at lines 751--752
+Overfull \hbox (32.85724pt too wide) in paragraph at lines 767--768
 [] $\OML/cmm/m/it/10.95 temp[]egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95 
   \OML/cmm/m/it/10.95 local[]egalitarian[]social[]welfare$ 
  []
 
 
-Overfull \hbox (24.97162pt too wide) in paragraph at lines 755--756
+Overfull \hbox (24.97162pt too wide) in paragraph at lines 771--772
 [] \OT1/cmr/bx/n/10.95 if $\OML/cmm/m/it/10.95 local[]egalitarian[]social[]welf
 are < temp[]egalitarian[]social[]welfare$
- []
-
-
-Overfull \hbox (32.85724pt too wide) in paragraph at lines 756--757
-[] $\OML/cmm/m/it/10.95 temp[]egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95 
-  \OML/cmm/m/it/10.95 local[]egalitarian[]social[]welfare$ 
  []
 
 
@@ -2404,13 +2404,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [51]
-Overfull \hbox (6.11534pt too wide) in paragraph at lines 762--763
+Overfull \hbox (32.85724pt too wide) in paragraph at lines 772--773
+[] $\OML/cmm/m/it/10.95 temp[]egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95 
+  \OML/cmm/m/it/10.95 local[]egalitarian[]social[]welfare$ 
+ []
+
+
+Overfull \hbox (6.11534pt too wide) in paragraph at lines 778--779
 [] $\OML/cmm/m/it/10.95 egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95   \OML
 /cmm/m/it/10.95 temp[]egalitarian[]social[]welfare$ 
  []
 
 
-Overfull \hbox (6.11534pt too wide) in paragraph at lines 768--769
+Overfull \hbox (6.11534pt too wide) in paragraph at lines 784--785
 [] $\OML/cmm/m/it/10.95 egalitarian[]social[]welfare \OMS/cmsy/m/n/10.95   \OML
 /cmm/m/it/10.95 temp[]egalitarian[]social[]welfare$ 
  []
@@ -2427,13 +2433,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux) (chapter_3.aux)) ) 
 Here is how much of TeX's memory you used:
- 5576 strings out of 493305
- 79342 string characters out of 3129802
- 157847 words of memory out of 3000000
- 8951 multiletter control sequences out of 15000+200000
+ 5578 strings out of 493305
+ 79366 string characters out of 3129802
+ 159847 words of memory out of 3000000
+ 8953 multiletter control sequences out of 15000+200000
  17411 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,43p,802b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,11n,43p,802b,433s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/U
 sers/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 x10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
@@ -2455,7 +2461,7 @@ m/cmti10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/valen/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on main.pdf (54 pages, 422644 bytes).
+Output written on main.pdf (54 pages, 422714 bytes).
 PDF statistics:
  248 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

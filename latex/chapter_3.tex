@@ -510,11 +510,19 @@ Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard 
 
 \begin{algorithmic}
 
+\State $start\gets time.time()$
+\State $limit\gets 60$ \Comment 1 minuto
+\State $time\_limit\gets False$ \\
+
 \State $count\gets 0$
 \State $restart\gets True$
 \State $last\_improved\_node\gets None$\\
 
 \While{$restart$}
+	\If{$time.time() > start + limit$}
+		\State $time\_limit\gets True$ 
+		\State \textbf{break}
+	\EndIf
 	\State $restart\gets False$
 	\For{$(node,data) \in G.nodes(data=True)$}
 		\State $color\_init\gets data['color']$
@@ -566,47 +574,49 @@ Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard 
 	\EndFor
 \EndWhile \\
 
-\State $egalitarian\_social\_welfare\gets 0$
-\State $utilitarian\_social\_welfare\gets 0$
-\State $first\_iter\_check\gets True$ \\
+\If{$time\_limit == False$}
+	\State $egalitarian\_social\_welfare\gets 0$
+	\State $utilitarian\_social\_welfare\gets 0$
+	\State $first\_iter\_check\gets True$ \\
 
-\For{$(node,data) \in G.nodes(data=True)$}
-	\State $temp\_egalitarian\_social\_welfare\gets 0$
-	\State $temp\_egalitarian\_social\_welfare += profits[node][data['color']]$
-	\State $utilitarian\_social\_welfare += profits[node][data['color']]$
-	\State $neighbors\gets G.neighbors(node)$
-	\For{$neighbor \in neighbors$}
-		\If{$G.node[neighbor]['color'] \neq G.node[node]['color']$}
-			\State $edge\_weight\gets G[node][neighbor]['weight']$
-			\State $utilitarian\_social\_welfare += edge\_weight$
-			\State $temp\_egalitarian\_social\_welfare += edge\_weight$
-		\Else
-			\State \textbf{continue}
-		\EndIf
-		\If{$first\_iter\_check$}
-			\State $egalitarian\_social\_welfare\gets temp\_egalitarian\_social\_welfare$
-			\State $first\_iter\_check\gets False$ \\
-			\State \textbf{continue}
-		\EndIf
-		\If{$temp\_egalitarian\_social\_welfare < egalitarian\_social\_welfare$}
-			\State $egalitarian\_social\_welfare\gets temp\_egalitarian\_social\_welfare$
-		\Else
-			\State \textbf{continue}
-		\EndIf
-	\EndFor
-\EndFor \\
+	\For{$(node,data) \in G.nodes(data=True)$}
+		\State $temp\_egalitarian\_social\_welfare\gets 0$
+		\State $temp\_egalitarian\_social\_welfare += profits[node][data['color']]$
+		\State $utilitarian\_social\_welfare += profits[node][data['color']]$
+		\State $neighbors\gets G.neighbors(node)$
+		\For{$neighbor \in neighbors$}
+			\If{$G.node[neighbor]['color'] \neq G.node[node]['color']$}
+				\State $edge\_weight\gets G[node][neighbor]['weight']$
+				\State $utilitarian\_social\_welfare += edge\_weight$
+				\State $temp\_egalitarian\_social\_welfare += edge\_weight$
+			\Else
+				\State \textbf{continue}
+			\EndIf
+			\If{$first\_iter\_check$}
+				\State $egalitarian\_social\_welfare\gets temp\_egalitarian\_social\_welfare$
+				\State $first\_iter\_check\gets False$ \\
+				\State \textbf{continue}
+			\EndIf
+			\If{$temp\_egalitarian\_social\_welfare < egalitarian\_social\_welfare$}
+				\State $egalitarian\_social\_welfare\gets temp\_egalitarian\_social\_welfare$
+			\Else
+				\State \textbf{continue}
+			\EndIf
+		\EndFor
+	\EndFor \\
 
-\State $nash\_utilitarian\_social\_welfare\gets utilitarian\_social\_welfare$
-\State $nash\_egalitarian\_social\_welfare\gets egalitarian\_social\_welfare$ \\
+	\State $nash\_utilitarian\_social\_welfare\gets utilitarian\_social\_welfare$
+	\State $nash\_egalitarian\_social\_welfare\gets egalitarian\_social\_welfare$ \\
 
-\If{$check\_utilitarian\_social\_welfare$}
-	\State $utilitarian\_price\_of\_anarchy\gets$ \\
-	$opt\_utilitarian\_social\_welfare / nash\_utilitarian\_social\_welfare$
+	\If{$check\_utilitarian\_social\_welfare$}
+		\State $utilitarian\_price\_of\_anarchy\gets$ \\
+		$opt\_utilitarian\_social\_welfare / nash\_utilitarian\_social\_welfare$
+	\EndIf
+	\If{$check\_egalitarian\_social\_welfare$}
+		\State $egalitarian\_price\_of\_anarchy\gets$ \\
+		$opt\_egalitarian\_social\_welfare / nash\_egalitarian\_social\_welfare$
+	\EndIf \\
 \EndIf
-\If{$check\_egalitarian\_social\_welfare$}
-	\State $egalitarian\_price\_of\_anarchy\gets$ \\
-	$opt\_egalitarian\_social\_welfare / nash\_egalitarian\_social\_welfare$
-\EndIf \\
 
 \end{algorithmic}
 
@@ -670,14 +680,16 @@ pseudocodice \\
 \begin{algorithmic}
 
 \State $start\gets time.time()$
-\State $limit\gets 300$ \Comment 5 minuti \\
+\State $limit\gets 60$ \Comment 1 minuto
+\State $time\_limit\gets False$ \\
 
 \State $utilitarian\_social\_welfare\gets 0$
 \State $permutations\gets list(itertools.product(colors, repeat=G.number\_of\_nodes()))$ \\
 
 \For{$permutation \in permutations$}
 	\If{$time.time() > start + limit$}
-		\State \textbf{sys.exit()}
+		\State $time\_limit\gets True$ 
+		\State \textbf{break}
 	\EndIf
 	\State $colouring\_old = permutation$
 	\For{$(node,data) \in G.nodes(data=True)$}
@@ -704,8 +716,10 @@ pseudocodice \\
 	\EndIf
 \EndFor \\
 
-\State $check\_utilitarian\_social\_welfare\gets True$
-\State $opt\_utilitarian\_social\_welfare\gets utilitarian\_social\_welfare$ \\
+\If{$time\_limit == False$}
+	\State $check\_utilitarian\_social\_welfare\gets True$
+	\State $opt\_utilitarian\_social\_welfare\gets utilitarian\_social\_welfare$
+\EndIf
 
 \end{algorithmic} 
 
@@ -719,7 +733,8 @@ pseudocodice \\
 \begin{algorithmic}
 
 \State $start\gets time.time()$
-\State $limit\gets 300$ \Comment 5 minuti \\
+\State $limit\gets 60$ \Comment 1 minuto
+\State $time\_limit\gets False$ \\
 
 \State $temp\_egalitarian\_social\_welfare\gets 0$
 \State $egalitarian\_social\_welfare\gets 0$
@@ -729,7 +744,8 @@ pseudocodice \\
 
 \For{$permutation \in permutations$}
 	\If{$time.time() > start + limit$}
-		\State \textbf{sys.exit()}
+		\State $time\_limit\gets True$ \\
+		\State \textbf{break}
 	\EndIf
 	\State $colouring\_old = permutation$
 	\For{$(node,data) \in G.nodes(data=True)$}
@@ -773,8 +789,10 @@ pseudocodice \\
 	\EndFor
 \EndFor \\
 
-\State $check\_egalitarian\_social\_welfare\gets True$
-\State $opt\_egalitarian\_social\_welfare\gets egalitarian\_social\_welfare$ \\
+\If{$time\_limit == False$}
+	\State $check\_egalitarian\_social\_welfare\gets True$
+	\State $opt\_egalitarian\_social\_welfare\gets egalitarian\_social\_welfare$
+\EndIf
 
 \end{algorithmic}
 
