@@ -1,0 +1,64 @@
+
+##############################
+
+1 single random
+
+    nodi = 5
+    colori = 5
+    probabilità = 0.90
+    archi = 9
+
+    opt usw = 314
+    opt esw = 45
+
+    nash count = 5
+    nash usw = 314
+    nash esw = 41
+
+    upoa = 1
+    epoa = 1.0975
+
+
+##############################
+
+2 single random
+
+    nodi = 5
+    colori = 4
+    probabilità = 0.27
+    archi = 5
+
+    opt usw = 485
+    opt esw = 94
+
+    nash count = 4
+    nash usw = 485
+    nash esw = 94
+
+    upoa = 1
+    epoa = 1
+
+
+##############################
+
+3 single random
+
+    nodi = 5
+    colori = 3
+    probabilità = 0.82
+    archi = 9
+
+    opt usw = 410
+    opt usw = 45
+
+    nash count = 4
+    nash usw = 410
+    nash esw = 40
+
+    upoa = 1
+    epoa = 1.125
+
+
+##############################
+
+
