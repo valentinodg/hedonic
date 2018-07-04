@@ -1,0 +1,35 @@
+
+COLORS (LIST)
+
+[0, 1, 2]
+
+
+NODE -- COLOR (LIST OF DICTIONARY) == INITIAL COLOURING
+
+0 {'color': 1}
+3 {'color': 0}
+4 {'color': 2}
+1 {'color': 1}
+2 {'color': 1}
+
+[number of nodes] = 5
+
+
+NODE -- COLORS -- PROFITS (NESTED DICTIONARY)
+
+0 {0: 22, 1: 25, 2: 7}
+3 {0: 12, 1: 30, 2: 22}
+4 {0: 28, 1: 11, 2: 33}
+1 {0: 33, 1: 25, 2: 11}
+2 {0: 18, 1: 6, 2: 9}
+
+
+NODE -- NODE -- EDGE WEIGHT (LIST OF LIST OF DICTIONARY)
+
+0 3 {'weight': 4}
+0 4 {'weight': 5}
+3 1 {'weight': 2}
+3 2 {'weight': 7}
+3 4 {'weight': 2}
+
+[number of edges] = 5
