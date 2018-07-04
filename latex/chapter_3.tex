@@ -440,6 +440,7 @@ All'utente viene chiesto di scegliere tra le 3 opzioni di calcolo disponibili, c
 	\item calcolo della colorazione ottima (ottimo con funzione di benessere sociale utilitaria)
 	\item calcolo della colorazione ottima (ottimo con funzione di benessere sociale egalitaria)
 	\item calcolo della colorazione stabile (equilibrio di Nash)
+	\item esecuzione completa
 	\item esci
 \end{itemize}
 
@@ -449,6 +450,9 @@ Per l'utente che esegue in modalità SINGLE EXEC, questo punto del programma rap
 L'utente infatti può eseguire, quante volte vuole, i vari algoritmi (può anche eseguirli tutti sull'istanza corrente o uscire e non fare nulla come specificato poco sopra).\\
 Terminata l'esecuzione di uno degli algoritmi, all'utente verrà lasciato il pieno controllo.\\
 Quest'ultimo potrà leggere il risultato dell'esecuzione da console e analizzare i vari cicli eseguiti e poi tornare all'hub nel quale potrà avviare una nuova esecuzione o uscire dal programma.\\
+
+Vi è inoltre l'opzione "esecuzione completa" che permette di calcolare l'ottimo con funzione di benessere sociale utilitaria, l'ottimo con funzione di benessere sociale egalitaria e infine la colorazione stabile, nell'ordine specificato.\\
+Il tutto sarà eseguito in modo automatico e slegato dunque dal controllo dell'utente, il quale dovrà fornire soltanto i classici parametri per la modellazione dell'istanza corrente come il numero di colori o il massimo valore del range relativo ai profitti.\\
 
 Prima di affrontare la descrizione degli algoritmi, il vero cuore dell'implementazione, analizziamo al modalità di funzionamento MULTIPLE EXEC relativa al programma reader.py.\\
 
@@ -624,12 +628,20 @@ La sintassi dello pseudocodice, in generale nell'aspetto e in particolare in alc
 
 In ogni caso le parti più vicine all'implementazione in Python saranno abbondantemente spiegate e rese chiare qui di seguito.\\
 
+Sono state omesse nello pseudocodice tutte le porzioni di stampa su console e su file.out dei dati significativi, poichè trascurabili.\\
+
 Il seguente algoritmo viene utilizzato, seguendo la definizione presentata poco sopra, solo nella modalità SINGLE EXEC, in modalità MULTIPLE EXEC non viene considerata l'ultima porzione del codice, ovvero quella relativa al prezzo dell'anarchia sperimentale utilitario e egalitario poiché, data la grandezza dei grafi utilizzati in questo tipo di sperimentazione, vengono tralasciati i calcoli dell'ottimo utilitario e egalitario.\\
 
 Il prezzo dell'anarchia sperimentale rappresenta lo studio e l'analisi del prezzo dell'anarchia (benessere sociale utilitario - egalitario della colorazione ottima / benessere sociale utilitario - egalitario della colorazione stabile) ma nel caso medio, laddove il prezzo dell'anarchia rappresenta lo studio e l'analisi nel caso peggiore.\\
 Il prezzo dell'anarchia sperimentale è uno dei risultati fondamentali prodotti dalla sperimentazione.\\
 
 L'algoritmo presenta 2 importanti porzioni di ottimizzazione dei cicli che verranno presentate qui di seguito, grazie alle quali è possibile snellire la fase di calcolo e diminuire l'impiego di risorse e il tempo di esecuzione.\\
+
+Come prima operazione impostiamo i valori temporali.\\
+In particolare viene memorizzato il tempo corrente relativo all'inizio dell'esecuzione all'interno della variabile $start$, utilizzando la libreria standard del linguaggio Python.\\
+In seguito viene impostato il limite temporale nella variabile $limit$, di default corrispondente al valore 60 secondi, ovvero 1 minuto.\\
+Oltrepassato il limite temporale interrompiamo l'esecuzione e non restituiamo alcun risultato, poichè quest'ultimo non è stato trovato dall'algoritmo nel tempo prestabilito.\\
+Tale controllo viene effettuato inizializzando al valore $False$ la variabile $time\_limit$ ed effettuando ad ogni iterazione il controllo sulla validità del tempo complessivo trascorso, lo analizzeremo tra poco.\\
 
 All'inizio del programma la variabile $count$ viene inizializzata con il valore 0.\\
 Quest'ultima serve a contare il numero di miglioramenti effettuati durante la computazione, in particolare registra il numero di mosse migliorative effettuate dalla procedura.\\
