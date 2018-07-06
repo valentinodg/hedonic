@@ -451,7 +451,7 @@ L'utente infatti può eseguire, quante volte vuole, i vari algoritmi (può anche
 Terminata l'esecuzione di uno degli algoritmi, all'utente verrà lasciato il pieno controllo.\\
 Quest'ultimo potrà leggere il risultato dell'esecuzione da console, analizzare i vari cicli eseguiti e poi tornare all'hub nel quale potrà avviare una nuova esecuzione o uscire dal programma.\\
 
-Vi è inoltre l'opzione "esecuzione completa" che permette di calcolare l'ottimo con funzione di benessere sociale utilitaria, l'ottimo con funzione di benessere sociale egalitaria e infine la colorazione stabile, nell'ordine specificato.\\
+Vi è inoltre l'opzione "esecuzione completa" che permette di calcolare l'ottimo con funzione di benessere sociale utilitaria, l'ottimo con funzione di benessere sociale egalitario e infine la colorazione stabile, nell'ordine specificato.\\
 Il tutto sarà eseguito in modo automatico e slegato dunque dal controllo dell'utente, il quale dovrà fornire solo i classici parametri per la modellazione dell'istanza corrente come il numero di colori o il massimo valore del range relativo ai profitti.\\
 
 Prima di affrontare la descrizione degli algoritmi, il vero cuore dell'implementazione, analizziamo al modalità di funzionamento MULTIPLE EXEC relativa al programma reader.py.\\
@@ -501,7 +501,7 @@ Gli algoritmi implementati sono i seguenti.
 \newpage
 \subsection{nash\_equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}
 \justify
-Il seguente algoritmo viene usato per calcolare una colorazione stabile per il gioco della \(k\)-colorazione generalizzata modellato in precedenza utilizzando la definizione di equilibrio di Nash.\\
+Il seguente algoritmo viene usato per calcolare una colorazione stabile per il gioco della \(k\)-colorazione generalizzata modellato in precedenza, utilizzando la definizione di equilibrio di Nash.\\
 
 Come abbiamo visto esiste sempre almeno un equilibrio di Nash per ogni istanza di gioco della \(k\)-colorazione generalizzata e il problema di trovare una di queste colorazioni stabili è PLS-Completo.\\
 
@@ -595,7 +595,7 @@ Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard 
 			\EndIf
 			\If{$first\_iter\_check$}
 				\State $egalitarian\_social\_welfare\gets temp\_egalitarian\_social\_welfare$
-				\State $first\_iter\_check\gets False$ \\
+				\State $first\_iter\_check\gets False$
 				\State \textbf{continue}
 			\EndIf
 			\If{$temp\_egalitarian\_social\_welfare < egalitarian\_social\_welfare$}
@@ -717,12 +717,62 @@ A questo punto l'iterazione corrente termina e il ciclo viene interrotto dall'us
 La variabile $restart$, che ora contiene nuovamente il valore $True$ permette la reinizializzazione del ciclo poichè la condizione del $while$ più esterno viene soddisfatta.\\
 Se non viene trovato alcun miglioramento, il valore della variabile $restart$ non viene reimpostato a $True$ e dunque, terminata l'iterazione su tutti i nodi del grafo, l'esecuzione corrente viene interrotta.\\
 
-Se il calcolo dell'equilibrio viene portato a termine correttamente e nel tempo limite prestabilito, viene eseguito un calcolo congiunto del benessere sociale utilitario e egalitario per la colorazione stabile trovata.\\
+Se il calcolo dell'equilibrio viene portato a termine correttamente e nel tempo limite prestabilito ($if time\_limit == False$), viene eseguito un calcolo congiunto del benessere sociale utilitario e egalitario per la colorazione stabile trovata.\\
+
+Vengono inizializzate al valore $0$ le variabili $egalitarian\_social\_welfare$ e $utilitarian\_social\_welfare$.\\
+Viene inoltre inizializzata al valore $True$ la variabile $first\_iter\_check$.\\
+
+A questo punto scorriamo nuovamente tutti i nodi (con annessi i relativi parametri) del grafo corrente, utilizzando il medesimo ciclo $for$ presentato in precedenza durante il calcolo dell'equilibrio.\\
+Inizializziamo una variabile temporanea $temp\_egalitarian\_social\_welfare$ con il valore $0$, quest'ultima servirà per il calcolo del benessere sociale egalitario relativo alla colorazione stabile trovata.\\
+
+Modifichiamo il valore della variabile $temp\_egalitarian\_social\_welfare$ e quello della variabile $utilitarian\_social\_welfare$ con il valore del profitto relativo al colore associato al nodo corrente nell'attuale colorazione stabile.\\
+
+Istanziamo nuovamente il loop, utilizzato in precendenza, che itera i nodi adiacenti per ciascun nodo del grafo in oggetto.\\
+
+Salviamo nella variabile $edge\_weight$ il valore del peso dell'arco tra il nodo corrente e uno dei suoi nodi adiacenti se e solo se i colori con i quali sono colorati entrambi i nodi sono differenti, altrimenti non eseguiamo alcuna operazione e saltiamo l'iterazione corrente per passare alla successiva attraverso l'uso dell'istruzione $continue$.\\
+In caso di colori differenti, aggiorniamo il valore delle variabili $utilitarian\_social\_welfare$ e $temp\_egalitarian\_social\_welfare$ sommandovi il contenuto della variabile $edge\_weight$.\\
+
+Un ulteriore controllo è quello relativo al conteggio dell'iterazione corrente.\\
+Se il valore della variabile booleana $first\_iter\_check$ è $True$, significa che ci troviamo all'interno della prima iterazione, dunque assegnamo semplicemente a $egalitarian\_social\_welfare$ il valore della variabile $temp\_egalitarian\_social\_welfare$, modifichiamo il contenuto della variabile $first\_iter\_check$ al valore $False$ e saltiamo all'iterazione successiva utilizzando l'istruzione $continue$.\\
+
+Per le successive iterazioni (tutte tranne la prima), eseguiamo il seguente controllo.\\
+Se il contenuto della variabile $temp\_egalitarian\_social\_welfare < egalitarian\_social\_welfare$, abbiamo trovato un valore migliore per il benessere sociale egalitario relativo alla colorazione stabile.\\
+Quindi assegnamo tale valore alla variabile $egalitarian\_social\_welfare$.\\
+
+Al termine dell'iterazione più esterna le variabili $nash\_egalitarian\_social\_welfare$ e $nash\_utilitarian\_social\_welfare$, grazie agli assegnamenti $nash\_utilitarian\_social\_welfare\gets utilitarian\_social\_welfare$ e $nash\_egalitarian\_social\_welfare\gets egalitarian\_social\_welfare$, conterranno rispettivamente i valori del benessere sociale egalitario e utilitario relativi alla colorazione stabile corrente.\\
+
+La seguente procedura, relativa al calcolo del prezzo dell'anarchia utilitario sperimentale e al prezzo dell'anarchia egalitario sperimentale, è stata implementata solo all'interno della modalità SINGLE EXEC, come specificato in precedenza.\\
+
+Verifichiamo a questo punto se sono stati calcolati, per l'istanza corrente, l'ottimo con funzione di benessere sociale utilitario e quello con funzione di benessere sociale egalitario.\\
+
+Se la condizione $if check\_utilitarian\_social\_welfare$ risulta valida, significa che abbiamo già eseguito sull'istanza corrente il calcolo dell'ottimo con funzione di benessere sociale utilitario.\\
+La variabile $opt\_utilitarian\_social\_welfare$ conterrà il valore relativo al suddetto calcolo dell'ottimo.\\
+Assegnamo dunque, in caso la condizione sia valida, il valore della divisione $opt\_utilitarian\_social\_welfare \ nash\_utilitarian\_social\_welfare$ alla variabile $utilitarian\_price\_of\_anarchy$.\\
+
+Se la condizione $if check\_egalitarian\_social\_welfare$ risulta valida, significa che abbiamo già eseguito sull'istanza corrente il calcolo dell'ottimo con funzione di benessere sociale egalitario.\\
+La variabile $opt\_egalitarian\_social\_welfare$ conterrà il valore relativo al suddetto calcolo dell'ottimo.\\
+Assegnamo dunque, in caso la condizione sia valida, il valore della divisione $opt\_egalitarian\_social\_welfare \ nash\_egalitarian\_social\_welfare$ alla variabile $egalitarian\_price\_of\_anarchy$.\\
+
 
 \newpage
 \subsection{opt\_utilitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}
 \justify
-pseudocodice \\
+Il seguente algoritmo viene usato per calcolare la colorazione ottima per il gioco della \(k\)-colorazione generalizzata modellato in precedenza, utilizzando la definizione di funzione di benessere sociale utilitario.\\
+
+Presentiamo ora lo pseudocodice relativo al suddetto algoritmo e di seguito analizziamo in modo accurato le caratteristiche, le iterazioni e le operazioni eseguite nell'implementazione raggiunta.\\
+
+Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard Library del Python e la libreria di costruzione e manipolazione di grafi NetworkX e che l'implementazione è stata accuratamente ottimizzata nei cicli e nelle operazioni grazie ad un attento uso di funzioni e strutture dati.\\
+
+Anche in questo caso, la sintassi dello pseudocodice, in generale nell'aspetto e in particolare in alcuni punti nei quali trascende l'astrazione, è volutamente molto vicina a quella del linguaggio Python in modo tale da coinvolgere il lettore nell'implementazione e in modo da mostrare alcune soluzioni adottate per effettuare le operazioni più significative.\\
+
+Inoltre, come per il caso precedente, sono state omesse nello pseudocodice tutte le porzioni di stampa su console e su file.out dei dati significativi, poichè trascurabili.\\
+
+Si specifica che il calcolo dell'ottimo (sia secondo la definizio di benessere sociale utilitario che egalitario) è una procedura pesante e dispendiosa al livello temporale la cui strategia principale è modellata secondo la forza bruta.\\
+In particolare tale procedura è incentrata sull'uso delle permutazioni, ciascuna delle quali rappresenta una possibile colorazione per l'istanza corrente.\\
+Tale aspetto è fortemente esponenziale, infatti avendo \(k\) colori e \(n\) nodi, il numero di permutazioni da iterare corrisponde a \(k^n\).\\
+
+Per non tediare il lettore, specifichiamo che, per chiarezza, le qui presenti assunzioni e affermazioni verranno riportate anche per l'algoritmo successivo, quello per il calcolo dell'ottimo con funzione di benessere sociale egalitario.\\
+Dunque lo invitiamo a saltare la lettura di tali assunzioni nella sezione successiva poichè saranno le medesime già lette in questa sezione.\\
 
 \begin{algorithmic}
 
@@ -775,7 +825,19 @@ Spiegazione algoritmo.
 \newpage
 \subsection{opt\_egalitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}
 \justify
-pseudocodice \\
+Il seguente algoritmo viene usato per calcolare la colorazione ottima per il gioco della \(k\)-colorazione generalizzata modellato in precedenza, utilizzando la definizione di funzione di benessere sociale egalitario.\\
+
+Presentiamo ora lo pseudocodice relativo al suddetto algoritmo e di seguito analizziamo in modo accurato le caratteristiche, le iterazioni e le operazioni eseguite nell'implementazione raggiunta.\\
+
+Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard Library del Python e la libreria di costruzione e manipolazione di grafi NetworkX e che l'implementazione è stata accuratamente ottimizzata nei cicli e nelle operazioni grazie ad un attento uso di funzioni e strutture dati.\\
+
+Anche in questo caso, la sintassi dello pseudocodice, in generale nell'aspetto e in particolare in alcuni punti nei quali trascende l'astrazione, è volutamente molto vicina a quella del linguaggio Python in modo tale da coinvolgere il lettore nell'implementazione e in modo da mostrare alcune soluzioni adottate per effettuare le operazioni più significative.\\
+
+Inoltre, come per il caso precedente, sono state omesse nello pseudocodice tutte le porzioni di stampa su console e su file.out dei dati significativi, poichè trascurabili.\\
+
+Si specifica che il calcolo dell'ottimo (sia secondo la definizio di benessere sociale utilitario che egalitario) è una procedura pesante e dispendiosa al livello temporale la cui strategia principale è modellata secondo la forza bruta.\\
+In particolare tale procedura è incentrata sull'uso delle permutazioni, ciascuna delle quali rappresenta una possibile colorazione per l'istanza corrente.\\
+Tale aspetto è fortemente esponenziale, infatti avendo \(k\) colori e \(n\) nodi, il numero di permutazioni da iterare corrisponde a \(k^n\).\\
 
 \begin{algorithmic}
 
