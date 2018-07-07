@@ -36,4 +36,4 @@
 \contentsline {subsection}{\numberline {3.5.1}nash\_equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}{43}
 \contentsline {subsection}{\numberline {3.5.2}opt\_utilitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}{54}
 \contentsline {subsection}{\numberline {3.5.3}opt\_egalitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}{59}
-\contentsline {part}{IV\hspace {1em}Sperimentazione}{63}
+\contentsline {part}{IV\hspace {1em}Sperimentazione}{66}
