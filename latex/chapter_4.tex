@@ -1,5 +1,73 @@
-descrizione modulo generazione singola e multipla grafi randomici
-descrizione assunzioni (numero nodi, numero colori, numero grafi, ecc)
-descrizione 2 tipologie di sperimentazione nash+uoptnash+eoptnash+uopt+eopt+upoa+epoa e nash+uoptnash+eoptnash
-tabelle
-conclusioni
+%descrizione modulo generazione singola e multipla grafi randomici
+%descrizione assunzioni (numero nodi, numero colori, numero grafi, ecc)
+%descrizione 2 tipologie di sperimentazione nash+uoptnash+eoptnash+uopt+eopt+upoa+epoa e nash+uoptnash+eoptnash
+%tabelle
+%conclusioni
+
+
+\chapter{Sperimentazione}
+
+In questo capitolo esplicheremo e descriveremo gli aspetti e le caratteristiche generali relative all'attività di sperimentazione.\\
+
+Inizieremo descrivendo in breve i moduli relativi alla generazione e alla lettura di grafi randomici situati all'interno dei 2 programmi implementati : generator.py e reader.py.\\
+
+Procederemo delineando un elenco delle assunzioni e delle decisioni compiute che riguardano in generale la modellazione del problema e nello specifico la costruzione e la tipologia dei grafi implementati.\\
+Queste rappresentano la base di partenza sulla quale è stata portata avanti l'attività di sperimentazione e sono fondamentali per comprendere meglio la parte concettuale e gli obiettivi dietro quest'ultima.\\
+
+L'ultima fase prevede la presentazione delle conclusioni associate ai risultati ottenuti, in relazione al problema trattato (gioco della k-colorazione generalizzata) e in relazione alla trattazione matematica e ai teoremi delineati all'interno del documento alla base di questo studio (Generalized Graph k-Coloring Games).\\
+
+\section{gnp\_random\_graph (grafo di Erdős-Rényi o grafo binomiale)}
+\justify
+Il principali oggetti matematici studiati durante l'attività di sperimentazione sono i grafi randomici.\\
+
+In particolare è stata dedicata una porzione del codice all'interno del programma generator.py per la creazione e la manipolazione di una specifica tipologia di grafo : il gnp\_random\_graph.\\
+
+Il gnp\_random\_graph, conosciuto anche come grafo di Erdős-Rényi o grafo binomiale, è l'oggetto attorno al quale ruota l'intera attività di implementazione.\\ Quest'ultimo appartiene alla classe Random Graphs.\\
+Tale classe è contenuta all'interno della libreria di generazione e manipolazione grafi NetworkX utilizzata durante l'attività di implementazione, come specificato nella sezione precedente.\\
+La tipologia di grafo gnp\_random\_graph, come delineato in precedenza, possiede dunque un costruttore di classe all'interno della suddetta libreria.\\
+
+Il costruttore di classe, opportunamente parametrizzato in modo automatico oppure grazie all'intervento attivo dell'utente, è stato utilizzato per la creazione delle varie istanze di questa tipologia di grafo.\\
+
+L'esecuzione dell'algoritmo di generazione comporta un complessità temporale pari a \(O(n^2)\), dunque un valore accettabile.\\
+Si cita in questo senso la presenza di algoritmi di generazione più rapidi correlati a differenti costruttori, come ad esempio l'algoritmo relativo alla tipologia fast\_gnp\_random\_graph, che per valori piccoli di $p$ (probabilità di generare archi tra coppie di nodi) riesce a generare grafi sparsi in \(O(n+m)\).\\
+
+Dato che la medio-alta densità dei grafi rende più interessante lo studio trattato è stato scelto di tralasciare questo tipo di costruttore alternativo e di utilizzare solo ed esclusivamente il costruttore gnp\_random\_graph per la generazione.\\
+
+Descriviamo ora le modalità di generazione per le esecuzioni in modalità SINGLE EXEC e in modalità MULTIPLE EXEC e procediamo con la delineazione dell'assunzioni fatte durante la modellazione dei grafi creati.\\
+
+\subsection{Generazione gnp\_random\_graph)}
+\justify
+Le funzioni per la generazione di grafi gnp\_random\_graph sono raggiungibili all'interno del programma generator.py selezionando la modalità di esecuzione MULTIPLE MODE e selezionando in seguito la classe gnp\_random\_graph.\\
+
+All'utente è richiesto, come primo parametro, l'inserimento del numero di iterazioni da compiere, che corrispondono al numero di grafi da costruire all'interno del singolo processo di generazione corrente.\\
+
+In seguito l'utente dovrà inserire il numero di nodi per i grafi da generare.\\
+Tale valore, per assunzione, sarà un valore fisso per ciascun ciclo di generazione e dunque applicato a tutti i grafi appartenenti a quest'ultimo.\\
+
+Gli ultimi parametri da inserire sono i valori massimo e minimo all'interno dei quali oscilleranno randomicamente i pesi associati agli archi del grafo, il tutto avviene nelle modalità specificate nella sezione relativa al generatore.\\
+
+A questo punto l'utente sarà chiamato a scegliere la sotto modalità di generazione dei grafi, la scelta della modalità "single" comporterà la creazione di un path specifico all'interno della cartella gen nel quale verranno salvati i vari risultati della creazione seguendo lo schema presentato durante la descrizine della modalità SINGLE MODE relativa al generatore di grafi.\\
+La scelta della modalità "multiple" comporterà la creazione di un path specifico all'interno della cartella mgen nel quale verranno salvati i vari risultati della creazione seguendo lo schema presentato durante la descrizine della modalità MULTIPLE MODE relativa al generatore di grafi. \\
+
+continua ....\\
+
+\section{Risultati sperimentazione I}
+\justify
+testo \\
+
+\begin{table}[h]
+\scalebox{0.9} {
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{n} & \textbf{c} & \textbf{p} & \textbf{a} & \textbf{o\_usw} & \textbf{o\_esw} & \textbf{n\_count} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{u\_poa} & \textbf{e\_poa} \\ \hline
+5 & 5 & 0.90 & 0 & 314 & 45 & 5 & 314 & 41 & 1 & 1.0975 \\ \hline
+5 & 4 & 0.27 & 5 & 485 & 94 & 4 & 485 & 94 & 1 & 1 \\ \hline
+5 & 3 & 0.82 & 9 & 410 & 45 & 4 & 410 & 40 & 1 & 1.1250 \\ \hline
+ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\section{Risultati sperimentazione II}
+\justify
+testo \\

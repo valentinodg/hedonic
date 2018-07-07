@@ -37,3 +37,8 @@
 \contentsline {subsection}{\numberline {3.5.2}opt\_utilitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}{54}
 \contentsline {subsection}{\numberline {3.5.3}opt\_egalitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}{59}
 \contentsline {part}{IV\hspace {1em}Sperimentazione}{66}
+\contentsline {chapter}{\numberline {4}Sperimentazione}{67}
+\contentsline {section}{\numberline {4.1}gnp\_random\_graph (grafo di Erd\IeC {\H o}s-R\IeC {\'e}nyi o grafo binomiale)}{67}
+\contentsline {subsection}{\numberline {4.1.1}Generazione gnp\_random\_graph)}{68}
+\contentsline {section}{\numberline {4.2}Risultati sperimentazione I}{69}
+\contentsline {section}{\numberline {4.3}Risultati sperimentazione II}{69}
