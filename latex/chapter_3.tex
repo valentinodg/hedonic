@@ -509,6 +509,7 @@ Presentiamo ora lo pseudocodice relativo al suddetto algoritmo e di seguito anal
 
 Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard Library del Python e la libreria di costruzione e manipolazione di grafi NetworkX e che l'implementazione è stata accuratamente ottimizzata nei cicli e nelle operazioni grazie ad un attento uso di funzioni e strutture dati e dunque la computazione è particolarmente snella è rapida.\\
 
+\newpage
 \begin{algorithmic}
 
 \State $start\gets time.time()$
@@ -617,10 +618,11 @@ Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard 
 		\State $egalitarian\_price\_of\_anarchy\gets$ \\
 		$opt\_egalitarian\_social\_welfare / nash\_egalitarian\_social\_welfare$
 	\EndIf \\
-\EndIf
+\EndIf 
 
 \end{algorithmic}
 
+\newpage
 La sintassi dello pseudocodice, in generale nell'aspetto e in particolare in alcuni punti nei quali trascende l'astrazione, è volutamente molto vicina a quella del linguaggio Python in modo tale da coinvolgere il lettore nell'implementazione e in modo da mostrare alcune soluzioni adottate per effettuare le operazioni più significative.\\
 
 In ogni caso le parti più vicine all'implementazione in linguaggio Python saranno abbondantemente spiegate e rese chiare qui di seguito.\\
@@ -730,16 +732,22 @@ Modifichiamo il valore della variabile $temp\_egalitarian\_social\_welfare$ e qu
 Istanziamo nuovamente il loop, utilizzato in precendenza, che itera i nodi adiacenti per ciascun nodo del grafo in oggetto.\\
 
 Salviamo nella variabile $edge\_weight$ il valore del peso dell'arco tra il nodo corrente e uno dei suoi nodi adiacenti se e solo se i colori con i quali sono colorati entrambi i nodi sono differenti, altrimenti non eseguiamo alcuna operazione e saltiamo l'iterazione corrente per passare alla successiva attraverso l'uso dell'istruzione $continue$.\\
-In caso di colori differenti, aggiorniamo il valore delle variabili $utilitarian\_social\_welfare$ e $temp\_egalitarian\_social\_welfare$ sommandovi il contenuto della variabile $edge\_weight$.\\
+In caso di colori differenti, aggiorniamo il valore delle variabili \\
+$utilitarian\_social\_welfare$ e $temp\_egalitarian\_social\_welfare$ sommandovi il contenuto della variabile $edge\_weight$.\\
 
 Un ulteriore controllo è quello relativo al conteggio dell'iterazione corrente.\\
-Se il valore della variabile booleana $first\_iter\_check$ è $True$, significa che ci troviamo all'interno della prima iterazione, dunque assegnamo semplicemente a $egalitarian\_social\_welfare$ il valore della variabile $temp\_egalitarian\_social\_welfare$, modifichiamo il contenuto della variabile $first\_iter\_check$ al valore $False$ e saltiamo all'iterazione successiva utilizzando l'istruzione $continue$.\\
+Se il valore della variabile booleana $first\_iter\_check$ è $True$, significa che ci troviamo all'interno della prima iterazione, dunque assegnamo semplicemente a $egalitarian\_social\_welfare$ il valore della variabile \\
+$temp\_egalitarian\_social\_welfare$, modifichiamo il contenuto della variabile $first\_iter\_check$ al valore $False$ e saltiamo all'iterazione successiva utilizzando l'istruzione $continue$.\\
 
 Per le successive iterazioni (tutte tranne la prima), eseguiamo il seguente controllo.\\
-Se il contenuto della variabile $temp\_egalitarian\_social\_welfare < egalitarian\_social\_welfare$, abbiamo trovato un valore migliore per il benessere sociale egalitario relativo alla colorazione stabile.\\
+Se il contenuto della variabile \\
+$temp\_egalitarian\_social\_welfare < egalitarian\_social\_welfare$, abbiamo trovato un valore migliore per il benessere sociale egalitario relativo alla colorazione stabile.\\
 Quindi assegnamo tale valore alla variabile $egalitarian\_social\_welfare$.\\
 
-Al termine dell'iterazione più esterna le variabili $nash\_egalitarian\_social\_welfare$ e $nash\_utilitarian\_social\_welfare$, grazie agli assegnamenti $nash\_utilitarian\_social\_welfare\gets utilitarian\_social\_welfare$ e $nash\_egalitarian\_social\_welfare\gets egalitarian\_social\_welfare$, conterranno rispettivamente i valori del benessere sociale egalitario e utilitario relativi alla colorazione stabile corrente.\\
+Al termine dell'iterazione più esterna le variabili \\
+$nash\_egalitarian\_social\_welfare$ e $nash\_utilitarian\_social\_welfare$, grazie agli assegnamenti \\
+$nash\_utilitarian\_social\_welfare\gets utilitarian\_social\_welfare$ e \\
+$nash\_egalitarian\_social\_welfare\gets egalitarian\_social\_welfare$, conterranno rispettivamente i valori del benessere sociale egalitario e utilitario relativi alla colorazione stabile corrente.\\
 
 La seguente procedura, relativa al calcolo del prezzo dell'anarchia utilitario sperimentale e al prezzo dell'anarchia egalitario sperimentale, è stata implementata solo all'interno della modalità SINGLE EXEC, come specificato in precedenza.\\
 
@@ -774,6 +782,7 @@ Tale aspetto è fortemente esponenziale, infatti avendo \(k\) colori e \(n\) nod
 Per non tediare il lettore, specifichiamo che, per chiarezza, le qui presenti assunzioni e affermazioni verranno riportate anche per l'algoritmo successivo, quello per il calcolo dell'ottimo con funzione di benessere sociale egalitario.\\
 Dunque lo invitiamo a saltare la lettura di tali assunzioni nella sezione successiva poichè saranno le medesime già lette in questa sezione.\\
 
+\newpage
 \begin{algorithmic}
 
 \State $start\gets time.time()$
@@ -816,11 +825,53 @@ Dunque lo invitiamo a saltare la lettura di tali assunzioni nella sezione succes
 \If{$time\_limit == False$}
 	\State $check\_utilitarian\_social\_welfare\gets True$
 	\State $opt\_utilitarian\_social\_welfare\gets utilitarian\_social\_welfare$
-\EndIf
+\EndIf 
 
 \end{algorithmic} 
 
-Spiegazione algoritmo.
+\newpage
+All'inizio impostiamo, come nella sezione precedente, il limitatore temporale inizializzando la variabile $start$ con il valore temporale iniziale, la variabile $limit$ con il valore limite di 60 (secondi), ovvero 1 minuto, e la variabile booleana $time\_limit$ con il valore $False$.\\
+
+Dichiariamo la variabile $utilitarian\_social\_welfare$ e assegnamole il valore $0$.\\
+Generiamo a questo punto tutte le possibili permutazioni con ripetizione tra nodi e colori dell'istanza corrente.\\
+Come specificato in precedenza, l'operazione potrebbe essere molto pesante, poichè vengono generate \(k^n\) permutazioni, con $k$ uguale al numero di colori e $n$ uguale al numero di nodi del grafo corrente.\\
+La funzione per generare la seguente lista di permutazione utilizza primitive interne alla Standard Library del linguaggio Python, $permutations\gets list(itertools.product(colors, repeat=G.number\_of\_nodes()))$.\\
+
+A questo punto iteriamo tutte le permutazioni contenute all'interno della lista generata nell'operazione precendente.\\
+Viene effettuato in questo punto il medesimo controllo sulla validità del tempo trascorso esplicato nella sezione precedente, le operazioni sono esattamente le stesse.\\
+Se il tempo di esecuzione corrente è valido (\(\leq 1 minuto\)), salviamo la colorazione attuale, ovvero la permutazione corrente, nella variabile $colouring\_old$.\\
+
+Iteriamo a questo punto tutti i nodi del grafo in oggetto attraverso un ciclo $for$ identico a quello utilizzato nella sezione precedente.\\
+Assegnamo a ciascun nodo, in sequenza, 1 colore appartenente alla permutazione corrente mediante l'istruzione $data['color']\gets permutation[node]$, ottenendo così una colorazione per il grafo corrente.\\
+
+Dichiariamo ora la variabile temporanea $temp\_utilitarian\_social\_welfare$ e inizializziamola al valore $0$, quest'ultima ci servirà per calcolare il valore del benessere sociale utilitario per la colorazione corrente.\\
+
+Iteriamo nuovamente i nodi, con la medesima operazione descritta poco sopra (ciclo $for$).\\
+Sommiamo, per ciascun nodo iterato, il valore del profitto associato al colore con il quale è colorato il nodo corrente al valore contenuto nella variabile $temp\_utilitarian\_social\_welfare$.\\
+
+Generiamo ora la lista di tutti i nodi adiacenti al nodo corrente attraverso l'istruzione $neighbors\gets G.neighbors(node)$ utilizzata anche nella sezione precedente.\\
+Iteriamo a questo punto tutti i nodi adiancenti al nodo corrente attraverso il medesimo ciclo $for$ presentato durante la descrizione dell'algoritmo per il calcolo della colorazione stabile.\\
+
+Istanziamo ora un controllo sulla validità del colore tra le coppie di nodi, lo stesso utilizzato nella sezione precedente.\\
+
+Se la condizione $G.node[neighbor]['color'] \neq G.node[node]['color']$ è valida otteniamo che i colori tra il nodo corrente e uno dei suoi nodi adiacenti sono differenti, dunque salviamo all'interno della variabile $edge\_weight$ il valore del peso dell'arco che congiunge la coppia di nodi analizzata attraverso l'istruzione $edge\_weight\gets G[node][neighbor]['weight']$ e aggiorniamo il contenuto della variabile $temp\_utilitarian\_social\_welfare$ sommandovi il valore della variabile $edge\_weight$.\\
+
+Se la condizione esplicata in precedenza non è valida, non eseguiamo alcuna operazione e saltiamo l'iterazione corrente attraverso l'istruzione $continue$, in modo tale da iterare, se disponibile, il prossimo nodo adiacente al nodo corrente e ripetere il controllo.\\
+
+A questo punto la variabile $temp\_utilitarian\_social\_welfare$ conterrà il valore totale relativo al benessere sociale utilitario correlato alla colorazione attuale (permutazione corrente).\\
+
+Viene ora effettuato un controllo sul valore di benessere sociale utilitario trovato in precedenza.\\
+Se la condizione $temp\_utilitarian\_social\_welfare > utilitarian\_social\_welfare$ è valida, abbiamo trovato un valore migliore per il benessere sociale utilitario relativo all'istanza corrente.\\
+
+Modifichiamo il valore della variabile $utilitarian\_social\_welfare$ con il valore della variabile $temp\_utilitarian\_social\_welfare$ e assegnamo alla variabile $colouring\_best$ il valore della variabile $colouring\_old$ (che contiene la tupla relativa alla colorazione attuale, ovvero la permutazione corrente).\\
+
+Se la condizione $temp\_utilitarian\_social\_welfare > utilitarian\_social\_welfare$ è valida, non viene effettuata alcuna operazione e viene saltata l'iterazione corrente attraverso l'utilizzo dell'istruzione $continue$.\\
+
+A questo punto, se è stato calcolato il risultato ottimo all'interno del range temporale prestabilito, viene modificato al valore $True$ il contenuto della variabile $check\_utilitarian\_social\_welfare$ e viene assegnato alla variabile $opt\_utilitarian\_social\_welfare$ il valore della variabile $utilitarian\_social\_welfare$ che contiene il risultato ottimo trovato.\\
+
+Il valore della variabile $check\_utilitarian\_social\_welfare$, quando uguale a $True$, ci permette di calcolare, in modalità SINGLE EXEC, il prezzo dell'anarchia sperimentale utilitario.\\
+
+Al termine dell'esecuzione la variabile $colouring\_best$ conterrà la tupla che descrive e rappresenta la colorazione ottima e la variabile $opt\_utilitarian\_social\_welfare$ ($utilitarian\_social\_welfare$) conterrà il valore ottimo relativo alla funzione di benessere sociale utilitario per l'istanza corrente.\\
 
 \newpage
 \subsection{opt\_egalitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}
@@ -839,6 +890,7 @@ Si specifica che il calcolo dell'ottimo (sia secondo la definizio di benessere s
 In particolare tale procedura è incentrata sull'uso delle permutazioni, ciascuna delle quali rappresenta una possibile colorazione per l'istanza corrente.\\
 Tale aspetto è fortemente esponenziale, infatti avendo \(k\) colori e \(n\) nodi, il numero di permutazioni da iterare corrisponde a \(k^n\).\\
 
+\newpage
 \begin{algorithmic}
 
 \State $start\gets time.time()$
@@ -905,4 +957,5 @@ Tale aspetto è fortemente esponenziale, infatti avendo \(k\) colori e \(n\) nod
 
 \end{algorithmic}
 
+\newpage
 Spiegazione algoritmo.
