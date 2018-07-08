@@ -31,6 +31,8 @@ else :
 init()
 matplotlib = False
 
+limit = int(input("\nSet time limit : "))
+
 
 #############################################################
 #################### PROGRAM MODE BLOCK #####################
@@ -272,7 +274,7 @@ if option is "SINGLE EXEC":
 		if option is "optimal colouring [OPT -- UTILITARIAN SOCIAL WELFARE]":
 
 			start = time.time()
-			limit = 60 # 1 minuto
+			#limit = 60 # 1 minuto
 			time_limit = False
 
 			with open(out_ext,'a') as f:
@@ -340,7 +342,7 @@ if option is "SINGLE EXEC":
 		if option is "optimal colouring [OPT -- EGALITARIAN SOCIAL WELFARE]":
 
 			start = time.time()
-			limit = 60 # 1 minuto
+			#limit = 60 # 1 minuto
 			time_limit = False
 
 			with open(out_ext,'a') as f:
@@ -566,7 +568,7 @@ if option is "SINGLE EXEC":
 			################################################################################
 
 			start = time.time()
-			limit = 60 # 1 minuto
+			#limit = 60 # 1 minuto
 			time_limit = False
 
 			with open(out_ext,'a') as f:
@@ -631,7 +633,7 @@ if option is "SINGLE EXEC":
 			################################################################################
 
 			start = time.time()
-			limit = 60 # 1 minuto
+			#limit = 60 # 1 minuto
 			time_limit = False
 
 			with open(out_ext,'a') as f:
@@ -1108,7 +1110,7 @@ if option is "MULTIPLE EXEC":
 			f.write("\n\n\n######################################################################\n[EXEC : NASH EQUILIBRIUM]\n[GRAPH : " + str(a[i].name) + "]\n[COLORS : " + str(num_colors) + "]\n\n")
 
 		start = time.time()
-		limit = 60 # 1 minuto
+		#limit = 60 # 1 minuto
 		time_limit = False
 
 		count = 0;
