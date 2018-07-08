@@ -258,7 +258,7 @@ I nodi sono generati in modo totalmente dinamico utilizzando valori interi posit
 
 Il file si presenta nella forma qui di seguito indicata (ciascuna coppia (nodo, nodo) codifica un arco al quale viene associato un perso attraverso la definizione del terzo valore della tupla, ovvero il peso intero).\\
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \begin{tabular}{ccc}
 \textbf{nodo} & \textbf{nodo} & \textbf{peso} \\
@@ -368,7 +368,7 @@ Assieme alla struttura relativa alle coppie arco-peso e quella relativa all'asso
 È stata utilizzata a questo scopo la potente nested dictionary comprehension del linguaggio Python, in modo da eliminare la possibilità di conflitto e inconsistenza dei dati, in modo da disambiguare efficacemente le entry del dizionario e dunque in modo da garantire l'utilizzo di interrogazioni ad accesso diretto utili nel programma.\\
 È stata generata la seguente struttura (esempio).
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \begin{tabular}{llllll}
 \multicolumn{1}{c}{nodo 0 ::} & \multicolumn{1}{c}{colore 0 :} & \multicolumn{1}{c}{profitto 24,} & \multicolumn{1}{c}{colore 1 :} & \multicolumn{1}{c}{profitto 38,} & \multicolumn{1}{c}{...} \\
@@ -385,7 +385,7 @@ Le etichette sono gestite a livello di libreria NetworkX, di conseguenza è stat
 È dunque possibile accedere e manipolare, con facilità e alta velocità computazionale, i dati all'interno dei dizionari che rappresentano i parametri associati al nodo attraverso semplici query ad accesso diretto e a singola chiave, ovvero, nel nostro caso, il parametro "color".\\
 Un esempio di colorazione iniziale è presentata qui di seguito.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \begin{tabular}{cc}
 nodo 0 & colore 2 \\
@@ -418,7 +418,7 @@ Infatti il peso degli archi (e gli eventuali altri parametri implementabili in m
 Anche qui dunque una struttura dati di questo tipo permette un'alta velocità di calcolo e recupero delle informazioni con query ad accesso diretto a chiave singola, ovvero il nome del parametro richiesto associato all'arco che nel nostro caso è la stringa "weight".\\
 La struttura dati si presenta come segue (esempio).
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \begin{tabular}{ccc}
 nodo 0 & nodo 1 & weight : 34 \\

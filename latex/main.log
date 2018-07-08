@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  8 JUL 2018 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  8 JUL 2018 19:23
 entering extended mode
 **./main.tex
 (main.tex
@@ -230,6 +230,13 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip56
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
+) ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count134
+\float@exts=\toks21
+\float@box=\box28
+\@float@everytoks=\toks22
+\@floatcapt=\box29
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
 sty"
@@ -271,16 +278,16 @@ s
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 29.
+less on input line 30.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 30.
+less on input line 31.
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks21
-\inpenc@posthook=\toks22
+\inpenc@prehook=\toks23
+\inpenc@posthook=\toks24
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
@@ -614,21 +621,21 @@ Language: italian 2015/03/26 v1.3n Italian support from the babel system
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count134
+\babel@savecnt=\count135
 \U@D=\dimen136
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel.d
 ef")
-\bbl@dirlevel=\count135
+\bbl@dirlevel=\count136
 )
-\it@lettering=\count136
-\it@doublequoteactive=\count137
-\it@ISOcompliance=\count138
+\it@lettering=\count137
+\it@doublequoteactive=\count138
+\it@ISOcompliance=\count139
 ))
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.
 sty"
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count139
+\etb@tempcnta=\count140
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\ragged2e.sty"
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
@@ -643,9 +650,9 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\footmisc\footmisc.
 sty"
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
-\FN@temptoken=\toks23
+\FN@temptoken=\toks25
 \footnotemargin=\dimen137
-\c@pp@next@reset=\count140
+\c@pp@next@reset=\count141
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -672,49 +679,53 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks24
-\thm@bodyfont=\toks25
-\thm@headfont=\toks26
-\thm@notefont=\toks27
-\thm@headpunct=\toks28
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
 \thm@preskip=\skip80
 \thm@postskip=\skip81
 \thm@headsep=\skip82
-\dth@everypar=\toks29
+\dth@everypar=\toks31
 )
-\c@prop=\count141
-\c@theorem=\count142
+\c@prop=\count142
+\c@theorem=\count143
  (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux) (chapter_3.aux)
-(chapter_4.aux))
+(chapter_4.aux
+
+LaTeX Warning: Label `tab:sperimentazione-tipo1-5nodi' multiply defined.
+
+))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count143
+\scratchcounter=\count144
 \scratchdimen=\dimen138
-\scratchbox=\box28
-\nofMPsegments=\count144
-\nofMParguments=\count145
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count146
+\scratchbox=\box30
+\nofMPsegments=\count145
+\nofMParguments=\count146
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count147
 \MPscratchDim=\dimen139
-\MPnumerator=\count147
-\makeMPintoPDFobject=\count148
-\everyMPtoPDFconversion=\toks31
+\MPnumerator=\count148
+\makeMPintoPDFobject=\count149
+\everyMPtoPDFconversion=\toks33
 )
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
 base.sty"
@@ -779,8 +790,8 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Info: Redefining \it@ocap on input line 45.
-LaTeX Info: Redefining \it@ccap on input line 45.
+LaTeX Info: Redefining \it@ocap on input line 46.
+LaTeX Info: Redefining \it@ccap on input line 46.
 
 
 File italian.ldf warning: 
@@ -788,11 +799,11 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 45.
+italian.ldf    on input line 46.
 
-Package ragged2e Info: ABD: executing \RaggedRight on input line 45.
+Package ragged2e Info: ABD: executing \RaggedRight on input line 46.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 45.
+LaTeX Info: Redefining \selectfont on input line 46.
 \openout2 = `front.aux'.
 
  (front.tex
@@ -1009,20 +1020,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
-
- []
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [7]
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
@@ -1162,7 +1170,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 273--274
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 275--51
+Underfull \hbox (badness 10000) in paragraph at lines 275--52
 
  []
 
@@ -2151,17 +2159,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 475--476
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--478
-
- []
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [41]
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 479--482
 
  []
@@ -2903,7 +2911,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [64])
-Underfull \hbox (badness 10000) in paragraph at lines 1037--57
+Underfull \hbox (badness 10000) in paragraph at lines 1037--58
 
  []
 
@@ -3048,18 +3056,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--60
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
-
- []
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [70]
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
@@ -3070,12 +3073,23 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [71]
-Overfull \hbox (8.73137pt too wide) in paragraph at lines 125--126
+Overfull \hbox (8.73137pt too wide) in paragraph at lines 127--128
 [][]  
  []
 
-)
-Underfull \hbox (badness 10000) in paragraph at lines 132--60
+
+Overfull \hbox (8.73137pt too wide) in paragraph at lines 145--146
+[][]  
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[72])
+Underfull \hbox (badness 10000) in paragraph at lines 152--61
 
  []
 
@@ -3085,39 +3099,43 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[72] (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux) (chapter_3.aux)
-(chapter_4.aux)) ) 
+[73] (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux) (chapter_3.aux)
+(chapter_4.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5587 strings out of 493305
- 79627 string characters out of 3129802
- 160553 words of memory out of 3000000
- 8955 multiletter control sequences out of 15000+200000
+ 5646 strings out of 493305
+ 80453 string characters out of 3129802
+ 166074 words of memory out of 3000000
+ 9010 multiletter control sequences out of 15000+200000
  17411 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,43p,802b,433s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmbx10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/valen/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/valen/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/User
-s/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/valen/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/valen/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/vale
-n/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy6.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmti10.pfb><C:/Users/valen/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/valen/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/valen/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on main.pdf (73 pages, 477402 bytes).
+<C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/valen/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/valen/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/v
+alen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmmi6.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/valen/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/valen/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/valen/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/U
+sers/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+y8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmti10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmti12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/valen/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
+Output written on main.pdf (74 pages, 479602 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
+ 313 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
