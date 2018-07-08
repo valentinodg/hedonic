@@ -40,5 +40,8 @@
 \contentsline {chapter}{\numberline {4}Sperimentazione}{67}
 \contentsline {section}{\numberline {4.1}gnp\_random\_graph (grafo di Erd\IeC {\H o}s-R\IeC {\'e}nyi o grafo binomiale)}{67}
 \contentsline {subsection}{\numberline {4.1.1}Generazione gnp\_random\_graph)}{68}
-\contentsline {section}{\numberline {4.2}Risultati sperimentazione I}{69}
-\contentsline {section}{\numberline {4.3}Risultati sperimentazione II}{69}
+\contentsline {subsection}{\numberline {4.1.2}Assunzioni generali}{69}
+\contentsline {subsection}{\numberline {4.1.3}Tipologie di sperimentazione}{70}
+\contentsline {section}{\numberline {4.2}Risultati sperimentazione - Tipologia I}{71}
+\contentsline {subsection}{\numberline {4.2.1}Sperimentazione - Tipologia I - Grafo randomico con 5 nodi}{72}
+\contentsline {section}{\numberline {4.3}Risultati sperimentazione II}{72}
