@@ -501,6 +501,10 @@ Gli algoritmi implementati sono i seguenti.
 \newpage
 \subsection{nash\_equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}
 \justify
+Gli algoritmi analizzati presentano la definizione della variabile $limit$.\\
+Quest'ultima contiene il valore del limitatore temporale (in secondi) associato all'esecuzione corrente.\\
+Viene impostato in modo dinamico all'inizio dell'esecuzione ed è valido per ogni tipo di calcolo.\\
+
 Il seguente algoritmo viene usato per calcolare una colorazione stabile per il gioco della \(k\)-colorazione generalizzata modellato in precedenza, utilizzando la definizione di equilibrio di Nash.\\
 
 Come abbiamo visto esiste sempre almeno un equilibrio di Nash per ogni istanza di gioco della \(k\)-colorazione generalizzata e il problema di trovare una di queste colorazioni stabili è PLS-Completo.\\
@@ -513,7 +517,7 @@ Si specifica che il seguente algoritmo è stato scritto utilizzando la Standard 
 \begin{algorithmic}
 
 \State $start\gets time.time()$
-\State $limit\gets 60$ \Comment 1 minuto
+\State $limit\gets X$ \Comment X assegnato dinamicamente dall'utente
 \State $time\_limit\gets False$ \\
 
 \State $count\gets 0$
@@ -638,7 +642,7 @@ L'algoritmo presenta 3 importanti porzioni di ottimizzazione dei cicli che verra
 
 Come prima operazione impostiamo i valori temporali.\\
 In particolare viene memorizzato il tempo corrente relativo all'inizio dell'esecuzione all'interno della variabile $start$, utilizzando la libreria standard del linguaggio Python per effettuare l'operazione.\\
-In seguito viene impostato il limite temporale nella variabile $limit$, di default corrispondente al valore $60$ (secondi), ovvero 1 minuto.\\
+In seguito viene impostato il limite temporale nella variabile $limit$, assegnato dinamicamente dall'utente all'inizio del programma.\\
 Oltrepassato il limite temporale interrompiamo l'esecuzione e non restituiamo alcun risultato, poiché quest'ultimo non è stato trovato dall'algoritmo nel tempo prestabilito.\\
 Tale controllo viene effettuato inizializzando al valore $False$ la variabile $time\_limit$ ed effettuando ad ogni iterazione il controllo sulla validità del tempo complessivo trascorso, lo analizzeremo tra poco.\\
 
@@ -657,7 +661,7 @@ Il ciclo $while(restart)$ è il ciclo fondamentale e più esterno dell'algoritmo
 Come si evince dalla condizione, l'iterazione continua fin tanto che il valore della variabile $restart$ è $True$.\\
 
 Viene ora istanziato il controllo sulla validità del tempo complessivo trascorso, come specificato poco sopra.\\
-In particolare se il tempo corrente $time.time() > start + limit$ allora è trascorso più di 1 minuto e l'esecuzione non ha ancora prodotto alcun risultato, dunque modifichiamo con il valore $True$ il contenuto della variabile $time\_limit$ e interrompiamo l'esecuzione corrente uscendo dal ciclo principale dell'algoritmo attraverso l'istruzione $break$.\\
+In particolare se il tempo corrente $time.time() > start + limit$ allora sono trascorsi più di X secondi e l'esecuzione non ha ancora prodotto alcun risultato, dunque modifichiamo con il valore $True$ il contenuto della variabile $time\_limit$ e interrompiamo l'esecuzione corrente uscendo dal ciclo principale dell'algoritmo attraverso l'istruzione $break$.\\
 
 A questo punto la variabile $restart$ viene inizializzata al valore $False$.\\
 Solo quando viene trovato un miglioramento quest'ultima viene inizializzata nuovamente al valore $True$ e dunque, se nessun miglioramento viene trovato dall'algoritmo, la condizione all'interno del ciclo $while$ si falsifica è l'esecuzione termina.
@@ -786,7 +790,7 @@ Dunque lo invitiamo a saltare la lettura di tali assunzioni nella sezione succes
 \begin{algorithmic}
 
 \State $start\gets time.time()$
-\State $limit\gets 60$ \Comment 1 minuto
+\State $limit\gets X$ \Comment X assegnato dinamicamente dall'utente
 \State $time\_limit\gets False$ \\
 
 \State $utilitarian\_social\_welfare\gets 0$
@@ -830,7 +834,7 @@ Dunque lo invitiamo a saltare la lettura di tali assunzioni nella sezione succes
 \end{algorithmic} 
 
 \newpage
-All'inizio impostiamo, come nella sezione precedente, il limitatore temporale inizializzando la variabile $start$ con il valore temporale iniziale, la variabile $limit$ con il valore limite di $60$ (secondi), ovvero 1 minuto, e la variabile booleana $time\_limit$ con il valore $False$.\\
+All'inizio impostiamo, come nella sezione precedente, il limitatore temporale inizializzando la variabile $start$ con il valore temporale iniziale, la variabile $limit$ con il valore limite di $X$ secondi e la variabile booleana $time\_limit$ con il valore $False$.\\
 
 Dichiariamo la variabile $utilitarian\_social\_welfare$ e assegniamole il valore $0$.\\
 Generiamo a questo punto tutte le possibili permutazioni con ripetizione tra nodi e colori dell'istanza corrente.\\
@@ -839,7 +843,7 @@ La funzione per generare la seguente lista di permutazione utilizza primitive in
 
 A questo punto iteriamo tutte le permutazioni contenute all'interno della lista generata nell'operazione precedente.\\
 Viene effettuato in questo punto il medesimo controllo sulla validità del tempo trascorso esplicato nella sezione precedente, le operazioni sono esattamente le stesse.\\
-Se il tempo di esecuzione corrente è valido (\(\leq 1 minuto\)), salviamo la colorazione attuale, ovvero la permutazione corrente, nella variabile $colouring\_old$.\\
+Se il tempo di esecuzione corrente è valido (\(\leq X secondi\)), salviamo la colorazione attuale, ovvero la permutazione corrente, nella variabile $colouring\_old$.\\
 
 Iteriamo a questo punto tutti i nodi del grafo in oggetto attraverso un ciclo $for$ identico a quello utilizzato nella sezione precedente.\\
 Assegniamo a ciascun nodo, in sequenza, 1 colore appartenente alla permutazione corrente mediante l'istruzione $data['color']\gets permutation[node]$, ottenendo così una colorazione per il grafo corrente.\\
@@ -898,7 +902,7 @@ Tale aspetto è fortemente esponenziale, infatti avendo \(k\) colori e \(n\) nod
 \begin{algorithmic}
 
 \State $start\gets time.time()$
-\State $limit\gets 60$ \Comment 1 minuto
+\State $limit\gets X$ \Comment X assegnato dinamicamente dall'utente
 \State $time\_limit\gets False$ \\
 
 \State $temp\_egalitarian\_social\_welfare\gets 0$
@@ -964,7 +968,7 @@ Tale aspetto è fortemente esponenziale, infatti avendo \(k\) colori e \(n\) nod
 \newpage
 
 All'inizio, come per gli algoritmi descritti in precedenza, impostiamo il valore del limitatore temporale relativo al tempo di esecuzione massimo accettato in fase di sperimentazione.\\
-Inizializziamo le variabili $start$, $limit$ e $time\_limit$ ai valori $0$, $60$ (1 minuto) e $False$ rispettivamente.\\
+Inizializziamo le variabili $start$, $limit$ e $time\_limit$ ai valori $0$, $X$ (X secondi) e $False$ rispettivamente.\\
 
 Dichiariamo e inizializziamo al valore $0$ le variabili \\
 $temp\_egalitarian\_social\_welfare$ e $egalitarian\_social\_welfare$ che ci serviranno per il calcolo del benessere sociale egalitario dell'istanza corrente.\\
@@ -978,7 +982,7 @@ $first\_iter\_opt\_check$ che ci serviranno all'interno di successivi controlli 
 
 A questo punto iteriamo tutte le permutazioni contenute all'interno della lista generata nell'operazione precedente.\\
 Viene effettuato in questo punto il medesimo controllo sulla validità del tempo trascorso esplicato nella sezione precedente, le operazioni sono esattamente le stesse.\\
-Se il tempo di esecuzione corrente è valido (\(\leq 1 minuto\)), salviamo la colorazione attuale, ovvero la permutazione corrente, nella variabile $colouring\_old$.\\
+Se il tempo di esecuzione corrente è valido (\(\leq X secondi\)), salviamo la colorazione attuale, ovvero la permutazione corrente, nella variabile $colouring\_old$.\\
 
 Iteriamo a questo punto tutti i nodi del grafo in oggetto attraverso un ciclo $for$ identico a quello utilizzato nella sezione precedente.\\
 Assegniamo a ciascun nodo, in sequenza, 1 colore appartenente alla permutazione corrente mediante l'istruzione $data['color']\gets permutation[node]$, ottenendo così una colorazione per il grafo corrente.\\
