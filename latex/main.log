@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  10 JUL 2018 01:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  10 JUL 2018 01:39
 entering extended mode
 **./main.tex
 (main.tex
@@ -3446,22 +3446,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 376--377
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--382
+Underfull \hbox (badness 10000) in paragraph at lines 378--381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 382--386
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 387--389
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
@@ -3471,8 +3466,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[79])
-Underfull \hbox (badness 10000) in paragraph at lines 390--64
+[79]
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--393
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 394--64
 
  []
 
@@ -3530,7 +3535,7 @@ fonts/cm/cmti10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/valen/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on main.pdf (83 pages, 502431 bytes).
+Output written on main.pdf (83 pages, 502921 bytes).
 PDF statistics:
  341 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
