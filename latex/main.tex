@@ -11,6 +11,9 @@
 \usepackage{algpseudocode}
 \usepackage{float}
 
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{bibl} 
+
 \renewcommand{\arraystretch}{1.5}
 
 %\usepackage{enumitem}
@@ -51,7 +54,7 @@
     \part{Equilibri di Nash}    
     \include{chapter_1}
     
-    \part{Gioco della K-Colorazione Generalizzata}
+    \part{Gioco della $k$-colorazione generalizzata}
     \include{chapter_2}
     
     \part{Implementazione}
@@ -59,5 +62,11 @@
 
 	\part{Sperimentazione}
 	\include{chapter_4}
+	
+	\newpage
+	\nocite{*}
+	\printbibliography
+	
+	\include{acknowledgments}
 	
 \end{document}
