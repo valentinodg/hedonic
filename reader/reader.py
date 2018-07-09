@@ -1107,7 +1107,7 @@ if option is "MULTIPLE EXEC":
 		##########################################################
 
 		with open(out_ext,'a') as f:
-			f.write("\n\n\n######################################################################\n[EXEC : NASH EQUILIBRIUM]\n[GRAPH : " + str(a[i].name) + "]\n[COLORS : " + str(num_colors) + "]\n\n")
+			f.write("\n\n\n######################################################################\n[EXEC : NASH EQUILIBRIUM]\n[GRAPH : " + str(a[i].name) + "]\n[COLORS : " + str(num_colors) + "]\n[EDGES : " + str(G.number_of_edges()) + "]\n\n")
 
 		start = time.time()
 		#limit = 60 # 1 minuto

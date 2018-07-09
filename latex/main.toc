@@ -88,14 +88,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Risultati sperimentazione - Tipologia I}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Sperimentazione - Tipologia I - Grafi randomici con 3 nodi}{72}
+\contentsline {subsection}{\numberline {4.2.1}Sperimentazione - Tipologia I - Random 3 nodi}{72}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Sperimentazione - Tipologia I - Grafi randomici con 5 nodi}{73}
+\contentsline {subsection}{\numberline {4.2.2}Sperimentazione - Tipologia I - Random 5 nodi}{73}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Sperimentazione - Tipologia I - Grafi randomici con 7 nodi}{73}
+\contentsline {subsection}{\numberline {4.2.3}Sperimentazione - Tipologia I - Random 7 nodi}{73}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.4}Sperimentazione - Tipologia I - Grafi randomici con 10 nodi}{74}
+\contentsline {subsection}{\numberline {4.2.4}Sperimentazione - Tipologia I - Random 10 nodi}{74}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Risultati sperimentazione II}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Sperimentazione - Tipologia II - Grafi randomici con 15 nodi}{75}
+\contentsline {subsection}{\numberline {4.3.1}Sperimentazione - Tipologia II - Random 15 nodi}{75}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.2}Sperimentazione - Tipologia II - Random 30 nodi}{75}
