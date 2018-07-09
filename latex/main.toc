@@ -92,6 +92,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.2}Sperimentazione - Tipologia I - Grafi randomici con 5 nodi}{73}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Sperimentazione - Tipologia I - Grafi randomici con 10 nodi}{73}
+\contentsline {subsection}{\numberline {4.2.3}Sperimentazione - Tipologia I - Grafi randomici con 7 nodi}{73}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Risultati sperimentazione II}{73}
+\contentsline {subsection}{\numberline {4.2.4}Sperimentazione - Tipologia I - Grafi randomici con 10 nodi}{74}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Risultati sperimentazione II}{74}
