@@ -26,7 +26,7 @@ Si cita in questo senso la presenza di algoritmi di generazione più rapidi corr
 
 Dato che la medio-alta densità dei grafi rende più interessante lo studio trattato è stato scelto di tralasciare questo tipo di costruttore alternativo e di utilizzare solo ed esclusivamente il costruttore gnp\_random\_graph per la generazione.\\
 
-Descriviamo ora le modalità di generazione per le esecuzioni in modalità SINGLE EXEC e in modalità MULTIPLE EXEC e procediamo con la delineazione dell'assunzioni fatte durante la modellazione dei grafi creati.\\
+Descriviamo ora le modalità di generazione per le esecuzioni in modalità SINGLE EXEC e in modalità MULTIPLE EXEC e procediamo con la delineazione delle assunzioni formulate durante la modellazione dei grafi creati.\\
 
 \subsection{Generazione gnp\_random\_graph)}
 \justify
@@ -39,8 +39,8 @@ Tale valore, per assunzione, sarà un valore fisso per ciascun ciclo di generazi
 
 Gli ultimi parametri da inserire sono i valori massimo e minimo all'interno dei quali oscilleranno randomicamente i pesi associati agli archi del grafo, il tutto avviene nelle modalità specificate nella sezione relativa al generatore.\\
 
-A questo punto l'utente sarà chiamato a scegliere la sotto modalità di generazione dei grafi, la scelta della modalità "single" comporterà la creazione di un path specifico all'interno della cartella gen nel quale verranno salvati i vari risultati della creazione seguendo lo schema presentato durante la descrizine della modalità SINGLE MODE relativa al generatore di grafi.\\
-La scelta della modalità "multiple" comporterà la creazione di un path specifico all'interno della cartella mgen nel quale verranno salvati i vari risultati della creazione seguendo lo schema presentato durante la descrizine della modalità MULTIPLE MODE relativa al generatore di grafi. \\
+A questo punto l'utente sarà chiamato a scegliere la sotto modalità di generazione dei grafi, la scelta della modalità "single" comporterà la creazione di un path specifico all'interno della cartella gen nel quale verranno salvati i vari risultati della creazione seguendo lo schema presentato durante la descrizione della modalità SINGLE MODE relativa al generatore di grafi.\\
+La scelta della modalità "multiple" comporterà la creazione di un path specifico all'interno della cartella mgen nel quale verranno salvati i vari risultati della creazione seguendo lo schema presentato durante la descrizione della modalità MULTIPLE MODE relativa al generatore di grafi. \\
 
 L'ultimo valore, gestito in modo randomico per ciascuna istanza della generazione corrente, è p.\\
 Il parametro p rappresenta la probabilità di generare un archi tra le varie coppie di nodi del grafo corrente, viene fatto oscillare in modo randomico tra i valori \(0 \geq p \geq 1\).\\
@@ -52,13 +52,13 @@ Ovviamente presenta le medesimi caratteristiche dei moduli utilizzati e descritt
 
 \subsection{Assunzioni generali}
 \justify
-In breve, durante l'attività di progettazione e programmazione rigurdanti la sperimentazione, sono state effettuate alcune decisioni relative a quest'ultima e sono state formulate le seguenti assunzioni sulla base delle quali si è svolta l'intera analisi.\\
+In breve, durante l'attività di progettazione e programmazione riguardanti la sperimentazione, sono state effettuate alcune decisioni relative a quest'ultima e sono state formulate le seguenti assunzioni sulla base delle quali si è svolta l'intera analisi.\\
 
 \begin{itemize}
 	\item I risultati delle varie sessioni di sperimentazione sono presentate al lettore sotto forma di tabelle riassuntive correlate da semplici leggende riguardanti la definizione dei parametri al fine di rendere più chiara e semplice la lettura e la visione dei dati raccolti
 	\item Ogni sperimentazione si è svolta fissando il numero di nodi e facendo oscillare randomicamente gli altri parametri come ad esempio il numero di color $k$ oppure la probabilità relativa alla densità del grafo $p$.\\
 	\item Il parametro $p$ relativo alla densità di un grafo, è un valore flottante a precisione 2 (2 cifre dopo la virgola) che oscilla tra i valori \(0 \geq p \geq 1\) e che descrive la probabilità di creare un arco tra un coppia di nodi e dunque definisce quanto il grafo in oggetto sia sparso (o denso)
-	\item Il parametro $k$ definisce il numero di colori utilizzati per generare le differenti colorazioni, ciascuna delle quali rappresenta uno stato del gioco in oggetto. Ciascun colore \(i \in K\), con \(K = 1,\ldots,k\) (il set di colori), rappresenta una strategia per un giocatore. Per convenzione (la sperimentazione effettuata perderebbe di senso altrimenti) il paramentro $k$ deve essere \(k \leq n\), con $n$ uguale al numero di nodi del grafo corrente
+	\item Il parametro $k$ definisce il numero di colori utilizzati per generare le differenti colorazioni, ciascuna delle quali rappresenta uno stato del gioco in oggetto. Ciascun colore \(i \in K\), con \(K = 1,\ldots,k\) (il set di colori), rappresenta una strategia per un giocatore. Per convenzione (la sperimentazione effettuata perderebbe di senso altrimenti) il parametro $k$ deve essere \(k \leq n\), con $n$ uguale al numero di nodi del grafo corrente
 	\item Per ogni sessione di sperimentazione sono elencati 10 risultati rilevanti (quando possibile)
 	\item Per le esecuzioni più pesati è stato concesso un limite temporale più ampio, ad esempio da 1 minuto a 2 minuti
 	\item Il range all'interno del quale oscillano dinamicamente i pesi degli archi, per ciascuna esecuzione, è definito per convenzione \(0 \geq a \geq 100\), con $a$ uguale ai pesi degli archi
