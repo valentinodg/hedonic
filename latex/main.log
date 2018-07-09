@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  9 JUL 2018 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  9 JUL 2018 14:11
 entering extended mode
 **./main.tex
 (main.tex
@@ -3332,13 +3332,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [71]
-Overfull \hbox (4.38556pt too wide) in paragraph at lines 125--126
-[][]  
+Overfull \hbox (4.38556pt too wide) in paragraph at lines 126--127
+ [][] 
  []
 
 
-Overfull \hbox (8.73137pt too wide) in paragraph at lines 149--150
-[][]  
+Overfull \hbox (8.73137pt too wide) in paragraph at lines 151--152
+ [][] 
  []
 
 
@@ -3348,13 +3348,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [72]
-Overfull \hbox (8.73137pt too wide) in paragraph at lines 168--169
-[][]  
+Overfull \hbox (8.73137pt too wide) in paragraph at lines 171--172
+ [][] 
  []
 
 
-Overfull \hbox (8.73137pt too wide) in paragraph at lines 187--188
-[][]  
+Overfull \hbox (8.73137pt too wide) in paragraph at lines 191--192
+ [][] 
  []
 
 
@@ -3364,7 +3364,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [73]
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
@@ -3375,7 +3375,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[74] [75
+[74]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[75] [76
 
 
 ]
@@ -3386,7 +3393,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 Package blindtext Warning: italian not defined, using English instead.
 (blindtext)                 on input line 70.
 
-[76
+[77
 
 
 ] (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux) (chapter_3.aux)
@@ -3396,10 +3403,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12018 strings out of 493305
- 201524 string characters out of 3129802
+ 12019 strings out of 493305
+ 201558 string characters out of 3129802
  443499 words of memory out of 3000000
- 15318 multiletter control sequences out of 15000+200000
+ 15319 multiletter control sequences out of 15000+200000
  18658 words of font info for 72 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,11n,45p,814b,1420s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -3423,9 +3430,9 @@ fonts/cm/cmti10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/valen/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on main.pdf (77 pages, 486139 bytes).
+Output written on main.pdf (78 pages, 487959 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
+ 325 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
