@@ -5,7 +5,7 @@ In questo capitolo andremo a delineare e descrivere gli aspetti fondamentali ed 
 Inizieremo con una presentazione della struttura generale dei programmi assieme ad una descrizione accurata dei componenti utilizzati e delle scelte effettuate in fase di progettazione.\\
 
 In seguito procederemo con un'attenta analisi degli algoritmi implementati, ovvero l'algoritmo per il calcolo degli equilibri di Nash, quello per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario e quello per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario.\\
-Tale sezione sarà caratterizzata dall'utilizzo di pseudocodice per ciascuno degli algoritmi in modo tale da rendere più comprensibile la descrizione dei cicli e delle operazioni.\\
+Tale sezione sarà caratterizzata dall'utilizzo di pseudocodice per ciascuno degli algoritmi trattati, in modo tale da rendere più comprensibile la descrizione dei cicli e delle operazioni.\\
 
 Tratteremo in modo approfondito questa porzione del documento poiché precede la sezione relativa alla sperimentazione effettuata attraverso i programmi implementati e dunque è di fondamentale importanza.\\
 
@@ -123,7 +123,7 @@ Al fine di trascurare alcuni aspetti relativi alla strutturazione e costruzione 
 
 Tale scelta di progettazione ha permesso al sottoscritto di concentrarsi maggiormente sulla progettazione e sull'ottimizzazione degli algoritmi.\\
 
-Inoltre tale scelta ha consentito al sottoscritto di rendere totalmente dinamici i processi di creazione e lettura dei grafi, ciò ha facilitato di molto il carico di lavoro in fase di sperimentazione.\\
+Inoltre tale scelta ha consentito al sottoscritto di rendere totalmente dinamici i processi di creazione e lettura dei grafi, ciò ha alleggerito di molto il carico di lavoro in fase di sperimentazione.\\
 
 La libreria standard del linguaggio Python è stata utilizzata in particolare per rendere totalmente dinamica e cross-platform la gestione del filesystem.\\
 
@@ -138,7 +138,6 @@ Il formato principale manipolato dai programmi è il formato .edgelist che anali
 In fase di debug è stata utilizzata la libreria di disegno MatPlotLib per rappresentare i grafi, quest'ultima è integrata in modo nativo all'interno della libreria NetworkX, dunque tale scelta di utilizzo ha reso più facili le operazioni di analisi e debug.\\
 
 Un'altra libreria che è stata utilizzata in fase di analisi e debug per rappresentare i grafi in ambiente GNU/Linux è la libreria di disegno PyGraphViz.\\
-
 Anche quest'ultima è integrata in modo nativo all'interno della libreria NetworkX.\\
 
 Il formato di descrizione testuale dei grafi .dot è stato utilizzato solo in fase di debug in ambiente GNU/Linux assieme alla libreria di disegno PyGraphViz, dunque possiamo tralasciare la sua definizione e descrizione dato che non viene utilizzato all'interno dei programmi durante l'esecuzione.\\
