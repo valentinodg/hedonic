@@ -17,64 +17,86 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
-  \entry{ARTICLE:1}{article}{}
+  \entry{WEBSITE:2}{misc}{}
     \name{author}{1}{}{%
-      {{hash=DJ}{%
-         family={Doe},
+      {{hash=DN}{%
+         family={Developers},
          familyi={D\bibinitperiod},
-         given={John},
-         giveni={J\bibinitperiod},
+         given={NetworkX},
+         giveni={N\bibinitperiod},
       }}%
     }
-    \strng{namehash}{DJ1}
-    \strng{fullhash}{DJ1}
+    \strng{namehash}{DN1}
+    \strng{fullhash}{DN1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{D}
     \field{sortinithash}{D}
-    \field{title}{Title}
-    \field{journaltitle}{Journal}
-    \field{year}{2017}
+  \field{howpublished}{\url{https://networkx.github.io/documentation/stable/}}
+    \field{title}{NetworkX Library}
+    \field{year}{2004-2018}
+  \endentry
+
+  \entry{WEBSITE:1}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=FPS}{%
+         family={Foundation},
+         familyi={F\bibinitperiod},
+         given={Python\bibnamedelima Software},
+         giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FPS1}
+    \strng{fullhash}{FPS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{howpublished}{\url{https://docs.python.org/3/library/index.html}}
+    \field{title}{Python Standard Library}
+    \field{year}{2001-2018}
+  \endentry
+
+  \entry{ARTICLE:1}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RG}{%
+         family={R.Carosi},
+         familyi={R\bibinitperiod},
+         given={G.Monaco},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RG1}
+    \strng{fullhash}{RG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Generalized Graph k-Coloring Games}
+    \field{journaltitle}{Gran Sasso Science Institute (GSSI)}
+    \field{year}{2018}
   \endentry
 
   \entry{ARTICLE:2}{article}{}
     \name{author}{1}{}{%
-      {{hash=DJ}{%
-         family={Doe},
-         familyi={D\bibinitperiod},
-         given={John},
-         giveni={J\bibinitperiod},
+      {{hash=SMGEA}{%
+         family={S.Koenig},
+         familyi={S\bibinitperiod},
+         given={M.Dantani G.Sukthankar E\bibnamedelima Andre},
+         giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod
+  E\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
-    \strng{namehash}{DJ1}
-    \strng{fullhash}{DJ1}
+    \strng{namehash}{SMGEA1}
+    \strng{fullhash}{SMGEA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{title}{Title}
-    \field{journaltitle}{Journal}
-    \field{year}{2017}
-  \endentry
-
-  \entry{ARTICLE:3}{article}{}
-    \name{author}{1}{}{%
-      {{hash=DJ}{%
-         family={Doe},
-         familyi={D\bibinitperiod},
-         given={John},
-         giveni={J\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{DJ1}
-    \strng{fullhash}{DJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{title}{Title}
-    \field{journaltitle}{Journal}
-    \field{year}{2017}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Stable Outcomes in Modified Fractional Hedonic Games}
+    \field{journaltitle}{Internation Conference on Autonomous Agents and
+  Multiagents Systems (AAMAS 18)}
+    \field{year}{2018}
   \endentry
 \enddatalist
 \endinput
