@@ -186,7 +186,7 @@ Per prima cosa vengono impostati i motori di disegno, ovvero le librerie MatPlot
 Quest'ultima è stata utilizzata solo in ambiente GNU/Linux in fase di debug, dunque non è disponibile per l'utente.\\
 
 In compenso è però disponibile per l'utente la libreria MatPlotLib che consente a quest'ultimo, qualora volesse, di disegnare al termine della generazione i grafi appena creati.\\
-È di fondamentale importanza però specificare che il processo di disegno per grafi di grandi dimensioni è molto dispendioso e dunque può richiedere un tempo considerevole.\\
+È di fondamentale importanza però specificare che il processo di disegno per grafi di grandi dimensioni è molto pesante e dunque può richiedere un tempo considerevole.\\
 
 Come prima operazione, all'avvio del programma, è disponibile per l'utente una scelta della classe di grafo da generare effettuata attraverso un'interfaccia di selezione da console implementata grazie alla libreria Pick.\\
 
@@ -209,14 +209,14 @@ Le classi implementate fanno riferimento a quelle presenti nella libreria Networ
 Una volta selezionata la classe desiderata, l'utente si troverà davanti una nuova interfaccia di selezione da console implementata attraverso l'uso del modulo Pick.\\
 
 La selezione dell'opzione MULTIPLE cambia la tipologia di funzionamento del programma, che da SINGLE MODE (modalità di generazione di un singolo grafo per volta) passa a MULTIPLE MODE (nella quale possono essere generati da 1 a n grafi della stessa tipologia in un solo processo di creazione, con n scelto dall'utente).\\
-Concentriamoci ora sulla SINGLE MODE, ovvero la la modalità di default del programma.\\
+Concentriamoci ora sulla creazione in SINGLE MODE, ovvero la la modalità di default del programma.\\
 
 Questa volta l'utente dovrà scegliere la tipologia di grafo da creare.\\
 Per ogni classe vi sono molteplici tipologie di grafo che l'utente può scegliere di generare.\\
 
 Le tipologie implementate fanno riferimento a quelle presenti nel modulo NetworkX, in particolare ciascuna tipologia ha un costruttore di libreria corrispondente che provvede a generare le strutture elementari e a comporre l'oggetto matematico richiesto dall'utente.\\
 
-Solo per far comprendere al lettore la vastità delle scelte possibili per l'utente in fase di selezione del grafo da generare, vengono qui si seguito riportate le tipologie di grafi implementate per la sola classe di grafi Classic.
+Solo per far comprendere al lettore la vastità delle scelte possibili per l'utente in fase di selezione del grafo da generare, vengono qui si seguito riportate le tipologie di grafi implementate per la sola classe Classic.
 
 \begin{itemize}
 	\item balanced tree
@@ -255,7 +255,7 @@ Il file .edgelist è un file di tipo testuale che codifica sotto forma di lista 
 
 I nodi sono generati in modo totalmente dinamico utilizzando valori interi positivi da 0 a n, con n scelto dall'utente in fase di creazione quando richiesto come parametro associato alla tipologia di grafo da generare.\\
 
-Il file si presenta nella forma qui di seguito indicata (ciascuna coppia (nodo, nodo) codifica un arco al quale viene associato un perso attraverso la definizione del terzo valore della tupla, ovvero il peso intero).\\
+Il file si presenta nella forma qui di seguito indicata (ciascuna coppia (nodo, nodo) codifica un arco al quale viene associato un peso attraverso la definizione del terzo valore della tupla, ovvero il peso intero).\\
 
 \begin{table}[H]
 \centering
@@ -309,28 +309,28 @@ il programma reader.py è un lettore dinamico di grafi anche esso scritto intera
 
 Inoltre il programma consente la modellazione del problema del gioco della \(k\)-colorazione generalizzata attraverso un massiccio uso della Standard Library del linguaggio Python.\\
 
-Nel programma reader.py sono incluse le definizioni degli algoritmi per il calcolo degli equilibri di Nash e quelli per il calcolo dell'ottimo con funzione di benessere utilitario e egalitario.\\
+Nel programma reader.py sono incluse le definizioni degli algoritmi per il calcolo degli equilibri di Nash e quelle per il calcolo dell'ottimo con funzione di benessere utilitario e egalitario.\\
 Il programma permette la lettura di un singolo o di molteplici grafi per volta e consente l'esecuzione dei suddetti algoritmi sulle istanze lette.\\
 
-Per rendere meno faticoso il lavoro relativo alla sperimentazione il programma è in grado di raccogliere efficacemente e organizzare i dati derivanti dalle esecuzioni in tempo reale.\\
+Per rendere meno faticoso il lavoro relativo alla sperimentazione, il programma è in grado di raccogliere efficacemente e organizzare i dati derivanti dalle esecuzioni in tempo reale.\\
 
-In modo totalmente dinamico il lettore è in grado di salvare i risultati delle sperimentazioni manipolando le strutture relative al filesystem.\\
+In modo totalmente dinamico, il lettore è in grado di salvare i risultati delle sperimentazioni manipolando le strutture relative al filesystem.\\
 Come per il generatore, il programma utilizza principalmente e in modo quasi esclusivo la libreria standard del linguaggio Python per eseguire queste operazioni.\\
-Anche in questo caso le primitive e le funzioni utilizzate garantiscono il funzionamento cross-platform e dunque la portabilità del programma.\\ Il tutto è stato ampiamente testato su macchine con sistema POSIX e non, il programma è totalmente ottimizzato e funzionale in questo senso.\\
+Anche in questo caso, le primitive e le funzioni utilizzate garantiscono il funzionamento cross-platform e dunque la portabilità del programma.\\ Il tutto è stato ampiamente testato su macchine con sistema POSIX e non, il programma è totalmente ottimizzato e funzionale in questo senso.\\
 
-I file di output per ciascuna esecuzione sono 2, il file .init (file testuale che contiene il salvataggio delle informazioni basilari del grafo, creato dopo aver effettuato la modellazione del problema) e il file.out (file testuale che contiene i risultati finali derivanti dall'esecuzione di uno o più algoritmi).\\
+I file di output, per ciascuna esecuzione, sono 2, il file .init (file testuale che contiene il salvataggio delle informazioni basilari del grafo, creato dopo aver effettuato la modellazione del problema) e il file.out (file testuale che contiene i risultati finali derivanti dall'esecuzione di uno o più algoritmi).\\
 
 Sia per le esecuzioni singole che per quelle multiple, il risultato prodotto sarà sempre e comunque una coppia file.init / file.out.\\  
 
-Anche in questo caso sono disponibili per l'utente moduli per il disegno dei grafi, in particolare pre e post modellazione e per rappresentare i risultati delle esecuzioni (ad esempio la colorazione iniziale e la colorazione stabile ottenute dal calcolo degli equilibri di Nash).\\
+Anche in questo caso, sono disponibili per l'utente i moduli per il disegno dei grafi, in particolare pre e post modellazione e per rappresentare i risultati delle esecuzioni (ad esempio la colorazione iniziale e la colorazione stabile ottenute dal calcolo di un equilibrio di Nash).\\
 La principale libreria in questo senso è MatPlotLib (la libreria PyGraphViz è stata utilizzata solo in fase di debug come specificato in precedenza).\\
 
-Per non tediare il lettore confermiamo che, anche il programma reader.py, fa uso delle medesime librerie addizionali utilizzate nel programma generator.py, il loro uso è però marginale e dunque non verranno trattate, come in precedenza.\\
+Per non tediare il lettore, confermiamo che, anche il programma reader.py, fa uso delle medesime librerie addizionali utilizzate nel programma generator.py, il loro uso è però marginale e dunque non verranno trattate, come in precedenza.\\
 L'utilizzo più intensivo è relativo alle librerie Pick, per fornire un'interfaccia di selezione da console per l'utente, e alla libreria Colorama, utilizzata in fase di lettura e debug per colorare l'output su console e mettere in risalto i dati fondamentali relativi alle esecuzioni degli algoritmi e alle operazioni essenziali di gestione del programma.\\
 
-Di fondamentale importanza è l'utilizzo della libreria NetworkX che consente la lettura e l'interpretazione delle informazioni relative ai file testuali di creazione .edgelist e la ricostruzione in modo asincrono dei grafi generati in precedenza, in modo da utilizzarli per la sperimentazione.\\
+Di fondamentale importanza è l'utilizzo della libreria NetworkX che consente la lettura e l'interpretazione delle informazioni relative ai file testuali di creazione .edgelist e la ricostruzione, in modo asincrono, dei grafi generati in precedenza, in modo da utilizzarli per la sperimentazione.\\
 
-Anche in questo caso, qui di seguito, vengono riportate le caratteristiche del programma assieme ad un esempio generale di un caso d'uso in modo da descrivere il funzionamento di quest'ultimo e le operazioni disponibili per l'utente
+Anche in questo caso, qui di seguito, vengono riportate le caratteristiche del programma assieme ad un esempio generale di un caso d'uso in modo da descrivere il funzionamento di quest'ultimo e le operazioni disponibili per l'utente.\\
 
 Sono disponibili per l'utente, in modo speculare e simmetrico rispetto alla definizione del programma generator.py, 2 modalità di funzionamento per la lettura e l'esecuzione : la modalità SINGLE EXEC e la modalità MULTIPLE EXEC.\\
 All'avvio del programma l'utente dovrà scegliere una delle 2 modalità d'uso attraverso un'interfaccia di selezione da console implementata attraverso l'utilizzo della libreria Pick.\\
@@ -338,14 +338,14 @@ All'avvio del programma l'utente dovrà scegliere una delle 2 modalità d'uso at
 
 \subsection{reader.py : SINGLE EXEC}
 \justify
-In modalità SINGLE EXEC il programma effettuerà una ricerca globale automatica e dinamica dei file con estensione .edgelist all'interno della cartella gen, la cartella relativa alle generazioni di grafi singoli creata dal generatore generator.py in modalità SINGLE MODE.\\
+In modalità SINGLE EXEC, il programma effettuerà una ricerca globale automatica e dinamica dei file con estensione .edgelist all'interno della cartella gen, la cartella relativa alle generazioni di grafi singoli creata dal generatore generator.py in modalità SINGLE MODE.\\
 
 A questo punto l'utente dovrà selezione il grafo da modellare e sul quale eseguire una sperimentazione, utilizzando gli algoritmi forniti all'interno del programma.\\
 La scelta è implementata attraverso un'interfaccia di selezione creata con la libreria Pick nella quale apparirà la lista di file .edgelist trovati.\\
 
 Il programma leggerà e interpreterà il contenuto del file.edgelist relativo al grafo selezionato dall'utente e attraverso le funzioni della libreria NetworkX ricostruirà l'istanza dell'oggetto matematico desiderato creato in precedenza e sul quale si vuole iniziare una sperimentazione.\\
 
-Ovviamente l'operazione genererà sempre e comunque un'istanza di grafo senza parallelismo non-orientato e con valori interi positivi associati ai nodi e pesi interi positivi associati agli archi (parametri scelti in precedenza, durante la fase di creazione del grafo e ricostruiti dalle funzioni di libreria).\\
+Ovviamente l'operazione genererà sempre e comunque un'istanza di grafo senza parallelismo non-orientato, con valori interi positivi associati ai nodi e pesi interi positivi associati agli archi (parametri scelti in precedenza, durante la fase di creazione del grafo e ricostruiti dalle funzioni di libreria).\\
 
 In seguito l'utente sarà nuovamente chiamato a scegliere 2 parametri fondamentali per la modellazione del problema, ovvero il numero di colori e valore massimo per il profitto associato a questi ultimi.\\
 
@@ -379,7 +379,7 @@ nodo 3 :: & colore 0 : & profitto 99, & colore 1 : & profitto 66, & ... \\
 \end{table}
 
 A questo punto viene generata automaticamente e in modo totalmente randomico la colorazione iniziale per il grafo corrente.\\
-Il colore è stato gestito attraverso l'implementazione di dizionari, ad ogni nodo viene associata una singola entry chiave : valore che rappresenta una label.\\ La chiave rappresenta il nome del parametro, ovvero la stringa "color" e il valore rappresenta il colore con il quale è colorato in nodo.\\
+Il colore è stato gestito attraverso l'implementazione di dizionari, ad ogni nodo viene associata una singola entry chiave : valore che rappresenta una label.\\ La chiave indica il nome del parametro, ovvero la stringa "color" e il valore indica il colore con il quale è colorato in nodo.\\
 Le etichette sono gestite a livello di libreria NetworkX, di conseguenza è stato utilizzato lo standard esplicato all'interno della documentazione.\\
 È dunque possibile accedere e manipolare, con facilità e alta velocità computazionale, i dati all'interno dei dizionari che rappresentano i parametri associati al nodo attraverso semplici query ad accesso diretto e a singola chiave, ovvero, nel nostro caso, il parametro "color".\\
 Un esempio di colorazione iniziale è presentata qui di seguito.
