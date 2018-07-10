@@ -396,8 +396,7 @@ nodo 4 & colore 2 \\
 \end{tabular}
 \end{table}
 
-Tutti i dati relativi alla modellazione iniziale dell'istanza letta per ricreare le condizioni di partenza del nostro gioco sono salvate nel file.init correlato all'esecuzione corrente.\\
-
+Tutti i dati relativi alla modellazione iniziale dell'istanza letta per ricreare le condizioni di partenza del nostro gioco, sono salvate nel file.init correlato all'esecuzione corrente.\\
 Specifichiamo nuovamente l'assoluta gestione cross-platform del filesystem e l'efficiente ottimizzazione eseguita sul lato input / output, il tutto è affiancato ovviamente da numerosissimi test su diverse tipologie di macchine.\\
 
 Nel file testuale .init, relativo all'esecuzione, vengono inseriti i seguenti parametri.
@@ -414,7 +413,7 @@ Nel file testuale .init, relativo all'esecuzione, vengono inseriti i seguenti pa
 È importante specificare che il peso degli archi è gestito in modo del tutto identico a quello relativo al colore dei nodi.\\
 Infatti il peso degli archi (e gli eventuali altri parametri implementabili in modo nativo grazie alla libreria NetworkX) si presenta come un dizionario chiave : valore, nel quale la chiave corrisponde al nome del parametro, ovvero la stringa "weight" e il valore rappresenta il vero e proprio peso associato all'arco.\\
 
-Anche qui dunque una struttura dati di questo tipo permette un'alta velocità di calcolo e recupero delle informazioni con query ad accesso diretto a chiave singola, ovvero il nome del parametro richiesto associato all'arco che nel nostro caso è la stringa "weight".\\
+Anche qui dunque, una struttura dati di questo tipo, permette un'alta velocità di calcolo e recupero delle informazioni con query ad accesso diretto a chiave singola, ovvero il nome del parametro richiesto associato all'arco che nel nostro caso è la stringa "weight".\\
 La struttura dati si presenta come segue (esempio).
 
 \begin{table}[H]
@@ -429,7 +428,7 @@ nodo 3 & nodo 2 & weight : 23 \\
 \end{table}
 
 Terminata la creazione del file testuale con estensione .init, il programma procede e genera tutte le strutture del filesystem necessarie per salvare correttamente i risultati della sperimentazione corrente.\\
-In particolare crea una nuova cartella all'interno della directory result (poiché siamo in SINGLE EXEC) in modo dinamico prendendo il nome del grafo corrente importato dall'utente.\\
+In particolare crea una nuova cartella all'interno della directory result (poiché siamo in modalità SINGLE EXEC) in modo dinamico prendendo il nome del grafo corrente importato dall'utente.\\
 Assegna il medesimo nome al file .init (e al file .out che vedremo tra poco) che viene creato all'interno del path appena generato.\\
 
 A questo punto l'utente viene chiamato a compiere un'ennesima scelta, l'ultima relativa al flusso di esecuzione corrente.\\
@@ -443,7 +442,7 @@ All'utente viene chiesto di scegliere tra le 3 opzioni di calcolo disponibili, c
 	\item esci
 \end{itemize}
 
-Vi inoltre un'ulteriore opzione che consente all'utente di uscire dal programma prima di un'eventuale esecuzione che potrebbe essere pesante a livello di calcolo e dunque lenta al livello temporale, soprattutto per ciò che concerne il calcolo degli ottimi.\\
+Vi inoltre un'ulteriore opzione che consente all'utente di uscire dal programma prima di un'eventuale esecuzione che potrebbe essere pesante a livello di calcolo e dunque dispendiosa al livello temporale, soprattutto per ciò che concerne il calcolo degli ottimi.\\
 
 Per l'utente che esegue in modalità SINGLE EXEC, questo punto del programma rappresenta un hub di esecuzione.\\
 L'utente infatti può eseguire, quante volte vuole, i vari algoritmi (può anche eseguirli tutti sull'istanza corrente o uscire e non fare nulla come specificato poco sopra).\\
@@ -463,7 +462,7 @@ Una prima differenza sostanziale è relativa al path in cui vengono cercati i fi
 Scegliendo MULTIPLE EXEC il programma effettuerà una ricerca globale di tutte le cartelle presenti all'interno della cartella mgen, ovvero la cartella contenente tutti i risultati delle varie generazioni multiple, creata dinamicamente dal generatore di grafi in modalità MULTIPLE MODE.\\
 
 A questo punto l'utente sarà nuovamente interpellato e attraverso un'interfaccia di selezione da console dovrà selezionare la cartella contenente i grafi sui quali desidera fare sperimentazione.\\
-Una volta selezionata la cartella il programma utilizzerà tutti i file con estensione .edgelist come istanze dell'esecuzione multipla.\\
+Una volta selezionata la cartella il programma utilizzerà tutti i file con estensione .edgelist come istanze dell'esecuzione multipla corrente.\\
 In particolare il programma si sviluppa all'interno di un ciclo principale che scorre tutti i file con estensione .edgelist presenti nella cartella scelta dall'utente.\\
 
 Il ciclo prende un grafo alla volta, opera la fase di pre-esecuzione modellando l'istanza corrente secondo la definizione del problema e poi esegue l'algoritmo per il calcolo della colorazione stabile trovando l'equilibrio di Nash per l'istanza corrente.\\
@@ -471,9 +470,9 @@ Il ciclo e l'esecuzione, che potrebbe coinvolgere un numero molto grande di graf
 
 Proprio a causa del fatto che le istanze potrebbero essere numerose e che la grandezza di ciascuna istanza, in termini di numero di nodi, potrebbe essere elevata, si utilizza come sperimentazione, annessa alla modalità di esecuzione multipla, il solo algoritmo per il calcolo della colorazione stabile (equilibrio di Nash) che vedremo in seguito.\\
 
-L'utente in questa fase che precede l'esecuzione, solo per la prima iterazione, il valore massimo del profitto associato ai colori per ogni giocatore.\\
+L'utente in questa fase che precede l'esecuzione, solo per la prima iterazione, dovrà inserire il valore massimo del profitto associato ai colori per ogni giocatore.\\
 
-Per ciò che riguarda il profitto, possiamo affermare che il funzionamento è identico a quello della modalità SINGLE EXEC, ovvero l'utente fornirà un numero \(n\) e il profitto da associare a ciascun colore per ciascun giocatore sarà un valore randomico tra 0 e \(n\) (valori interi positivi).\\
+Per ciò che riguarda il profitto, possiamo affermare che il funzionamento è identico a quello della modalità SINGLE EXEC, ovvero l'utente fornirà un numero \(n\) e il profitto da associare a ciascun colore per ciascun giocatore sarà un valore randomico tra $0$ e \(n\) (valori interi positivi).\\
 
 Per ciò che riguarda il numero dei colori, in modalità MULTIPLE EXEC, il funzionamento è in parte differente.\\
 Il numero di colori, infatti, viene definito in modo randomico e dinamico durante l'esecuzione su ciascuna istanza in input.\\
@@ -632,7 +631,7 @@ In ogni caso le parti più vicine all'implementazione in linguaggio Python saran
 
 Sono state omesse nello pseudocodice tutte le porzioni di stampa su console e su file.out dei dati significativi, poiché trascurabili.\\
 
-Il seguente algoritmo viene utilizzato, seguendo la definizione presentata poco sopra, solo nella modalità SINGLE EXEC, in modalità MULTIPLE EXEC non viene considerata l'ultima porzione del codice, ovvero quella relativa al prezzo dell'anarchia sperimentale utilitario e egalitario poiché, data la grandezza dei grafi utilizzati in questo tipo di sperimentazione, vengono tralasciati i calcoli dell'ottimo utilitario e egalitario.\\
+Il seguente algoritmo viene utilizzato, seguendo la definizione presentata poco sopra, solo nella modalità SINGLE EXEC, in modalità MULTIPLE EXEC non viene considerata l'ultima porzione del codice, ovvero quella relativa al calcolo del prezzo dell'anarchia sperimentale utilitario e egalitario poiché, data la grandezza dei grafi utilizzati in questo tipo di sperimentazione, vengono tralasciati i calcoli dell'ottimo utilitario e egalitario.\\
 
 Il prezzo dell'anarchia sperimentale rappresenta lo studio e l'analisi del prezzo dell'anarchia (benessere sociale utilitario - egalitario della colorazione ottima / benessere sociale utilitario - egalitario della colorazione stabile) ma nel caso medio, laddove il prezzo dell'anarchia rappresenta lo studio e l'analisi nel caso peggiore.\\
 Il prezzo dell'anarchia sperimentale è uno dei risultati fondamentali prodotti dalla sperimentazione.\\
