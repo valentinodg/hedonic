@@ -83,3 +83,5 @@ Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/d
 Written in **LaTeX** (*LaTeX 3*) [https://www.latex-project.org/get/]
 
 * using **MiKTeX Compiler** (*MiKTeX 2.9.6*) [https://miktex.org/download]
+
+Link : https://github.com/valentinodg/hedonic-games/blob/master/latex/main.pdf
