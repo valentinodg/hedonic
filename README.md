@@ -84,4 +84,5 @@ Written in **LaTeX** (*LaTeX 3*) [https://www.latex-project.org/get/]
 
 * using **MiKTeX Compiler** (*MiKTeX 2.9.6*) [https://miktex.org/download]
 
-Link : https://github.com/valentinodg/hedonic-games/blob/master/latex/main.pdf
+Link Tesi: https://github.com/valentinodg/hedonic-games/blob/master/latex/main.pdf
+Link Slides: https://github.com/valentinodg/hedonic-games/blob/master/slides/master.pdf
