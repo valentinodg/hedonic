@@ -2,114 +2,124 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{I\hspace {1em}Equilibri di Nash}{3}
+\contentsline {part}{I\hspace {1em}Equilibri di Nash}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Introduzione agli equilibri di Nash}{4}
+\contentsline {chapter}{\numberline {1}Introduzione agli equilibri di Nash}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Teoria dei giochi}{4}
+\contentsline {section}{\numberline {1.1}Teoria dei giochi}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.1}Giochi non-cooperativi}{5}
+\contentsline {subsection}{\numberline {1.1.1}Giochi non-cooperativi}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Equilibri di Nash}{5}
+\contentsline {section}{\numberline {1.2}Equilibri di Nash}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}Definizione formale}{6}
+\contentsline {subsection}{\numberline {1.2.1}Definizione formale}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Nozioni di base}{7}
+\contentsline {section}{\numberline {1.3}Nozioni di base}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.1}Rappresentazione con matrici di payoff e descrizione del procedimento decisionale}{7}
+\contentsline {subsection}{\numberline {1.3.1}Rappresentazione con matrici di payoff e descrizione del procedimento decisionale}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.2}Equilibri di Nash e ottimo sociale}{9}
+\contentsline {subsection}{\numberline {1.3.2}Equilibri di Nash e ottimo sociale}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.3}Equilibri di Nash multipli}{9}
+\contentsline {subsection}{\numberline {1.3.3}Equilibri di Nash multipli}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.4}Assenza di equilibri di Nash}{10}
+\contentsline {subsection}{\numberline {1.3.4}Assenza di equilibri di Nash}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.5}Il dilemma del prigioniero : sub-ottimalit\IeC {\`a} individuale e sociale}{11}
+\contentsline {subsection}{\numberline {1.3.5}Il dilemma del prigioniero : sub-ottimalit\IeC {\`a} individuale e sociale}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{II\hspace {1em}Gioco della $k$-colorazione generalizzata}{13}
+\contentsline {part}{II\hspace {1em}Gioco della $k$-colorazione generalizzata}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Gioco della \(k\)-colorazione generalizzata}{14}
+\contentsline {chapter}{\numberline {2}Gioco della \(k\)-colorazione generalizzata}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Descrizione generale}{15}
+\contentsline {section}{\numberline {2.1}Descrizione generale}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}Nozioni sul problema}{16}
+\contentsline {subsection}{\numberline {2.1.1}Nozioni sul problema}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Dettagli sul modello}{17}
+\contentsline {section}{\numberline {2.2}Dettagli sul modello}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Convergenza ed esistenza degli equilibri di Nash}{19}
+\contentsline {subsection}{\numberline {2.2.1}Convergenza ed esistenza degli equilibri di Nash}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Benessere sociale utilitario (utilitarian social welfare)}{19}
+\contentsline {section}{\numberline {2.3}Benessere sociale utilitario (utilitarian social welfare)}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Prezzo dell'anarchia utilitario (utilitarian price of anarchy)}{20}
+\contentsline {subsection}{\numberline {2.3.1}Prezzo dell'anarchia utilitario (utilitarian price of anarchy)}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Benessere sociale egalitario (egalitarian social welfare)}{20}
+\contentsline {section}{\numberline {2.4}Benessere sociale egalitario (egalitarian social welfare)}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Prezzo dell'anarchia egalitario (egalitarian price of anarchy)}{20}
+\contentsline {subsection}{\numberline {2.4.1}Prezzo dell'anarchia egalitario (egalitarian price of anarchy)}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{III\hspace {1em}Implementazione}{22}
+\contentsline {part}{III\hspace {1em}Implementazione}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Implementazione}{23}
+\contentsline {chapter}{\numberline {3}Implementazione}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Struttura generale}{23}
+\contentsline {section}{\numberline {3.1}Struttura generale}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Componenti utilizzati e progettazione}{27}
+\contentsline {section}{\numberline {3.2}Componenti utilizzati e progettazione}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}generator.py : il generatore di grafi}{29}
+\contentsline {section}{\numberline {3.3}generator.py : il generatore di grafi}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}generator.py : SINGLE MODE}{30}
+\contentsline {subsection}{\numberline {3.3.1}generator.py : SINGLE MODE}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}generator.py : MULTIPLE MODE}{33}
+\contentsline {subsection}{\numberline {3.3.2}generator.py : MULTIPLE MODE}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}reader.py : il lettore di grafi}{34}
+\contentsline {section}{\numberline {3.4}reader.py : il lettore di grafi}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}reader.py : SINGLE EXEC}{36}
+\contentsline {subsection}{\numberline {3.4.1}reader.py : SINGLE EXEC}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}reader.py : MULTIPLE EXEC}{41}
+\contentsline {subsection}{\numberline {3.4.2}reader.py : MULTIPLE EXEC}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Analisi e descrizione degli algoritmi}{42}
+\contentsline {section}{\numberline {3.5}Analisi e descrizione degli algoritmi}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.1}nash\_equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}{43}
+\contentsline {subsection}{\numberline {3.5.1}nash\_equilibrium : l'algoritmo per il calcolo degli equilibri di Nash}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.2}opt\_utilitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}{54}
+\contentsline {subsection}{\numberline {3.5.2}opt\_utilitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale utilitario}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.3}opt\_egalitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}{59}
+\contentsline {subsection}{\numberline {3.5.3}opt\_egalitarian\_social\_welfare : l'algoritmo per il calcolo dell'ottimo relativo alla funzione di benessere sociale egalitario}{60}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{IV\hspace {1em}Sperimentazione}{66}
+\contentsline {part}{IV\hspace {1em}Sperimentazione}{67}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Sperimentazione}{67}
+\contentsline {chapter}{\numberline {4}Sperimentazione}{68}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}gnp\_random\_graph (grafo di Erd\IeC {\H o}s-R\IeC {\'e}nyi o grafo binomiale)}{67}
+\contentsline {section}{\numberline {4.1}Obiettivi}{68}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Generazione gnp\_random\_graph)}{68}
+\contentsline {section}{\numberline {4.2}gnp\_random\_graph (grafo di Erd\IeC {\H o}s-R\IeC {\'e}nyi o grafo binomiale)}{69}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Assunzioni generali}{69}
+\contentsline {subsection}{\numberline {4.2.1}Generazione gnp\_random\_graph)}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Tipologie di sperimentazione}{70}
+\contentsline {subsection}{\numberline {4.2.2}Assunzioni generali}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Risultati sperimentazione - Tipologia I}{71}
+\contentsline {subsection}{\numberline {4.2.3}Tipologie di sperimentazione}{72}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Sperimentazione - Tipologia I - Random 3 nodi}{72}
+\contentsline {section}{\numberline {4.3}Risultati sperimentazione - Tipologia I}{73}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Sperimentazione - Tipologia I - Random 5 nodi}{73}
+\contentsline {subsection}{\numberline {4.3.1}Tipologia I - Grafi Random - 3 nodi [$n=3$]}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Sperimentazione - Tipologia I - Random 7 nodi}{73}
+\contentsline {subsection}{\numberline {4.3.2}Tipologia I - Grafi Random - 5 nodi [$n=5$]}{75}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.4}Sperimentazione - Tipologia I - Random 10 nodi}{74}
+\contentsline {subsection}{\numberline {4.3.3}Tipologia I - Grafi Random - 5 nodi [$n=5$] e 3 colori [$k=3$]}{75}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Risultati sperimentazione - Tipologia II}{74}
+\contentsline {subsection}{\numberline {4.3.4}Tipologia I - Grafi Random - 5 nodi [$n=5$] e probabilit\IeC {\`a} $0.70$ [$p=0.70$]}{76}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Sperimentazione - Tipologia II - Random 15 nodi}{75}
+\contentsline {subsection}{\numberline {4.3.5}Tipologia I - Grafi Random - 7 nodi [$n=7$]}{76}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Sperimentazione - Tipologia II - Random 30 nodi}{75}
+\contentsline {subsection}{\numberline {4.3.6}Tipologia I - Grafi Random - 10 nodi [$n=10$]}{77}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}Sperimentazione - Tipologia II - Random 45 nodi}{76}
+\contentsline {section}{\numberline {4.4}Risultati sperimentazione - Tipologia II}{77}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.4}Sperimentazione - Tipologia II - Random 60 nodi}{76}
+\contentsline {subsection}{\numberline {4.4.1}Tipologia II - Grafi Random - 15 nodi [$n=15$]}{78}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.5}Sperimentazione - Tipologia II - Random 75 nodi}{77}
+\contentsline {subsection}{\numberline {4.4.2}Tipologia II - Grafi Random - 15 nodi [$n=15$] e 8 colori [$k=8$]}{78}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.6}Sperimentazione - Tipologia II - Random 90 nodi}{77}
+\contentsline {subsection}{\numberline {4.4.3}Tipologia II - Grafi Random - 15 nodi [$n=15$] e probabilit\IeC {\`a} $0.70$ [$p=0.70$]}{79}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.7}Sperimentazione - Tipologia II - Random 100 nodi}{78}
+\contentsline {subsection}{\numberline {4.4.4}Tipologia II - Grafi Random - 30 nodi [$n=30$]}{80}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Conclusioni}{78}
+\contentsline {subsection}{\numberline {4.4.5}Tipologia II - Grafi Random - 45 nodi [$n=45$]}{80}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.6}Tipologia II - Grafi Random - 60 nodi [$n=60$]}{81}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.7}Tipologia II - Grafi Random - 75 nodi [$n=75$]}{81}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.8}Tipologia II - Grafi Random - 90 nodi [$n=90$]}{82}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.9}Tipologia II - Grafi Random - 100 nodi [$n=100$]}{82}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Conclusioni}{83}

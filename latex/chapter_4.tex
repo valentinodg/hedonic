@@ -9,6 +9,13 @@ Queste rappresentano la base di partenza sulla quale è stata portata avanti l'a
 
 L'ultima fase prevede la presentazione delle conclusioni associate ai risultati ottenuti, in relazione al problema in oggetto (gioco della k-colorazione generalizzata) e in relazione alla trattazione matematica e ai teoremi delineati all'interno del documento alla base di questo studio (Generalized Graph k-Coloring Games).\\
 
+\section{Obiettivi}
+\justify
+Si specifica, in breve, che l'obiettivo primario dell'intera sperimentazione è quello di calcolare, misurare e analizzare il numero di passi compiuti dall'algoritmo ottimizzato per il calcolo degli equilibri di Nash sulle varie istanze di gioco della $k$-colorazione generalizzata modellate attraverso l'utilizzo di grafi randomici.\\
+A questo scopo ricordiamo che il problema di trovare un equilibrio di Nash per il gioco della $k$-colorazione generalizzata è PLS-Completo e dunque è interessante analizzare il numero di miglioramenti effettuati relativi alle varie dinamiche trovate sulle varie istanze studiate.
+Inoltre specifichiamo che è stato svolto uno studio parallelo riguardante la validità della colorazione stabile in termini di benessere sociale utilitario ed egalitario. A questo proposito sono stati utilizzati i 2 algoritmi per il calcolo dell'ottimo con funzione di benessere sociale utilitario e egalitario. I suddetti algoritmi non prevedono alcuna strategia di ottimizzazione legata alle iterazioni e utilizzano un approccio a forza bruta che rende la computazione molto complessa. Ricordiamo che il problema di calcolare gli ottimi con funzioni di benessere sociale utilitario e egalitario appartiene alla classe NP.\\
+Per descrivere la lontananza del valore di benessere sociale utilitario o egalitario della colorazione stabile, dal valore di benessere sociale utilitario o egalitario della colorazione ottima, sono state utilizzate le definizioni di prezzo dell'anarchia sperimentale utilitario e egalitario, presentate in precedenza.\\
+
 \section{gnp\_random\_graph (grafo di Erdős-Rényi o grafo binomiale)}
 \justify
 Il principali oggetti matematici studiati durante l'attività di sperimentazione sono i grafi randomici.\\
@@ -109,7 +116,7 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 \end{itemize}
 
 
-\subsection{Sperimentazione - Tipologia I - Random 3 nodi}
+\subsection{Tipologia I - Grafi Random - 3 nodi [$n=3$]}
 
 \begin{table}[H]
 \centering
@@ -129,12 +136,12 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 2 & 0.14 & 3 & 548 & 146 & 3 & 548 & 146 & 1 & 1 & 1 \\ \hline
 \end{tabular}
 }
-\caption{Sperimentazione - Tipologia I - Random 3 nodi}
+\caption{Tipologia I - Grafi Random - 3 nodi}
 \label{tab:sperimentazione-tipo1-3nodi}
 \end{table}
 
 
-\subsection{Sperimentazione - Tipologia I - Random 5 nodi}
+\subsection{Tipologia I - Grafi Random - 5 nodi [$n=5$]}
 
 \begin{table}[H]
 \centering
@@ -154,12 +161,50 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 2 & 0.24 & 3 & 590 & 64 & 3 & 566 & 64 & 1.0402 & 1 & 1 \\ \hline
 \end{tabular}
 }
-\caption{Sperimentazione - Tipologia I - Random 5 nodi}
+\caption{Tipologia I - Grafi Random - 5 nodi}
 \label{tab:sperimentazione-tipo1-5nodi}
 \end{table}
 
+\subsection{Tipologia I - Grafi Random - 5 nodi [$n=5$] e 3 colori [$k=3$]}
 
-\subsection{Sperimentazione - Tipologia I - Random 7 nodi}
+\begin{table}[H]
+\centering
+\scalebox{0.9} {
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{p} & \textbf{a} & \textbf{o\_usw} & \textbf{o\_esw} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{u\_poa} & \textbf{e\_poa} & \textbf{t} \\ \hline
+0.40 & 5 & 1064 & 148 & 6 & 1064 & 126 & 1 & 1.1746 & 1 \\ \hline
+0.50 & 7 & 1113 & 100 & 3 & 1019 & 76 & 1.0922 & 1.3157 & 1 \\ \hline
+0.60 & 6 & 1253 & 163 & 8 & 1121 & 163 & 1.1177 & 1 & 1 \\ \hline
+0.70 & 5 & 862 & 95 & 7 & 862 & 95 & 1 & 1 & 1 \\ \hline
+0.80 & 9 & 1104 & 166 & 9 & 1061 & 125 & 1.0405 & 1.328 & 1 \\ \hline
+0.90 & 9 & 1249 & 210 & 7 & 1249 & 173 & 1 & 1.1475 & 1 \\ \hline
+1 & 10 & 1564 & 261 & 3 & 1451 & 246 & 1.0778 & 1.0609 & 1 \\ \hline
+\end{tabular}
+}
+\caption{Tipologia I - Grafi Random - 5 nodi e 3 colori}
+\label{tab:sperimentazione-tipo1-5nodi3colori}
+\end{table}
+
+\subsection{Tipologia I - Grafi Random - 5 nodi [$n=5$] e probabilità $0.70$ [$p=0.70$]}
+
+\begin{table}[H]
+\centering
+\scalebox{0.9} {
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{k} & \textbf{a} & \textbf{o\_usw} & \textbf{o\_esw} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{u\_poa} & \textbf{e\_poa} & \textbf{t} \\ \hline
+2 & 6 & 794 & 118 & 3 & 778 & 77 & 1.0205 & 1.5324 & 1 \\ \hline
+3 & 6 & 930 & 148 & 6 & 912 & 120 & 1.0197 & 1.2333 & 1 \\ \hline
+4 & 6 & 1015 & 152 & 6 & 1015 & 152 & 1 & 1 & 1 \\ \hline
+5 & 6 & 1063 & 149 & 4 & 1063 & 149 & 1 & 1 & 1 \\ \hline
+\end{tabular}
+}
+\caption{Tipologia I - Grafi Random - 5 nodi e probabilità $0.70$}
+\label{tab:sperimentazione-tipo1-5nodi070probab}
+\end{table}
+
+\subsection{Tipologia I - Grafi Random - 7 nodi [$n=7$]}
 
 \begin{table}[H]
 \centering
@@ -179,12 +224,12 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 3 & 0.61 & 13 & 1541 & 153 & 7 & 1525 & 134 & 1.0104 & 1.1417 & 5 \\ \hline
 \end{tabular}
 }
-\caption{Sperimentazione - Tipologia I - Random 7 nodi}
+\caption{Tipologia I - Grafi Random - 7 nodi}
 \label{tab:sperimentazione-tipo1-7nodi}
 \end{table}
 
 
-\subsection{Sperimentazione - Tipologia I - Random 10 nodi}
+\subsection{Tipologia I - Grafi Random - 10 nodi [$n=10$]}
 
 \begin{table}[H]
 \centering
@@ -204,7 +249,7 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 3 & 0.43 & 15 & 2310 & 131 & 8 & 2310 & 131 & 1 & 1 & 15 \\ \hline
 \end{tabular}
 }
-\caption{Sperimentazione - Tipologia I - Random 10 nodi}
+\caption{Tipologia I - Grafi Random - 10 nodi}
 \label{tab:sperimentazione-tipo1-10nodi}
 \end{table}
 
@@ -224,7 +269,7 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 	\item Il parametro \textbf{t} è valore, assegnato dinamicamente, del limitatore temporale (1 = 1 minuto, 2 = 2 minuti, ecc...)
 \end{itemize}
 
-\subsection{Sperimentazione - Tipologia II - Random 15 nodi}
+\subsection{Tipologia II - Grafi Random - 15 nodi [$n=15$]}
 
 \begin{table}[H]
 \centering
@@ -242,11 +287,56 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 4 & 0.88 & 87 & 9 & 9295 & 473 & 1 \\ \hline
 13 & 0.38 & 34 & 14 & 4185 & 161 & 1 \\ \hline
 \end{tabular}
-\caption{Sperimentazione - Tipologia II - Random 15 nodi}
+\caption{Tipologia II - Grafi Random - 15 nodi}
 \label{tab:sperimentazione-tipo1-15nodi}
 \end{table}
 
-\subsection{Sperimentazione - Tipologia II - Random 30 nodi}
+\subsection{Tipologia II - Grafi Random - 15 nodi [$n=15$] e 8 colori [$k=8$]}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{p} & \textbf{a} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{t} \\ \hline
+0.40 & 53 & 18 & 6199 & 213 & 1 \\ \hline
+0.50 & 54 & 25 & 7243 & 338 & 1 \\ \hline
+0.60 & 69 & 22 & 8747 & 459 & 1 \\ \hline
+0.70 & 82 & 21 & 9376 & 414 & 1 \\ \hline
+0.80 & 86 & 16 & 10292 & 556 & 1 \\ \hline
+0.90 & 93 & 22 & 11063 & 569 & 1 \\ \hline
+1 & 105 & 17 & 12055 & 604 & 1 \\ \hline
+\end{tabular}
+\caption{Tipologia II - Grafi Random - 15 nodi e 8 colori}
+\label{tab:sperimentazione-tipo1-15nodi}
+\end{table}
+
+\subsection{Tipologia II - Grafi Random - 15 nodi [$n=15$] e probabilità $0.70$ [$p=0.70$]}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{k} & \textbf{a} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{t} \\ \hline
+2 & 82 & 7 & 5929 & 267 & 1 \\ \hline
+3 & 82 & 14 & 7648 & 340 & 1 \\ \hline
+4 & 82 & 15 & 8677 & 375 & 1 \\ \hline
+5 & 82 & 21 & 8742 & 394 & 1 \\ \hline
+6 & 82 & 21 & 9072 & 414 & 1 \\ \hline
+7 & 82 & 22 & 9219 & 402 & 1 \\ \hline
+8 & 82 & 11 & 9093 & 398 & 1 \\ \hline
+9 & 82 & 16 & 9340 & 420 & 1 \\ \hline
+10 & 82 & 21 & 9361 & 430 & 1 \\ \hline
+11 & 82 & 18 & 9475 & 444 & 1 \\ \hline
+12 & 82 & 19 & 9510 & 413 & 1 \\ \hline
+13 & 82 & 14 & 9561 & 436 & 1 \\ \hline
+14 & 82 & 20 & 9631 & 444 & 1 \\ \hline
+15 & 82 & 19 & 9581 & 443 & 1 \\ \hline
+\end{tabular}
+\caption{Tipologia II - Grafi Random - 15 nodi e probabilità $0.70$}
+\label{tab:sperimentazione-tipo1-15nodi}
+\end{table}
+
+\subsection{Tipologia II - Grafi Random - 30 nodi [$n=30$]}
 
 \begin{table}[H]
 \centering
@@ -264,11 +354,11 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 28 & 0.56 & 248 & 34 & 26688 & 633 & 2 \\ \hline
 17 & 0.42 & 191 & 46 & 22487 & 376 & 2 \\ \hline
 \end{tabular}
-\caption{Sperimentazione - Tipologia II - Random 30 nodi}
+\caption{Tipologia II - Grafi Random - 30 nodi}
 \label{tab:sperimentazione-tipo1-30nodi}
 \end{table}
 
-\subsection{Sperimentazione - Tipologia II - Random 45 nodi}
+\subsection{Tipologia II - Grafi Random - 45 nodi [$n=45$]}
 
 \begin{table}[H]
 \centering
@@ -286,11 +376,11 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 9 & 0.49 & 481 & 62 & 51387 & 561 & 5 \\ \hline
 15 & 0.32 & 338 & 52 & 37617 & 544 & 5 \\ \hline
 \end{tabular}
-\caption{Sperimentazione - Tipologia II - Random 45 nodi}
+\caption{Tipologia II - Grafi Random - 45 nodi}
 \label{tab:sperimentazione-tipo1-45nodi}
 \end{table}
 
-\subsection{Sperimentazione - Tipologia II - Random 60 nodi}
+\subsection{Tipologia II - Grafi Random - 60 nodi [$n=60$]}
 
 \begin{table}[H]
 \centering
@@ -308,11 +398,11 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 14 & 0.39 & 711 & 92 & 76014 & 609 & 10 \\ \hline
 47 & 0.86 & 1507 & 90 & 158109 & 2236 & 10 \\ \hline
 \end{tabular}
-\caption{Sperimentazione - Tipologia II - Random 60 nodi}
+\caption{Tipologia II - Grafi Random - 60 nodi}
 \label{tab:sperimentazione-tipo1-60nodi}
 \end{table}
 
-\subsection{Sperimentazione - Tipologia II - Random 75 nodi}
+\subsection{Tipologia II - Grafi Random - 75 nodi [$n=75$]}
 
 \begin{table}[H]
 \centering
@@ -330,11 +420,11 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 8 & 0.08 & 221 & 85 & 28302 & 92 & 10 \\ \hline
 6 & 0.29 & 803 & 115 & 85384 & 636 & 10 \\ \hline
 \end{tabular}
-\caption{Sperimentazione - Tipologia II - Random 75 nodi}
+\caption{Tipologia II - Grafi Random - 75 nodi}
 \label{tab:sperimentazione-tipo1-75nodi}
 \end{table}
 
-\subsection{Sperimentazione - Tipologia II - Random 90 nodi}
+\subsection{Tipologia II - Grafi Random - 90 nodi [$n=90$]}
 
 \begin{table}[H]
 \centering
@@ -352,11 +442,11 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 45 & 0.18 & 716 & 105 & 79042 & 379 & 15 \\ \hline
 11 & 0.56 & 2230 & 156 & 227861 & 1881 & 15 \\ \hline
 \end{tabular}
-\caption{Sperimentazione - Tipologia II - Random 90 nodi}
+\caption{Tipologia II - Grafi Random - 90 nodi}
 \label{tab:sperimentazione-tipo1-90nodi}
 \end{table}
 
-\subsection{Sperimentazione - Tipologia II - Random 100 nodi}
+\subsection{Tipologia II - Grafi Random - 100 nodi [$n=100$]}
 
 \begin{table}[H]
 \centering
@@ -374,19 +464,19 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 2 & 0.34 & 1688 & 71 & 112251 & 635 & 20 \\ \hline
 25 & 0.01 & 48 & 62 & 10979 & 98 & 20 \\ \hline
 \end{tabular}
-\caption{Sperimentazione - Tipologia II - Random 100 nodi}
+\caption{Tipologia II - Grafi Random - 100 nodi}
 \label{tab:sperimentazione-tipo1-100nodi}
 \end{table}
 
 \section{Conclusioni}
 \justify
 La suddetta sperimentazione effettuata ha pienamente soddisfatto le aspettative e gli obiettivi prefissati in fase di progettazione.\\
-Sia la tipologia di sperimentazione I che la tipologia di sperimentazione II hanno prodotto e portato alla luce risultati significativi che testimoniamo la validità e la correttezza dei teoremi affrontati nel Capitolo 2.\\
+Sia la tipologia di sperimentazione I che la tipologia di sperimentazione II hanno prodotto e portato alla luce risultati significativi che evidenziano la validità e la correttezza dei teoremi affrontati nel Capitolo 2.\\
 Inoltre l'assoluta accuratezza e precisione delle procedure applicate è testimoniata dall'esattezza degli output ottenuti.\\
 
 Per ciò che concerne la Tipologia I, specifichiamo che l'enorme dispendio temporale e l'ingente quantità di risorse richieste dai calcoli effettuati, hanno limitato, nella pratica, l'attività di sperimentazione.\\
 La quantità di risultati ottenuti è però sufficiente per trarre le dovute riflessioni e conclusioni.\\
-Per completezza specifichiamo che l'ordine delle permutazioni (colorazioni) analizzate, per ciascun calcolo dell'ottimo, è dell'ordine del milione.\\
+Per completezza specifichiamo che il numero delle permutazioni (colorazioni) analizzate, per ciascun calcolo dell'ottimo, è dell'ordine del milione.\\
 Si è scelto di restare all'interno di questa soglia in modo da ottenere esecuzioni singole che non superino le 1-2 ore al massimo.\\
 
 Analizzando gli output ottenuti relativi alla sperimentazione di tipo I, possiamo affermare con certezza che molti parametri influiscono in modo diretto con le operazioni di calcolo dell'ottimo sia con funzione di benessere sociale utilitario che egalitario.\\
@@ -397,18 +487,19 @@ Concentrandoci invece sugli algoritmi per il calcolo degli ottimi con funzioni d
 Nello specifico, dato come valore fisso il numero di nodi $n$, l'uso del parametro $k$ in correlazione con quest'ultimo genera un numero di permutazioni pari a \(k^n\), è dunque immediato comprendere come al crescere di $k$ crescerà anche il numero di permutazioni \(k^n\) e di conseguenza la complessità temporale dell'algoritmo in modo esponenziale.\\
 
 Un altro parametro che influenza direttamente la complessità temporale relativa agli algoritmi per il calcolo degli ottimi è $p$.\\
-Il parametro $p$ definisce il grado di densità del grafo in oggetto, dunque determina la probabilità di costruire archi tra le coppie di nodi.\\
+Il parametro $p$ definisce la probabilità di costruire archi tra le coppie di nodi, dunque determina il grado di densità del grafo in oggetto.\\
 La forte connessione del grafo e dunque un valore di densità elevato per quest'ultimo, determinano una maggiore complessità temporale per gli algoritmi relativi al calcolo degli ottimi.\\
 La presenza di molti archi nel grafo genera l'esistenza di un numero maggiore di nodi adiacenti per ciascun nodo del grafo e dunque aumenta in modo diretto il numero di iterazioni innestate all'interno dell'algoritmo.\\
 
 Inizializzando con valori piccoli e medi i suddetti parametri $k$ e $p$ otteniamo esecuzioni caratterizzate da una complessità temporale minore.\\
 
-Analizzando in seguito i parametri ottenuti, in particolare riguardo il prezzo dell'anarchia sperimentale utilitario e quello egalitario, possiamo notare, dai risultati ottenuti, come sia facile, in caso di grafi piccoli, ottenere colorazioni stabili con un benessere sociale utilitario e egalitario molto vicino se non pari al benessere sociale utilitario e egalitario delle colorazioni ottime.\\
+Analizzando in seguito i parametri ottenuti, in particolare riguardo il prezzo dell'anarchia sperimentale utilitario e quello egalitario, possiamo notare dai risultati ottenuti come sia facile, in caso di grafi piccoli, ottenere colorazioni stabili con un benessere sociale utilitario e egalitario molto vicino se non pari al benessere sociale utilitario e egalitario delle colorazioni ottime.\\
 
-Molto spesso infatti otteniamo il valore $1$ per ciò che riguarda il prezzo dell'anarchia sperimentale utilitario o egalitario o entrambi, tale valore conferma che la colorazione stabile trovata dall'algoritmo presenta un valore di benessere sociale utilitario o egalitario o entrambi pari al valore dei rispettivi ottimi.\\
+Molto spesso infatti otteniamo il valore $1$ per ciò che riguarda il prezzo dell'anarchia sperimentale utilitario o egalitario o entrambi.\\
+Tale valore conferma che la colorazione stabile trovata dall'algoritmo presenta un valore di benessere sociale utilitario o egalitario o entrambi pari al valore dei rispettivi ottimi.\\
 
 In generale possiamo confermare che la totalità dei risultati ottenuti rispetta pienamente la descrizione del modello matematico e le affermazioni determinate dai vari teoremi presentati all'interno del Capitolo 2.\\
-Possiamo affermare che il gioco implementato è convergente poiché sono stati sempre ottenuti risultati stabili (equilibri di Nash) con complessità temporale polinomiale (nei casi di studio).\\
+Possiamo affermare che il gioco implementato è convergente poiché sono stati sempre ottenuti risultati stabili (equilibri di Nash).\\
 Abbiamo inoltre ottenuto valori per il prezzo dell'anarchia sperimentale utilitario e egalitario che rispettano a pieno le asserzioni contenute nel Teorema 1, poiché abbiamo ottenuto sempre risultati \(\leq 2\).\\
 
 Per ciò che riguarda la sperimentazione di tipo II, l'analisi è meno complessa.\\
