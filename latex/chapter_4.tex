@@ -13,39 +13,23 @@ Descriviamo ora le modalità di generazione per le esecuzioni in modalità SINGL
 
 \subsection{Generazione \textit{gnp\_random\_graph})}
 \justify
-Le funzioni per la generazione di grafi \textit{gnp\_random\_graph} sono raggiungibili all'interno del programma generator.py selezionando la modalità di esecuzione MULTIPLE MODE e selezionando in seguito la classe \textit{gnp\_random\_graph}.\\
-
-All'utente è richiesto, come primo parametro, l'inserimento del numero di iterazioni da compiere, che corrispondono al numero di grafi da costruire all'interno del singolo processo di generazione corrente.\\
-
-In seguito l'utente dovrà inserire il numero di nodi per i grafi da generare.\\
-Tale valore, per assunzione, sarà un valore fisso per ciascun ciclo di generazione e dunque applicato a tutti i grafi appartenenti a quest'ultimo.\\
-
-Gli ultimi parametri da inserire sono i valori massimo e minimo all'interno dei quali oscilleranno randomicamente i pesi associati agli archi del grafo, il tutto avviene nelle modalità specificate nella sezione relativa al generatore.\\
-
-A questo punto l'utente sarà chiamato a scegliere la sotto modalità di generazione dei grafi, la scelta della modalità "single" comporterà la creazione di un path specifico all'interno della cartella gen nel quale verranno salvati i vari risultati della creazione seguendo lo schema presentato durante la descrizione della modalità SINGLE MODE relativa al generatore di grafi.\\
-La scelta della modalità "multiple" comporterà la creazione di un path specifico all'interno della cartella mgen nel quale verranno salvati i vari risultati della creazione seguendo lo schema presentato durante la descrizione della modalità MULTIPLE MODE relativa al generatore di grafi. \\
-
-L'ultimo valore, gestito in modo randomico per ciascuna istanza della generazione corrente, è $p$.\\
-Il parametro $p$ rappresenta la probabilità di generare un archi tra le varie coppie di nodi del grafo corrente, viene fatto oscillare in modo randomico tra i valori \(0 \geq p \geq 1\).\\
-La variabile $p$ conterrà dunque un valore flottante (tipo float) la cui precisione è gestita in modo automatico e impostata a 2, ovvero sono ammesse fino a 2 cifre dopo la virgola.\\
-
-Tralasciando i dettagli trascurabili descritti all'interno della sezione relativa all'implementazione, specifichiamo che la manipolazione del filesystem finalizzata al salvataggio degli output di generazione è effettuata in modo automatico e dinamico dal programma.\\
-Quest'ultima è ottimizzata, cross-platform e presenta, come descritto in precedenza, primitive e funzioni appartenenti alla sola Standard Library del linguaggio Python.\\
-Ovviamente presenta le medesime caratteristiche dei moduli utilizzati e descritti in precedenza e dunque vengono accuratamente gestiti e evitati possibili conflitti tra i dati e problemi di inconsistenza.\\
+Le funzioni per la generazione di grafi \textit{gnp\_random\_graph} sono raggiungibili all'interno del programma generator.py selezionando la modalità di esecuzione MULTIPLE MODE e selezionando in seguito la classe \textit{gnp\_random\_graph}. All'utente è richiesto, come primo parametro, l'inserimento del numero di iterazioni da compiere, che corrispondono al numero di grafi da costruire all'interno del singolo processo di generazione corrente. In seguito l'utente dovrà inserire il numero di nodi per i grafi da generare. Tale valore, per assunzione, sarà un valore fisso per ciascun ciclo di generazione e dunque applicato a tutti i grafi appartenenti a quest'ultimo. Gli ultimi parametri da inserire sono i valori massimo e minimo relativi al range all'interno del quale oscilleranno randomicamente i pesi associati agli archi del grafo, il tutto avviene nelle modalità specificate nella sezione relativa al generatore. A questo punto l'utente sarà chiamato a scegliere la sotto-modalità di generazione dei grafi, la scelta della modalità "single" comporterà la creazione di un path specifico all'interno della cartella gen nel quale verranno salvati i vari risultati della creazione seguendo lo schema presentato durante la descrizione della modalità SINGLE MODE relativa al generatore di grafi. La scelta della modalità "multiple" comporterà la creazione di un path specifico all'interno della cartella mgen nel quale verranno salvati i vari risultati della creazione seguendo lo schema presentato durante la descrizione della modalità MULTIPLE MODE relativa al generatore di grafi. L'ultimo valore, gestito in modo randomico per ciascuna istanza della generazione corrente, è $p$. Il parametro $p$ rappresenta la probabilità di generare archi tra le varie coppie di nodi del grafo corrente, viene fatto oscillare in modo randomico tra i valori \(0 \geq p \geq 1\). La variabile $p$ conterrà dunque un valore flottante (tipo float) la cui precisione è gestita in modo automatico e impostata a 2, ovvero sono ammesse fino a 2 cifre dopo la virgola.\\
+Tralasciando i dettagli trascurabili descritti all'interno della sezione relativa all'implementazione, specifichiamo che la manipolazione del filesystem, finalizzata al salvataggio degli output di generazione, è effettuata in modo automatico e dinamico dal programma. Quest'ultima è ottimizzata, cross-platform e presenta, come descritto in precedenza, primitive e funzioni appartenenti alla sola Standard Library del linguaggio Python. Ovviamente presenta le medesime caratteristiche dei moduli utilizzati e descritti in precedenza e dunque vengono accuratamente gestiti e evitati possibili conflitti tra i dati e problemi di inconsistenza.\\
 
 \section{Assunzioni generali}
 \justify
-In breve, durante l'attività di progettazione e programmazione riguardanti la sperimentazione, sono state effettuate alcune decisioni relative a quest'ultima e sono state formulate le seguenti assunzioni sulla base delle quali si è svolta l'intera analisi.\\
+In breve, durante l'attività di progettazione e programmazione riguardanti la sperimentazione, sono state effettuate alcune decisioni relative a quest'ultima e sono state formulate le seguenti assunzioni sulla base delle quali si è svolta l'intera analisi.
 
 \begin{itemize}
 	\item I risultati delle varie sessioni di sperimentazione sono presentati al lettore sotto forma di tabelle riassuntive correlate da semplici leggende riguardanti la definizione dei parametri al fine di rendere più chiara e semplice la lettura e la visione dei dati raccolti
-	\item Ogni sperimentazione si è svolta fissando il numero di nodi e facendo oscillare randomicamente gli altri parametri come ad esempio il numero di colori $k$ oppure la probabilità relativa alla densità del grafo $p$.\\
-	\item Il parametro $p$ relativo alla densità di un grafo, è un valore flottante a precisione 2 (2 cifre dopo la virgola) che oscilla tra i valori \(0 \geq p \geq 1\) e che descrive la probabilità di creare un arco tra un coppia di nodi e dunque definisce quanto il grafo in oggetto sia sparso (o denso)
-	\item Il parametro $k$ definisce il numero di colori utilizzati per generare le differenti colorazioni, ciascuna delle quali rappresenta uno stato del gioco in oggetto. Ciascun colore \(i \in K\), con \(K = 1,\ldots,k\) (il set di colori), rappresenta una strategia per un giocatore. Per convenzione (la sperimentazione effettuata perderebbe di senso altrimenti) il parametro $k$ deve essere \(k \leq n\), con $n$ uguale al numero di nodi del grafo corrente
-	\item Per ogni sessione di sperimentazione sono elencati 10 risultati rilevanti 
-	\item Per le esecuzioni più pesati è stato concesso un limite temporale più ampio, ad esempio da 1 minuto a 2 minuti
-	\item Il range all'interno del quale oscillano dinamicamente i pesi degli archi, per ciascuna esecuzione, è definito per convenzione \(0 \geq a \geq 100\), con $a$ uguale ai pesi degli archi
-	\item Il range all'interno del quale oscillano i valore dei profitti associati ai colori per ciascun giocatore, per ciascuna esecuzione, è definito per convenzione \(0 \geq p \geq 100\), con $p$ uguale ai profitti associati ai colori per ogni giocatore
+	\item Ogni sperimentazione si è svolta fissando il numero di nodi e facendo oscillare randomicamente gli altri parametri come ad esempio il numero di colori $k$ oppure la probabilità relativa alla densità del grafo $p$.
+	\item Sono state svolte inoltre alcune sessioni di sperimentazione fissando 2 parametri alla volta e muovendo randomicamente il terzo parametro (sia nella Tipologia I che nella Tipologia II), ad esempio fissando $n$ e $k$ e muovendo $p$ oppure fissando $n$ e $p$ e muovendo $k$
+	\item Il parametro $p$ relativo alla densità di un grafo, è un valore flottante a precisione 2 (2 cifre dopo la virgola) che oscilla tra i valori \(0 \geq p \geq 1\) e che descrive la probabilità di creare archi tra coppie di nodi e dunque definisce quanto il grafo in oggetto sia sparso (o denso)
+	\item Il parametro $k$ definisce il numero di colori utilizzati per generare le differenti colorazioni, ciascuna delle quali rappresenta uno stato del gioco in oggetto. Ciascun colore \(i \in K\), con \(K = 1,\ldots,k\) (il set di colori), rappresenta una strategia per i giocatori. Per convenzione (la sperimentazione effettuata perderebbe di senso altrimenti) il parametro $k$ deve essere \(k \leq n\), con $n$ uguale al numero di nodi del grafo corrente
+	\item Per ogni sessione di sperimentazione sono elencati circa una decina risultati rilevanti 
+	\item Per le esecuzioni più pesati è stato concesso un limite temporale più ampio (fino ad un massimo di 20 minuti)
+	\item Il range all'interno del quale oscillano dinamicamente i pesi degli archi, per ciascuna esecuzione, è definito per convenzione \(0 \geq w \geq 100\), con $w$ uguale ai pesi degli archi (la convenzione è stata formulata in modo arbitrario e totalmente casuale)
+	\item Il range all'interno del quale oscillano i valore dei profitti associati ai colori per ogni giocatore, per ciascuna esecuzione, è definito per convenzione \(0 \geq u \geq 100\), con $u$ uguale ai profitti associati ai colori per ogni giocatore (la convenzione è stata formulata in modo arbitrario e totalmente casuale)
 \end{itemize}
 
 \section{Tipologie di sperimentazione}
@@ -79,7 +63,7 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 
 \begin{itemize}
 	\item Il parametro \textbf{k} descrive il numero di colori relativo all'istanza corrente
-	\item Il parametro \textbf{p} descrive la probabilità relativa alla densità dell'istanza corrente
+	\item Il parametro \textbf{p} descrive la probabilità di generare archi tra le coppie di nodi (densità dell'istanza corrente)
 	\item Il parametro \textbf{a} descrive il numero di archi dell'istanza corrente
 	\item Il valore \textbf{o\_usw} è il risultato ottenuto dall'applicazione, sull'istanza corrente, del calcolo dell'ottimo con funzione di benessere sociale utilitario
 	\item Il valore \textbf{o\_esw} è il risultato ottenuto dall'applicazione, sull'istanza corrente, del calcolo dell'ottimo con funzione di benessere sociale egalitario
@@ -88,9 +72,9 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 	\item Il valore \textbf{n\_esw} è il risultato del calcolo del benessere sociale egalitario relativo alla colorazione stabile trovata per l'istanza corrente
 	\item Il valore \textbf{u\_poa} è il risultato del calcolo del prezzo dell'anarchia utilitario sperimentale relativo all'istanza corrente
 	\item Il valore \textbf{e\_poa} è il risultato del calcolo del prezzo dell'anarchia egalitario sperimentale relativo all'istanza corrente
-	\item Il parametro \textbf{t} è valore, assegnato dinamicamente, del limitatore temporale (1 = 1 minuto, 2 = 2 minuti, ecc...), il valore vale per ciascun calcolo (assegnando \(t = 5\), la singola esecuzione completa dovrebbe durare circa 10-15 minuti in totale)
+	\item Il parametro \textbf{t} è il valore, assegnato dinamicamente, del limitatore temporale (1 = 1 minuto, 2 = 2 minuti, ecc...), tale valore vale per ciascun calcolo (assegnando \(t = 5\), la singola esecuzione completa dovrebbe durare circa 10-15 minuti in totale).\\
+	\textbf{NOTA :} il valore di $t$ non indica il tempo totale dell'esecuzione
 \end{itemize}
-
 
 \subsection{Tipologia I - Grafi Random - 3 nodi [$n=3$]}
 
@@ -116,7 +100,6 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 \label{tab:sperimentazione-tipo1-3nodi}
 \end{table}
 
-
 \subsection{Tipologia I - Grafi Random - 5 nodi [$n=5$]}
 
 \begin{table}[H]
@@ -139,45 +122,6 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 }
 \caption{Tipologia I - Grafi Random - 5 nodi}
 \label{tab:sperimentazione-tipo1-5nodi}
-\end{table}
-
-\subsection{Tipologia I - Grafi Random - 5 nodi [$n=5$] e 3 colori [$k=3$]}
-
-\begin{table}[H]
-\centering
-\scalebox{0.9} {
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{p} & \textbf{a} & \textbf{o\_usw} & \textbf{o\_esw} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{u\_poa} & \textbf{e\_poa} & \textbf{t} \\ \hline
-0.40 & 5 & 1064 & 148 & 6 & 1064 & 126 & 1 & 1.1746 & 1 \\ \hline
-0.50 & 7 & 1113 & 100 & 3 & 1019 & 76 & 1.0922 & 1.3157 & 1 \\ \hline
-0.60 & 6 & 1253 & 163 & 8 & 1121 & 163 & 1.1177 & 1 & 1 \\ \hline
-0.70 & 5 & 862 & 95 & 7 & 862 & 95 & 1 & 1 & 1 \\ \hline
-0.80 & 9 & 1104 & 166 & 9 & 1061 & 125 & 1.0405 & 1.328 & 1 \\ \hline
-0.90 & 9 & 1249 & 210 & 7 & 1249 & 173 & 1 & 1.1475 & 1 \\ \hline
-1 & 10 & 1564 & 261 & 3 & 1451 & 246 & 1.0778 & 1.0609 & 1 \\ \hline
-\end{tabular}
-}
-\caption{Tipologia I - Grafi Random - 5 nodi e 3 colori}
-\label{tab:sperimentazione-tipo1-5nodi3colori}
-\end{table}
-
-\subsection{Tipologia I - Grafi Random - 5 nodi [$n=5$] e probabilità $0.70$ [$p=0.70$]}
-
-\begin{table}[H]
-\centering
-\scalebox{0.9} {
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{k} & \textbf{a} & \textbf{o\_usw} & \textbf{o\_esw} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{u\_poa} & \textbf{e\_poa} & \textbf{t} \\ \hline
-2 & 6 & 794 & 118 & 3 & 778 & 77 & 1.0205 & 1.5324 & 1 \\ \hline
-3 & 6 & 930 & 148 & 6 & 912 & 120 & 1.0197 & 1.2333 & 1 \\ \hline
-4 & 6 & 1015 & 152 & 6 & 1015 & 152 & 1 & 1 & 1 \\ \hline
-5 & 6 & 1063 & 149 & 4 & 1063 & 149 & 1 & 1 & 1 \\ \hline
-\end{tabular}
-}
-\caption{Tipologia I - Grafi Random - 5 nodi e probabilità $0.70$}
-\label{tab:sperimentazione-tipo1-5nodi070probab}
 \end{table}
 
 \subsection{Tipologia I - Grafi Random - 7 nodi [$n=7$]}
@@ -204,7 +148,6 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 \label{tab:sperimentazione-tipo1-7nodi}
 \end{table}
 
-
 \subsection{Tipologia I - Grafi Random - 10 nodi [$n=10$]}
 
 \begin{table}[H]
@@ -229,6 +172,49 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 \label{tab:sperimentazione-tipo1-10nodi}
 \end{table}
 
+\subsection{Tipologia I [fissando i 2 parametri $n$ e $k$]- Grafi Random - 5 nodi [$n=5$] e 3 colori [$k=3$]}
+Si è scelto di far oscillare il valore della probabilità $p$ da $0.40$ a $1$ (con una progressione caratterizzata da un incremento di $0.10$ per volta). Con valori di \(p<0.40\) e un numero di nodi $n$ così piccolo, vengono generati grafi con un grado di densità molto basso (sparsi), i quali risultano poco interessanti ai fini della sperimentazione.\\
+I valori fissi per $n$ e $k$ sono stati scelti in modo arbitrario e totalmente casuale.
+
+\begin{table}[H]
+\centering
+\scalebox{0.9} {
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{p} & \textbf{a} & \textbf{o\_usw} & \textbf{o\_esw} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{u\_poa} & \textbf{e\_poa} & \textbf{t} \\ \hline
+0.40 & 5 & 1064 & 148 & 6 & 1064 & 126 & 1 & 1.1746 & 1 \\ \hline
+0.50 & 7 & 1113 & 100 & 3 & 1019 & 76 & 1.0922 & 1.3157 & 1 \\ \hline
+0.60 & 6 & 1253 & 163 & 8 & 1121 & 163 & 1.1177 & 1 & 1 \\ \hline
+0.70 & 5 & 862 & 95 & 7 & 862 & 95 & 1 & 1 & 1 \\ \hline
+0.80 & 9 & 1104 & 166 & 9 & 1061 & 125 & 1.0405 & 1.328 & 1 \\ \hline
+0.90 & 9 & 1249 & 210 & 7 & 1249 & 173 & 1 & 1.1475 & 1 \\ \hline
+1 & 10 & 1564 & 261 & 3 & 1451 & 246 & 1.0778 & 1.0609 & 1 \\ \hline
+\end{tabular}
+}
+\caption{Tipologia I - Grafi Random - 5 nodi e 3 colori}
+\label{tab:sperimentazione-tipo1-5nodi3colori}
+\end{table}
+
+\subsection{Tipologia I [fissando i 2 parametri $n$ e $p$] - Grafi Random - 5 nodi [$n=5$] e probabilità $0.70$ [$p=0.70$]}
+Si è scelto di far variare il parametro $k$ dal valore $2$ al valore $5$. Per valori di \(k<2\) la sperimentazione perde di senso, per valori di \(k>5\) viene invalidata la definizione del modello presentata nel Capitolo 2 che descrive il gioco della \(k\)-colorazione generalizzata.\\
+I valori fissi per $n$ e $p$ sono stati scelti in modo arbitrario e totalmente casuale.
+
+\begin{table}[H]
+\centering
+\scalebox{0.9} {
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{k} & \textbf{a} & \textbf{o\_usw} & \textbf{o\_esw} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{u\_poa} & \textbf{e\_poa} & \textbf{t} \\ \hline
+2 & 6 & 794 & 118 & 3 & 778 & 77 & 1.0205 & 1.5324 & 1 \\ \hline
+3 & 6 & 930 & 148 & 6 & 912 & 120 & 1.0197 & 1.2333 & 1 \\ \hline
+4 & 6 & 1015 & 152 & 6 & 1015 & 152 & 1 & 1 & 1 \\ \hline
+5 & 6 & 1063 & 149 & 4 & 1063 & 149 & 1 & 1 & 1 \\ \hline
+\end{tabular}
+}
+\caption{Tipologia I - Grafi Random - 5 nodi e probabilità $0.70$}
+\label{tab:sperimentazione-tipo1-5nodi070probab}
+\end{table}
+
 \section{Risultati sperimentazione - Tipologia II}
 \justify
 Qui di seguito vengono presentati i risultati relativi alla sperimentazione di Tipologia II.\\
@@ -237,12 +223,13 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 
 \begin{itemize}
 	\item Il parametro \textbf{k} descrive il numero di colori relativo all'istanza corrente
-	\item Il parametro \textbf{p} descrive la probabilità relativa alla densità dell'istanza corrente
+	\item Il parametro \textbf{p} descrive la probabilità di generare archi tra le coppie di nodi (densità dell'istanza corrente)
 	\item Il parametro \textbf{a} descrive il numero di archi dell'istanza corrente
 	\item Il valore \textbf{n\_step} è il numero di step (mosse migliorative effettuate) ottenuto dall'applicazione, sull'istanza corrente, del calcolo della colorazione stabile seguendo la definizione di equilibrio di Nash
 	\item Il valore \textbf{n\_usw} è il risultato del calcolo del benessere sociale utilitario relativo alla colorazione stabile trovata per l'istanza corrente
 	\item Il valore \textbf{n\_esw} è il risultato del calcolo del benessere sociale egalitario relativo alla colorazione stabile trovata per l'istanza corrente
-	\item Il parametro \textbf{t} è valore, assegnato dinamicamente, del limitatore temporale (1 = 1 minuto, 2 = 2 minuti, ecc...)
+	\item Il parametro \textbf{t} è il valore, assegnato dinamicamente, del limitatore temporale (1 = 1 minuto, 2 = 2 minuti, ecc...)\\
+	\textbf{NOTA :} il valore di $t$ non indica il tempo totale dell'esecuzione
 \end{itemize}
 
 \subsection{Tipologia II - Grafi Random - 15 nodi [$n=15$]}
@@ -264,51 +251,6 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 13 & 0.38 & 34 & 14 & 4185 & 161 & 1 \\ \hline
 \end{tabular}
 \caption{Tipologia II - Grafi Random - 15 nodi}
-\label{tab:sperimentazione-tipo1-15nodi}
-\end{table}
-
-\subsection{Tipologia II - Grafi Random - 15 nodi [$n=15$] e 8 colori [$k=8$]}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-\textbf{p} & \textbf{a} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{t} \\ \hline
-0.40 & 53 & 18 & 6199 & 213 & 1 \\ \hline
-0.50 & 54 & 25 & 7243 & 338 & 1 \\ \hline
-0.60 & 69 & 22 & 8747 & 459 & 1 \\ \hline
-0.70 & 82 & 21 & 9376 & 414 & 1 \\ \hline
-0.80 & 86 & 16 & 10292 & 556 & 1 \\ \hline
-0.90 & 93 & 22 & 11063 & 569 & 1 \\ \hline
-1 & 105 & 17 & 12055 & 604 & 1 \\ \hline
-\end{tabular}
-\caption{Tipologia II - Grafi Random - 15 nodi e 8 colori}
-\label{tab:sperimentazione-tipo1-15nodi}
-\end{table}
-
-\subsection{Tipologia II - Grafi Random - 15 nodi [$n=15$] e probabilità $0.70$ [$p=0.70$]}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-\textbf{k} & \textbf{a} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{t} \\ \hline
-2 & 82 & 7 & 5929 & 267 & 1 \\ \hline
-3 & 82 & 14 & 7648 & 340 & 1 \\ \hline
-4 & 82 & 15 & 8677 & 375 & 1 \\ \hline
-5 & 82 & 21 & 8742 & 394 & 1 \\ \hline
-6 & 82 & 21 & 9072 & 414 & 1 \\ \hline
-7 & 82 & 22 & 9219 & 402 & 1 \\ \hline
-8 & 82 & 11 & 9093 & 398 & 1 \\ \hline
-9 & 82 & 16 & 9340 & 420 & 1 \\ \hline
-10 & 82 & 21 & 9361 & 430 & 1 \\ \hline
-11 & 82 & 18 & 9475 & 444 & 1 \\ \hline
-12 & 82 & 19 & 9510 & 413 & 1 \\ \hline
-13 & 82 & 14 & 9561 & 436 & 1 \\ \hline
-14 & 82 & 20 & 9631 & 444 & 1 \\ \hline
-15 & 82 & 19 & 9581 & 443 & 1 \\ \hline
-\end{tabular}
-\caption{Tipologia II - Grafi Random - 15 nodi e probabilità $0.70$}
 \label{tab:sperimentazione-tipo1-15nodi}
 \end{table}
 
@@ -444,63 +386,67 @@ Qui di seguito vengono presentati i risultati relativi alla sperimentazione di T
 \label{tab:sperimentazione-tipo1-100nodi}
 \end{table}
 
+\newpage
+\subsection{Tipologia II [fissando i 2 parametri $n$ e $k$] - Grafi Random - 15 nodi [$n=15$] e 8 colori [$k=8$]}
+Si è scelto di far oscillare il valore della probabilità $p$ da $0.40$ a $1$ (con una progressione caratterizzata da un incremento di $0.10$ per volta). Con valori di \(p<0.40\) e un numero di nodi $n$ così piccolo, vengono generati grafi con un grado di densità molto basso (sparsi), i quali risultano poco interessanti ai fini della sperimentazione.\\
+I valori fissi per $n$ e $k$ sono stati scelti in modo arbitrario e totalmente casuale.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{p} & \textbf{a} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{t} \\ \hline
+0.40 & 53 & 18 & 6199 & 213 & 1 \\ \hline
+0.50 & 54 & 25 & 7243 & 338 & 1 \\ \hline
+0.60 & 69 & 22 & 8747 & 459 & 1 \\ \hline
+0.70 & 82 & 21 & 9376 & 414 & 1 \\ \hline
+0.80 & 86 & 16 & 10292 & 556 & 1 \\ \hline
+0.90 & 93 & 22 & 11063 & 569 & 1 \\ \hline
+1 & 105 & 17 & 12055 & 604 & 1 \\ \hline
+\end{tabular}
+\caption{Tipologia II - Grafi Random - 15 nodi e 8 colori}
+\label{tab:sperimentazione-tipo1-15nodi8colori}
+\end{table}
+
+\newpage
+\subsection{Tipologia II [fissando i 2 parametri $n$ e $p$] - Grafi Random - 15 nodi [$n=15$] e probabilità $0.70$ [$p=0.70$]}
+Si è scelto di far variare il parametro $k$ dal valore $2$ al valore $15$. Per valori di \(k<2\) la sperimentazione perde di senso, per valori di \(k>5\) viene invalidata la definizione del modello presentata nel Capitolo 2 che descrive il gioco della \(k\)-colorazione generalizzata.\\
+I valori fissi per $n$ e $p$ sono stati scelti in modo arbitrario e totalmente casuale.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{k} & \textbf{a} & \textbf{n\_step} & \textbf{n\_usw} & \textbf{n\_esw} & \textbf{t} \\ \hline
+2 & 82 & 7 & 5929 & 267 & 1 \\ \hline
+3 & 82 & 14 & 7648 & 340 & 1 \\ \hline
+4 & 82 & 15 & 8677 & 375 & 1 \\ \hline
+5 & 82 & 21 & 8742 & 394 & 1 \\ \hline
+6 & 82 & 21 & 9072 & 414 & 1 \\ \hline
+7 & 82 & 22 & 9219 & 402 & 1 \\ \hline
+8 & 82 & 11 & 9093 & 398 & 1 \\ \hline
+9 & 82 & 16 & 9340 & 420 & 1 \\ \hline
+10 & 82 & 21 & 9361 & 430 & 1 \\ \hline
+11 & 82 & 18 & 9475 & 444 & 1 \\ \hline
+12 & 82 & 19 & 9510 & 413 & 1 \\ \hline
+13 & 82 & 14 & 9561 & 436 & 1 \\ \hline
+14 & 82 & 20 & 9631 & 444 & 1 \\ \hline
+15 & 82 & 19 & 9581 & 443 & 1 \\ \hline
+\end{tabular}
+\caption{Tipologia II - Grafi Random - 15 nodi e probabilità $0.70$}
+\label{tab:sperimentazione-tipo1-15nodi070probab}
+\end{table}
+
+\newpage
 \section{Conclusioni}
 \justify
-La suddetta sperimentazione effettuata ha pienamente soddisfatto le aspettative e gli obiettivi prefissati in fase di progettazione.\\
-Sia la tipologia di sperimentazione I che la tipologia di sperimentazione II hanno prodotto e portato alla luce risultati significativi che evidenziano la validità e la correttezza dei teoremi affrontati nel Capitolo 2.\\
-Inoltre l'assoluta accuratezza e precisione delle procedure applicate è testimoniata dall'esattezza degli output ottenuti.\\
-
-Per ciò che concerne la Tipologia I, specifichiamo che l'enorme dispendio temporale e l'ingente quantità di risorse richieste dai calcoli effettuati, hanno limitato, nella pratica, l'attività di sperimentazione.\\
-La quantità di risultati ottenuti è però sufficiente per trarre le dovute riflessioni e conclusioni.\\
-Per completezza specifichiamo che il numero delle permutazioni (colorazioni) analizzate, per ciascun calcolo dell'ottimo, è dell'ordine del milione.\\
-Si è scelto di restare all'interno di questa soglia in modo da ottenere esecuzioni singole che non superino le 1-2 ore al massimo.\\
-
-Analizzando gli output ottenuti relativi alla sperimentazione di tipo I, possiamo affermare con certezza che molti parametri influiscono in modo diretto con le operazioni di calcolo dell'ottimo sia con funzione di benessere sociale utilitario che egalitario.\\
-In particolare possiamo tralasciare l'analisi della complessità riguardante l'algoritmo per il calcolo della colorazione stabile poiché la grandezza dei grafi utilizzati determina un dispendio temporale trascurabile.\\
-
-Concentrandoci invece sugli algoritmi per il calcolo degli ottimi con funzioni di benessere sociale utilitario e egalitario, possiamo affermare che il parametro $k$ influisce direttamente sulla complessità temporale relativa alle varie esecuzioni poiché determina il numero di colorazioni (permutazioni) da iterare.\\
-
-Nello specifico, dato come valore fisso il numero di nodi $n$, l'uso del parametro $k$ in correlazione con quest'ultimo genera un numero di permutazioni pari a \(k^n\), è dunque immediato comprendere come al crescere di $k$ crescerà anche il numero di permutazioni \(k^n\) e di conseguenza la complessità temporale dell'algoritmo in modo esponenziale.\\
-
-Un altro parametro che influenza direttamente la complessità temporale relativa agli algoritmi per il calcolo degli ottimi è $p$.\\
-Il parametro $p$ definisce la probabilità di costruire archi tra le coppie di nodi, dunque determina il grado di densità del grafo in oggetto.\\
-La forte connessione del grafo e dunque un valore di densità elevato per quest'ultimo, determinano una maggiore complessità temporale per gli algoritmi relativi al calcolo degli ottimi.\\
-La presenza di molti archi nel grafo genera l'esistenza di un numero maggiore di nodi adiacenti per ciascun nodo del grafo e dunque aumenta in modo diretto il numero di iterazioni innestate all'interno dell'algoritmo.\\
-
-Inizializzando con valori piccoli e medi i suddetti parametri $k$ e $p$ otteniamo esecuzioni caratterizzate da una complessità temporale minore.\\
-
-Analizzando in seguito i parametri ottenuti, in particolare riguardo il prezzo dell'anarchia sperimentale utilitario e quello egalitario, possiamo notare dai risultati ottenuti come sia facile, in caso di grafi piccoli, ottenere colorazioni stabili con un benessere sociale utilitario e egalitario molto vicino se non pari al benessere sociale utilitario e egalitario delle colorazioni ottime.\\
-
-Molto spesso infatti otteniamo il valore $1$ per ciò che riguarda il prezzo dell'anarchia sperimentale utilitario o egalitario o entrambi.\\
-Tale valore conferma che la colorazione stabile trovata dall'algoritmo presenta un valore di benessere sociale utilitario o egalitario o entrambi pari al valore dei rispettivi ottimi.\\
-
-In generale possiamo confermare che la totalità dei risultati ottenuti rispetta pienamente la descrizione del modello matematico e le affermazioni determinate dai vari teoremi presentati all'interno del Capitolo 2.\\
-Possiamo affermare che il gioco implementato è convergente poiché sono stati sempre ottenuti risultati stabili (equilibri di Nash).\\
-Abbiamo inoltre ottenuto valori per il prezzo dell'anarchia sperimentale utilitario e egalitario che rispettano a pieno le asserzioni contenute nel Teorema 1, poiché abbiamo ottenuto sempre risultati \(\leq 2\).\\
-
-Per ciò che riguarda la sperimentazione di tipo II, l'analisi è meno complessa.\\
-Anche qui il parametro $k$ influenza la computazione, sia a livello temporale che concettuale.\\
-Il parametro $k$ influenza la complessità temporale dell'algoritmo in misura del tutto minore se confrontata con quella relativa agli algoritmi per il calcolo delle 2 tipologie di ottimo implementate per il gioco in oggetto.\\
-Nonostante ciò il parametro determina l'aumento delle iterazioni innestate che interessano la ricerca del miglioramento per ciascun nodo, tale aumento è ovviamente direttamente proporzionale al crescere di $k$.\\
-
-Il parametro $k$ influenza anche la complessità concettuale del gioco poiché ciascun giocatore, avendo più strategie, dovrà cercare più a lungo le mosse migliori, in modo da trovare la dinamica più adatta all'istanza corrente.\\
-
-Il parametro $p$, anche in questa tipologia di sperimentazione, influenza direttamente la complessità temporale del calcolo poiché, aumentando la presenza di connessioni e dunque la densità del grafo corrente, aumenta anche il numero di nodi adiacenti per ciascun nodo e di conseguenza il numero totale del iterazioni necessarie.\\
-
-In generale, per entrambe le tipologie di sperimentazione, l'aumento del valore del parametro $p$, che descrive la densità del grafo, produce un generale e banale aumento del valore del parametro $a$, il numero di archi dell'istanza corrente.\\
-
-Il limitatore temporale $t$, in questo caso, serve a specificare un'altra caratteristica fondamentale di questo tipo di analisi effettuata sul gioco in oggetto, ovvero l'aumento graduale del tempo necessario a ciascuna esecuzione all'aumentare del numero di nodi $n$ (fissato per ogni sperimentazione).\\
-Difficilmente il variare dei parametri $k$ e $p$ produce oscillazioni significative a livello temporale (come ad esempio un aumento netto del tempo richiesto) e infatti per la quasi totalità dei casi è corretto impostare un set di valori omogeneo per $t$.\\
-
-Riguardo la Tipologia I, sono state effettuate 2 sessioni complete di sperimentazione fissando, per il medesimo grafo randomico, prima il numero di nodi $n=5$ e il numero di colori $k=3$ e poi il numero di nodi $n=5$ e il valore della probabilità $p=0.70$, i valori per $n$ $k$ e $p$ sono stati scelte in modo arbitrario.
-Lo stesso vale per la Tipologia II, anche qui sono state effettuate 2 sessioni complete di sperimentazione fissando, per il medesimo grafo randomico, prima il numero di nodi $n=15$ e il numero di colori $k=8$ e poi il numero di nodi $n=15$ e il valore della probabilità $p=0.70$, i valori per $n$ $k$ e $p$ sono stati scelte in modo arbitrario.
-Entrambe le sperimentazioni hanno evidenziato e sottolineato le medesime affermazioni specificate poco sopra. In particolare, per quanto riguarda la Tipologia I, è stato rilevato un aumento più o meno omogeneo di tutti i valori legati al calcolo degli ottimi e della colorazione stabile, al crescere di $p$ (fissati $n$ e $k$) e di $k$ (fissati $n$ e $p$). Lo stesso vale per ciò che riguarda la Tipologia di sperimentazione II. In generale si evidenzia che, muovendo un solo paramentro alla volta, sono vengono riscontrate, all'interno delle istanze studiate, variazioni molto significative relative al valori associati al calcolo degli ottimi e della colorazione stabile.
-
-Per concludere affermiamo inoltre che l'aumento del numero di nodi $n$, del numero dei colori $k$ e della probabilità che descrive la densità del grafo $p$, influenzano direttamente il parametro $n\_step$ generando nella quasi totalità dei casi un generale aumento più o meno significativo di quest'ultimo.\\
-Inoltre possiamo specificare che al crescere di $n$, per entrambe le tipologie di sperimentazione, è possibile notare un generale aumento dei valori associati ai parametri relativi al benessere sociale utilitario, poiché abbiamo più membri all'interno della sommatoria definita dalla funzione.\\
-Per ciò che riguarda i parametri legati al benessere sociale egalitario il discorso è leggermente differente, questi ultimi infatti sono molto influenzati dal valore di $p$ poiché un grafo più denso genera l'aumento generale del profitto individuale per ciascun giocatore e di conseguenza del profitto minimo individuale.\\ 
+La suddetta sperimentazione effettuata ha pienamente soddisfatto le aspettative e gli obiettivi prefissati in fase di progettazione. Sia la Tipologia di sperimentazione I che la Tipologia di sperimentazione II hanno prodotto e portato alla luce risultati significativi che evidenziano la validità e la correttezza dei teoremi affrontati nel Capitolo 2. Inoltre l'assoluta accuratezza e precisione delle procedure applicate è testimoniata dall'esattezza degli output ottenuti.\\
+Per ciò che concerne la Tipologia I, specifichiamo che l'enorme dispendio temporale e l'ingente quantità di risorse richieste dai calcoli effettuati, hanno limitato, nella pratica, l'attività di sperimentazione. La quantità di risultati ottenuti è però sufficiente per trarre le dovute riflessioni e conclusioni. Per completezza specifichiamo che il numero delle permutazioni (colorazioni) analizzate, per ciascun calcolo dell'ottimo, è dell'ordine del milione. Si è scelto di restare all'interno di questa soglia in modo da ottenere esecuzioni singole che non superino le 1-2 ore al massimo. Analizzando gli output ottenuti relativi alla sperimentazione di Tipo I, possiamo affermare con certezza che molti parametri influiscono in modo diretto con le operazioni di calcolo dell'ottimo sia con funzione di benessere sociale utilitario che egalitario. In particolare possiamo tralasciare l'analisi della complessità riguardante l'algoritmo per il calcolo della colorazione stabile poiché la grandezza dei grafi utilizzati determina un dispendio temporale trascurabile. Concentrandoci invece sugli algoritmi per il calcolo degli ottimi con funzioni di benessere sociale utilitario e egalitario, possiamo affermare che il parametro $k$ influisce direttamente sulla complessità temporale relativa alle varie esecuzioni poiché determina il numero di colorazioni (permutazioni) da iterare. Nello specifico, dato come valore fisso il numero di nodi $n$, l'uso del parametro $k$, in correlazione con quest'ultimo, genera un numero di permutazioni pari a \(k^n\). È dunque immediato comprendere che, al crescere di $k$, crescerà anche il numero di permutazioni \(k^n\) e di conseguenza la complessità temporale dell'algoritmo (in modo esponenziale). Un altro parametro che influenza direttamente la complessità temporale relativa agli algoritmi per il calcolo degli ottimi è $p$. Il parametro $p$ definisce la probabilità di costruire archi tra le coppie di nodi, dunque determina il grado di densità del grafo in oggetto. La forte connessione del grafo, grazie a un valore di densità elevato per quest'ultimo, determinano una maggiore complessità temporale per gli algoritmi relativi al calcolo degli ottimi. La presenza di molti archi nel grafo genera l'esistenza di un numero maggiore di nodi adiacenti per ciascun nodo del grafo e dunque aumenta in modo diretto il numero di iterazioni innestate all'interno dell'algoritmo. Inizializzando con valori piccoli e medi i suddetti parametri $k$ e $p$ otteniamo esecuzioni caratterizzate da una complessità temporale minore. Analizzando in seguito i parametri ottenuti, in particolare riguardo il prezzo dell'anarchia sperimentale utilitario e egalitario, possiamo notare dai risultati ottenuti come sia facile, in caso di grafi piccoli, ottenere colorazioni stabili con un benessere sociale utilitario e egalitario molto vicino se non pari al benessere sociale utilitario e egalitario delle colorazioni ottime. Molto spesso infatti otteniamo il valore $1$ per ciò che riguarda il prezzo dell'anarchia sperimentale utilitario o egalitario o entrambi. Tale valore conferma che la colorazione stabile trovata dall'algoritmo presenta un valore di benessere sociale utilitario o egalitario o entrambi pari al valore dei rispettivi ottimi. In generale possiamo confermare che la totalità dei risultati ottenuti rispetta pienamente la descrizione del modello matematico e le affermazioni determinate dai vari teoremi presentati all'interno del Capitolo 2. Possiamo affermare che il gioco implementato è convergente poiché sono stati sempre ottenuti risultati stabili (equilibri di Nash). Abbiamo inoltre ottenuto valori per il prezzo dell'anarchia sperimentale utilitario e egalitario che rispettano a pieno le asserzioni contenute nel Teorema 1, poiché abbiamo sempre ottenuto risultati \(\leq 2\).\\
+Per ciò che riguarda la sperimentazione di Tipo II, l'analisi è meno complessa. Anche qui il parametro $k$ influenza la computazione, sia a livello temporale che concettuale. Il parametro $k$ influenza la complessità temporale dell'algoritmo in misura del tutto minore se confrontata con quella relativa agli algoritmi per il calcolo delle 2 tipologie di ottimo implementate per il gioco in oggetto. Nonostante ciò il variare del valore associato a questo parametro, determina l'aumento delle iterazioni innestate che interessano la ricerca del miglioramento per ciascun nodo, tale aumento è ovviamente direttamente proporzionale al crescere di $k$. Il parametro $k$ influenza anche la complessità concettuale del gioco poiché ciascun giocatore, avendo più strategie, dovrà cercare più a lungo le mosse migliori, in modo da trovare la dinamica più adatta all'istanza corrente. Il parametro $p$, anche in questa Tipologia di sperimentazione, influenza direttamente la complessità temporale del calcolo poiché, aumentando la presenza di connessioni e dunque la densità del grafo corrente, aumenta anche il numero di nodi adiacenti per ciascun nodo e di conseguenza il numero totale delle iterazioni necessarie. In generale, per entrambe le tipologie di sperimentazione, l'aumento del valore del parametro $p$, che descrive la densità del grafo, produce un generale e banale aumento del valore del parametro $a$, il numero di archi dell'istanza corrente. Il limitatore temporale $t$, in questo caso, serve a specificare un'altra caratteristica fondamentale di questo tipo di analisi effettuata sul gioco in oggetto, ovvero l'aumento graduale del tempo necessario a ciascuna esecuzione all'aumentare del numero di nodi $n$ (fissato per ogni sperimentazione). Difficilmente il variare dei parametri $k$ e $p$ produce oscillazioni significative a livello temporale (come ad esempio un aumento netto del tempo richiesto) e infatti per la quasi totalità dei casi è corretto impostare un set di valori omogeneo per $t$.\\
+Riguardo la Tipologia I, sono state effettuate 2 sessioni complete di sperimentazione fissando, per il medesimo grafo randomico, prima il numero di nodi $n=5$ e il numero di colori $k=3$ e poi il numero di nodi $n=5$ e il valore della probabilità $p=0.70$, i valori per $n$, $k$ e $p$ sono stati scelte in modo arbitrario. Lo stesso vale per la Tipologia II, anche qui sono state effettuate 2 sessioni complete di sperimentazione fissando, per il medesimo grafo randomico, prima il numero di nodi $n=15$ e il numero di colori $k=8$ e poi il numero di nodi $n=15$ e il valore della probabilità $p=0.70$, i valori per $n$, $k$ e $p$ sono stati scelte in modo arbitrario. Entrambe le sperimentazioni hanno evidenziato e sottolineato le medesime affermazioni specificate poco sopra. In particolare, per quanto riguarda la Tipologia I, è stato rilevato un aumento più o meno omogeneo di tutti i valori legati al calcolo degli ottimi e della colorazione stabile, al crescere di $p$ (fissati $n$ e $k$) e di $k$ (fissati $n$ e $p$). Lo stesso vale per ciò che riguarda la Tipologia di sperimentazione II. In generale si evidenzia che, muovendo un solo paramentro alla volta, sono vengono riscontrate, all'interno delle istanze studiate, variazioni significative relative al valori associati al calcolo degli ottimi e della colorazione stabile.\\
+Per concludere affermiamo inoltre che l'aumento del numero di nodi $n$, del numero dei colori $k$ e della probabilità che descrive la densità del grafo $p$, influenzano direttamente il parametro $n\_step$ generando, nella quasi totalità dei casi, un generale aumento più o meno significativo di quest'ultimo. Inoltre possiamo specificare che al crescere di $n$, per entrambe le tipologie di sperimentazione, è possibile notare un generale aumento dei valori associati ai parametri relativi al benessere sociale utilitario, poiché abbiamo più membri all'interno della sommatoria definita dalla funzione. Per ciò che riguarda i parametri legati al benessere sociale egalitario il discorso è leggermente differente, questi ultimi infatti sono molto più influenzati dal valore di $p$ poiché un grafo più denso genera l'aumento generale del profitto individuale per ciascun giocatore e di conseguenza del profitto minimo individuale (tale affermazione non è sempre valida, poichè le variabili in gioco sono molteplici).\\ 
 
 \section{Lavori futuri}
 \justify
-L'attività di sperimentazione effettuata è principalmente incentrata sul calcolo degli equilibri di Nash per il gioco della $k$-colorazione generalizzata. L'algoritmo per il calcolo della colorazione stabile è dunque stato fortemente ottimizzato in modo favorire l'abbattimento del valore relativo agli step della dinamica. Questa scelta ha incrementato la complessità computazione relativa alle varie esecuzioni. Quest'ultima è stata affrontata però utilizzando 2 ulteriori tecniche di ottimizzazione che consentono il salto di numerose iterazioni senza invalidare la correttezza concettuale e procedurale dell'algoritmo. In conclusione l'implementazione prodotta è dunque computazionalmente molto efficace e ha consentito di effettuare una sperimentazione completa ed esaustiva. Di conseguenza ha consentito di analizzare a fondo le performance dell'algoritmo per il calcolo degli equilibri di Nash, altro punto cardine della sperimentazione in oggetto.
+L'attività di sperimentazione effettuata è principalmente incentrata sul calcolo degli equilibri di Nash per il gioco della $k$-colorazione generalizzata. L'algoritmo per il calcolo della colorazione stabile è dunque stato fortemente ottimizzato in modo favorire l'abbattimento del valore relativo agli step della dinamica. Questa scelta ha incrementato la complessità computazione relativa alle varie esecuzioni. Quest'ultima è stata però affrontata utilizzando 2 ulteriori tecniche di ottimizzazione che consentono il salto di numerose iterazioni senza invalidare la correttezza concettuale e procedurale dell'algoritmo. In conclusione l'implementazione prodotta è dunque computazionalmente molto efficace e ha consentito di effettuare una sperimentazione completa ed esaustiva. Di conseguenza ha consentito di analizzare a fondo le performance relative al suddetto algoritmo, altro punto cardine della sperimentazione in oggetto.\\
 Un possibile sviluppo potrebbe essere il miglioramento delle performance relative agli algoritmi per il calcolo dell'ottimo con funzione di benessere sociale utilitario e egalitario. L'approccio utilizzato all'interno degli algoritmi per il calcolo degli ottimi, anche se ottimizzati in modo accurato nei cicli e nelle operazioni, è incentrato sulla forza bruta. Di conseguenza il calcolo delle 2 tipologie di ottimo implementate, essendo dispendioso a livello temporale e computazionale, ha limitato fortemente l'attività di sperimentazione. Potrebbe essere utile sviluppare implementazioni più efficaci utilizzando tecniche accurate di ricerca operativa per evitare l'uso della forza bruta. Ciò garantirebbe la possibilità di studiare le variazioni relative al prezzo dell'anarchia sperimentale utilitario e egalitario per istanze con un numero di nodi maggiore di 10, effettuando esecuzioni in tempi ragionevoli. Dunque sarebbe possibile studiare in modo più approfondito la validità dalle soluzioni stabili trovate per le varie istanze in termini di benessere sociale utilitario e egalitario.

@@ -84,7 +84,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.1}Generazione \textit {gnp\_random\_graph})}{61}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Assunzioni generali}{62}
+\contentsline {section}{\numberline {4.3}Assunzioni generali}{61}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}Tipologie di sperimentazione}{63}
 \defcounter {refsection}{0}\relax 
@@ -94,34 +94,34 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.5.2}Tipologia I - Grafi Random - 5 nodi [$n=5$]}{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.3}Tipologia I - Grafi Random - 5 nodi [$n=5$] e 3 colori [$k=3$]}{66}
+\contentsline {subsection}{\numberline {4.5.3}Tipologia I - Grafi Random - 7 nodi [$n=7$]}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.4}Tipologia I - Grafi Random - 5 nodi [$n=5$] e probabilit\IeC {\`a} $0.70$ [$p=0.70$]}{66}
+\contentsline {subsection}{\numberline {4.5.4}Tipologia I - Grafi Random - 10 nodi [$n=10$]}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.5}Tipologia I - Grafi Random - 7 nodi [$n=7$]}{67}
+\contentsline {subsection}{\numberline {4.5.5}Tipologia I [fissando i 2 parametri $n$ e $k$]- Grafi Random - 5 nodi [$n=5$] e 3 colori [$k=3$]}{67}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.6}Tipologia I - Grafi Random - 10 nodi [$n=10$]}{67}
+\contentsline {subsection}{\numberline {4.5.6}Tipologia I [fissando i 2 parametri $n$ e $p$] - Grafi Random - 5 nodi [$n=5$] e probabilit\IeC {\`a} $0.70$ [$p=0.70$]}{67}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.6}Risultati sperimentazione - Tipologia II}{68}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.6.1}Tipologia II - Grafi Random - 15 nodi [$n=15$]}{69}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.2}Tipologia II - Grafi Random - 15 nodi [$n=15$] e 8 colori [$k=8$]}{69}
+\contentsline {subsection}{\numberline {4.6.2}Tipologia II - Grafi Random - 30 nodi [$n=30$]}{69}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.3}Tipologia II - Grafi Random - 15 nodi [$n=15$] e probabilit\IeC {\`a} $0.70$ [$p=0.70$]}{70}
+\contentsline {subsection}{\numberline {4.6.3}Tipologia II - Grafi Random - 45 nodi [$n=45$]}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.4}Tipologia II - Grafi Random - 30 nodi [$n=30$]}{71}
+\contentsline {subsection}{\numberline {4.6.4}Tipologia II - Grafi Random - 60 nodi [$n=60$]}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.5}Tipologia II - Grafi Random - 45 nodi [$n=45$]}{71}
+\contentsline {subsection}{\numberline {4.6.5}Tipologia II - Grafi Random - 75 nodi [$n=75$]}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.6}Tipologia II - Grafi Random - 60 nodi [$n=60$]}{72}
+\contentsline {subsection}{\numberline {4.6.6}Tipologia II - Grafi Random - 90 nodi [$n=90$]}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.7}Tipologia II - Grafi Random - 75 nodi [$n=75$]}{72}
+\contentsline {subsection}{\numberline {4.6.7}Tipologia II - Grafi Random - 100 nodi [$n=100$]}{72}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.8}Tipologia II - Grafi Random - 90 nodi [$n=90$]}{73}
+\contentsline {subsection}{\numberline {4.6.8}Tipologia II [fissando i 2 parametri $n$ e $k$] - Grafi Random - 15 nodi [$n=15$] e 8 colori [$k=8$]}{73}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.9}Tipologia II - Grafi Random - 100 nodi [$n=100$]}{73}
+\contentsline {subsection}{\numberline {4.6.9}Tipologia II [fissando i 2 parametri $n$ e $p$] - Grafi Random - 15 nodi [$n=15$] e probabilit\IeC {\`a} $0.70$ [$p=0.70$]}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Conclusioni}{74}
+\contentsline {section}{\numberline {4.7}Conclusioni}{75}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.8}Lavori futuri}{77}
