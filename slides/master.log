@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.8)  11 JUL 2018 10:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  12 JUL 2018 18:27
 entering extended mode
 **./master.tex
 (master.tex
@@ -1287,7 +1287,26 @@ italian.ldf    on input line 25.
 
 (master.nav) [1
 
-{C:/Users/valen/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+{C:/Users/valen/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+msa on input line 39.
+
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 39.
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
+line 39.
+
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sansmathaccent\ot1
+mathkerncmss.fd"
+File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+) [2
+
+] [3
 
 ]
 \tf@nav=\write6
@@ -1299,29 +1318,31 @@ italian.ldf    on input line 25.
 \tf@snm=\write8
 \openout8 = `master.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 42.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 42.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (master.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 42.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 42.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17570 strings out of 493305
- 333264 string characters out of 3129803
- 414088 words of memory out of 3000000
- 20731 multiletter control sequences out of 15000+200000
- 5759 words of font info for 21 fonts, out of 3000000 for 9000
+ 17675 strings out of 493305
+ 335962 string characters out of 3129802
+ 415088 words of memory out of 3000000
+ 20813 multiletter control sequences out of 15000+200000
+ 10697 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,14n,55p,775b,553s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmss10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmss12.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on master.pdf (2 pages, 45108 bytes).
+onts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/valen/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/valen/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on master.pdf (3 pages, 66832 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 5 named destinations out of 1000 (max. 500000)
+ 113 PDF objects out of 1000 (max. 8388607)
+ 7 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
