@@ -1,43 +1,19 @@
 \chapter{Sperimentazione}
 \justify
-In questo capitolo esplicheremo e descriveremo gli aspetti e le caratteristiche generali relative all'attività di sperimentazione.\\
-
-Inizieremo descrivendo in breve i moduli relativi alla generazione e alla lettura di grafi randomici situati all'interno dei 2 programmi implementati : generator.py e reader.py.\\
-
-Procederemo delineando un elenco delle assunzioni e delle decisioni compiute che riguardano in generale la modellazione del problema e nello specifico la costruzione e la tipologia dei grafi implementati.\\
-Queste rappresentano la base di partenza sulla quale è stata portata avanti l'attività di sperimentazione e sono fondamentali per comprendere meglio la parte concettuale e gli obiettivi dietro quest'ultima.\\
-
-L'ultima fase prevede la presentazione delle conclusioni associate ai risultati ottenuti, in relazione al problema in oggetto (gioco della k-colorazione generalizzata) e in relazione alla trattazione matematica e ai teoremi delineati all'interno del documento alla base di questo studio (Generalized Graph k-Coloring Games).\\
+In questo capitolo esplicheremo e descriveremo gli aspetti e le caratteristiche principali relative all'attività di sperimentazione. Inizieremo con una breve descrizione dei moduli relativi alla generazione e alla lettura di grafi randomici, situati all'interno dei 2 programmi implementati : generator.py e reader.py. Procederemo delineando un elenco delle assunzioni e delle decisioni compiute che riguardano in generale la modellazione del problema e nello specifico la costruzione e la tipologia dei grafi implementati. Queste rappresentano la base di partenza sulla quale è stata portata avanti l'attività di sperimentazione e sono fondamentali per comprendere meglio la parte concettuale e gli obiettivi dietro quest'ultima. L'ultima fase prevede la presentazione delle conclusioni associate ai risultati ottenuti, in relazione al problema in oggetto (\textit{Gioco della k-colorazione generalizzata}) e in relazione alla trattazione matematica e ai teoremi delineati all'interno del documento alla base di questo studio (\textit{Generalized Graph k-Coloring Games}).\\
 
 \section{Obiettivi}
 \justify
-Si specifica, in breve, che l'obiettivo primario dell'intera sperimentazione è quello di calcolare, misurare e analizzare il numero di passi compiuti dall'algoritmo ottimizzato per il calcolo degli equilibri di Nash sulle varie istanze di gioco della $k$-colorazione generalizzata modellate attraverso l'utilizzo di grafi randomici.\\
-A questo scopo ricordiamo che il problema di trovare un equilibrio di Nash per il gioco della $k$-colorazione generalizzata è PLS-Completo e dunque è interessante analizzare il numero di miglioramenti effettuati relativi alle varie dinamiche trovate sulle differenti istanze studiate.
-Inoltre specifichiamo che è stato svolto uno studio parallelo riguardante la validità della colorazione stabile in termini di benessere sociale utilitario ed egalitario. A questo proposito sono stati utilizzati i 2 algoritmi per il calcolo dell'ottimo con funzione di benessere sociale utilitario e egalitario. I suddetti algoritmi non prevedono alcuna strategia di ottimizzazione legata alle iterazioni e utilizzano un approccio a forza bruta che rende la computazione molto complessa. Ricordiamo che il problema di calcolare gli ottimi con funzioni di benessere sociale utilitario e egalitario appartiene alla classe NP.\\
-Per descrivere la lontananza del valore di benessere sociale utilitario o egalitario della colorazione stabile, dal valore di benessere sociale utilitario o egalitario della colorazione ottima, sono state utilizzate le definizioni di prezzo dell'anarchia sperimentale utilitario e egalitario, presentate in precedenza.\\
+Si specifica, in breve, che l'obiettivo primario dell'intera sperimentazione è quello di calcolare, misurare e analizzare il numero di passi compiuti dall'algoritmo ottimizzato per il calcolo degli equilibri di Nash sulle varie istanze di gioco della $k$-colorazione generalizzata, modellate attraverso l'utilizzo di grafi randomici. A questo scopo ricordiamo che il problema di trovare un equilibrio di Nash per il gioco della $k$-colorazione generalizzata è PLS-Completo e dunque è interessante analizzare il numero di miglioramenti effettuati relativi alle varie dinamiche trovate sulle differenti istanze studiate. Inoltre specifichiamo che è stato svolto uno studio parallelo riguardante la validità della colorazione stabile in termini di benessere sociale utilitario e egalitario. A questo proposito sono stati utilizzati i 2 algoritmi per il calcolo dell'ottimo con funzione di benessere sociale utilitario e egalitario. I suddetti algoritmi non prevedono alcuna strategia di ottimizzazione legata alle iterazioni e utilizzano un approccio brute force che rende la computazione molto complessa. Ricordiamo che il problema di calcolare gli ottimi con funzioni di benessere sociale utilitario e egalitario per il gioco della \(k\)-colorazione generalizzata appartiene alla classe NP. Per descrivere la lontananza del valore di benessere sociale utilitario e egalitario della colorazione stabile, dal valore di benessere sociale utilitario e egalitario della colorazione ottima, sono state utilizzate le definizioni di prezzo dell'anarchia sperimentale utilitario e egalitario, presentate in precedenza.\\
 
-\section{gnp\_random\_graph (grafo di Erdős-Rényi o grafo binomiale)}
+\section{\textit{gnp\_random\_graph} (grafo di Erdős-Rényi o grafo binomiale)}
 \justify
-Il principali oggetti matematici studiati durante l'attività di sperimentazione sono i grafi randomici.\\
-
-In particolare è stata dedicata una porzione del codice all'interno del programma generator.py per la creazione e la manipolazione di una specifica tipologia di grafo : il gnp\_random\_graph.\\
-
-Il gnp\_random\_graph, conosciuto anche come grafo di Erdős-Rényi o grafo binomiale, è l'oggetto attorno al quale ruota l'intera attività di implementazione.\\ Quest'ultimo appartiene alla classe Random Graphs.\\
-Tale classe è contenuta all'interno della libreria di generazione e manipolazione di grafi NetworkX, utilizzata durante l'attività di implementazione, come specificato nella sezione precedente.\\
-La tipologia di grafo gnp\_random\_graph, come delineato in precedenza, possiede dunque un costruttore di classe all'interno della suddetta libreria.\\
-
-Il costruttore di classe, opportunamente parametrizzato in modo automatico oppure grazie all'intervento attivo dell'utente, è stato utilizzato per la creazione delle varie istanze di questa tipologia di grafo.\\
-
-L'esecuzione dell'algoritmo di generazione comporta un complessità temporale pari a \(O(n^2)\), dunque un valore accettabile.\\
-Si cita in questo senso la presenza di algoritmi di generazione più rapidi correlati a differenti costruttori, come ad esempio l'algoritmo relativo alla tipologia fast\_gnp\_random\_graph, che, per valori piccoli di $p$ (probabilità di creare archi tra coppie di nodi), riesce a generare grafi sparsi in \(O(n+m)\).\\
-
-Dato che la medio-alta densità dei grafi rende più interessante lo studio trattato, è stato scelto di tralasciare questo tipo di costruttore alternativo e di utilizzare solo ed esclusivamente il costruttore gnp\_random\_graph per la generazione.\\
-
+Il principali oggetti matematici studiati durante l'attività di sperimentazione sono i grafi randomici. In particolare è stata dedicata una porzione del codice, all'interno del programma generator.py, per la creazione e la manipolazione di una specifica tipologia di grafo : il \textit{gnp\_random\_graph}. Il \textit{gnp\_random\_graph}, conosciuto anche come grafo di Erdős-Rényi o grafo binomiale, è l'oggetto attorno al quale ruota l'intera attività di implementazione. Quest'ultimo appartiene alla classe \textit{Random Graphs}. Tale classe è contenuta all'interno della libreria di generazione e manipolazione di grafi NetworkX, utilizzata durante l'attività di implementazione, come specificato nella sezione precedente. La tipologia di grafo \textit{gnp\_random\_graph}, come delineato in precedenza, possiede dunque un costruttore di classe all'interno della suddetta libreria. Il costruttore di classe, opportunamente parametrizzato in modo automatico oppure grazie all'intervento attivo dell'utente, è stato utilizzato per la creazione delle varie istanze di questa tipologia di grafo. L'esecuzione dell'algoritmo di generazione comporta un complessità temporale pari a \(O(n^2)\), dunque un valore accettabile. Si cita, in questo senso, la presenza di algoritmi di generazione più rapidi correlati a differenti costruttori, come ad esempio l'algoritmo relativo alla tipologia \textit{fast\_gnp\_random\_graph}, che, per valori piccoli di $p$ (probabilità di creare archi tra coppie di nodi), riesce a generare grafi sparsi in \(O(n+m)\). Dato che la medio-alta densità dei grafi rende più interessante lo studio trattato, si è scelto di tralasciare questo tipo di costruttore alternativo e di utilizzare solo ed esclusivamente il costruttore \textit{gnp\_random\_graph} per la generazione.\\
 Descriviamo ora le modalità di generazione per le esecuzioni in modalità SINGLE EXEC e in modalità MULTIPLE EXEC e procediamo con la delineazione delle assunzioni formulate durante la modellazione dei grafi creati.\\
 
-\subsection{Generazione gnp\_random\_graph)}
+\subsection{Generazione \textit{gnp\_random\_graph})}
 \justify
-Le funzioni per la generazione di grafi gnp\_random\_graph sono raggiungibili all'interno del programma generator.py selezionando la modalità di esecuzione MULTIPLE MODE e selezionando in seguito la classe gnp\_random\_graph.\\
+Le funzioni per la generazione di grafi \textit{gnp\_random\_graph} sono raggiungibili all'interno del programma generator.py selezionando la modalità di esecuzione MULTIPLE MODE e selezionando in seguito la classe \textit{gnp\_random\_graph}.\\
 
 All'utente è richiesto, come primo parametro, l'inserimento del numero di iterazioni da compiere, che corrispondono al numero di grafi da costruire all'interno del singolo processo di generazione corrente.\\
 
@@ -57,7 +33,7 @@ Tralasciando i dettagli trascurabili descritti all'interno della sezione relativ
 Quest'ultima è ottimizzata, cross-platform e presenta, come descritto in precedenza, primitive e funzioni appartenenti alla sola Standard Library del linguaggio Python.\\
 Ovviamente presenta le medesime caratteristiche dei moduli utilizzati e descritti in precedenza e dunque vengono accuratamente gestiti e evitati possibili conflitti tra i dati e problemi di inconsistenza.\\
 
-\subsection{Assunzioni generali}
+\section{Assunzioni generali}
 \justify
 In breve, durante l'attività di progettazione e programmazione riguardanti la sperimentazione, sono state effettuate alcune decisioni relative a quest'ultima e sono state formulate le seguenti assunzioni sulla base delle quali si è svolta l'intera analisi.\\
 
@@ -72,7 +48,7 @@ In breve, durante l'attività di progettazione e programmazione riguardanti la s
 	\item Il range all'interno del quale oscillano i valore dei profitti associati ai colori per ciascun giocatore, per ciascuna esecuzione, è definito per convenzione \(0 \geq p \geq 100\), con $p$ uguale ai profitti associati ai colori per ogni giocatore
 \end{itemize}
 
-\subsection{Tipologie di sperimentazione}
+\section{Tipologie di sperimentazione}
 \justify
 Le tipologie di sperimentazione effettuate sono le seguenti
 
