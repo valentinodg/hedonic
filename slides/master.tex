@@ -160,8 +160,8 @@ L'equilibrio di Nash rappresenta inoltre una \alert{soluzione stabile}, poiché 
 \frametitle{Assunzioni generali}
 Sperimentazione effettuata su \alert{grafi randomici} di tipo \textit{gnp\_random\_graph} (detti grafi di Erdős-Rényi o grafi binomiali) fissando il parametro \alert{$n$} [\alert{numero di nodi}] e fissando o facendo oscillare randomicamente i 2 parametri \alert{$k$} [\alert{numero di colori}, $2 \geq k \geq n$] e \alert{$p$} [\alert{probabilità di generare archi tra le coppie di nodi}, $0 \geq p \geq 1$]
 \begin{itemize}
-	\item \alert{Tipologia I} : calcolo degli ottimi con funzioni di benessere sociale utilitario e egalitario, calcolo dell'equilibrio di Nash, definizione del valore di benessere sociale utilitario e egalitario della colorazione stabile, definizione dei valori di prezzo dell'anarchia sperimentale utilitario e egalitario (su istanze piccole)
-	\item \alert{Tipologia II} : calcolo dell'equilibrio di Nash, definizione del valore di benessere sociale utilitario e egalitario della colorazione stabile (su istanze medio-grandi)
+	\item \alert{Tipologia I} : calcolo degli ottimi con funzioni di benessere sociale utilitario e egalitario, calcolo dell'equilibrio di Nash, definizione del valore di benessere sociale utilitario e egalitario della colorazione stabile, definizione dei valori di prezzo dell'anarchia sperimentale utilitario e egalitario (su istanze piccole, con limitatore temporale $t$)
+	\item \alert{Tipologia II} : calcolo dell'equilibrio di Nash, definizione del valore di benessere sociale utilitario e egalitario della colorazione stabile (su istanze medio-grandi, con limitatore temporale $t$)
 \end{itemize}
 \end{frame}
 
@@ -253,7 +253,7 @@ Sperimentazione effettuata su \alert{grafi randomici} di tipo \textit{gnp\_rando
 
 
 \begin{frame}
-\frametitle{Sperimentazione [$n=15$, $k=8$, random $0.40 \geq p \geq 1$]}
+\frametitle{Tipologia II [$n=15$, $k=8$, random $0.40 \geq p \geq 1$]}
 \begin{table}[H]
 \centering
 \scalebox{1} {
@@ -275,7 +275,39 @@ Sperimentazione effettuata su \alert{grafi randomici} di tipo \textit{gnp\_rando
 
 
 \begin{frame}
-\frametitle{Sperimentazione [$n=15$, $p=0.70$, random $2 \geq k \geq 15$]}
+\frametitle{Tipologia II [$n=15$, $p=0.70$, random $2 \geq k \geq 15$]}
+\begin{table}[H]
+\centering
+\scalebox{1} {
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{\textbf{}} & \multicolumn{3}{c|}{\textbf{\color{orange}nash}} & \textbf{} \\ \hline
+\textbf{\alert{k}} & \textbf{a} & \textbf{step} & \textbf{utilitarian} & \textbf{egalitarian} & \textbf{t} \\ \hline
+2 & 82 & 7 & 5929 & 267 & 1 \\ \hline
+3 & 82 & 14 & 7648 & 340 & 1 \\ \hline
+4 & 82 & 15 & 8677 & 375 & 1 \\ \hline
+5 & 82 & 21 & 8742 & 394 & 1 \\ \hline
+6 & 82 & 21 & 9072 & 414 & 1 \\ \hline
+7 & 82 & 22 & 9219 & 402 & 1 \\ \hline
+8 & 82 & 11 & 9093 & 398 & 1 \\ \hline
+9 & 82 & 16 & 9340 & 420 & 1 \\ \hline
+10 & 82 & 21 & 9361 & 430 & 1 \\ \hline
+11 & 82 & 18 & 9475 & 444 & 1 \\ \hline
+12 & 82 & 19 & 9510 & 413 & 1 \\ \hline
+13 & 82 & 14 & 9561 & 436 & 1 \\ \hline
+14 & 82 & 20 & 9631 & 444 & 1 \\ \hline
+15 & 82 & 19 & 9581 & 443 & 1 \\ \hline
+\end{tabular}
+}
+\end{table}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conclusioni}
+\begin{itemize}
+	\item Conclusioni
+\end{itemize}
 \end{frame}
 
 
