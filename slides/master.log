@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.8)  13 JUL 2018 16:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  13 JUL 2018 17:58
 entering extended mode
 **./master.tex
 (master.tex
@@ -1324,6 +1324,8 @@ thkerncmss.
 
 ] [11
 
+] [12
+
 ]
 \tf@nav=\write6
 \openout6 = `master.nav'.
@@ -1334,19 +1336,19 @@ thkerncmss.
 \tf@snm=\write8
 \openout8 = `master.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
  (master.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17720 strings out of 493305
- 336499 string characters out of 3129803
+ 17724 strings out of 493305
+ 336534 string characters out of 3129802
  417069 words of memory out of 3000000
- 20841 multiletter control sequences out of 15000+200000
+ 20843 multiletter control sequences out of 15000+200000
  11053 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,14n,55p,775b,553s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1361,9 +1363,9 @@ n/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb>
 m/cmssi8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmsy10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (11 pages, 150760 bytes).
+Output written on master.pdf (12 pages, 156470 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 23 named destinations out of 1000 (max. 500000)
+ 361 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
