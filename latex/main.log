@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  12 JUL 2018 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  13 JUL 2018 17:09
 entering extended mode
 **./main.tex
 (main.tex
@@ -1936,25 +1936,20 @@ Overfull \hbox (0.16467pt too wide) in paragraph at lines 69--69
 ]
 \openout2 = `acknowledgments.aux'.
 
- (acknowledgments.tex
-
-Package blindtext Warning: italian not defined, using English instead.
-(blindtext)                 on input line 4.
-
-) [80
+ (acknowledgments.tex) [80
 
 
-] (main.aux (front.aux) (chapter_1.aux) (chapter_2.aux) (chapter_3.aux)
-(chapter_4.aux) (acknowledgments.aux))
+] (main.aux (front.aux) (chapter_1.aux)
+(chapter_2.aux) (chapter_3.aux) (chapter_4.aux) (acknowledgments.aux))
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12040 strings out of 493305
- 202126 string characters out of 3129802
+ 12039 strings out of 493305
+ 202109 string characters out of 3129802
  473960 words of memory out of 3000000
- 15338 multiletter control sequences out of 15000+200000
+ 15337 multiletter control sequences out of 15000+200000
  19472 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,11n,45p,3905b,2361s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1981,7 +1976,7 @@ ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/valen/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Us
 ers/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/doublestroke/dsr
 om10.pfb>
-Output written on main.pdf (81 pages, 545460 bytes).
+Output written on main.pdf (81 pages, 546584 bytes).
 PDF statistics:
  343 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
