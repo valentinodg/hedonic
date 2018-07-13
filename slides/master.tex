@@ -23,42 +23,122 @@
 \date{Anno Accademico 2017/2018}
 %\logo{\includegraphics[height=1.3cm]{univaqlogowb.png}}
 
+
 \begin{document}
+
 
 \frame{\titlepage}
 
+
 \begin{frame}
-
 \frametitle{Obiettivi della sperimentazione}
-
 \begin{itemize}
 	\item Calcolo degli equilibri di Nash per il gioco della $k$-colorazione generalizzata
 	\item Analisi delle performance dell'algoritmo per il calcolo delle soluzioni Nash-stabili effettuata attraverso la determinazione del numero di step relativi alle dinamiche di miglioramento
 	\item Valutazione del benessere sociale utilitario e egalitario delle soluzioni Nash-stabili in relazione con il benessere sociale utilitario e egalitario delle soluzioni ottime, utilizzando le definizioni di prezzo dell'anarchia sperimentale utilitario e egalitario
 \end{itemize}
-
 \end{frame}
 
+
 \begin{frame}
-
 \frametitle{Teoria dei giochi e giochi non-cooperativi}
-
 La \alert{teoria dei giochi} è la disciplina scientifica che si occupa dello studio del comportamento e dei processi decisionali di soggetti razionali in un contesto di interdipendenza strategica. L'analisi è incentrata sugli scenari caratterizzati dalla presenza di situazioni di conflitto nelle quali gli attori sono costretti ad intraprendere strategie di cooperazione o competizione.\medskip
 
 I \alert{giochi non-cooperativi} definiscono una specifica classe di giochi nella quale i giocatori non possono stipulare accordi vincolanti di cooperazione, anche normativamente.\medskip
 
 Il criterio di comportamento razionale adottato nei giochi non-cooperativi è di carattere individuale ed è denominato \alert{strategia del massimo}. Tale definizione di razionalità va modellare il comportamento di un individuo intelligente e ottimista che si prefigge l'obiettivo di prendere sempre la decisione più vantaggiosa per se stesso.
-
 \end{frame}
+
 
 \begin{frame}
+\frametitle{Equilibri di Nash}
+L'equilibrio di Nash è una combinazione di strategie nella quale ciascun giocatore effettua la migliore scelta possibile, seguendo cioè una \alert{strategia dominante}, sulla base delle aspettative di scelta degli altri giocatori.\medskip
 
-\frametitle{Frame teorema}
- 
-\begin{alertblock}{Important theorem}
-Sample text in red box
-\end{alertblock}
- 
+L'equilibrio di Nash rappresenta un \alert{concetto di soluzione} robusto per i giochi non-cooperativi.\medskip
+
+L'equilibrio di Nash rappresenta inoltre una \alert{soluzione stabile}, poiché nessun giocatore ha interesse a deviare unilateralmente modificando la propria strategia.
 \end{frame}
+
+
+\begin{frame}
+\frametitle{Definizione formale I}
+\begin{itemize}
+	\item Sia $G$ l'insieme dei \alert{giocatori}, che indicheremo con $i=1,\ldots,N$
+	\item Sia $S$ l'insieme delle \alert{strategie}, costituito da un set di \(M\) vettori $S_{i}=\left(s_{{i,1}},s_{{i,2}},\ldots,s_{{i,j}},\ldots,s_{{i,M_{i}}}\right)$, ciascuno dei quali contiene l'insieme delle strategie che il giocatore \textit{i-esimo} ha a disposizione, cioè l'insieme delle azioni che esso può compiere (indichiamo con $s_i$ la strategia scelta dal giocatore $i$)
+	\item Sia $U$ l'insieme delle \alert{funzioni} $u_{i}=U_{i}\left(s_{1},s_{2},\ldots,s_{i},\ldots,s_{N}\right)$ che associano ad ogni giocatore $i$ il guadagno (detto anche payoff) $u_i$ derivante da una data combinazione di strategie (il guadagno di un giocatore in generale non dipende solo dalla propria strategia ma anche dalle strategie scelte dagli avversari) 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Definizione formale II}
+\begin{itemize}
+	\item Un \alert{equilibrio di Nash} per un dato gioco è una combinazione di strategie (che indichiamo con l'apice $e$) \[s_{1}^{e},s_{2}^{e},...,s_{N}^{e}\] tale che \[U_{i}\left(s_{1}^{e},s_{2}^{e},...,s_{i}^{e},...,s_{N}^{e}\right)\geq U_{i}\left(s_{1}^{e},s_{2}^{e},...,s_{i},...,s_{N}^{e}\right)\] $\forall i$ e $\forall s_i$ scelta dal giocatore \textit{i-esimo}.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Descrizione del modello}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Nozioni sul problema}
+\begin{itemize}
+	\item Il problema di calcolare un equilibrio di Nash su grafi non-orientati pesati è \alert{PLS-Completo}, anche per $k=2$, dato che il gioco del taglio massimo [Max-Cut Game] è un caso speciale del nostro gioco
+	\item Se $k=2$ e i profitti sono impostati a $0$, otteniamo il \alert{gioco del taglio massimo}, celebre gioco PLS-Completo ampiamente trattato in letteratura
+	\item Se i profitti sono impostati a $0$, otteniamo il \alert{gioco della $k$-colorazione}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Risultati teorici}
+	\begin{alertblock}{Proposizione 1}
+		$\forall k$, ogni gioco della $k$-colorazione generalizzata $(G,K,P)$ finito è convergente
+	\end{alertblock}
+	\begin{alertblock}{Teorema 1}
+		Il prezzo dell'anarchia per il gioco della $k$-colorazione generalizzata è al più $2$ 
+	\end{alertblock}	
+	\begin{alertblock}{Teorema 2}
+		Il prezzo dell'anarchia utilitario per il gioco della $k$-colorazione generalizzata è almeno $2$, anche per il caso speciale di grafi stella non-pesati
+	\end{alertblock}	
+	\begin{alertblock}{Teorema 3}
+		Il prezzo dell'anarchia egalitario per il gioco della $k$-colorazione generalizzata è $2$ 
+	\end{alertblock}	
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementazione I}
+\begin{itemize}
+	\item Utilizzo del linguaggio \alert{Python} [Standard Library]
+	\item Utilizzo della libreria di creazione e manipolazione di grafi \alert{NetworkX} [e altre minori]
+	\item Costruzione dei moduli per la generazione e per la lettura asincrona di grafi [\textit{generator.py}, \textit{reader.py}]
+	\item Utilizzo di \alert{strutture dati} efficenti come \textit{liste} e \textit{dizionari} sia in forma singola che innestata [\textit{single or nested list and dictionary comprehension}]
+	\item Implementazione degli \alert{algoritmi per il calcolo dell'ottimo} con funzioni di benessere sociale utilitario e egalitario utilizzando una strategia incentrata sulla forza bruta [privi di tecniche di ottimizzazione delle iterazioni]
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementazione II}
+\begin{itemize}
+	\item Implementazione dell'\alert{algoritmo per il calcolo della colorazione stabile} seguendo la definizione di equilbrio di Nash utilizzando 3 importanti strategie di ottimizzazione
+	\item Strategia per il calcolo della \textit{\alert{best move}} per ciascun nodo, in modo da minimizzare il valore relativo agli step totali effettuati dall'algoritmo durante la ricerca della dinamica [incremento della complessità computazionale]
+	\item Doppia strategia per il salto delle iterazioni basata sul controllo dei colori e dei miglioramenti effettuati [abbattimento della complessità computazionale]
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
