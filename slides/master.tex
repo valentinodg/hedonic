@@ -3,6 +3,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 
+\usepackage{dsfont}
+
+
 %\usepackage{graphicx}
 %\graphicspath{ {./img/} }
 
@@ -35,7 +38,7 @@
 \begin{itemize}
 	\item Calcolo degli equilibri di Nash per il gioco della $k$-colorazione generalizzata
 	\item Analisi delle performance dell'algoritmo per il calcolo delle soluzioni Nash-stabili effettuata attraverso la determinazione del numero di step relativi alle dinamiche di miglioramento
-	\item Valutazione del benessere sociale utilitario e egalitario delle soluzioni Nash-stabili in relazione con il benessere sociale utilitario e egalitario delle soluzioni ottime, utilizzando le definizioni di prezzo dell'anarchia sperimentale utilitario e egalitario
+	\item Valutazione del benessere sociale utilitario e egalitario delle soluzioni Nash-stabili in relazione con il benessere sociale utilitario e egalitario delle soluzioni ottime, utilizzando le definizioni di prezzo dell'anarchia sperimentale utilitario e egalitario [descrive il prezzo dell'anarchia nel caso medio]
 \end{itemize}
 \end{frame}
 
@@ -79,9 +82,27 @@ L'equilibrio di Nash rappresenta inoltre una \alert{soluzione stabile}, poiché 
 
 
 \begin{frame}
-\frametitle{Descrizione del modello}
+\frametitle{Descrizione del modello I}
 \begin{itemize}
-	\item 
+	\item Un'\alert{istanza} di gioco della $k$-colorazione generalizzata è una tupla $(G,K,P)$
+	\item $G=(V,E,w)$ è un \alert{grafo} non-orientato pesato (senza self-loops e parallelismo degli archi), dove $|V|=n$, $|E|=m$ e $w : E\rightarrow\mathds{R}_{\geq 0}$ è la \alert{funzione} che associa un \alert{peso} intero positivo a ciascun arco [ogni $v \in V$ è un giocatore egoista]
+	\item $K$ è un insieme di $k$ \alert{colori} disponibili (strategie), assumiamo $k\geq2$ [ciascun giocatore hai il medesimo set di azioni disponibili]
+	\item Sia $P : V \times K \rightarrow \mathds{R}_{\geq 0}$ la \alert{funzione} che associa un \alert{profitto} a ciascun colore per ciascun giocatore [se il giocatore $v$ sceglie di usare il colore $i$ allora guadagna $P_v (i)$]
+	\item Uno \alert{stato del gioco} è una $k$-colorazione $c = \{c_1,\ldots,c_n\}$ [$c_v$, con $1 \leq c_v \leq k$, è il colore scelto dal giocatore $v$ in $c$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Descrizione del modello II}
+\begin{itemize}
+	\item Il \alert{payoff} (utilità) del giocatore $v$ nella colorazione $c$ è $\mu_c (v) = \sum_{u \in V:\{v, u\} \in E \wedge c_v \neq c_u} w(\{v, u\}) + P_v(c_v)$
+	\item Data una colorazione $c$, una \alert{mossa migliorativa} del giocatore $v$ è una strategia $c'_v$ tale che $\mu_{(c_{-v}, c_v^{\prime})} (v) > \mu_c (v)$
+	\item Una \alert{dinamica di miglioramento} è una sequenza di mosse migliorative
+	\item Una colorazione $c$ è un \alert{equilibrio di Nash} se $\mu_c (v) \geq \mu_{(c_{-v}, c_v^{\prime})} (v)$
+	\item \alert{Funzione di benessere sociale utilitario} : $SW_{UT} (c) = \sum_{v \in V} \mu_c (v) = \sum_{v \in V} P_v(c_v) + \sum_{\{v, u\} \in E : c_v \neq c_u} 2w(\{v, u\})$
+	\item \alert{Funzione di benessere sociale egalitario} : $SW_{EG} (c) = min_{v \in V} \mu_c (v)$
+	\item \alert{Prezzo dell'anarchia} : $PoA = \frac{max_{c \in C} SW(c)}{min_{c^{\prime} \in Q} SW(c^{\prime})}$
 \end{itemize}
 \end{frame}
 
@@ -121,6 +142,26 @@ L'equilibrio di Nash rappresenta inoltre una \alert{soluzione stabile}, poiché 
 	\item Costruzione dei moduli per la generazione e per la lettura asincrona di grafi [\textit{generator.py}, \textit{reader.py}]
 	\item Utilizzo di \alert{strutture dati} efficenti come \textit{liste} e \textit{dizionari} sia in forma singola che innestata [\textit{single or nested list and dictionary comprehension}]
 	\item Implementazione degli \alert{algoritmi per il calcolo dell'ottimo} con funzioni di benessere sociale utilitario e egalitario utilizzando una strategia incentrata sulla forza bruta [privi di tecniche di ottimizzazione delle iterazioni]
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementazione II}
+\begin{itemize}
+	\item Implementazione dell'\alert{algoritmo per il calcolo della colorazione stabile} seguendo la definizione di equilbrio di Nash utilizzando 3 importanti strategie di ottimizzazione
+	\item Strategia per il calcolo della \textit{\alert{best move}} per ciascun nodo, in modo da minimizzare il valore relativo agli step totali effettuati dall'algoritmo durante la ricerca della dinamica [incremento della complessità computazionale]
+	\item Doppia strategia per il salto delle iterazioni basata sul controllo dei colori e dei miglioramenti effettuati [abbattimento della complessità computazionale]
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implementazione II}
+\begin{itemize}
+	\item Implementazione dell'\alert{algoritmo per il calcolo della colorazione stabile} seguendo la definizione di equilbrio di Nash utilizzando 3 importanti strategie di ottimizzazione
+	\item Strategia per il calcolo della \textit{\alert{best move}} per ciascun nodo, in modo da minimizzare il valore relativo agli step totali effettuati dall'algoritmo durante la ricerca della dinamica [incremento della complessità computazionale]
+	\item Doppia strategia per il salto delle iterazioni basata sul controllo dei colori e dei miglioramenti effettuati [abbattimento della complessità computazionale]
 \end{itemize}
 \end{frame}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  13 JUL 2018 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.10)  13 JUL 2018 19:04
 entering extended mode
 **./master.tex
 (master.tex
@@ -1088,29 +1088,33 @@ LaTeX Info: Redefining \textlatin on input line 1839.
 \it@doublequoteactive=\count157
 \it@ISOcompliance=\count158
 ))
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\doublestroke\dsfon
+t.sty"
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamertheme
 Default.sty")
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfill' on input line 21.
+(hyperref)                removing `\hfill' on input line 24.
 
 (master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1178,7 +1182,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 30.
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -1190,65 +1194,65 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count165
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
  (master.out) (master.out)
 \@outlinefile=\write5
 \openout5 = `master.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 27.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 30.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 27.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 30.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 27.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 27.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 27.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 30.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 27.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 27.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 30.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 27.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 27.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 30.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 27.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 27.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 30.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 27.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 30.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 27.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 27.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 27.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 27.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 27.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 27.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 27.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 30.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 2
-7.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 3
+0.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-27.
+30.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 27.
+ut line 30.
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transla
 tor-basic-dictionary-English.dict"
@@ -1274,8 +1278,8 @@ Dictionary: translator-numbers-dictionary, Language: English
 tor-theorem-dictionary-English.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \it@ocap on input line 27.
-LaTeX Info: Redefining \it@ccap on input line 27.
+LaTeX Info: Redefining \it@ocap on input line 30.
+LaTeX Info: Redefining \it@ccap on input line 30.
 
 
 File italian.ldf warning: 
@@ -1283,22 +1287,22 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 27.
+italian.ldf    on input line 30.
 
 (master.nav) [1
 
 {C:/Users/valen/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+LaTeX Font Info:    Try loading font information for U+msa on input line 43.
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 43.
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 40.
+line 43.
 
 ("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sansmathaccent\ot1
 mathkerncmss.fd"
@@ -1314,7 +1318,13 @@ thkerncmss.
 
 ] [6
 
-] [7
+]
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 93.
+
+("C:\Users\valen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\doublestroke\udsro
+m.fd"
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+) [7
 
 ] [8
 
@@ -1326,6 +1336,12 @@ thkerncmss.
 
 ] [12
 
+] [13
+
+] [14
+
+] [15
+
 ]
 \tf@nav=\write6
 \openout6 = `master.nav'.
@@ -1336,36 +1352,41 @@ thkerncmss.
 \tf@snm=\write8
 \openout8 = `master.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
  (master.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17724 strings out of 493305
- 336534 string characters out of 3129802
- 417069 words of memory out of 3000000
- 20843 multiletter control sequences out of 15000+200000
- 11053 words of font info for 40 fonts, out of 3000000 for 9000
+ 17755 strings out of 493305
+ 337218 string characters out of 3129802
+ 419195 words of memory out of 3000000
+ 20859 multiletter control sequences out of 15000+200000
+ 11341 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,14n,55p,775b,553s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmi10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmmi8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/valen/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/valen/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/vale
-n/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb>
-<C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmssi8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on master.pdf (12 pages, 156470 bytes).
+/cm/cmex10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/valen/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/valen/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/val
+en/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><
+C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmssi10.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmssi8.pfb><C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/valen/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/valen/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/valen/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/doublestroke/dsrom10.pfb><
+C:/Users/valen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/sy
+mbols/msam10.pfb>
+Output written on master.pdf (15 pages, 207781 bytes).
 PDF statistics:
- 361 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
+ 454 PDF objects out of 1000 (max. 8388607)
+ 31 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
