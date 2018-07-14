@@ -140,7 +140,7 @@ L'equilibrio di Nash rappresenta inoltre una \alert{soluzione stabile}, poiché 
 	\item Utilizzo del linguaggio \alert{Python} [Standard Library]
 	\item Utilizzo della libreria di creazione e manipolazione di grafi \alert{NetworkX} [e altre minori]
 	\item Costruzione dei moduli per la generazione e per la lettura asincrona di grafi [\textit{generator.py}, \textit{reader.py}]
-	\item Utilizzo di \alert{strutture dati} efficenti come \textit{liste} e \textit{dizionari} sia in forma singola che innestata [\textit{single or nested list and dictionary comprehension}]
+	\item Utilizzo di \alert{strutture dati} efficienti come \textit{liste} e \textit{dizionari} sia in forma singola che innestata [\textit{single or nested list and dictionary comprehension}]
 	\item Implementazione degli \alert{algoritmi per il calcolo dell'ottimo} con funzioni di benessere sociale utilitario e egalitario utilizzando una strategia incentrata sulla forza bruta [privi di tecniche di ottimizzazione delle iterazioni]
 \end{itemize}
 \end{frame}
@@ -150,8 +150,8 @@ L'equilibrio di Nash rappresenta inoltre una \alert{soluzione stabile}, poiché 
 \frametitle{Implementazione II}
 \begin{itemize}
 	\item Implementazione dell'\alert{algoritmo per il calcolo della colorazione stabile} seguendo la definizione di equilbrio di Nash utilizzando 3 importanti strategie di ottimizzazione
-	\item Strategia per il calcolo della \textit{\alert{best move}} per ciascun nodo, in modo da minimizzare il valore relativo agli step totali effettuati dall'algoritmo durante la ricerca della dinamica [incremento della complessità computazionale]
-	\item Doppia strategia per il salto delle iterazioni basata sul controllo dei colori e dei miglioramenti effettuati [abbattimento della complessità computazionale]
+	\item \alert{Strategia} per il calcolo della \textit{\alert{best move}} per ciascun nodo, in modo da minimizzare il valore relativo agli step totali effettuati dall'algoritmo durante la ricerca della dinamica [incremento della complessità computazionale]
+	\item \alert{Doppia strategia} per il \alert{salto delle iterazioni} basata sul controllo dei colori e dei miglioramenti effettuati [abbattimento della complessità computazionale]
 \end{itemize}
 \end{frame}
 
@@ -304,9 +304,23 @@ Sperimentazione effettuata su \alert{grafi randomici} di tipo \textit{gnp\_rando
 
 
 \begin{frame}
-\frametitle{Conclusioni}
+\frametitle{Conclusioni I}
 \begin{itemize}
-	\item Conclusioni
+	\item La \alert{complessità computazionale} relativa al calcolo degli \alert{ottimi} cresce in modo esponenziale al \alert{crescere} del valore di \alert{$k$} (fissato $n$), poiché il numero di colorazioni (permutazioni) da analizzare è uguale a \alert{$k^n$}, evidenziando così l'appartenenza di questo problema all'insieme NP 
+	\item Quest'ultima è influenzata inoltre dal valore del \alert{parametro $p$}, infatti un alto valore di \alert{densità} del grafo genera un forte grado di connessione che produce un aumento significativo del numero delle \alert{iterazioni innestate} 
+	\item Le sperimentazioni su \alert{istanze} di dimensioni \alert{modeste} hanno prodotto, in misura maggiore, \alert{risultati ottimi} [\alert{$=1$}] relativi al \alert{prezzo dell'anarchia sperimentale} utilitario e egalitario
+	\item Il \alert{limitatore temporale t} relativo alle esecuzioni è influenzato in modo significativo e diretto dal \alert{crescere} del \alert{numero di nodi $n$}, l'oscillazione di $k$ e $p$ non causa variazioni degne di nota dunque è sufficiente assegnare un \alert{set omogeneo} di valori per $t$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conclusioni II}
+\begin{itemize}
+	\item La \alert{complessità computazionale} relativa all'algoritmo per il calcolo degli \alert{equilibri di Nash} è influenzata direttamente dal crescere del \alert{parametro $k$} e dal \alert{parametro $p$} che generano un aumento significativo delle iterazioni innestate
+	\item Riguardo le sperimentazioni con \alert{doppio parametro fisso} ($n$ e $k$ o $n$ e $p$) notiamo, la \alert{crescere} dei valori randomici di \alert{$p$} e \alert{$k$} rispettivamente, un generale e progressivo aumento di tutti i valori relativi al calcolo degli \alert{ottimi} e degli \alert{equilibri}, in particolare del parametro \textit{\alert{step}}, ovvero il numero di passi che compongono le dinamiche
+	\item In generale si evidenzia un \alert{aumento} dei valori legati al benessere sociale \alert{utilitario} al crescere di \alert{$n$}
+	\item Inoltre si evidenzia un \alert{aumento} dei valori legati al benessere sociale \alert{egalitario} al crescere di \alert{$p$} [risultato puramente connesso alla sperimentazione in oggetto poiché le variabili sono molteplici]
 \end{itemize}
 \end{frame}
 
