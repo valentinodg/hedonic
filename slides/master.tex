@@ -5,7 +5,6 @@
 
 \usepackage{dsfont}
 
-
 %\usepackage{graphicx}
 %\graphicspath{ {./img/} }
 
@@ -16,7 +15,7 @@
 \setbeamercolor{block title alerted}{fg=white,bg=black}
 \setbeamercolor{block body alerted}{fg=black, bg=gray!40}
 \setbeamercolor{alerted text}{fg=red}
-\setbeamercolor{background canvas}{bg=gray!10}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamertemplate{itemize item}{\color{black}$\blacktriangleright$}
 
 
@@ -160,7 +159,9 @@ I \alert{giochi non-cooperativi} definiscono una specifica classe di giochi nell
 
 \begin{frame}
 \frametitle{Assunzioni generali}
-Sperimentazione effettuata su \alert{grafi randomici} di tipo \textit{gnp\_random\_graph} (detti grafi di Erdős-Rényi o grafi binomiali) fissando il parametro \alert{$n$} [\alert{numero di nodi}] e fissando o facendo oscillare randomicamente i 2 parametri \alert{$k$} [\alert{numero di colori}, $2 \geq k \geq n$] e \alert{$p$} [\alert{probabilità di generare archi tra le coppie di nodi}, $0 \geq p \geq 1$]
+Sperimentazione effettuata su \alert{grafi randomici} di tipo \textit{gnp\_random\_graph} (detti grafi di Erdős-Rényi o grafi binomiali)\medskip
+
+Fissando il parametro \alert{$n$} [\alert{numero di nodi}] e fissando o facendo oscillare randomicamente i 2 parametri \alert{$k$} [\alert{numero di colori}, $2 \geq k \geq n$] e \alert{$p$} [\alert{probabilità di generare archi tra le coppie di nodi}, $0 \geq p \geq 1$] [sono stati utilizzati \alert{valori interi positivi randomici} per i \alert{pesi} sugli archi e per i \alert{profitti} associati ai colori]
 \begin{itemize}
 	\item \alert{Tipologia I} : calcolo degli ottimi con funzioni di benessere sociale utilitario e egalitario, calcolo dell'equilibrio di Nash, definizione del valore di benessere sociale utilitario e egalitario della colorazione stabile, definizione dei valori di prezzo dell'anarchia sperimentale utilitario e egalitario (su istanze piccole, con limitatore temporale $t$)
 	\item \alert{Tipologia II} : calcolo dell'equilibrio di Nash, definizione del valore di benessere sociale utilitario e egalitario della colorazione stabile (su istanze medio-grandi, con limitatore temporale $t$)
