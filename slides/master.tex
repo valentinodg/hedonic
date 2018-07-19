@@ -151,7 +151,7 @@ I \alert{giochi non-cooperativi} definiscono una specifica classe di giochi nell
 \frametitle{Implementazione II}
 \begin{itemize}
 	\item Implementazione dell'\alert{algoritmo per il calcolo della colorazione stabile} seguendo la definizione di equilibrio di Nash utilizzando 3 importanti strategie di ottimizzazione
-	\item \alert{Strategia} per il calcolo della \textit{\alert{best move}} per ciascun nodo, in modo da minimizzare il valore relativo agli step totali effettuati dall'algoritmo durante la ricerca della dinamica [incremento della complessità computazionale]
+	\item \alert{Strategia} per il calcolo della \textit{\alert{best move}} [miglioramento locale ottimo] per ciascun nodo, in modo da minimizzare il valore relativo agli step totali effettuati dall'algoritmo durante la ricerca della dinamica [incremento della complessità computazionale]
 	\item \alert{Doppia strategia} per il \alert{salto delle iterazioni} basata sul controllo dei colori e dei miglioramenti effettuati [abbattimento della complessità computazionale]
 \end{itemize}
 \end{frame}
@@ -309,7 +309,7 @@ Fissando il parametro \alert{$n$} [\alert{numero di nodi}] e fissando o facendo 
 \begin{frame}
 \frametitle{Conclusioni I}
 \begin{itemize}
-	\item La \alert{complessità computazionale} relativa al calcolo degli \alert{ottimi} cresce in modo esponenziale al \alert{crescere} del valore di \alert{$k$} (fissato $n$), poiché il numero di colorazioni (permutazioni) da analizzare è uguale a \alert{$k^n$}, evidenziando così l'appartenenza di questo problema all'insieme NP 
+	\item La \alert{complessità computazionale} relativa al calcolo degli \alert{ottimi} cresce in modo esponenziale al \alert{crescere} del valore di \alert{$k$} (fissato $n$), poiché il numero di colorazioni (permutazioni) da analizzare è uguale a \alert{$k^n$}, evidenziando così l'appartenenza di questi problemi all'insieme NP 
 	\item Quest'ultima è influenzata inoltre dal valore del \alert{parametro $p$}, infatti un alto valore di \alert{densità} del grafo genera un forte grado di connessione che produce un aumento significativo del numero delle \alert{iterazioni innestate} 
 	\item Le sperimentazioni su \alert{istanze} di dimensioni \alert{modeste} hanno prodotto, in misura maggiore, \alert{risultati ottimi} [\alert{$=1$}] relativi al \alert{prezzo dell'anarchia sperimentale} utilitario e egalitario
 	\item Il \alert{limitatore temporale t} relativo alle esecuzioni è influenzato in modo significativo e diretto dal \alert{crescere} del \alert{numero di nodi $n$}, l'oscillazione di $k$ e $p$ non causa variazioni degne di nota dunque è sufficiente assegnare un \alert{set omogeneo} di valori per $t$
@@ -321,7 +321,7 @@ Fissando il parametro \alert{$n$} [\alert{numero di nodi}] e fissando o facendo 
 \frametitle{Conclusioni II}
 \begin{itemize}
 	\item La \alert{complessità computazionale} relativa all'algoritmo per il calcolo degli \alert{equilibri di Nash} è influenzata direttamente dal crescere del \alert{parametro $k$} e dal \alert{parametro $p$} che generano un aumento significativo delle iterazioni innestate
-	\item Riguardo le sperimentazioni con \alert{doppio parametro fisso} ($n$ e $k$ o $n$ e $p$) notiamo, la \alert{crescere} dei valori randomici di \alert{$p$} e \alert{$k$} rispettivamente, un generale e progressivo aumento di tutti i valori relativi al calcolo degli \alert{ottimi} e degli \alert{equilibri}, in particolare del parametro \textit{\alert{step}}, ovvero il numero di passi che compongono le dinamiche
+	\item Riguardo le sperimentazioni con \alert{doppio parametro fisso} ($n$ e $k$ o $n$ e $p$) notiamo, al \alert{crescere} dei valori randomici di \alert{$p$} e \alert{$k$} rispettivamente, un generale e progressivo aumento di tutti i valori relativi al calcolo degli \alert{ottimi} e degli \alert{equilibri}, in particolare del parametro \textit{\alert{step}}, ovvero il numero di passi che compongono le dinamiche
 	\item In generale si evidenzia un \alert{aumento} dei valori legati al benessere sociale \alert{utilitario} al crescere di \alert{$n$}
 	\item Inoltre si evidenzia un \alert{aumento} dei valori legati al benessere sociale \alert{egalitario} al crescere di \alert{$p$} [risultato puramente connesso alla sperimentazione in oggetto poiché le variabili sono molteplici]
 \end{itemize}
