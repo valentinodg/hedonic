@@ -78,7 +78,7 @@ Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/d
 * using **NetworkX Library** (*NetworkX 2.1*) [https://pypi.org/project/networkx/]
 * using **Colorama Library** (*Colorama 0.3.9*) [https://pypi.org/project/colorama/]
 
-## DOCUMENT (INCOMPLETE)
+## DOCUMENT (COMPLETE)
 
 Written in **LaTeX** (*LaTeX 3*) [https://www.latex-project.org/get/]
 
