@@ -3,6 +3,11 @@
 * MODIFIED FRACTIONAL HEDONIC GAMES
 * GENERALIZED GRAPH K-COLORING GAMES ***
 
+## !!!
+The code is intentionally not optimized in the structure and organization (for example, the use of functions is absent) and some of its parts are redundant (for example, only probabilistic random graphs and cliques were used for experimentation).
+
+The exploration, understanding and formulation of the mathematical and theoretical aspects of the problem in question (computability and complexity theory, algorithms and data structures, graph theory, social networks, etc.) represent the main part of this thesis project.
+
 ## GRAPH GENERATOR (COMPLETE)
 
 Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/downloads/]
@@ -50,7 +55,7 @@ Written in **Python** (*Python 3.6.5 - Python 2.7.14*) [https://www.python.org/d
 * using **NetworkX Library** (*NetworkX 2.1*) [https://pypi.org/project/networkx/]
 * using **Colorama Library** (*Colorama 0.3.9*) [https://pypi.org/project/colorama/]
 
-## DOCUMENT (COMPLETE)
+## DOCUMENTS (COMPLETE)
 
 Written in **LaTeX** (*LaTeX 3*) [https://www.latex-project.org/get/]
 
